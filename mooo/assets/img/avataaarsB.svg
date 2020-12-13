@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="198.80141mm"
+   width="52.557297mm"
    height="72.336929mm"
-   viewBox="0 0 198.80141 72.336929"
+   viewBox="0 0 52.557298 72.336929"
    version="1.1"
    id="svg6149"
    inkscape:version="1.0.1 (3bc2e81, 2020-09-07)"
-   sodipodi:docname="avataaars.svg">
+   sodipodi:docname="avataaarsB.svg">
   <defs
      id="defs6143" />
   <sodipodi:namedview
@@ -54,18 +54,7 @@
      transform="translate(-83.884314,-115.97012)">
     <path
        id="path10587"
-       style="fill:#f9f9f9;fill-opacity:1;stroke-width:0.141284"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.141284"
        d="m 110.16296,115.97012 c -14.490184,0 -26.278646,11.7885 -26.278646,26.27867 0,8.20238 7.201225,21.1162 11.493852,28.08433 2.731864,4.4346 5.686594,8.7539 8.319704,12.16153 4.16066,5.38472 5.3467,5.8124 6.46509,5.8124 1.1184,0 2.30442,-0.42768 6.4651,-5.8124 2.6331,-3.40763 5.58784,-7.72693 8.31969,-12.16153 4.29277,-6.96813 11.49386,-19.88195 11.49386,-28.08433 0,-14.49017 -11.78844,-26.27867 -26.27865,-26.27867 z m -6.92282,12.856 h 8.12398 c 4.3237,0 7.84145,3.51779 7.84145,7.84148 0,2.25531 -0.9588,4.28975 -2.48833,5.72169 1.52953,1.43174 2.48833,3.46699 2.48833,5.72246 0,4.32368 -3.51775,7.84066 -7.84145,7.84066 h -8.12398 c -1.1704,0 -2.119,-0.9486 -2.119,-2.11902 v -22.88825 c 0,-1.17037 0.9486,-2.11902 2.119,-2.11902 z m 2.11899,3.95705 v 7.20535 h 6.00499 c 1.98657,0 3.60268,-1.61607 3.60268,-3.60268 0,-1.98655 -1.61608,-3.60267 -3.60268,-3.60267 z m 0,11.44415 v 7.20535 h 6.00499 c 1.98657,0 3.60268,-1.61607 3.60268,-3.60269 0,-1.98659 -1.61608,-3.60266 -3.60268,-3.60266 z" />
-    <text
-       xml:space="preserve"
-       style="font-size:22.0518px;line-height:1.25;font-family:sans-serif;fill:#f9f9f9;stroke-width:2.75647;"
-       x="162.39143"
-       y="156.79243"
-       id="text42"><tspan
-         sodipodi:role="line"
-         id="tspan40"
-         x="162.39143"
-         y="156.79243"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#f9f9f9;stroke-width:2.75647;">BRUNURB</tspan></text>
   </g>
 </svg>
