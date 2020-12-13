@@ -9999,7 +9999,7 @@ h3 {
   }
 }
 .page-section {
-  padding: 6rem 0;
+  padding: 1rem 0;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
@@ -10007,7 +10007,7 @@ h3 {
 }
 @media (min-width: 992px) {
   .page-section .page-section-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 2.5rem;
   }
 }
@@ -10035,7 +10035,7 @@ h3 {
 }
 .divider-custom .divider-custom-icon {
   color: #2c3e50 !important;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .divider-custom.divider-light .divider-custom-line {
   background-color: #fff;
@@ -10152,7 +10152,7 @@ h3 {
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 3.5rem;
   }
   .masthead .masthead-subheading {
