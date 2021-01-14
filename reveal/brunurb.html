@@ -212,34 +212,11 @@ Exemplo de dados DOIS, 28, 48, 40, 19, 86, 27, 90
 
 			<section>
 				<h3>Gráficos de pizza</h3>
-				<canvas id="pie-chart" width="800" height="450"></canvas>
-
-				
-<script>
-
-		new Chart(document.getElementById("pie-chart"), {
-    type: 'pie',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [{
-        label: "Population (millions)",
-        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-        data: [2478,5267,734,784,433]
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
-
-
-</script>		
-				
-				
-				
+				<canvas class="stretch chartjs-render-monitor" data-chart="pie">
+,Black, Red, Green, Yellow
+Exemplos de dados UM, 40, 40, 20, 6
+Exemplos de dados DOIS, 45, 40, 25, 4
+				</canvas>
 			</section>
 
 
