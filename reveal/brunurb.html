@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Demo presentation by brunurb - v1.0</title>
+
+		<meta name="description" content="Uma apresentacao de demonstracao feita por brunurb">
+		<meta name="author" content="brunurb">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<a href="https://brunurb.github.io">
+						<img src="https://raw.githubusercontent.com/brunurb/brunurb.github.io/2e71787681f77023c2b4791402825faf7ef17739/mooo/assets/img/B225LOGObrunurb.svg" alt="brunurb logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>Uma apresentação de exemplo</h3>
+					<p>
+						<small>por <a href="https://brunurb.github.io">brunurb</a></small>
+					</p>
+					<p>
+						<small>usar setas do teclado para controlar</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Uma apresentação</h2>
+					<p>
+						de demonstração
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Slides verticais</h2>
+						<p>Slides podem ser integrados dentro de outros</p>
+						<p>Usar a barra de <em>Espaços</em> para navegar por todos os slides.</p>
+						<br>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://raw.githubusercontent.com/brunurb/brunurb.github.io/6c6469b12bb7e5225820fcf69f42cfba2a1acb98/mooo/assets/img/down-arrow.svg" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>Andar -1</h2>
+						<p>Subniveis de slides podem ser usados para para inserir detalhes adicionais ao mesmo topico dos slides horizontais.</p>
+					</section>
+					<section>
+						<h2>Andar -2</h2>
+						<p>Mais um andar, altura de voltar ao topo.</p>
+						<br>
+						<a href="#/2">
+							<img width="178" height="238" data-src="https://raw.githubusercontent.com/brunurb/brunurb.github.io/6c6469b12bb7e5225820fcf69f42cfba2a1acb98/mooo/assets/img/up-arrow.svg" alt="Up arrow">
+						</a>
+					</section>
+				</section>
+
+
+				
+
+				<section>
+					<h2>Ponto de vista</h2>
+					<p>
+						Carregar na tecla <strong>ESC</strong> para aceder visualização geral.
+					</p>
+					<p>
+						Manter pressionada a tecla <strong>alt</strong> (<strong>ctrl</strong> em Linux) e clique em qualquer elemento para o aproximar clique outra vez para afastar.
+					</p>
+					<p>
+						(NOTA: Use ctrl + clique em Linux.)
+					</p>
+				</section>
+
+
+					<section id="fragments">
+						<h2>Anotações em tempo real</h2>
+						<p>Carregar na tecla <strong>C</strong> para utilizar um marcador.</p>
+						<p class="fragment">E escrever no monitor em tempo real</p>
+						<p><span class="fragment">Use a tecla <strong>DEL</strong> para limpar o quadro </span> <span class="fragment">use a tecla  <strong>X</strong> para mudar cores - Avançar </span><span class="fragment">use a tecla <strong>Y</strong> para mudar cores - Recuar </span></p>
+					</section>
+
+
+
+
+				<section>
+					<h2>Otimizado para touch-screens</h2>
+					<p>
+                        As apresentações ficam fantásticas em touch-screens como smartphones e tablets. Basta arrastar para mudar de slide.
+					</p>
+				</section>
+
+
+				<section>
+					<section id="fragments">
+						<h2>Tópicos</h2>
+						<p>Use a seta avançar...</p>
+						<p class="fragment">... para navegar ...</p>
+						<p><span class="fragment">... uma</span> <span class="fragment">lista</span> <span class="fragment">de Tópicos.</span></p>
+
+						<aside class="notes">
+							Este slide tem tópicos fragmentados que tambem aparecem nas notas da mesma forma.
+						</aside>
+					</section>
+					
+				</section>
+
+				<section id="transitions">
+					<h2>Transições</h2>
+					<p>
+						existem varios tipos de transições, como: <br>
+						<a href="?transition=none#/transitions">Nada</a> -
+						<a href="?transition=fade#/transitions">Dissolver</a> -
+						<a href="?transition=slide#/transitions">Deslizar</a> -
+						<a href="?transition=convex#/transitions">Convexo</a> -
+						<a href="?transition=concave#/transitions">Concavo</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+
+
+
+
+			<section>
+				<h1>Gráficos</h1>
+				<p>
+					<small>de dados</small>
+				</p>
+			</section>
+
+			<section>
+				<h3>Gráficos de linhas usando um string JSON</h3>
+				<canvas class="stretch" data-chart="line">
+<!--
+{
+ "data": {
+  "labels": ["Janeiro"," Fevereiro"," Março"," Abril"," Maio"," Junho"," Julho"],
+  "datasets":[
+   {
+    "data":[65,59,80,81,56,55,40],
+    "label":"Exemplos de dados UM","backgroundColor":"rgba(20,220,220,.8)"
+   },
+   {
+    "data":[28,48,40,19,86,27,90],
+    "label":"Exemplo de dados DOIS","backgroundColor":"rgba(220,120,120,.8)"
+   }
+  ]
+ }, 
+ "options": { "responsive": "true" }
+}
+-->
+				</canvas>
+			</section>
+
+			<section>
+				<h3>Gráficos de linhas usando dados CSV e configuração JSON</h3>
+				<canvas class="stretch" data-chart="line">
+Exemplos de dados UM,  65, 59, 80, 81, 56, 55, 40
+<!-- This is a comment -->
+Exemplo de dados DOIS, 28, 48, 40, 19, 86, 27, 90
+<!-- 
+{ 
+"data" : {
+	"labels" : ["Janeiro"," Fevereiro"," Março"," Abril"," Maio"," Junho"," Julho"],
+	"datasets" : [{ "borderColor": "#0f0", "borderDash": ["5","10"] }, { "borderColor": "#0ff" } ]
+	}
+}
+-->
+				</canvas>
+			</section>
+
+			<section>
+				<h3>Gráficos de barras usando CSV</h3>
+				<canvas class="stretch" data-chart="bar">
+,Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho
+Exemplos de dados UM, 65, 59, 80, 81, 56, 55, 40
+Exemplo de dados DOIS, 28, 48, 40, 19, 86, 27, 90
+				</canvas>
+			</section>
+
+			<section>
+				<h3>Gráficos de barras acumulado usando ficheiro CSV com configuração JSON</h3>
+				<canvas class="stretch" data-chart="bar" data-chart-src="https://brunurb.github.io/data/data.csv">
+<!-- 
+{
+"data" : {
+"datasets" : [{ "backgroundColor": "#0f0" }, { "backgroundColor": "#0ff" } ]
+},
+"options": { "responsive": true, "scales": { "xAxes": [{ "stacked": true }], "yAxes": [{ "stacked": true }] } }
+}
+-->
+				</canvas>
+			</section>
+
+			<section>
+				<h3>Gráficos de pizza</h3>
+				<canvas class="stretch chartjs-render-monitor" data-chart="pie">
+,Black, Red, Green, Yellow
+Exemplos de dados UM, 40, 40, 20, 6
+Exemplos de dados DOIS, 45, 40, 25, 4
+				</canvas>
+			</section>
+
+
+
+
+
+
+
+				<section>
+					<section data-background="#dddddd">
+						<h2>Diferentes tipos de fundos</h2>
+						
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://raw.githubusercontent.com/brunurb/brunurb.github.io/6c6469b12bb7e5225820fcf69f42cfba2a1acb98/mooo/assets/img/down-arrow.svg" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/imagens/earthfromspace.jpeg">
+						<h2>Imagens de Fundo</h2>
+					</section>
+					<section data-background="https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/imagens/Leavespattern.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Fundos em Padrao</h2>
+					</section>
+					<section data-background-video="http://95.94.220.160/star_trails.mp4" data-background-video-loop data-background-video-autoplay playsinline data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Videos como Fundo</h2>
+						</div>
+					</section>
+					<section data-background="https://raw.githubusercontent.com/brunurb/54ND80X/master/giphy.gif">
+						<h2>... e GIFs!</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Transições de Fundos</h2>
+					<p>
+						Sao possiveis várias transições da imagem de fundo. esta chama-se "zoom".
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Transições de Fundos</h2>
+					<p>
+						Cada slide pode ter a sua Transições diferente.
+					</p>
+				</section>
+
+				<section data-background-iframe="https://brunurb.github.io" data-background-interactive>
+					<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<h2>Fundos Iframe</h2>
+						<p>Torna-se possivel embeber paginas web completas como Iframe. Experimente interagir com a pagina de fundo.</p>
+					</div>
+				</section>
+
+				
+				<section>
+					<h2>Visão de apresentador</h2>
+					<p>Existe uma Visão de apresentador. Inclui um temporizador, pré visualização dos próximos slides. E notas de apresentação.</p>
+					<p>Carregue na tecla <em>S</em> para experimentar.</p>
+
+					<aside class="notes">
+						Olá, estas sao as notas de apresentador, que estão escondidas na apresentação principal e só podem ser vistas pelo apresentador (carregue 's' no seu teclado).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Exportar para PDF</h2>
+					<p>Apresentações podem ser exportadas para PDF</p>
+				</section>
+
+				<section>
+					<h2>Faça uma pausa</h2>
+					<p>
+						Carregue B ou . no seu teclado para pausar a apresentação. Isto pode ser util quando está a apresentar e quizer ocultar slides que distraem a audiência enquanto aborda outras questões.
+					</p>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>FIM</h1>
+					<p>
+						Obrigado pela atenção<br>
+						- <a href="https://brunurb.github.io">Mais exemplos</a>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/chalkboard/plugin.js"></script>
+        <script src="plugin/chart/Chart.min.js"></script>
+        <script src="plugin/chart/plugin.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                autoPlayMedia: true,
+
+				plugins: [ RevealChalkboard, RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealChart ]
+			});
+
+		</script>
+
+	</body>
+</html>
