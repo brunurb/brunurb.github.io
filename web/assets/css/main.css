@@ -1,0 +1,535 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Source Sans Pro", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    color: #414f57;
+    font-size: 17.5px;
+}
+a {
+    cursor: pointer;
+}
+
+/* Header CSS */
+header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../img/bgHeader.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    padding-top: calc((100vh - 280px)/2);
+    box-sizing: border-box;
+    padding-left: 100px;
+}
+header h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 80px;
+    margin-bottom: 30px;
+}
+header ul {
+    height: 50px;
+}
+header ul a {
+    height: 55px;
+    font-size: 25px;
+    padding: 0 15px;
+    text-decoration: none;
+    line-height: 53px;
+    color: #fff;
+}
+
+header ul a.download {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #2188ff;
+    background-color: #2188ff;
+    transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+    margin-right: 10px;
+}
+header ul a.download:hover {
+    background-color: #2155ff;
+    border-color: #2155ff;
+}
+
+header ul a.learnMore {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: background-color 0.25s ease-in-out,border-color 0.25s ease-in-out,color 0.25s ease-in-out;
+}
+header ul a.learnMore:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+@media only screen and (max-width: 875px) {
+    header {
+        padding: 75px;
+        padding-top: 150px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    header h1 {
+        font-size: 50px;
+        line-height: 65px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header {
+        padding: 12.5px;
+        padding-top: 125px;
+    }
+    header h1 {
+        font-size: 37.5px;
+        line-height: 50px;
+    }
+}
+@media only screen and (max-width: 395px) {
+    header h1 {
+        text-align: center;
+        font-size: 32.5px;
+        line-height: 40px;
+    }
+    header ul {
+        margin-top: 30px;
+        text-align: center;
+    }
+    header ul a {
+        width: 70%;
+        box-sizing: border-box;
+        height: 45px;
+        font-size: 20px;
+        text-decoration: none;
+        line-height: 43px;
+    }
+    header ul a.download {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Nav CSS */
+nav {
+    position: fixed;
+    top: 0;
+    height: 75px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12.5px 100px;
+    transition: background-color 0.25s;
+}
+nav a {
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.15s ease-in-out;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #fff;
+}
+nav a.brandName {
+    display: block;
+    float: left;
+    font-size: 50px;
+    line-height: 1;
+}
+nav ul {
+    float: right;
+    height: 50px;
+}
+nav ul a {
+    font-size: 17.5px;
+    line-height: 50px;
+    margin: 0 12.5px;
+}
+
+nav.nonTopNav {
+    background-color: #fff;
+    box-shadow: 0 0 3vh black;
+}
+nav.nonTopNav a.brandName {
+    color: #2188ff;
+}
+nav.nonTopNav a {
+    color: #414f57;
+}
+nav.nonTopNav a:hover {
+    color: #2188ff;
+}
+nav button.menuButton {
+    display: none;
+    float: right;
+    border: none;
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    padding: 2.5px;
+    outline: none;
+    cursor: pointer;
+}
+nav button.menuButton svg {
+    height: 100%;
+    width: 100%;
+}
+nav button.menuButton svg path {
+    transition: fill 0.15s ease-in-out;
+    fill: rgba(255, 255, 255, 0.55);
+}
+nav button.menuButton:hover svg path {
+    fill: #fff;
+}
+nav.nonTopNav button.menuButton svg path {
+    fill: #414f57;
+}
+nav.nonTopNav button.menuButton:hover svg path {
+    fill: #2188ff;
+}
+
+nav button.menuButton svg.menuIcon {
+    display: block;
+}
+nav button.menuButton svg.closeIcon {
+    display: none;
+}
+
+@media only screen and (max-width: 925px) {
+    nav {
+        padding: 12.5px 25px;
+    }
+}
+@media only screen and (max-width: 755px) {
+    nav {
+        padding: 12.5px;
+    }
+    body.activeNavLinks {
+        overflow: hidden;
+    }
+    nav button.menuButton {
+        display: block !important;
+    }
+    body.activeNavLinks nav {
+        box-shadow: none;
+        background-color: #2188ff;
+        height: 100%;
+        width: 100%;
+        transition: none;
+    }
+    body.activeNavLinks nav.nonTopNav {
+        background-color: #fff;
+    }
+    nav ul {
+        display: none;
+    }
+    body.activeNavLinks nav ul {
+        display: block !important;
+        clear: both;
+        overflow: auto;
+        width: 100%;
+        height: auto;
+        margin-top: calc(((100vh - 280px - 75px) / 2));
+    }
+    body.activeNavLinks nav ul a {
+        display: block;
+        text-align: center;
+        height: 70px;
+        font-size: 30px;
+    }
+    body.activeNavLinks nav button.menuButton svg.menuIcon {
+        display: none;
+    }
+    body.activeNavLinks nav button.menuButton svg.closeIcon {
+        display: block;
+    }
+}
+@media only screen and (max-width: 500px) {
+    nav {
+        height: 65px;
+    }
+    nav a.brandName {
+        font-size: 40px;
+    }
+    nav button.menuButton {
+        height: 40px;
+        width: 40px;
+    }
+    body.activeNavLinks nav ul {
+        margin-top: calc(((100vh - 280px - 65px) / 2));
+    }
+    body.activeNavLinks nav ul a {
+        height: 60px;
+        font-size: 25px;
+    }
+}
+
+/* Section CSS */
+
+section h1.headerLine {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1;
+}
+section div.lineContainer {
+    width: 100%;
+    height: 4px;
+    display: block;
+    text-align: center;
+    font-size: 0;
+    margin: 25px 0;
+}
+section div.lineContainer div.line {
+    width: 50px;
+    height: 4px;
+    display: inline-block;
+    background-color: #2188ff;
+    margin: 0;
+    line-height: 0;
+}
+
+div.row {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+div.row div.col {
+    width: 300px;
+    display: inline-block;
+}
+
+/* About Section CSS */
+section#about {
+    padding: 75px 0;
+    text-align: center;
+}
+section#about p {
+    width: 500px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+section#about a {
+    height: 55px;
+    font-size: 25px;
+    padding: 0 15px;
+    text-decoration: none;
+    line-height: 53px;
+    color: #414f57;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #c7cbd4;
+    transition: border-color 0.25s ease-in-out,color 0.25s ease-in-out;
+}
+section#about a:hover{
+    border-color: #2188ff;
+    color: #2188ff;
+}
+
+@media only screen and (max-width: 500px) {
+    section#about p {
+        width: 90%;
+    }
+}
+
+/* Template Section CSS */
+section#template {
+    padding: 75px 0;
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../img/bgTemplateSection.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+section#template h1.headerLine {
+    color: white;
+}
+section#template div.lineContainer div.line {
+    background-color: white;
+}
+section#template div.row {
+    margin-top: 50px;
+}
+section#template div.row div.col svg {
+    height: 70px;
+    width: 70px;
+    padding: 5px;
+}
+section#template div.row div.col svg path {
+    fill: #2188ff;
+    width: 100%;
+    height: 100%;
+}
+section#template div.row div.col h1, section#template div.row div.col p {
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+section#template div.row div.col h1 {
+    font-size: 40px;
+    line-height: 80px;
+    font-weight: 600;
+}
+@media only screen and (max-width: 906px) {
+    section#template div.row div.col {
+        width: 270px;
+    }
+}
+@media only screen and (max-width: 816px) {
+    section#template div.row div.col {
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 757px) {
+    section#template div.lineContainer {
+        margin-bottom: 50px;
+    }
+    section#template div.row div.col {
+        width: 100%;
+        display: block;
+        margin-top: 70px;
+    }
+    section#template div.row div.col p {
+        width: 250px;
+        display: inline-block;
+    }
+}
+
+/* Download Section CSS */
+section#download {
+    padding: 75px 0;
+    text-align: center;
+}
+section#download p {
+    width: 500px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+section#download a {
+    height: 55px;
+    font-size: 25px;
+    padding: 0 15px;
+    text-decoration: none;
+    line-height: 53px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #2188ff;
+    background-color: #2188ff;
+    transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+    margin-right: 10px;
+}
+section#download a:hover {
+    background-color: #2155ff;
+    border-color: #2155ff;
+}
+@media only screen and (max-width: 500px) {
+    section#download p {
+        width: 90%;
+    }
+    section#download h1.headerLine {
+        font-size: 32.5px;
+    }
+}
+
+/* Contact Section CSS */
+section#contact {
+    padding: 75px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+section#contact p.desc {
+    width: 500px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+section#contact ul {
+    display: block;
+    text-align: center;
+}
+section#contact ul li {
+    display: inline-block;
+    margin: 0 25px;
+    margin-top: 40px;
+}
+section#contact ul li p,section#contact ul li svg {
+    display: inline-block;
+    line-height: 50px;
+    font-size: 25px;
+}
+section#contact ul li svg {
+    width: 52.5px;
+    height: 52.5px;
+    margin-bottom: 5px;
+}
+section#contact ul li svg path {
+    fill: #414f57;
+}
+section#contact ul li p {
+    text-align: left;
+}
+section#contact a {
+    text-decoration: none;
+    border-bottom: 1px dotted #c7cbd4;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    color: inherit;
+}
+section#contact a:hover{
+    border-color: #2188ff;
+    color: #2188ff;
+}
+
+@media only screen and (max-width: 500px) {
+    section#contact p.desc {
+        width: 90%;
+    }
+}
+
+/* Footer CSS */
+footer {
+    padding: 65px 0;
+    text-align: center;
+    overflow: auto;
+}
+footer p.copyright {
+    font-size: 20px;
+    color: #414f57;
+    display: block;
+    float: left;
+    width: calc(100% - 10px);
+    text-align: center;
+}
+footer ul.links {
+    text-align: center;
+    overflow: auto;
+    margin-bottom: 5px;
+}
+footer ul.links a {
+    text-decoration: none;
+    height: 35px;
+    width: 35px;
+    padding: 7.5px 5px;
+    display: inline-block;
+}
+footer ul.links a svg {
+    height: 100%;
+    width: 100%;
+}
+footer ul.links a svg path {
+    fill: #c7cbd4;
+    transition: fill 0.15s ease-in-out;
+}
+footer ul.links a svg:hover path {
+    fill: #414f57;
+}
