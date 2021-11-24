@@ -12,6 +12,23 @@ a {
     cursor: pointer;
 }
 
+.grid {
+  background: #EEE;
+  /* center */
+  margin: 0 auto;
+}
+
+.grid-item {
+  float: left;
+  width: 80px;
+  height: 60px;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+}
+
+.grid-item { width: 100%; }
+.grid-item { height: 100%; }
+
+
 /* Header CSS */
 header {
     height: 100vh;
@@ -310,6 +327,7 @@ div.row div.col {
 section#about {
     padding: 75px 0;
     text-align: center;
+    height: 100vh;
 }
 section#about p {
     width: 500px;
@@ -349,6 +367,7 @@ section#template {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    height: 100vh;
 }
 section#template h1.headerLine {
     color: white;
@@ -406,8 +425,11 @@ section#template div.row div.col h1 {
 
 /* Download Section CSS */
 section#download {
+    height: 100vh;
     padding: 75px 0;
     text-align: center;
+    background-image: url(../img/oldRailwayStation5.png);
+    background-size: contain;
 }
 section#download p {
     width: 500px;
@@ -533,3 +555,4 @@ footer ul.links a svg path {
 footer ul.links a svg:hover path {
     fill: #414f57;
 }
+
