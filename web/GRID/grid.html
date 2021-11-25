@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>brunurb portfolio</title>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<meta name="description" content="works and prototypes by brunurb" />
+		<meta name="keywords" content="sozi, sketchup, inkscape, jquery, gimp, photoshop, ffmpeg"/>
+		<link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico" type="image/x-icon" />    
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,600,700,900" rel="stylesheet">
+
+
+
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/freewall.js"></script>
+		<style type="text/css">
+			.free-wall {
+				margin: 15px;
+			}
+			.brick img {
+				margin: 0;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+
+    <nav>
+        <a class="brandName scrollLink" scrolllink="#header" href="https://brunurb.github.io/web/index.html">BRUNURB</a>
+        <button class="menuButton">
+            <svg class="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+            <svg class="closeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"/></svg>
+        </button>
+        <ul>
+            <a class="scrollLink" scrolllink="#about" href="https://brunurb.github.io/web/index.html#about">About</a>
+            <a class="scrollLink" scrolllink="#template" href="https://brunurb.github.io/web/index.html#template">Works</a>
+            <a class="scrollLink" scrolllink="#download" href="https://brunurb.github.io/web/index.html#download">Experiments</a>
+            <a class="scrollLink" scrolllink="#contact" href="https://brunurb.github.io/web/index.html#contact">Contact</a>
+        </ul>
+    </nav>
+
+		<div id="freewall" style="margin-top: 80px;" class="free-wall" ></div>
+
+		<script type="text/javascript">
+
+			var temp = "<div class='brick' style='width:{width}px;'><img src='img/{index}.jpg' width='100%'></div>";
+			var w = 1, h = 1, html = '', limitItem = 49;
+			for (var i = 0; i < limitItem; ++i) {
+				w = 1 + 3 * Math.random() << 0;
+				html += temp.replace(/\{width\}/g, w*150).replace("{index}", i + 1);
+			}
+			$("#freewall").html(html);
+
+			var wall = new Freewall("#freewall");
+			wall.reset({
+				selector: '.brick',
+				animate: true,
+				cellW: 150,
+				cellH: 'auto',
+				onResize: function() {
+					wall.fitWidth();
+				}
+			});
+
+			var images = wall.container.find('.brick');
+			images.find('img').load(function() {
+				wall.fitWidth();
+			});
+
+		</script>
+	</body>
+</html>
