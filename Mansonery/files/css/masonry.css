@@ -9,6 +9,14 @@ a {
   transition: all .25s ease-in-out;
 }
 
+
+.heater {
+    color: #2188ff;
+    padding-top: 70px;
+}
+
+
+
 /* The title */
 .title {
   font-weight: 700;
