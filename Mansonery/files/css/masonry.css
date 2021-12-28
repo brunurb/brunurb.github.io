@@ -66,13 +66,13 @@ a {
 /* Masonry grid */
 .masonry {
   transition: all .5s ease-in-out;
-  column-gap: 30px;
+  column-gap: 5px;
   column-fill: initial;
 }
 
 /* Masonry item */
 .masonry .brick {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   display: inline-block; /* Fix the misalignment of items */
   vertical-align: top; /* Keep the item on the very top */
 }
