@@ -328,6 +328,11 @@ section#about {
     padding: 75px 0;
     text-align: center;
     height: 100vh;
+    background-image: url(../img/bgHeader.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 section#about p {
     width: 500px;
@@ -362,7 +367,7 @@ section#about a:hover{
 section#template {
     padding: 75px 0;
     text-align: center;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../img/bgTemplateSection.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../img/456.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -428,8 +433,11 @@ section#download {
     height: 100vh;
     padding: 75px 0;
     text-align: center;
-    background-image: url(../img/oldRailwayStation5.png);
-    background-size: contain;
+    background-image: url(../img/123.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 section#download p {
     width: 500px;
@@ -468,6 +476,11 @@ section#contact {
     padding: 75px 0;
     text-align: center;
     background-color: #f5f5f5;
+    background-image: url(../img/oldRailwayStation5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 section#contact p.desc {
     width: 500px;
