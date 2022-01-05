@@ -66,7 +66,6 @@ a {
 /* Masonry grid */
 .masonry {
   transition: all .5s ease-in-out;
-  column-gap: 5px;
   column-fill: initial;
 }
 
@@ -84,7 +83,7 @@ a {
 }
 
 .masonry .brick:hover img {
-  opacity: .75;
+  opacity: .45;
 }
 
 /* Bordered masonry */
