@@ -367,7 +367,7 @@ section#about a:hover{
 section#template {
     padding: 75px 0;
     text-align: center;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../img/1.png);
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../img/4.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -433,7 +433,7 @@ section#download {
     height: 100vh;
     padding: 75px 0;
     text-align: center;
-    background-image: url(../img/3.png);
+    background-image: url(../img/5.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
