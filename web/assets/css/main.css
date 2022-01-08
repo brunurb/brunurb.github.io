@@ -438,6 +438,7 @@ section#download {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    color: #2f4a69;
 }
 section#download p {
     width: 500px;
@@ -481,6 +482,7 @@ section#contact {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    color: #2f4a69;
 }
 section#contact p.desc {
     width: 500px;
@@ -508,20 +510,18 @@ section#contact ul li svg {
     margin-bottom: 5px;
 }
 section#contact ul li svg path {
-    fill: #414f57;
+    fill: #2f4a69;
 }
 section#contact ul li p {
     text-align: left;
 }
 section#contact a {
     text-decoration: none;
-    border-bottom: 1px dotted #c7cbd4;
     transition: color 0.2s, border-color 0.2s;
     cursor: pointer;
     color: inherit;
 }
 section#contact a:hover{
-    border-color: #2188ff;
     color: #2188ff;
 }
 
