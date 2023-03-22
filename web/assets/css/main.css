@@ -38,7 +38,7 @@ header {
     background-position: center;
     background-attachment: fixed;
     color: #fff;
-    padding-top: 0;
+    padding-top: calc((100vh - 280px)/2);
     box-sizing: border-box;
     padding-left: 100px;
 }
