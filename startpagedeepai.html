@@ -7,35 +7,57 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 20px;
+            background-color: #2C2E3A; /* Main background color */
+            color: #D1D2D6; /* Light gray text color */
+            margin: 0; /* Remove default body margin */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
         .bookmark-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 16px; /* Space between icon containers */
+            width: 100%; /* Full width for grid */
+            max-width: 100%; /* Allow it to fill all space */
         }
         .bookmark {
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
+            background-color: #3C3E47; /* Lighter gray for box backgrounds */
+            border: 1px solid #4A4C58; /* Light gray border */
+            border-radius: 10px; /* Rounded corners */
+            width: 80px; /* Icon container width */
+            height: 80px; /* Icon container height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            width: 100px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: opacity 0.3s;
+            text-decoration: none; /* No underline for links */
+            color: #D1D2D6; /* Always light gray text */
         }
         .favicon {
-            width: 32px;
-            height: 32px;
+            width: 40px; /* Favicon size */
+            height: 40px;
+            margin-bottom: 4px; /* Space between icon and text */
+        }
+        .bookmark:hover {
+            opacity: 0.9; /* Slightly transparent on hover */
         }
         #addShortcut {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            padding: 10px 15px;
+            background-color: #3C3E47; /* Background color for the plus sign */
+            color: #ededed; /* Lighter gray for plus sign */
+            border: 1px solid #4A4C58; /* Consistent border */
+            border-radius: 10px; /* Match the rounding of other bookmarks */
+            height: 80px; /* Same height as other boxes */
+            width: 80px; /* Same width as other boxes */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer; /* Hand cursor for button */
+            font-size: 32px; /* Increased size for plus sign */
+            margin-bottom: 0; /* No margin under the plus sign box */
         }
         /* Modal styles */
         .modal {
@@ -50,36 +72,69 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
         .modal-content {
-            background-color: white;
+            background-color: #35373F; /* Dialog background color */
             margin: auto;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px;
-            margin-top: 100px;
+            border: 1px solid #4A4C58; /* Border color for dialog */
+            border-radius: 8px;
+            width: 400px; /* Dialog width */
+            height: 250px; /* Dialog height */
+            display: flex;
+            flex-direction: column;
         }
         .modal-header {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            color: #D1D2D6;
         }
         .modal-footer {
             display: flex;
             justify-content: space-between;
         }
         .input-field {
-            margin-bottom: 10px;
+            margin-bottom: 16px;
         }
         .input-field input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            height: 40px; /* Input field height */
+            width: 80%; /* 80% of dialog width */
+            border-radius: 5px; /* Rounded edges */
+            border: 1px solid #4A4C58; /* Inactive border */
+            padding: 8px; /* Padding inside input */
+            font-size: 14px;
+            color: #FFFFFF; /* White input text color */
+            background-color: #444; /* Darker input background */
+        }
+        .input-field input:focus {
+            outline: none;
+            border-color: #00AEEF; /* Active border color */
+        }
+        .cancel {
+            background-color: #4A4C58; /* Dark gray cancel button */
+            color: #D1D2D6; /* Light gray text */
+            border: none;
+            border-radius: 5px;
+            width: 80px; /* Width of the button */
+            height: 36px; /* Height of the button */
+            cursor: pointer;
+        }
+        .cancel:hover {
+            background-color: #3C3E47; /* Slightly darker on hover */
+        }
+        .done {
+            background-color: #00AEEF; /* Blue for add button */
+            color: #FFFFFF; /* White text color */
+            border: none;
+            border-radius: 5px;
+            width: 80px; /* Width of the button */
+            height: 36px; /* Height of the button */
+            cursor: pointer;
+        }
+        .done:hover {
+            background-color: #007B9F; /* Darker blue on hover */
         }
     </style>
 </head>
 <body>
 
-    <h1>Your Bookmarks</h1>
-    <button id="addShortcut">➕ Add Shortcut</button>
     <div class="bookmark-grid" id="bookmarkGrid"></div>
 
     <!-- Modal for adding shortcut -->
@@ -109,7 +164,6 @@
 
     <script>
         const bookmarkGrid = document.getElementById('bookmarkGrid');
-        const addShortcutButton = document.getElementById('addShortcut');
         const shortcutModal = document.getElementById('shortcutModal');
         const cancelButton = document.getElementById('cancelButton');
         const addButton = document.getElementById('addButton');
@@ -117,95 +171,107 @@
         const shortcutURLInput = document.getElementById('shortcutURL');
 
         const bookmarks = [
-            { title: "TorrentGalaxy", url: "https://tgx.rs/" },
-            { title: "Reddit", url: "https://www.reddit.com/" },
-            { title: "Google Photos", url: "https://photos.google.com/" },
-            { title: "Nostv", url: "https://www.nostv.pt/" },
-            { title: "Reliefviz", url: "https://reliefviz.com/app" },
-            { title: "RARBG", url: "https://therarbg.com/imdb-detail/tt27722061/" },
-            { title: "Blort", url: "https://blort.meepzorp.com/" },
-            { title: "Places Journal", url: "https://placesjournal.org/" },
-            { title: "It's Nice That", url: "https://www.itsnicethat.com/" },
-            { title: "Preterhuman", url: "https://preterhuman.net/" },
-            { title: "Libre Game Wiki", url: "https://libregamewiki.org/" },
-            { title: "Jodie: Tenberg", url: "https://jodiettenberg.substack.com/" },
-            { title: "Aeon", url: "https://aeon.co" },
-            { title: "Swiss Miss", url: "https://www.swiss-miss.com/" },
-            { title: "Linux Links", url: "https://www.linuxlinks.com/" },
-            { title: "Gallica BNF", url: "https://gallica.bnf.fr/accueil/en/content/accueil-en?mode=desktop" },
-            { title: "This Is Colossal", url: "https://www.thisiscolossal.com/" },
-            { title: "Bsky", url: "https://bsky.app" },
-            { title: "Messy Nessy Chic", url: "https://www.messynessychic.com/" },
-            { title: "Weird Wide Web Ring", url: "https://weirdwidewebring.net/" },
-            { title: "Syllabus Project", url: "https://syllabusproject.org/" },
-            { title: "Public Domain Review", url: "https://publicdomainreview.org/" },
-            { title: "Jalopnik", url: "https://jalopnik.com/" },
-            { title: "Ars Technica", url: "https://arstechnica.com/" },
-            { title: "We Make Money Not Art", url: "https://we-make-money-not-art.com/" },
-            { title: "Pen Addict", url: "https://www.penaddict.com/" },
-            { title: "Stack Overflow", url: "https://stackoverflow.com/questions" },
-            { title: "Beautiful Public Data", url: "https://www.beautifulpublicdata.com/" },
-            { title: "Predb", url: "https://predb.net/" },
-            { title: "Knaben", url: "https://knaben.eu/" },
-            { title: "WatchSomuch", url: "https://watchsomuch.to/" },
-            { title: "BT4GPRX", url: "http://bt4gprx" },
-            { title: "Leonardo.ai", url: "https://app.leonardo.ai/" },
-            { title: "Ext", url: "https://ext.to/" },
-            { title: "Show RSS", url: "https://showrss.info/" },
-            { title: "Atlas Obscura", url: "https://www.atlasobscura.com" },
-            { title: "38north", url: "https://www.38north.org/" },
-            { title: "Web Curios", url: "https://webcurios.co.uk/" },
-            { title: "Works in Progress", url: "https://www.worksinprogress.news/" },
-            { title: "Vox", url: "http://vox.com/" },
-            { title: "Language Transfer", url: "https://www.languagetransfer.org/" },
-            { title: "The Kid Should See This", url: "https://thekidshouldseethis.com/" },
-            { title: "Citation Needed", url: "https://www.citationneeded.news/" },
-            { title: "Pudding", url: "https://pudding.cool" },
-            { title: "Hello GitHub", url: "https://hellogithub.com" },
-            { title: "Never Was Magazine", url: "https://neverwasmag.com/" },
-            { title: "Deja Reviewer", url: "https://dejareviewer.com/" },
-            { title: "Russian Space Web", url: "https://www.russianspaceweb.com/index.html" },
-            { title: "Laura Olin Archive", url: "https://buttondown.com/lauraolin/archive/" },
-            { title: "Damn Interesting", url: "https://www.damninteresting.com/" },
-            { title: "Listen Notes", url: "https://www.listennotes.com/" },
-            { title: "Spectrum IEEE", url: "https://spectrum.ieee.org/" },
-            { title: "Flashbak", url: "https://flashbak.com/" },
-            { title: "NPR", url: "https://www.npr.org" },
-            { title: "Gods and Foolish Grandeur", url: "http://godsandfoolishgrandeur.blogspot.com/" },
-            { title: "Poki Monster Tracks", url: "https://poki.com/en/g/monster-tracks" },
-            { title: "HathiTrust", url: "https://www.hathitrust.org/" },
-            { title: "Hedgehog Review", url: "https://hedgehogreview.com/" },
-            { title: "Fark", url: "https://www.fark.com/" },
-            { title: "News.pub", url: "https://news.pub/index.html" },
-            { title: "Mental Floss", url: "https://www.mentalfloss.com/" },
-            { title: "My Modern Met", url: "https://mymodernmet.com/" },
-            { title: "Vessel Finder", url: "https://www.vesselfinder.com" },
-            { title: "Claude AI", url: "https://claude.ai/new" },
-            { title: "Ytch.xyz", url: "https://ytch.xyz/" },
-            { title: "Pasabon.nl", url: "https://www.pasabon.nl/" },
-            { title: "Jaap Grolleman", url: "https://jaapgrolleman.com/" },
-            { title: "Toxel", url: "https://www.toxel.com/" },
-            { title: "Miss Cellania", url: "https://misscellania.blogspot.com/" },
-            { title: "Laughing Squid", url: "https://laughingsquid.com/" },
-            { title: "MetaFilter", url: "https://www.metafilter.com/" },
-            { title: "Visualising China", url: "https://visualisingchina.net/blog/" },
-            { title: "David Byrne", url: "https://davidbyrne.com/" },
-            { title: "World Archaeology", url: "https://www.world-archaeology.com/" },
-            { title: "Greek Movies", url: "https://greek-movies.com/" },
-            { title: "Cartoon Brew", url: "https://www.cartoonbrew.com/" },
-            { title: "Palladium Magazine", url: "https://www.palladiummag.com/" }
+            { url: "https://tgx.rs/", label: "TorrentGalaxy" },
+            { url: "https://www.reddit.com/", label: "Reddit" },
+            { url: "https://photos.google.com/", label: "Google Photos" },
+            { url: "https://www.nostv.pt/", label: "NOSTV" },
+            { url: "https://reliefviz.com/app", label: "Reliefviz" },
+            { url: "https://therarbg.com/imdb-detail/tt27722061/", label: "RARBG" },
+            { url: "https://blort.meepzorp.com/", label: "Blort" },
+            { url: "https://placesjournal.org/", label: "Places Journal" },
+            { url: "https://www.itsnicethat.com/", label: "It's Nice That" },
+            { url: "https://preterhuman.net/", label: "Preterhuman" },
+            { url: "https://libregamewiki.org/", label: "Libre Game Wiki" },
+            { url: "https://jodiettenberg.substack.com/", label: "Jodie: Tenberg" },
+            { url: "https://aeon.co", label: "Aeon" },
+            { url: "https://www.swiss-miss.com/", label: "Swiss Miss" },
+            { url: "https://www.linuxlinks.com/", label: "Linux Links" },
+            { url: "https://gallica.bnf.fr/accueil/en/content/accueil-en?mode=desktop", label: "Gallica BNF" },
+            { url: "https://www.thisiscolossal.com/", label: "This Is Colossal" },
+            { url: "https://bsky.app", label: "BSKY" },
+            { url: "https://www.messynessychic.com/", label: "Messy Nessy Chic" },
+            { url: "https://weirdwidewebring.net/", label: "Weird Wide Web Ring" },
+            { url: "https://syllabusproject.org/", label: "Syllabus Project" },
+            { url: "https://publicdomainreview.org/", label: "Public Domain Review" },
+            { url: "https://jalopnik.com/", label: "Jalopnik" },
+            { url: "https://arstechnica.com/", label: "Ars Technica" },
+            { url: "https://we-make-money-not-art.com/", label: "We Make Money Not Art" },
+            { url: "https://www.penaddict.com/", label: "Pen Addict" },
+            { url: "https://posit.co/", label: "Posit" },
+            { url: "https://stackoverflow.com/questions", label: "Stack Overflow" },
+            { url: "https://www.beautifulpublicdata.com/", label: "Beautiful Public Data" },
+            { url: "https://predb.net/", label: "Predb" },
+            { url: "https://knaben.eu/", label: "Knaben" },
+            { url: "https://watchsomuch.to/", label: "Watch So Much" },
+            { url: "https://app.leonardo.ai/", label: "Leonardo AI" },
+            { url: "https://ext.to/", label: "EXT" },
+            { url: "https://showrss.info/", label: "Show RSS" },
+            { url: "https://www.atlasobscura.com", label: "Atlas Obscura" },
+            { url: "https://www.38north.org/", label: "38 North" },
+            { url: "https://webcurios.co.uk/", label: "Web Curios" },
+            { url: "https://www.worksinprogress.news/", label: "Works In Progress" },
+            { url: "http://vox.com/", label: "Vox" },
+            { url: "https://www.languagetransfer.org/", label: "Language Transfer" },
+            { url: "https://thekidshouldseethis.com/", label: "The Kid Should See This" },
+            { url: "https://www.citationneeded.news/", label: "Citation Needed" },
+            { url: "https://pudding.cool", label: "Pudding" },
+            { url: "https://hellogithub.com", label: "Hello GitHub" },
+            { url: "https://neverwasmag.com/", label: "Never Was Magazine" },
+            { url: "https://dejareviewer.com/", label: "Deja Reviewer" },
+            { url: "https://www.russianspaceweb.com/index.html", label: "Russian Space Web" },
+            { url: "https://buttondown.com/lauraolin/archive/", label: "Laura Olin" },
+            { url: "https://www.damninteresting.com/", label: "Damn Interesting" },
+            { url: "https://www.listennotes.com/", label: "Listen Notes" },
+            { url: "https://spectrum.ieee.org/", label: "Spectrum IEEE" },
+            { url: "https://flashbak.com/", label: "Flashbak" },
+            { url: "https://www.npr.org", label: "NPR" },
+            { url: "http://godsandfoolishgrandeur.blogspot.com/", label: "Gods and Foolish Grandeur" },
+            { url: "https://poki.com/en/g/monster-tracks", label: "Monster Tracks" },
+            { url: "https://www.hathitrust.org/", label: "HathiTrust" },
+            { url: "https://hedgehogreview.com/", label: "Hedgehog Review" },
+            { url: "https://www.fark.com/", label: "Fark" },
+            { url: "https://news.pub/index.html", label: "News.pub" },
+            { url: "https://www.mentalfloss.com/", label: "Mental Floss" },
+            { url: "https://mymodernmet.com/", label: "My Modern Met" },
+            { url: "https://www.vesselfinder.com", label: "Vessel Finder" },
+            { url: "https://claude.ai/new", label: "Claude AI" },
+            { url: "https://ytch.xyz/", label: "YTCH.XYZ" },
+            { url: "https://www.pasabon.nl/", label: "Pasabon" },
+            { url: "https://jaapgrolleman.com/", label: "Jaap Grolleman" },
+            { url: "https://www.toxel.com", label: "Toxel" },
+            { url: "https://misscellania.blogspot.com/", label: "Miss Cellania" },
+            { url: "https://laughingsquid.com/", label: "Laughing Squid" },
+            { url: "https://www.metafilter.com/", label: "MetaFilter" },
+            { url: "https://visualisingchina.net/blog/", label: "Visualizing China" },
+            { url: "https://davidbyrne.com/", label: "David Byrne" },
+            { url: "https://www.world-archaeology.com/", label: "World Archaeology" },
+            { url: "https://greek-movies.com/", label: "Greek Movies" },
+            { url: "https://www.cartoonbrew.com/", label: "Cartoon Brew" },
+            { url: "https://www.palladiummag.com/", label: "Palladium" }
         ];
 
         function displayBookmarks() {
             bookmarkGrid.innerHTML = ''; // Clear current bookmarks
+            
+            // Create "Add Shortcut" button (the plus sign as a bookmark item)
+            const addButton = document.createElement('a');
+            addButton.className = 'bookmark';
+            addButton.href = "javascript:void(0)";
+            addButton.id = 'addShortcut';
+            addButton.innerHTML = `<span style="color: #ededed; font-size: 32px;">➕</span>`;
+            bookmarkGrid.appendChild(addButton);
+
+            // Display all bookmarks
             bookmarks.forEach((bookmark) => {
-                const bookmarkDiv = document.createElement('div');
-                bookmarkDiv.className = 'bookmark';
-                bookmarkDiv.innerHTML = `
-                    <img src="${bookmark.favicon}" alt="favicon" class="favicon" onerror="this.src='https://via.placeholder.com/32'">
-                    <a href="${bookmark.url}" target="_blank">${bookmark.title}</a>
+                const a = document.createElement('a');
+                a.className = 'bookmark';
+                a.href = bookmark.url; // Link to the bookmark URL
+                a.target = '_blank'; // Open link in new tab
+                a.innerHTML = `
+                    <img src="https://www.google.com/s2/favicons?domain=${new URL(bookmark.url).hostname}" alt="favicon" class="favicon" onerror="this.src='https://via.placeholder.com/32'">
+                    <span style="font-size: 12px;">${bookmark.label}</span>
                 `;
-                bookmarkGrid.appendChild(bookmarkDiv);
+                bookmarkGrid.appendChild(a);
             });
         }
 
@@ -214,16 +280,15 @@
             if (!/^https?:\/\//.test(url)) {
                 url = 'http://' + url; // Ensure it has a valid protocol
             }
-            
-            const favicon = `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}`;
-            bookmarks.push({ title, url, favicon });
+
+            bookmarks.push({ title, url });
             displayBookmarks();
         }
 
         // Load initial bookmarks
         displayBookmarks();
 
-        addShortcutButton.addEventListener('click', () => {
+        document.getElementById('addShortcut').addEventListener('click', () => {
             shortcutModal.style.display = 'block'; // Show the modal
         });
 
@@ -241,11 +306,7 @@
                 shortcutURLInput.value = '';
             }
         });
-
-        // Example bookmarks (can be removed)
-        addBookmark('Google', 'https://www.google.com');
-        addBookmark('GitHub', 'https://www.github.com');
-
+        
     </script>
 
 </body>
