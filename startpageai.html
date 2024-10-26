@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <!-- Bookmarks Made with the Help of DeepAI.org -->
+<!-- Bookmarks Made with the Help of DeepAI.org -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2C2E3A; /* Main background color */
-            color: #D1D2D6; /* Light gray text color */
+            background-color: #2C2E3E; /* Main background color */
+            color: #D1D5DB; /* Light gray text color */
             margin: 0; /* Remove default body margin */
             padding: 20px;
             display: flex;
@@ -19,7 +19,7 @@
         .header {
             font-size: 24px;
             margin-bottom: 16px;
-            color: #D1D2D6; /* Light gray color for the header */
+            color: #D1D5DB; /* Light gray color for the header */
         }
         .bookmark-grid {
             display: grid;
@@ -41,7 +41,7 @@
             text-align: center;
             transition: opacity 0.3s;
             text-decoration: none; /* No underline for links */
-            color: #D1D2D6; /* Always light gray text */
+            color: #D1D5DB; /* Always light gray text */
         }
         .favicon {
             width: 40px; /* Favicon size */
@@ -90,7 +90,7 @@
         }
         .modal-header {
             margin-bottom: 16px;
-            color: #D1D2D6;
+            color: #D1D5DB;
         }
         .modal-footer {
             display: flex;
@@ -115,7 +115,7 @@
         }
         .cancel {
             background-color: #4A4C58; /* Dark gray cancel button */
-            color: #D1D2D6; /* Light gray text */
+            color: #D1D5DB; /* Light gray text */
             border: none;
             border-radius: 5px;
             width: 80px; /* Width of the button */
@@ -141,6 +141,7 @@
 </head>
 <body>
 
+    <div class="header">Bookmark Shortcuts</div>
     <div class="bookmark-grid" id="bookmarkGrid"></div>
 
     <!-- Modal for adding shortcut -->
@@ -177,7 +178,7 @@
         const shortcutURLInput = document.getElementById('shortcutURL');
 
         const bookmarks = [
-            { url: "https://deepai.org", label: "DeepAI" }, // New shortcut for DeepAI
+            { url: "https://deepai.org", label: "DeepAI" },
             { url: "https://tgx.rs/", label: "TorrentGalaxy" },
             { url: "https://www.reddit.com/", label: "Reddit" },
             { url: "https://photos.google.com/", label: "Google Photos" },
