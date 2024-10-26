@@ -141,6 +141,7 @@
 </head>
 <body>
 
+    <div class="header">Bookmark Shortcuts</div>
     <div class="bookmark-grid" id="bookmarkGrid"></div>
 
     <!-- Modal for adding shortcut -->
@@ -149,16 +150,14 @@
             <div class="modal-header">
                 <h3>New Shortcut</h3>
             </div>
-            <div class="fields-and-preview">
-                <div class="form-input-container">
-                    <div class="input-field">
-                        <label for="shortcutTitle">Title</label>
-                        <input type="text" id="shortcutTitle" placeholder="Enter a title">
-                    </div>
-                    <div class="input-field">
-                        <label for="shortcutURL">URL</label>
-                        <input type="text" id="shortcutURL" placeholder="Type or paste a URL">
-                    </div>
+            <div class="form-input-container">
+                <div class="input-field">
+                    <label for="shortcutTitle">Title</label>
+                    <input type="text" id="shortcutTitle" placeholder="Enter a title">
+                </div>
+                <div class="input-field">
+                    <label for="shortcutURL">URL</label>
+                    <input type="text" id="shortcutURL" placeholder="Type or paste a URL">
                 </div>
             </div>
             <div class="modal-footer">
@@ -180,6 +179,8 @@
             { url: "https://deepai.org", label: "DeepAI" },
             { url: "https://tgx.rs/", label: "TorrentGalaxy" },
             { url: "https://www.reddit.com/", label: "Reddit" },
+            { url: "https://old.reddit.com/", label: "Old Reddit" },
+            { url: "https://news.ycombinator.com/", label: "Hacker News" },
             { url: "https://photos.google.com/", label: "Google Photos" },
             { url: "https://www.nostv.pt/", label: "NOSTV" },
             { url: "https://reliefviz.com/app", label: "Reliefviz" },
@@ -254,7 +255,55 @@
             { url: "https://www.world-archaeology.com/", label: "World Archaeology" },
             { url: "https://greek-movies.com/", label: "Greek Movies" },
             { url: "https://www.cartoonbrew.com/", label: "Cartoon Brew" },
-            { url: "https://www.palladiummag.com/", label: "Palladium" }
+            { url: "https://www.palladiummag.com/", label: "Palladium" },
+            { url: "https://old.reddit.com/", label: "Old Reddit" },
+            { url: "https://news.ycombinator.com/", label: "Hacker News" },
+            { url: "https://music.youtube.com/", label: "YouTube Music" },
+            { url: "https://kottke.org/", label: "Kottke" },
+            { url: "https://drive.google.com/drive/u/0/", label: "Google Drive" },
+            { url: "https://feedreader.com/online/", label: "Feedreader" },
+            { url: "https://ezgif.com/", label: "Ezgif" },
+            { url: "https://www.microsiervos.com/", label: "Microsiervos" },
+            { url: "https://myflixerz.to/", label: "MyFlixerz" },
+            { url: "https://archive.ph/", label: "Archive.ph" },
+            { url: "https://hackaday.com/", label: "Hackaday" },
+            { url: "https://www.photopea.com/", label: "Photopea" },
+            { url: "https://brunurb.github.io/startpage/", label: "Brunurb Startpage" },
+            { url: "https://colab.research.google.com/", label: "Google Colab" },
+            { url: "https://www.wired.com/story/best-apple-tv-plus-shows/", label: "Wired" },
+            { url: "https://forums.mvgroup.org/index.php?showtopic=2827", label: "MVGroup Forums" },
+            { url: "https://chat.openai.com/", label: "ChatGPT" },
+            { url: "https://rohan.ga/blog/", label: "Rohan's Blog" },
+            { url: "https://www.terabox.com/", label: "TeraBox" },
+            { url: "https://copilot.microsoft.com/?showconv=1", label: "Microsoft Copilot" },
+            { url: "https://www.rubinghscience.org/", label: "Rubingh Science" },
+            { url: "https://pages.github.com/", label: "GitHub Pages" },
+            { url: "https://3d2k.com/", label: "3D2K" },
+            { url: "https://glitch.com/", label: "Glitch" },
+            { url: "https://etiennefd.substack.com/", label: "Etienne FD" },
+            { url: "https://chatgpt.com/", label: "ChatGPT" },
+            { url: "https://overpass-turbo.eu/#", label: "Overpass Turbo" },
+            { url: "https://notebooklm.google.com/", label: "Notebook LM" },
+            { url: "https://www.sensesatlas.com/", label: "Senses Atlas" },
+            { url: "https://webwormhole.io/#", label: "WebWormhole" },
+            { url: "https://generative.3d2k.com/", label: "Generative 3D" },
+            { url: "https://www.amusingplanet.com/search/label/Portugal?max-results=10", label: "Amusing Planet" },
+            { url: "https://sotl.as/map/coordinates/33.6609,-95.5555/7.2", label: "SOTL" },
+            { url: "https://theorangeduck.com/page/last-lamb", label: "The Orange Duck" },
+            { url: "https://www.duckipedia.de/Duckipedia:Hauptseite", label: "Duckipedia" },
+            { url: "https://itsfoss.com/bootable-windows-usb-linux/", label: "It's FOSS" },
+            { url: "https://killedbyapixel.github.io/", label: "Killed by a Pixel" },
+            { url: "https://bestcam.tv/", label: "Bestcam" },
+            { url: "https://www.dfdoom.com/project/eviternity/", label: "DFDoom - Eviternity" },
+            { url: "https://megalodon.jp/", label: "Megalodon" },
+            { url: "https://help.redbubble.com/hc/en-us", label: "Redbubble Help" },
+            { url: "https://streamlink.github.io/", label: "Streamlink" },
+            { url: "https://substack.com/", label: "Substack" },
+            { url: "https://clipperz.is/", label: "Clipperz" },
+            { url: "https://cartes.app/#5.52/47.014/-0.611", label: "Cartes" },
+            { url: "https://www.navalgazing.net/", label: "Naval Gazing" },
+            { url: "https://www.maritimeheritage.org/index.html", label: "Maritime Heritage" },
+            { url: "https://www.spaceweather.com/", label: "Space Weather" },
         ];
 
         function displayBookmarks() {
@@ -276,7 +325,7 @@
                 a.target = '_blank'; // Open link in new tab
                 a.innerHTML = `
                     <img src="https://www.google.com/s2/favicons?domain=${new URL(bookmark.url).hostname}" alt="favicon" class="favicon" onerror="this.src='https://via.placeholder.com/32'">
-                    <span style="font-size: 12px;">${bookmark.label}</span>
+                    <span style="font-size: 12px;">${bookmark.label || bookmark.url}</span>
                 `;
                 bookmarkGrid.appendChild(a);
             });
