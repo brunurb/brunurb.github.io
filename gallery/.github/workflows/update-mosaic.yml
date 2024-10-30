@@ -3,7 +3,7 @@ name: Update Image Gallery
 on:
   push:
     paths:
-      - 'gallery/pictures/**'  # Triggers on changes to the pictures directory
+      - 'gallery/pictures/**'  # Trigger on changes to the pictures directory
 
 jobs:
   build:
@@ -15,11 +15,11 @@ jobs:
 
       - name: Generate Image List
         run: |
-          echo "const images = [" > images.js
+          echo "const images = [" > gallery/images.js # Ensure images.js is created in the correct folder
           for f in gallery/pictures/*; do
-            echo "  '$(basename "$f")'," >> images.js
+            echo "  '$(basename "$f")'," >> gallery/images.js
           done
-          echo "];" >> images.js
+          echo "];" >> gallery/images.js
 
       - name: Update index.html
         run: |
