@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a CSS file, link it here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        
+        h1 {
+            margin: 20px;
+        }
+        
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #gallery img {
+            margin: 10px;
+            width: 200px; /* You can adjust the size */
+            height: auto; /* Maintain aspect ratio */
+            border: 2px solid #ccc; /* Optional styling */
+            border-radius: 4px; /* Optional styling */
+            transition: transform 0.2s;
+        }
+
+        #gallery img:hover {
+            transform: scale(1.05); /* Scale image on hover */
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Gallery</h1>
-    <p>Images will be displayed here</p>
+    <h1>My Image Gallery</h1>
+    <div id="gallery"></div> <!-- This is where the images will be loaded -->
+
+    <script src="updateMosaic.js"></script> <!-- Ensure this path is correct -->
+    <script>
+        // JavaScript to load images dynamically from the 'pictures' folder
+        const gallery = document.getElementById('gallery');
+
+        // Array of image file names that are present in 'pictures' directory
+        const images = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            // Add more image names as needed
+        ];
+
+        images.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = 'pictures/' + image; // Forming the correct path
+            imgElement.alt = image;
+            gallery.appendChild(imgElement);
+        });
+    </script>
 </body>
 </html>
