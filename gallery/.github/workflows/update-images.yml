@@ -3,7 +3,7 @@ name: Update Images
 on:
   push:
     paths:
-      - 'images/**'  # This triggers the action for any changes in the images folder
+      - 'gallery/images/**'  # This triggers the action for any changes in the images folder
 
 jobs:
   update-images-js:
@@ -15,18 +15,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14' # Specify your desired Node version
+          node-version: '14' # Specify the version of Node.js to use
 
       - name: Install Dependencies
         run: npm install
 
       - name: Run updateMosaic.js
-        run: node updateMosaic.js # This assumes updateMosaic.js is in the root
+        run: node gallery/updateMosaic.js # Adjust path if your script is located differently
 
       - name: Commit images.js
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add images.js
+          git add gallery/images.js
           git commit -m "Update images.js automatically" || echo "No changes to commit"
           git push
