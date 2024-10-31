@@ -1,27 +1,28 @@
 const fs = require('fs');
 const path = require('path');
 
+// Get the absolute path to the pictures directory
+const picturesDir = path.join(__dirname, 'pictures');
+const outputFile = path.join(__dirname, 'images.js');
+
 try {
-    // Use synchronous operations
-    const directoryPath = path.join(__dirname, 'pictures');
-    const outputPath = path.join(__dirname, 'images.js');
+    // Read the pictures directory
+    const files = fs.readdirSync(picturesDir);
     
-    // Read directory synchronously
-    const files = fs.readdirSync(directoryPath);
+    // Filter for image files and sort them
+    const imageFiles = files.filter(file => 
+        /\.(jpg|jpeg|png|gif|svg)$/i.test(file)
+    ).sort();
+
+    // Create the JavaScript array string
+    const contentArray = imageFiles.map(file => `  "${file}"`);
+    const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
     
-    // Filter for valid image files
-    const imageFiles = files.filter(file => {
-        return /\.(jpg|jpeg|png|gif|svg)$/i.test(file);
-    });
-    
-    // Create the JavaScript content
-    const content = `const images = ${JSON.stringify(imageFiles, null, 2)};\n`;
-    
-    // Write file synchronously
-    fs.writeFileSync(outputPath, content);
-    
-    console.log('images.js has been generated successfully');
-} catch (err) {
-    console.error('Error:', err);
-    process.exit(1); // Exit with error code to fail the GitHub Action
+    // Write to images.js
+    fs.writeFileSync(outputFile, content);
+    console.log('Successfully updated images.js');
+    console.log(`Found ${imageFiles.length} images`);
+} catch (error) {
+    console.error('Error:', error.message);
+    process.exit(1);
 }

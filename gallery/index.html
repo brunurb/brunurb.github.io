@@ -9,7 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="jquery.mosaic.js"></script>
     <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
-
     <style>
         body {
             font-family: Arial, sans-serif; 
@@ -30,38 +29,31 @@
             border-radius: 0px; 
         }
         #myMosaic img:hover {
-        transform: scale(1.05);  /* Slightly enlarge the image */
-        transition: transform 0.2s ease;  /* Smooth transition */
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
         }
         #myMosaic img {
-          width: 100%;      /* Ensures images are responsive */
-         height: auto;     /* Maintains aspect ratio */
+            width: 100%;
+            height: auto;
         }
-
     </style>
 </head>
 <body>
-
-    
     <div id="myMosaic">
         <!-- Images will be dynamically inserted here -->
     </div>
-
-    <script src="images.js"></script> <!-- Make sure this file is generated as shown previously -->
+    <script src="images.js"></script>
     <script>
         $(document).ready(function() {
             const gallery = $('#myMosaic');
-
             // Dynamically insert images into the mosaic
             images.forEach(image => {
                 const imgElement = $('<img>').attr('src', 'pictures/' + image);
                 gallery.append(imgElement);
             });
-
             // Initialize the mosaic
             $('#myMosaic').Mosaic();
         });
     </script>
-
 </body>
 </html>
