@@ -9,10 +9,15 @@ try {
     // Read the pictures directory
     const files = fs.readdirSync(picturesDir);
     
+    // Log files found in the directory for debugging
+    console.log('Files found in pictures directory:', files);
+    
     // Filter for image files and sort them
-    const imageFiles = files.filter(file => 
-        /\.(jpg|jpeg|png|gif|svg)$/i.test(file)
-    ).sort();
+    const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|svg)$/i.test(file)).sort();
+
+    if (imageFiles.length === 0) {
+        console.warn('No image files found. images.js will not be updated.');
+    }
 
     // Create the JavaScript array string
     const contentArray = imageFiles.map(file => `  "${file}"`);
