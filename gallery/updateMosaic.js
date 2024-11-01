@@ -17,16 +17,16 @@ try {
 
     if (imageFiles.length === 0) {
         console.warn('No image files found. images.js will not be updated.');
+    } else {
+        // Create the JavaScript array string with the correct path prefix
+        const contentArray = imageFiles.map(file => `  "pictures/${file}"`);
+        const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
+        
+        // Write to images.js
+        fs.writeFileSync(outputFile, content);
+        console.log('Successfully updated images.js');
+        console.log(`Found ${imageFiles.length} images`);
     }
-
-    // Create the JavaScript array string
-    const contentArray = imageFiles.map(file => `  "${file}"`);
-    const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
-    
-    // Write to images.js
-    fs.writeFileSync(outputFile, content);
-    console.log('Successfully updated images.js');
-    console.log(`Found ${imageFiles.length} images`);
 } catch (error) {
     console.error('Error:', error.message);
     process.exit(1);
