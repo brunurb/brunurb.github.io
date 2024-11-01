@@ -11,8 +11,12 @@ fs.readdir(picturesDir, (err, files) => {
         return;
     }
 
+    console.log("Files found in pictures directory:", files); // Log all files found
+
     // Filter out image files (you can customize this based on your needs)
     const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(file));
+
+    console.log("Filtered image files:", imageFiles); // Log filtered file names
 
     // Generate the images.js file content
     const contentArray = imageFiles.map(file => `"pictures/${file}"`).join(',\n');
