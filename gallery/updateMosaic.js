@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-// Get the absolute path to the pictures directory
-const picturesDir = path.join(__dirname, 'pictures');
-const outputFile = path.join(__dirname, 'images.js');
+// Adjust the paths to match your directory structure
+const picturesDir = path.join(__dirname, 'gallery/pictures'); // Point to the correct pictures directory
+const outputFile = path.join(__dirname, 'gallery/images.js'); // Output to the correct images.js file
 
 try {
     // Read the pictures directory
