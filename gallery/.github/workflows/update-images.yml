@@ -1,34 +1,32 @@
 name: Update Images
-
 on:
   push:
     paths:
-      - 'pictures/**'
+      - 'gallery/pictures/**'
   workflow_dispatch:
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 jobs:
   update-images-js:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: gallery
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           ref: master
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
       - name: Debug Directory Contents
         run: |
           echo "Current directory:"
@@ -37,34 +35,28 @@ jobs:
           ls -la
           echo "Pictures directory contents:"
           ls -la pictures/
-
       - name: Run updateMosaic.js
         run: |
           node updateMosaic.js
           echo "Generated images.js contents:"
           cat images.js
-
       - name: Commit and push changes
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add images.js
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update images.js [skip ci]" && git push)
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
       - name: Build with Jekyll
         uses: actions/jekyll-build-action@v1.0.0
         with:
-          source: ./
+          source: ./gallery
           destination: ./_site
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
