@@ -23,19 +23,18 @@
             flex-wrap: wrap; 
             justify-content: center; 
             margin: 0px; 
-            width: 100%;
-            max-width: 1200px;
-            padding: 20px;
         }
         #myMosaic img {
             margin: 0px; 
             border-radius: 0px; 
-            max-width: 100%;
-            height: auto;
         }
         #myMosaic img:hover {
             transform: scale(1.05);
             transition: transform 0.2s ease;
+        }
+        #myMosaic img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -47,23 +46,13 @@
     <script>
         $(document).ready(function() {
             const gallery = $('#myMosaic');
-            
-            // Log the images array to console for debugging
-            console.log('Images array:', images);
-            
             // Dynamically insert images into the mosaic
             images.forEach(image => {
-                const imgElement = $('<img>').attr('src', `pictures/${image}`);
-                console.log('Adding image:', `pictures/${image}`);
+                const imgElement = $('<img>').attr('src', 'pictures/' + image);
                 gallery.append(imgElement);
             });
-            
-            // Initialize the mosaic with specific options
-            $('#myMosaic').Mosaic({
-                maxRowHeight: 400,
-                refitOnResize: true,
-                refitOnResizeDelay: 250
-            });
+            // Initialize the mosaic
+            $('#myMosaic').Mosaic();
         });
     </script>
 </body>
