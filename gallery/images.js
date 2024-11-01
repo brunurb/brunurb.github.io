@@ -1,13 +1,13 @@
 const images = [
-  "3B1WTJ2v.jpeg",
-  "B79FA_9A.jpeg",
-  "Cd0p3wkH.jpeg",
-  "YSpjTE6l.jpeg",
-  "dBPLvVRl.jpeg",
-  "evCNf4DI.jpeg",
-  "iSmpRYVl.jpeg",
-  "oMB107yk.jpeg",
-  "q3NDGC5H.jpeg",
-  "qX250kKm.jpeg",
-  "tCcp1R9E.jpeg"
+  "pictures/3B1WTJ2v.jpeg",
+  "pictures/B79FA_9A.jpeg",
+  "pictures/Cd0p3wkH.jpeg",
+  "pictures/YSpjTE6l.jpeg",
+  "pictures/dBPLvVRl.jpeg",
+  "pictures/evCNf4DI.jpeg",
+  "pictures/iSmpRYVl.jpeg",
+  "pictures/oMB107yk.jpeg",
+  "pictures/q3NDGC5H.jpeg",
+  "pictures/qX250kKm.jpeg",
+  "pictures/tCcp1R9E.jpeg"
 ];
