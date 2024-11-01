@@ -3,59 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mosaic Image Gallery</title>
-    
-    <!-- Include jQuery and jQuery Mosaic Plugin -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>Image Mosaic Gallery</title>
+    <link rel="stylesheet" href="jquery.mosaic.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="jquery.mosaic.js"></script>
-    <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            background-color: #f4f4f4; 
-            margin: 0;
-        }
-        #myMosaic {
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            margin: 0px; 
-        }
-        #myMosaic img {
-            margin: 0px; 
-            border-radius: 0px; 
-        }
-        #myMosaic img:hover {
-            transform: scale(1.05);
-            transition: transform 0.2s ease;
-        }
-        #myMosaic img {
-            width: 100%;
-            height: auto;
-        }
-    </style>
+    <script src="images.js"></script> <!-- Ensure this path is correct -->
 </head>
 <body>
-    <div id="myMosaic">
-        <!-- Images will be dynamically inserted here -->
-    </div>
-    <script src="images.js"></script>
+    <div id="myMosaic" class="mosaic"></div> <!-- Container for mosaic images -->
+
     <script>
         $(document).ready(function() {
             const gallery = $('#myMosaic');
-            console.log("Images array:", images); // Check if images array is properly loaded
 
-            // Dynamically insert images into the mosaic
+            // Log loaded images for debugging
+            console.log("Loaded images array:", images);
+
+            // Dynamically insert images into the gallery
             images.forEach(image => {
-                const imgElement = $('<img>').attr('src', 'pictures/' + image);
+                const imgElement = $('<img>').attr('src', image);
                 gallery.append(imgElement);
                 console.log("Adding image:", image); // Log each image being added
             });
             
-            // Initialize the mosaic
+            // Initialize the mosaic once all images are loaded
             $('#myMosaic').Mosaic();
         });
     </script>

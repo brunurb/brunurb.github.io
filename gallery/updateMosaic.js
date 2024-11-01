@@ -1,33 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 
-// Adjust the paths to match your directory structure
-const picturesDir = path.join(__dirname, 'pictures'); // Point to the correct pictures directory
-const outputFile = path.join(__dirname, 'images.js'); // Output to the correct images.js file
+// Path to the pictures directory
+const picturesDir = path.resolve(__dirname, 'pictures');
 
-try {
-    // Read the pictures directory
-    const files = fs.readdirSync(picturesDir);
-    
-    // Log files found in the directory for debugging
-    console.log('Files found in pictures directory:', files);
-    
-    // Filter for image files and sort them
-    const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|svg)$/i.test(file)).sort();
-
-    if (imageFiles.length === 0) {
-        console.warn('No image files found. images.js will not be updated.');
-    } else {
-        // Create the JavaScript array string with the correct path prefix
-        const contentArray = imageFiles.map(file => `  "pictures/${file}"`);
-        const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
-        
-        // Write to images.js
-        fs.writeFileSync(outputFile, content);
-        console.log('Successfully updated images.js');
-        console.log(`Found ${imageFiles.length} images`);
+// Read the files from the pictures directory
+fs.readdir(picturesDir, (err, files) => {
+    if (err) {
+        console.error('Error reading the pictures directory:', err);
+        return;
     }
-} catch (error) {
-    console.error('Error:', error.message);
-    process.exit(1);
-}
+
+    // Filter out image files (you can customize this based on your needs)
+    const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(file));
+
+    // Generate the images.js file content
+    const contentArray = imageFiles.map(file => `"pictures/${file}"`).join(',\n');
+
+    // Write to images.js
+    const imagesJsContent = `const images = [\n${contentArray}\n];\n`;
+    fs.writeFileSync(path.join(__dirname, 'images.js'), imagesJsContent, 'utf8');
+
+    console.log('images.js updated successfully with image paths.');
+});
