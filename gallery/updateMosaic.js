@@ -1,17 +1,33 @@
 const fs = require('fs');
 const path = require('path');
 
-// Path to the folder containing images
-const imagesDir = path.join(__dirname, 'gallery', 'pictures');
+// Adjust the paths to match your directory structure
+const picturesDir = path.join(__dirname, 'pictures'); // Point to the correct pictures directory
+const outputFile = path.join(__dirname, 'images.js'); // Output to the correct images.js file
 
-// Get the list of JPEG files from the directory
-const images = fs.readdirSync(imagesDir).filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
+try {
+    // Read the pictures directory
+    const files = fs.readdirSync(picturesDir);
+    
+    // Log files found in the directory for debugging
+    console.log('Files found in pictures directory:', files);
+    
+    // Filter for image files and sort them
+    const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|svg)$/i.test(file)).sort();
 
-// Log discovered images
-console.log("Discovered images:", images);
+    if (imageFiles.length === 0) {
+        console.warn('No image files found. images.js will not be updated.');
+    }
 
-// Prepare content for the images.js file with correct paths
-const imageArrayContent = `const images = [\n  ${images.map(img => `"pictures/${img}"`).join(',\n  ')}\n];\n`;
-
-// Write content to images.js
-fs.writeFileSync(path.join(__dirname, 'gallery', 'images.js'), imageArrayContent);
+    // Create the JavaScript array string
+    const contentArray = imageFiles.map(file => `  "${file}"`);
+    const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
+    
+    // Write to images.js
+    fs.writeFileSync(outputFile, content);
+    console.log('Successfully updated images.js');
+    console.log(`Found ${imageFiles.length} images`);
+} catch (error) {
+    console.error('Error:', error.message);
+    process.exit(1);
+}
