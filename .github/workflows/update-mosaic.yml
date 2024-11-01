@@ -3,7 +3,7 @@ name: Update Images
 on:
   push:
     paths:
-      - 'gallery/pictures**'
+      - 'gallery/pictures/**'
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: master  # or 'master' depending on your default branch name
+          ref: master  # or 'main' depending on your default branch name
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -40,5 +40,10 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add images.js
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update images.js [skip ci]" && git push)
+          # Check if images.js exists and is not empty before adding
+          if [[ -f gallery/images.js && -s gallery/images.js ]]; then
+            git add gallery/images.js
+            git diff --quiet && git diff --staged --quiet || (git commit -m "Update images.js [skip ci]" && git push)
+          else
+            echo "images.js is missing or empty, skipping commit."
+          fi
