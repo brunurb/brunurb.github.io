@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'pictures/**'
+      - 'images.js'  # Trigger on changes to images.js as well
   workflow_dispatch:
 
 jobs:
@@ -11,17 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: master  # Make sure this matches your default branch name
+          ref: master  # Adjust to your default branch
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
+      - name: Change directory to repository root
+        run: cd $GITHUB_WORKSPACE
 
       - name: Debug Directory Contents
         run: |
