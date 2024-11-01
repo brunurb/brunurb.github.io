@@ -19,15 +19,20 @@
             // Log loaded images for debugging
             console.log("Loaded images array:", images);
 
-            // Dynamically insert images into the gallery
-            images.forEach(image => {
-                const imgElement = $('<img>').attr('src', image);
-                gallery.append(imgElement);
-                console.log("Adding image:", image); // Log each image being added
-            });
-            
-            // Initialize the mosaic once all images are loaded
-            $('#myMosaic').Mosaic();
+            // Check if images array is empty
+            if (images.length === 0) {
+                console.error("No images found. Please check images.js.");
+            } else {
+                // Dynamically insert images into the gallery
+                images.forEach(image => {
+                    const imgElement = $('<img>').attr('src', image);
+                    gallery.append(imgElement);
+                    console.log("Adding image:", image); // Log each image being added
+                });
+                
+                // Initialize the mosaic once all images are loaded
+                $('#myMosaic').Mosaic();
+            }
         });
     </script>
 </body>
