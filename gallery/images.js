@@ -5,5 +5,9 @@ const images = [
   "YSpjTE6l.jpeg",
   "dBPLvVRl.jpeg",
   "evCNf4DI.jpeg",
+  "iSmpRYVl.jpeg",
+  "oMB107yk.jpeg",
+  "q3NDGC5H.jpeg",
+  "qX250kKm.jpeg",
   "tCcp1R9E.jpeg"
 ];
