@@ -46,11 +46,15 @@
     <script>
         $(document).ready(function() {
             const gallery = $('#myMosaic');
+            console.log("Images array:", images); // Check if images array is properly loaded
+
             // Dynamically insert images into the mosaic
             images.forEach(image => {
                 const imgElement = $('<img>').attr('src', 'pictures/' + image);
                 gallery.append(imgElement);
+                console.log("Adding image:", image); // Log each image being added
             });
+            
             // Initialize the mosaic
             $('#myMosaic').Mosaic();
         });
