@@ -9,5 +9,7 @@ const images = [
 "pictures/oMB107yk.jpeg",
 "pictures/q3NDGC5H.jpeg",
 "pictures/qX250kKm.jpeg",
-"pictures/tCcp1R9E.jpeg"
+"pictures/tCcp1R9E.jpeg",
+"pictures/unnamed1.jpg",
+"pictures/unnamed1.png"
 ];
