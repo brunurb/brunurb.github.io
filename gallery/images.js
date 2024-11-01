@@ -1,19 +1,3 @@
 const images = [
-  "1s-_7aXm.jpeg",
-  "2ex-I-3R.jpeg",
-  "3cD3bCOR.jpeg",
-  "5D3SDkn9.jpeg",
-  "C8Bvd4Jb.jpeg",
-  "LyZvmYbq.jpeg",
-  "RSobqox3.jpeg",
-  "VsM4bS1N.jpeg",
-  "cwHZBWjq.jpeg",
-  "iNHtWPlL.png",
-  "keZMiCDS.jpeg",
-  "oMB107yk.jpeg",
-  "pEii4ZZp.jpeg",
-  "pghs2011036a.jpeg",
-  "sbZimKwc.jpeg",
-  "unnamed1.jpg",
-  "unnamed1.png"
+ 
 ];
