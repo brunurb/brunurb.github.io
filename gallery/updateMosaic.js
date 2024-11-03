@@ -1,36 +1,28 @@
 const fs = require('fs');
 const path = require('path');
 
-const picturesDir = path.resolve(__dirname, 'pictures');
-const imagesFile = path.join(__dirname, 'images.js');
+// Get the absolute path to the pictures directory
+const picturesDir = path.join(__dirname, 'pictures');
+const outputFile = path.join(__dirname, 'images.js');
 
-fs.readdir(picturesDir, (err, files) => {
-    if (err) {
-        console.error('Error reading the pictures directory:', err);
-        return;
-    }
+try {
+    // Read the pictures directory
+    const files = fs.readdirSync(picturesDir);
     
-    console.log('Files in pictures directory:', files); // Log all files
+    // Filter for image files and sort them
+    const imageFiles = files.filter(file => 
+        /\.(jpg|jpeg|png|gif|svg)$/i.test(file)
+    ).sort();
 
-    // Filter for image files with common extensions
-    const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i.test(file));
+    // Create the JavaScript array string
+    const contentArray = imageFiles.map(file => `  "${file}"`);
+    const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
     
-    console.log('Filtered image files:', imageFiles); // Log filtered images
-
-    if (imageFiles.length === 0) {
-        console.error('No image files found. Exiting.');
-        return;
-    }
-    
-    // Prepare content to write to images.js
-    const contentArray = imageFiles.map(file => `    "pictures/${file}"`).join(',\n');
-    const imagesJsContent = `const images = [\n${contentArray}\n];\n`;
-
-    fs.writeFile(imagesFile, imagesJsContent, 'utf8', (err) => {
-        if (err) {
-            console.error('Error writing to images.js:', err);
-            return;
-        }
-        console.log('images.js updated successfully with image paths.');
-    });
-});
+    // Write to images.js
+    fs.writeFileSync(outputFile, content);
+    console.log('Successfully updated images.js');
+    console.log(`Found ${imageFiles.length} images`);
+} catch (error) {
+    console.error('Error:', error.message);
+    process.exit(1);
+}
