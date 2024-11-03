@@ -1,24 +1,36 @@
 const fs = require('fs');
 const path = require('path');
 
-// Path to the pictures directory
 const picturesDir = path.resolve(__dirname, 'pictures');
+const imagesFile = path.join(__dirname, 'images.js');
 
-// Read the files from the pictures directory
 fs.readdir(picturesDir, (err, files) => {
     if (err) {
         console.error('Error reading the pictures directory:', err);
         return;
     }
+    
+    console.log('Files in pictures directory:', files); // Log all files
 
-    // Filter out image files
-    const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(file));
+    // Filter for image files with common extensions
+    const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i.test(file));
+    
+    console.log('Filtered image files:', imageFiles); // Log filtered images
 
-    // Generate the images.js file content
+    if (imageFiles.length === 0) {
+        console.error('No image files found. Exiting.');
+        return;
+    }
+    
+    // Prepare content to write to images.js
     const contentArray = imageFiles.map(file => `    "pictures/${file}"`).join(',\n');
     const imagesJsContent = `const images = [\n${contentArray}\n];\n`;
-    
-    // Write to images.js
-    fs.writeFileSync(path.join(__dirname, 'images.js'), imagesJsContent, 'utf8');
-    console.log('images.js updated successfully with image paths.');
+
+    fs.writeFile(imagesFile, imagesJsContent, 'utf8', (err) => {
+        if (err) {
+            console.error('Error writing to images.js:', err);
+            return;
+        }
+        console.log('images.js updated successfully with image paths.');
+    });
 });
