@@ -1,54 +1,44 @@
-name: Update Mosaic
+name: Update Images
 
 on:
   push:
-    branches:
-      - master
-  workflow_dispatch:  # Enables manual triggering of the workflow
+    paths:
+      - 'pictures/**'
+  workflow_dispatch:
 
 jobs:
-  update-mosaic:
+  update-images-js:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+    
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3  # Updated to v3
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
-          repository: brunurb/brunurb.github.io
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ssh-strict: true
-          persist-credentials: true
-          clean: true
-          fetch-depth: 1
-          lfs: false
-          submodules: false
-          set-safe-directory: true
+          ref: main  # or 'master' depending on your default branch name
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # Updated to v3
+        uses: actions/setup-node@v2
         with:
           node-version: '18'
-          always-auth: false
-          check-latest: false
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: List files in pictures directory
-        run: ls -la gallery/pictures
-
+      - name: List directory structure
+        run: |
+          pwd
+          ls -la
+          ls -la pictures/
+        
       - name: Run updateMosaic.js
         run: |
-          cd gallery
           node updateMosaic.js
+        
+      - name: Verify images.js
+        run: cat images.js
 
-      - name: Commit changes if any
+      - name: Commit and push if changed
         run: |
-          cd gallery
-          git config --local user.name "github-actions"
-          git config --local user.email "github-actions@github.com"
-          echo "Current Git Status:"
-          git status
-          git diff --quiet && git diff --staged --quiet || (git commit -am "Update images.js [skip ci]" && git push)
-
-      - name: Post Process Cleanup
-        if: always()
-        run: echo "Workflow completed."
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add images.js
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update images.js [skip ci]" && git push)
