@@ -3,24 +3,33 @@ name: Update Mosaic
 on:
   push:
     branches:
-      - main
-    paths:
-      - 'gallery/pictures/**'
-      - 'gallery/updateMosaic.js'
-  workflow_dispatch:  # Allows manual trigger
+      - master
 
 jobs:
   update-mosaic:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
+      - name: Checkout Code
         uses: actions/checkout@v2
-        
+        with:
+          repository: brunurb/brunurb.github.io
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ssh-strict: true
+          persist-credentials: true
+          clean: true
+          fetch-depth: 1
+          lfs: false
+          submodules: false
+          set-safe-directory: true
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18' # Use a consistent Node version
+          node-version: 18
+          always-auth: false
+          check-latest: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: List files in pictures directory
         run: ls -la gallery/pictures
@@ -28,13 +37,21 @@ jobs:
       - name: Run updateMosaic.js
         run: |
           cd gallery
-          node updateMosaic.js  # Confirm this path is correct
-        env:
-          NODE_ENV: development
+          node updateMosaic.js  # Ensure this path is correct
 
       - name: Commit changes if any
         run: |
           cd gallery
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
+
+          # Check for the status of files before attempting to commit
+          echo "Current Git Status:"
+          git status
+
+          # Check for changes and commit/log output
           git diff --quiet && git diff --staged --quiet || (git commit -am "Update images.js [skip ci]" && git push)
+
+      - name: Post Process Cleanup
+        if: always()
+        run: echo "Workflow completed."
