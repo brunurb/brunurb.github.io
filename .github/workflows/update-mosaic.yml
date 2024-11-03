@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:  # This will allow manual triggers
-  
+  workflow_dispatch:  # Enables manual triggering of the workflow
+
 jobs:
   update-mosaic:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to v3
         with:
           repository: brunurb/brunurb.github.io
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -25,9 +25,9 @@ jobs:
           set-safe-directory: true
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Updated to v3
         with:
-          node-version: 18
+          node-version: '18'
           always-auth: false
           check-latest: false
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -38,19 +38,15 @@ jobs:
       - name: Run updateMosaic.js
         run: |
           cd gallery
-          node updateMosaic.js  # Ensure this path is correct
+          node updateMosaic.js
 
       - name: Commit changes if any
         run: |
           cd gallery
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-
-          # Check for the status of files before attempting to commit
           echo "Current Git Status:"
           git status
-
-          # Check for changes and commit/log output
           git diff --quiet && git diff --staged --quiet || (git commit -am "Update images.js [skip ci]" && git push)
 
       - name: Post Process Cleanup
