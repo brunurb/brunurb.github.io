@@ -7,32 +7,49 @@
     <link rel="stylesheet" href="jquery.mosaic.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="jquery.mosaic.js"></script>
-    <script src="images.js"></script> <!-- Ensure this path is correct -->
+    <script src="images.js"></script>
 </head>
 <body>
-    <div id="myMosaic" class="mosaic"></div> <!-- Container for mosaic images -->
-
+    <div id="myMosaic" class="mosaic"></div>
     <script>
-        $(document).ready(function() {
+        // Wait for both DOM and stylesheets to be fully loaded
+        $(window).on('load', function() {
             const gallery = $('#myMosaic');
-
+            
             // Log loaded images for debugging
             console.log("Loaded images array:", images);
-
+            
             // Check if images array is empty
             if (images.length === 0) {
                 console.error("No images found. Please check images.js.");
-            } else {
-                // Dynamically insert images into the gallery
-                images.forEach(image => {
-                    const imgElement = $('<img>').attr('src', image);
-                    gallery.append(imgElement);
-                    console.log("Adding image:", image); // Log each image being added
-                });
-                
-                // Initialize the mosaic once all images are loaded
-                $('#myMosaic').Mosaic();
+                return;
             }
+
+            // Create a promise array for all images to load
+            const imagePromises = images.map(imageSrc => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(imageSrc);
+                    img.onerror = () => reject(new Error(`Failed to load image: ${imageSrc}`));
+                    img.src = imageSrc;
+                });
+            });
+
+            // Wait for all images to load before creating the mosaic
+            Promise.all(imagePromises)
+                .then(loadedImages => {
+                    loadedImages.forEach(imageSrc => {
+                        const imgElement = $('<img>').attr('src', imageSrc);
+                        gallery.append(imgElement);
+                        console.log("Adding image:", imageSrc);
+                    });
+
+                    // Initialize the mosaic after all images are loaded and appended
+                    $('#myMosaic').Mosaic();
+                })
+                .catch(error => {
+                    console.error("Error loading images:", error);
+                });
         });
     </script>
 </body>
