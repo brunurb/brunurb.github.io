@@ -1,7 +1,10 @@
 const images = [
     "pictures/3B1WTJ2v.jpeg",
+    "pictures/3jAyfywl.jpeg",
+    "pictures/3vIDJI5A.jpeg",
     "pictures/B79FA_9A.jpeg",
     "pictures/Cd0p3wkH.jpeg",
+    "pictures/SSgA7wc2.jpeg",
     "pictures/YSpjTE6l.jpeg",
     "pictures/dBPLvVRl.jpeg",
     "pictures/evCNf4DI.jpeg",
@@ -11,5 +14,6 @@ const images = [
     "pictures/qX250kKm.jpeg",
     "pictures/tCcp1R9E.jpeg",
     "pictures/unnamed1.jpg",
-    "pictures/unnamed1.png"
+    "pictures/unnamed1.png",
+    "pictures/wyAc9sIt.jpeg"
 ];
