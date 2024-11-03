@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - master
-
+  workflow_dispatch:  # This will allow manual triggers
+  
 jobs:
   update-mosaic:
     runs-on: ubuntu-latest
