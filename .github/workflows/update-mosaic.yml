@@ -36,7 +36,7 @@ jobs:
       - name: Verify gallery/images.js
         run: cat gallery/images.js  # Check the content of images.js after running the script
 
-      - name: Check if images.js was updated
+      - name: Check if gallery/images.js was updated
         run: |
           echo "Checking for changes in images.js..."
           if git diff --quiet; then
