@@ -15,7 +15,7 @@ try {
     ).sort();
 
     // Create the JavaScript array string with the correct path
-    const contentArray = imageFiles.map(file => `  "pictures/${file}"`); // Added pictures/ prefix
+    const contentArray = imageFiles.map(file => `  "gallery/pictures/${file}"`); // Added gallery/pictures/ prefix
     const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
     
     // Write to images.js
