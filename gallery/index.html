@@ -47,7 +47,7 @@
             // Dynamically insert images into the mosaic
             if (images && Array.isArray(images)) {
                 images.forEach(image => {
-                    const imgElement = $('<img>').attr('src', image); // Use the paths from images array
+                    const imgElement = $('<img>').attr('src', image); // The path to image is correct based on updateMosaic.js
                     gallery.append(imgElement);
                 });
             }
