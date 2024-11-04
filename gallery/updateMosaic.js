@@ -15,7 +15,8 @@ try {
     ).sort();
 
     // Create the JavaScript array string with the correct path
-    const contentArray = imageFiles.map(file => `  "gallery/pictures/${file}"`); // Added gallery/pictures/ prefix
+    // Corrected path to not repeat "gallery"
+    const contentArray = imageFiles.map(file => `  "pictures/${file}"`); // Use "pictures/" instead of "gallery/pictures/"
     const content = 'const images = [\n' + contentArray.join(',\n') + '\n];';
     
     // Write to images.js
