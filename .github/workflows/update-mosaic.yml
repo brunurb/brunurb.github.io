@@ -3,20 +3,20 @@ name: Update Images
 on:
   push:
     paths:
-      - 'gallery/pictures/**'  # This will trigger when any file in the pictures directory changes
-  workflow_dispatch:  # Allows running the workflow manually from GitHub UI
+      - 'gallery/pictures/**'  # Trigger when any file in the pictures directory changes
+  workflow_dispatch:  # Allows manual trigger from the GitHub UI
 
 jobs:
   update-images-js:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Ensure this workflow has permission to write content to the repository
-    
+      contents: write  # Ensure this workflow has permission to write to the repository
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: master  # or 'main' depending on your default branch name
+          ref: master  # Change 'master' to 'main' if that's your default branch
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
