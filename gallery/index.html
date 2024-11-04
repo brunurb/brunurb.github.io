@@ -27,14 +27,12 @@
         #myMosaic img {
             margin: 0px; 
             border-radius: 0px; 
+            width: 100%;
+            height: auto;
         }
         #myMosaic img:hover {
             transform: scale(1.05);
             transition: transform 0.2s ease;
-        }
-        #myMosaic img {
-            width: 100%;
-            height: auto;
         }
     </style>
 </head>
@@ -48,7 +46,7 @@
             const gallery = $('#myMosaic');
             // Dynamically insert images into the mosaic
             images.forEach(image => {
-                const imgElement = $('<img>').attr('src', 'pictures/' + image);
+                const imgElement = $('<img>').attr('src', image); // Directly use the full path
                 gallery.append(imgElement);
             });
             // Initialize the mosaic
