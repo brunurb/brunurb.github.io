@@ -58,7 +58,6 @@ const images = [
   "gallery/pictures/sbZimKwc.jpeg",
   "gallery/pictures/t-JYgqb0.jpeg",
   "gallery/pictures/tCcp1R9E.jpeg",
-  "gallery/pictures/taaft.com-technical-drawings-generator-by-silviumercan-1730253452.png",
   "gallery/pictures/uhO6ShzS.jpeg",
   "gallery/pictures/ujg1rp0b.jpeg",
   "gallery/pictures/unnamed1.jpg",
