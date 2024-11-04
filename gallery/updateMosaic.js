@@ -11,7 +11,7 @@ try {
     
     // Filter for image files and sort them
     const imageFiles = files.filter(file => 
-        /\.(jpg|jpeg|png|gif|svg)$/i.test(file)
+        /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(file)
     ).sort();
 
     // Create the JavaScript array string with the correct path
