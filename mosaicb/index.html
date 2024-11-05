@@ -1,44 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mosaic Gallery</title>
-    <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
-    <link rel="stylesheet" type="text/css" href="otherfile.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.mosaic.js"></script>
-    <script type="text/javascript" src="otherfile.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#myMosaic').Mosaic(); // Initialize the Mosaic
-        });
-    </script>
-    <style>
-        /* Inline CSS to style the gallery without extra margins */
-        #myMosaic {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        img {
-            margin: 0;
-            padding: 0;
-            display: block;
-            border: none; /* Remove default border */
-        }
-    </style>
-</head>
-
-<body>
-    <h1>Mosaic Gallery</h1>
-    <div id="myMosaic">
-        <!-- Images will be dynamically loaded here via otherfile.js -->
-    </div>
-</body>
-
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosaic Gallery</title>
+<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
+<link rel="stylesheet" type="text/css" href="otherfile.css" />
+<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>
+</head><body><h1>Mosaic Gallery</h1><div id="myMosaic">
+<img src='pictures/generated-image-1730756197258.jpeg' alt='Gallery Image' />
+<img src='pictures/generated-image-1730756203794.jpeg' alt='Gallery Image' />
+<img src='pictures/generated-image-1730756249715.jpeg' alt='Gallery Image' />
+<img src='pictures/generated-image-1730756254655.jpeg' alt='Gallery Image' />
+</div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.mosaic.js"></script>
+<script type="text/javascript" src="otherfile.js"></script>
+<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>
+</body></html>
