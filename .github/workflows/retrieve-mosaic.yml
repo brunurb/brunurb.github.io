@@ -43,8 +43,8 @@ jobs:
           git commit -m "Regenerate index.html for mosaic gallery" || echo "No changes to commit"
           git push origin master  # Adjust branch if needed
 
-      - name: Force GitHub Pages deployment
-        if: success()
-        run: |
-          git commit --allow-empty -m "Trigger GitHub Pages rebuild"
-          git push origin master  # Adjust branch if needed
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mosaicb
