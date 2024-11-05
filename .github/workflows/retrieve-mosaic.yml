@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'mosaicb/pictures/**'
+      - 'mosaicb/index.html'  # Added to ensure it triggers on updates to index.html
   workflow_dispatch:
 
 jobs:
@@ -39,5 +40,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add mosaicb/index.html
-          git commit -m "Regenerate index.html for mosaic gallery"
-          git push
+          git commit -m "Regenerate index.html for mosaic gallery" || echo "No changes to commit"
+          git push origin master  # Push changes to master (or gh-pages if applicable)
