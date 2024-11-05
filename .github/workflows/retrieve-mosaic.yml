@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'mosaicb/pictures/**'
-      - 'mosaicb/index.html'  # Added to ensure it triggers on updates to index.html
+      - 'mosaicb/index.html'
   workflow_dispatch:
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
 
           # Loop through image files in the pictures directory
           for img in $(ls mosaicb/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-          echo "<img src='pictures/$img' alt='Gallery Image' />" >> mosaicb/index.html
+            echo "<img src='pictures/$img' alt='Gallery Image' />" >> mosaicb/index.html
           done
 
           echo '</div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>' >> mosaicb/index.html
@@ -41,4 +41,10 @@ jobs:
           git config --local user.name "GitHub Action"
           git add mosaicb/index.html
           git commit -m "Regenerate index.html for mosaic gallery" || echo "No changes to commit"
-          git push origin master  # Push changes to master (or gh-pages if applicable)
+          git push origin master  # Adjust branch if needed
+
+      - name: Force GitHub Pages deployment
+        if: success()
+        run: |
+          git commit --allow-empty -m "Trigger GitHub Pages rebuild"
+          git push origin master  # Adjust branch if needed
