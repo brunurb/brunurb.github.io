@@ -22,7 +22,7 @@ jobs:
           echo '<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />' >> mosaicb/index.html
           echo '<link rel="stylesheet" type="text/css" href="otherfile.css" />' >> mosaicb/index.html
           echo '<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>' >> mosaicb/index.html
-          echo '</head><body><h1>Mosaic Gallery</h1><div id="myMosaic">' >> mosaicb/index.html
+          echo '</head><body><div id="myMosaic">' >> mosaicb/index.html
 
           # Loop through image files in the pictures directory
           for img in $(ls mosaicb/pictures | grep -E '\.jpeg$|\.jpg$|\.png$'); do
