@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mosaic Gallery</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.mosaic.js"></script>
     <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
     <link rel="stylesheet" type="text/css" href="otherfile.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.mosaic.js"></script>
+    <script type="text/javascript" src="otherfile.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myMosaic').Mosaic(); // Initialize the Mosaic
+        });
+    </script>
     <style>
-        /* Style to remove margins and borders around the gallery */
+        /* Inline CSS to style the gallery without extra margins */
         #myMosaic {
             margin: 0;
             padding: 0;
@@ -18,6 +24,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
         img {
             margin: 0;
             padding: 0;
@@ -30,15 +37,8 @@
 <body>
     <h1>Mosaic Gallery</h1>
     <div id="myMosaic">
-        <!-- Images will be dynamically loaded here by otherfile.js -->
+        <!-- Images will be dynamically loaded here via otherfile.js -->
     </div>
-
-    <script type="text/javascript" src="otherfile.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#myMosaic').Mosaic(); // Initialize the Mosaic on the div
-        });
-    </script>
 </body>
 
 </html>
