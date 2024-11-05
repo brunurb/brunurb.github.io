@@ -3,8 +3,6 @@ $(document).ready(function() {
 
     // List of images, add your image filenames here
     const images = [
-        "pictures/example1.jpeg",
-        "pictures/example2.png",
         // Add more images with their correct paths
     ];
 
