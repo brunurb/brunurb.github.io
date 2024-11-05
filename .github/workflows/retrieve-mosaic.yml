@@ -41,21 +41,14 @@ jobs:
           git config --local user.name "GitHub Action"
           git add mosaicb/index.html
           git commit -m "Regenerate index.html for mosaic gallery" || echo "No changes to commit"
-          git push origin master  # Adjust branch if needed
+          git push origin master  # Pushing changes to the master branch
 
       - name: Wait before deployment
-        run: sleep 60  # Adjust delay as needed
-        
-      - name: Trigger GitHub Pages deployment
-        run: |
-          git config user.name "GitHub Action"
-          git config user.email "brunurb@users.noreply.github.com"
-          git commit --allow-empty -m "Trigger GitHub Pages rebuild"
-          git push
-
+        run: sleep 60  # Adjust delay as needed to allow for image uploads
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./mosaicb
+          publish_branch: master  # Deploy to the master branch
