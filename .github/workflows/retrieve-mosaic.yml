@@ -24,7 +24,6 @@ jobs:
           echo '<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>' >> mosaicb/index.html
           echo '</head><body><div id="myMosaic">' >> mosaicb/index.html
 
-          # Loop through image files in the pictures directory
           for img in $(ls mosaicb/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             echo "<img src='pictures/$img' alt='Gallery Image' />" >> mosaicb/index.html
           done
@@ -41,13 +40,13 @@ jobs:
           git config --local user.name "GitHub Action"
           git add mosaicb/index.html
           git commit -m "Regenerate index.html for mosaic gallery" || echo "No changes to commit"
-          git push origin master  # Adjust branch if needed
+          git push origin master  # Make sure this matches your main branch
 
       - name: Wait before deployment
-        run: sleep 30  # Adjust delay as needed
+        run: sleep 30  # Wait to ensure previous commits are processed
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./mosaicb  # Ensure this is the correct directory for your content
+          publish_dir: ./mosaicb
