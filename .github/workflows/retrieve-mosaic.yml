@@ -17,12 +17,51 @@ jobs:
       - name: Generate index.html
         run: |
           echo "Generating index.html..."
-          echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">' > mosaicb/index.html
+          echo '<!DOCTYPE html><html lang="en">' > mosaicb/index.html
+          echo '<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> mosaicb/index.html
           echo '<title>Mosaic Gallery</title>' >> mosaicb/index.html
+          echo '<link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet">' >> mosaicb/index.html
           echo '<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />' >> mosaicb/index.html
           echo '<link rel="stylesheet" type="text/css" href="styles.css" />' >> mosaicb/index.html
-          echo '<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>' >> mosaicb/index.html
-          echo '</head><body><div id="myMosaic">' >> mosaicb/index.html
+          
+          # Add the styles for the top nav
+          echo '<style>' >> mosaicb/index.html
+          echo 'body { margin: 0; font-family: "Public Pixel", sans-serif; }' >> mosaicb/index.html
+          echo '.topnav { overflow: hidden; background-color: #333; }' >> mosaicb/index.html
+          echo '.topnav a { float: left; display: block; color: #f2f2f2; text-align: center; padding: 4px 7px; text-decoration: none; font-size: 8px; }' >> mosaicb/index.html
+          echo '.topnav a:hover { background-color: #d5fc26; color: black; }' >> mosaicb/index.html
+          echo '.topnav a.active { background-color: #d5fc26; color: black; }' >> mosaicb/index.html
+          echo '.topnav .icon { display: none; }' >> mosaicb/index.html
+          echo '@media screen and (max-width: 600px) { .topnav a:not(:first-child) {display: none;} .topnav a.icon { float: right; display: block; } }' >> mosaicb/index.html
+          echo '@media screen and (max-width: 600px) { .topnav.responsive {position: relative;} .topnav.responsive .icon { position: absolute; right: 0; top: 0; } .topnav.responsive a { float: none; display: block; text-align: left; } }' >> mosaicb/index.html
+          echo '</style>' >> mosaicb/index.html
+          
+          # Add the navigation HTML
+          echo '<body>' >> mosaicb/index.html
+          echo '<div class="topnav" id="myTopnav">' >> mosaicb/index.html
+          echo '  <a href="#home" class="active">Home</a>' >> mosaicb/index.html
+          echo '  <a href="#news">News</a>' >> mosaicb/index.html
+          echo '  <a href="#contact">Contact</a>' >> mosaicb/index.html
+          echo '  <a href="#about">About</a>' >> mosaicb/index.html
+          echo '  <a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> mosaicb/index.html
+          echo '    <i class="fa fa-bars"></i>' >> mosaicb/index.html
+          echo '  </a>' >> mosaicb/index.html
+          echo '</div>' >> mosaicb/index.html
+          
+          # Add the JavaScript function for the menu
+          echo '<script>' >> mosaicb/index.html
+          echo 'function myFunction() {' >> mosaicb/index.html
+          echo '  var x = document.getElementById("myTopnav");' >> mosaicb/index.html
+          echo '  if (x.className === "topnav") {' >> mosaicb/index.html
+          echo '    x.className += " responsive";' >> mosaicb/index.html
+          echo '  } else {' >> mosaicb/index.html
+          echo '    x.className = "topnav";' >> mosaicb/index.html
+          echo '  }' >> mosaicb/index.html
+          echo '}' >> mosaicb/index.html
+          echo '</script>' >> mosaicb/index.html
+
+          # Continue generating the mosaic images section
+          echo '<div id="myMosaic">' >> mosaicb/index.html
 
           for img in $(ls mosaicb/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             echo "<img src='pictures/$img' alt='Gallery Image' />" >> mosaicb/index.html
