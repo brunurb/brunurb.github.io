@@ -27,8 +27,8 @@ jobs:
 
           # Here is the menu code
           echo '<div class="topnav" id="myTopnav">' >> mosaicb/index.html
-          echo '  <a href="https://brunurb.github.io/startpage/">Home</a>' >> mosaicb/index.html
-          echo '  <a href="#917" class="active">Home</a>' >> mosaicb/index.html
+          echo '  <a href="https://brunurb.github.io/">Home</a>' >> mosaicb/index.html
+          echo '  <a href="#917" class="active">917</a>' >> mosaicb/index.html
           echo '  <a href="#news">News</a>' >> mosaicb/index.html
           echo '  <a href="#contact">Contact</a>' >> mosaicb/index.html
           echo '  <a href="#about">About</a>' >> mosaicb/index.html
