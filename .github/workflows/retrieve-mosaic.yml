@@ -1,4 +1,4 @@
-name: Update Mosaic Gallery
+name: Update mosaicb Gallery
 
 on:
   push:
