@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosaic Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>
+</head><body>
+
+<script>function myFunction() { var x = document.getElementById("myTopnav"); if (x.className === "topnav") { x.className += " responsive"; } else { x.className = "topnav"; } }</script>
+<div id="myMosaic">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.mosaic.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>
+</body></html>
