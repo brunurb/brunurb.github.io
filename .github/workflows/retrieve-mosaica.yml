@@ -24,9 +24,8 @@ jobs:
           echo '<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />' >> mosaica/index.html
           echo '<link rel="stylesheet" type="text/css" href="styles.css" />' >> mosaica/index.html
           echo '<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>' >> mosaica/index.html
-          echo '<style>#myMosaic       html, body, pre, code, kbd, samp {
-          font-family: "Press+Start+2P&display=swap";
-      }</style>' >> mosaica/index.html
+          echo '<style>#myMosaic html, body, pre, code, kbd, samp {
+          font-family: "Press+Start+2P&display=swap";}</style>' >> mosaica/index.html
           echo '</head><body>' >> mosaica/index.html
 
           # Here is the menu code
