@@ -1,8 +1,10 @@
-name: Update majortom
+name: Update major tom
+
 on:
   push:
     branches:
       - main  # Change this if you're using a different branch
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   update-gallery:
@@ -12,11 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # Specify a Node.js version
-
       - name: Create image JSON
         run: |
           echo "[" > pictures.json
@@ -34,5 +31,5 @@ jobs:
           git config --local user.email "brunurb+github@gmail.com"
           git config --local user.name "brunurb"
           git add pictures.json
-          git commit -m "Update images.json with new images"
+          git commit -m "Update images.json with new images" || echo "No changes to commit"
           git push
