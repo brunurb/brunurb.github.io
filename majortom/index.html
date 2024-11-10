@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majortom Gallery</title>
-    <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js">
+
+    <!-- Import NES.css from CDN -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- Import Masonry.js from CDN -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
     <style>
+        :root {
+            --honeydew: #f1faeeff;
+            --cerulean: #457b9dff;
+            --berkeley-blue: #1d3557ff;
+            --non-photo-blue: #a8dadcff;
+        }
+
         body {
             margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Press Start 2P", cursive;
             background-color: var(--honeydew);
             color: var(--berkeley-blue);
         }
-        /* Top fixed menu styles */
+
         #menu {
-            background-color: var(--berkeley-blue);
+            background-color: var(--cerulean);
             color: white;
             padding: 10px;
             position: fixed;
@@ -24,24 +34,32 @@
             top: 0;
             z-index: 1000;
             display: flex;
-            justify-content: space-around;
+            flex-direction: row;
+            justify-content: flex-end;
         }
+
         #menu a {
+            margin: 0 2px; /* 2px spacing */
             color: white;
             text-decoration: none;
         }
-        .grid {
+
+        #gallery {
             margin-top: 50px; /* Offset for fixed menu */
+            padding: 10px;
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
+            background-color: var(--berkeley-blue);
         }
+
         .grid-item {
-            width: calc(33.333% - 16px);
             background-color: var(--non-photo-blue);
             border-radius: 5px;
             overflow: hidden;
+            width: calc(33.333% - 16px); /* Adjust for spacing */
         }
+
         img {
             width: 100%;
             display: block;
@@ -50,49 +68,50 @@
 </head>
 <body>
     <div id="menu">
-        <a href="#" class="nes-btn">Home</a>
-        <a href="#" class="nes-btn">Gallery</a>
-        <a href="#" class="nes-btn">About</a>
-        <a href="#" class="nes-btn">Contact</a>
-        <a href="#" class="nes-btn">Blog</a>
-        <a href="#" class="nes-btn">Support</a>
+        <a class="nes-btn is-primary" href="#">Home</a>
+        <a class="nes-btn is-primary" href="#">Gallery</a>
+        <a class="nes-btn is-primary" href="#">About</a>
+        <a class="nes-btn is-primary" href="#">Contact</a>
+        <a class="nes-btn is-primary" href="#">Blog</a>
+        <a class="nes-btn is-primary" href="#">Support</a>
     </div>
+
     <div id="gallery" class="grid"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
     <script>
-        // Fetch image folder path
         const imageFolder = 'pictures/';
-
+        
         async function loadImages() {
-            const gallery = document.getElementById('gallery');
+            try {
+                const response = await fetch(`./pictures.json`);  // Adjusted path for JSON
+                const images = await response.json();
+                const gallery = document.getElementById('gallery');
+                
+                // Clear existing images
+                gallery.innerHTML = '';
 
-            // Fetch image paths dynamically
-            const response = await fetch(`./majortom/images.json`);
-            const images = await response.json();
+                images.forEach(imageName => {
+                    if (/\.(jpg|jpeg|gif|png|webp|svg)$/.test(imageName)) {
+                        const img = document.createElement('img');
+                        img.src = `${imageFolder}${imageName}`;
+                        img.alt = imageName;
 
-            images.forEach(imageName => {
-                const img = document.createElement('img');
-                img.src = `${imageFolder}${imageName}`;
-                img.alt = imageName;
+                        const item = document.createElement('div');
+                        item.className = 'grid-item';
+                        item.appendChild(img);
+                        gallery.appendChild(item);
+                    }
+                });
 
-                const item = document.createElement('div');
-                item.className = 'grid-item';
-                item.appendChild(img);
-                gallery.appendChild(item);
-
-                // Error handling for missing images
-                img.onerror = () => {
-                    console.log(`Image ${imageName} not found.`);
-                };
-            });
-
-            // Initialize Masonry layout
-            new Masonry('#gallery', {
-                itemSelector: '.grid-item',
-                columnWidth: '.grid-item',
-                percentPosition: true
-            });
+                // Initialize Masonry layout
+                new Masonry('#gallery', {
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-item',
+                    percentPosition: true
+                });
+            } catch (error) {
+                console.error('Error loading images:', error);
+            }
         }
 
         loadImages();
