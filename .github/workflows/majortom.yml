@@ -19,17 +19,24 @@ jobs:
           echo "Generating index.html..."
           # Ensure the directory exists
           mkdir -p majortom
+
           # Start creating the index.html in the correct directory
           echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">' > majortom/index.html
           echo '<title>Majortom Gallery</title>' >> majortom/index.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/index.html
           echo '<link href="https://nostalgic-css.github.io/NES.css/css/nes.min.css" rel="stylesheet" />' >> majortom/index.html
           echo '<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>' >> majortom/index.html
-          echo '<style>body { font-family: "Press Start 2P", serif; background-color: #f1faee; color: #457b9d; } #gallery { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 16px; } .grid-item { width: calc(25% - 16px); } img { width: 100%; display: block; border-radius: 5px; }</style>' >> majortom/index.html
+          echo '<style>body { font-family: "Press Start 2P", cursive; background-color: #f1faee; color: #457b9d; margin: 0; padding: 0; }' >> majortom/index.html
+          echo '#menu { background-color: #457b9d; padding: 10px; position: fixed; width: calc(100% - 2px); top: 0; z-index: 1000; display: flex; align-items: center; gap: 2px; box-sizing: border-box; }' >> majortom/index.html
+          echo '#gallery { margin-top: 60px; display: flex; flex-wrap: wrap; gap: 16px; padding: 0 2px; }' >> majortom/index.html
+          echo '.grid-item { width: calc(25% - 16px); } img { width: 100%; display: block; border-radius: 5px; }' >> majortom/index.html
+          echo '@media (max-width: 768px) { .grid-item { width: calc(50% - 16px); } }' >> majortom/index.html
+          echo '@media (max-width: 480px) { .grid-item { width: 100%; } }' >> majortom/index.html
+          echo '</style>' >> majortom/index.html
           echo '</head><body>' >> majortom/index.html
 
           # Menu code
-          echo '<div id="menu" style="background-color: #457b9d; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000;">' >> majortom/index.html
+          echo '<div id="menu">' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-success">Success</button>' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> majortom/index.html
