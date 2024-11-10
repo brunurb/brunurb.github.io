@@ -7,45 +7,12 @@
     <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--honeydew);
-            color: var(--berkeley-blue);
-        }
-        /* Top fixed menu styles */
-        #menu {
-            background-color: var(--berkeley-blue);
-            color: white;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-around;
-        }
-        #menu a {
-            color: white;
-            text-decoration: none;
-        }
-        .grid {
-            margin-top: 50px; /* Offset for fixed menu */
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .grid-item {
-            width: calc(33.333% - 16px);
-            background-color: var(--non-photo-blue);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        img {
-            width: 100%;
-            display: block;
-        }
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f1faee; color: #1d3557; }
+        #menu { background-color: #1d3557; color: white; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-around; }
+        #menu a { color: white; text-decoration: none; }
+        .grid { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 16px; }
+        .grid-item { width: calc(33.333% - 16px); background-color: #a8dadc; border-radius: 5px; overflow: hidden; }
+        img { width: 100%; display: block; }
     </style>
 </head>
 <body>
@@ -57,45 +24,25 @@
         <a href="#" class="nes-btn">Blog</a>
         <a href="#" class="nes-btn">Support</a>
     </div>
-    <div id="gallery" class="grid"></div>
-
+    <div id="gallery" class="grid">
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
     <script>
-        // Fetch image folder path
-        const imageFolder = 'pictures/';
-
-        async function loadImages() {
-            const gallery = document.getElementById('gallery');
-
-            // Fetch image paths dynamically
-            const response = await fetch(`./majortom/images.json`);
-            const images = await response.json();
-
-            images.forEach(imageName => {
-                const img = document.createElement('img');
-                img.src = `${imageFolder}${imageName}`;
-                img.alt = imageName;
-
-                const item = document.createElement('div');
-                item.className = 'grid-item';
-                item.appendChild(img);
-                gallery.appendChild(item);
-
-                // Error handling for missing images
-                img.onerror = () => {
-                    console.log(`Image ${imageName} not found.`);
-                };
+        fetch("./majortom/images.json")
+            .then(response => response.json())
+            .then(images => {
+                const gallery = document.getElementById("gallery");
+                images.forEach(imageName => {
+                    const img = document.createElement("img");
+                    img.src = "pictures/" + imageName;
+                    img.alt = imageName;
+                    const item = document.createElement("div");
+                    item.className = "grid-item";
+                    item.appendChild(img);
+                    gallery.appendChild(item);
+                });
+                new Masonry("#gallery", { itemSelector: ".grid-item", columnWidth: ".grid-item", percentPosition: true });
             });
-
-            // Initialize Masonry layout
-            new Masonry('#gallery', {
-                itemSelector: '.grid-item',
-                columnWidth: '.grid-item',
-                percentPosition: true
-            });
-        }
-
-        loadImages();
     </script>
 </body>
 </html>
