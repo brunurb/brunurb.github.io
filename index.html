@@ -1,48 +1,18 @@
-<head> 
-    <title>brunurb</title> 
-    <meta name="google-site-verification" content="wgghX_x66IeVe5zO-ErF5qFQpjCJ0HZZ-cNSTQ7fPcw" /> 
-
-    <style type="text/css"> 
-        html { 
-            overflow: auto; 
-        } 
-
-        html, 
-        body, 
-        div, 
-        iframe { 
-            margin: 0px; 
-            padding: 0px; 
-            height: 100%; 
-            border: none; 
-        } 
-
-        iframe { 
-            display: block; 
-            width: 100%; 
-            border: none; 
-            overflow-y: auto; 
-            overflow-x: hidden; 
-        } 
-    </style> 
-    
-    
-</head> 
-
-<body> 
-    <iframe src="https://brunurb.github.io/web/index"
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            width="100%" 
-            height="100%" 
-            scrolling="auto"> 
-  </iframe> 
-
-</body> 
-
-
-
-
-</html>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Majortom Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://nostalgic-css.github.io/NES.css/css/nes.min.css" rel="stylesheet" />
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<style>body { font-family: "Press Start 2P", serif; background-color: #f1faee; color: #457b9d; } #gallery { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 16px; } .grid-item { width: calc(25% - 16px); } img { width: 100%; display: block; border-radius: 5px; }</style>
+</head><body>
+<div id="menu" style="background-color: #457b9d; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000;">
+  <button type="button" class="nes-btn is-primary">Primary</button>
+  <button type="button" class="nes-btn is-success">Success</button>
+  <button type="button" class="nes-btn is-warning">Warning</button>
+  <button type="button" class="nes-btn is-error">Error</button>
+  <button type="button" class="nes-btn is-disabled" disabled>Disabled</button>
+</div>
+<div id="gallery">
+</div>
+<script>document.addEventListener("DOMContentLoaded", function() { const gallery = document.getElementById("gallery"); new Masonry(gallery, { itemSelector: ".grid-item", columnWidth: ".grid-item", percentPosition: true }); });</script>
+</body></html>
