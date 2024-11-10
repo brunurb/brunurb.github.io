@@ -1,35 +1,55 @@
-name: Update major tom
+name: Update Majortom Gallery
 
 on:
   push:
-    branches:
-      - main  # Change this if you're using a different branch
-  workflow_dispatch:  # Allows manual triggering of the workflow
+    paths:
+      - 'pictures/**'
+      - 'index.html'
+  workflow_dispatch:
 
 jobs:
   update-gallery:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
-        
-      - name: Create image JSON
-        run: |
-          echo "[" > pictures.json
-          for file in majortom/pictures/*.{jpg,jpeg,gif,png,webp,svg}; do
-            if [[ -f $file ]]; then
-              echo "  \"$(basename "$file")\"," >> pictures.json
-            fi
-          done
-          # Remove trailing comma and close the JSON array
-          sed -i '$ s/,$//' pictures.json
-          echo "]" >> pictures.json
 
-      - name: Commit and push changes
+      - name: Generate index.html
         run: |
-          git config --local user.email "brunurb+github@gmail.com"
-          git config --local user.name "brunurb"
-          git add pictures.json
-          git commit -m "Update images.json with new images" || echo "No changes to commit"
-          git push
+          echo "Generating index.html..."
+          echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">' > index.html
+          echo '<title>Majortom Gallery</title>' >> index.html
+          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> index.html
+          echo '<link href="https://nostalgic-css.github.io/NES.css/css/nes.min.css" rel="stylesheet" />' >> index.html
+          echo '<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>' >> index.html
+          echo '<style>body { font-family: "Press Start 2P", serif; background-color: #f1faee; color: #457b9d; } #gallery { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 16px; } .grid-item { width: calc(25% - 16px); } img { width: 100%; display: block; border-radius: 5px; }</style>' >> index.html
+          echo '</head><body>' >> index.html
+
+          # Menu code
+          echo '<div id="menu" style="background-color: #457b9d; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000;">' >> index.html
+          echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> index.html
+          echo '  <button type="button" class="nes-btn is-success">Success</button>' >> index.html
+          echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> index.html
+          echo '  <button type="button" class="nes-btn is-error">Error</button>' >> index.html
+          echo '  <button type="button" class="nes-btn is-disabled" disabled>Disabled</button>' >> index.html
+          echo '</div>' >> index.html
+
+          # Gallery generation
+          echo '<div id="gallery">' >> index.html
+          for img in $(ls pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
+            echo "<div class='grid-item'><img src='pictures/$img' alt='Gallery Image' /></div>" >> index.html
+          done
+          echo '</div>' >> index.html
+
+          # Masonry Initialization
+          echo '<script>document.addEventListener("DOMContentLoaded", function() { const gallery = document.getElementById("gallery"); new Masonry(gallery, { itemSelector: ".grid-item", columnWidth: ".grid-item", percentPosition: true }); });</script>' >> index.html
+
+          echo '</body></html>' >> index.html
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "GitHub Action"
+          git add index.html
+          git commit -m "Regenerate index.html for Majortom gallery" || echo "No changes to commit"
+          git push origin main  # Adjust this if using a different branch
