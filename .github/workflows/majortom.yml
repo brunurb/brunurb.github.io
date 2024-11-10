@@ -23,24 +23,24 @@ jobs:
 
           # Start creating index.html using a Here Document
           cat <<EOF > majortom/index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Majortom Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <style>
-        body { font-family: "Press Start 2P", cursive; background-color: #f1faee; color: #457b9d; margin: 0; padding: 0; }
-        #menu { background-color: #457b9d; padding: 10px; position: fixed; width: calc(100% - 2px); top: 0; z-index: 1000; display: flex; align-items: center; gap: 2px; box-sizing: border-box; }
-        #gallery { margin-top: 60px; display: flex; flex-wrap: wrap; gap: 16px; padding: 0 2px; }
-        .grid-item { width: calc(25% - 16px); }
-        img { width: 100%; display: block; border-radius: 5px; }
-        @media (max-width: 768px) { .grid-item { width: calc(50% - 16px); } }
-        @media (max-width: 480px) { .grid-item { width: 100%; } }
-    </style>
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Majortom Gallery</title>
+          <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+          <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+          <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+          <style>
+          body { font-family: "Press Start 2P", cursive; background-color: #f1faee; color: #457b9d; margin: 0; padding: 0; }
+          #menu { background-color: #457b9d; padding: 10px; position: fixed; width: calc(100% - 2px); top: 0; z-index: 1000; display: flex; align-items: center; gap: 2px; box-sizing: border-box; }
+          #gallery { margin-top: 60px; display: flex; flex-wrap: wrap; gap: 16px; padding: 0 2px; }
+          .grid-item { width: calc(25% - 16px); }
+          img { width: 100%; display: block; border-radius: 5px; }
+          @media (max-width: 768px) { .grid-item { width: calc(50% - 16px); } }
+          @media (max-width: 480px) { .grid-item { width: 100%; } }
+          </style>
 </head>
 <body>
 
