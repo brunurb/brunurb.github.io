@@ -1,0 +1,87 @@
+name: Update Majortom
+
+on:
+  push:
+    paths:
+      - 'majortom/pictures/**'
+  workflow_dispatch:  # Allows manual triggering of the workflow.
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Generate Image List
+        run: |
+          # Create a JSON file with image names
+          echo '[' > majortom/images.json
+          for img in majortom/pictures/*; do
+            # Check if the image is a supported format
+            if [[ $img == *.jpg || $img == *.jpeg || $img == *.png || $img == *.gif || $img == *.webp || $img == *.svg ]]; then
+              echo "    \"$(basename "$img")\"," >> majortom/images.json
+            fi
+          done
+          # Remove the last comma and close the JSON array
+          sed -i '$ s/,$//' majortom/images.json
+          echo ']' >> majortom/images.json
+
+      - name: Generate Index Page
+        run: |
+          echo '<!DOCTYPE html>' > majortom/index.html
+          echo '<html lang="en">' >> majortom/index.html
+          echo '<head>' >> majortom/index.html
+          echo '    <meta charset="UTF-8">' >> majortom/index.html
+          echo '    <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/index.html
+          echo '    <title>Majortom Gallery</title>' >> majortom/index.html
+          echo '    <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.min.css">' >> majortom/index.html
+          echo '    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js">' >> majortom/index.html
+          echo '    <style>' >> majortom/index.html
+          echo '        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f1faee; color: #1d3557; }' >> majortom/index.html
+          echo '        #menu { background-color: #1d3557; color: white; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-around; }' >> majortom/index.html
+          echo '        #menu a { color: white; text-decoration: none; }' >> majortom/index.html
+          echo '        .grid { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 16px; }' >> majortom/index.html
+          echo '        .grid-item { width: calc(33.333% - 16px); background-color: #a8dadc; border-radius: 5px; overflow: hidden; }' >> majortom/index.html
+          echo '        img { width: 100%; display: block; }' >> majortom/index.html
+          echo '    </style>' >> majortom/index.html
+          echo '</head>' >> majortom/index.html
+          echo '<body>' >> majortom/index.html
+          echo '    <div id="menu">' >> majortom/index.html
+          echo '        <a href="#" class="nes-btn">Home</a>' >> majortom/index.html
+          echo '        <a href="#" class="nes-btn">Gallery</a>' >> majortom/index.html
+          echo '        <a href="#" class="nes-btn">About</a>' >> majortom/index.html
+          echo '        <a href="#" class="nes-btn">Contact</a>' >> majortom/index.html
+          echo '        <a href="#" class="nes-btn">Blog</a>' >> majortom/index.html
+          echo '        <a href="#" class="nes-btn">Support</a>' >> majortom/index.html
+          echo '    </div>' >> majortom/index.html
+          echo '    <div id="gallery" class="grid">' >> majortom/index.html
+          echo '    </div>' >> majortom/index.html
+          echo '    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>' >> majortom/index.html
+          echo '    <script>' >> majortom/index.html
+          echo '        fetch("./majortom/images.json")' >> majortom/index.html
+          echo '            .then(response => response.json())' >> majortom/index.html
+          echo '            .then(images => {' >> majortom/index.html
+          echo '                const gallery = document.getElementById("gallery");' >> majortom/index.html
+          echo '                images.forEach(imageName => {' >> majortom/index.html
+          echo '                    const img = document.createElement("img");' >> majortom/index.html
+          echo '                    img.src = "pictures/" + imageName;' >> majortom/index.html
+          echo '                    img.alt = imageName;' >> majortom/index.html
+          echo '                    const item = document.createElement("div");' >> majortom/index.html
+          echo '                    item.className = "grid-item";' >> majortom/index.html
+          echo '                    item.appendChild(img);' >> majortom/index.html
+          echo '                    gallery.appendChild(item);' >> majortom/index.html
+          echo '                });' >> majortom/index.html
+          echo '                new Masonry("#gallery", { itemSelector: ".grid-item", columnWidth: ".grid-item", percentPosition: true });' >> majortom/index.html
+          echo '            });' >> majortom/index.html
+          echo '    </script>' >> majortom/index.html
+          echo '</body>' >> majortom/index.html
+          echo '</html>' >> majortom/index.html
+
+      - name: Commit Changes
+        run: |
+          git config --local user.email "brunurb+github@gmail.com"
+          git config --local user.name "brunurb"
+          git add majortom/index.html majortom/images.json
+          git commit -m "Update index page with new images"
+          git push
