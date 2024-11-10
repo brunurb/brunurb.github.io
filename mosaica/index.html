@@ -1,15 +1,30 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mosaic Gallery</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
 <link rel="stylesheet" type="text/css" href="styles.css" />
 <style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>
+<style>#myMosaic html, body, pre, code, kbd, samp {
+font-family: "Press+Start+2P&display=swap";}</style>
 </head><body>
-
+<div class="nes-btn" id="myTopnav">
+  <a href="https://brunurb.github.io/">Home</a>
+  <button type="button" class="nes-btn is-warning">917</button><a href="#917">917</a>
+  <a href="#GUI" class="active">GUI</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 <script>function myFunction() { var x = document.getElementById("myTopnav"); if (x.className === "topnav") { x.className += " responsive"; } else { x.className = "topnav"; } }</script>
 <div id="myMosaic">
+<img src='pictures/3dgThpHL.jpeg' alt='Gallery Image' />
+<img src='pictures/3jAyfywl.jpeg' alt='Gallery Image' />
+<img src='pictures/3vIDJI5A.jpeg' alt='Gallery Image' />
+<img src='pictures/4b69848f736c.jpeg' alt='Gallery Image' />
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.mosaic.js"></script>
