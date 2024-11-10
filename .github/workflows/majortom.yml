@@ -3,7 +3,7 @@ name: Update Majortom Gallery
 on:
   push:
     paths:
-      - 'majortom/pictures/**'   # Update to watch for image changes in majortom/pictures
+      - 'majortom/pictures/**'   # Watch for image changes in majortom/pictures
       - 'majortom/index.html'     # Watch for changes to majortom/index.html
   workflow_dispatch:
 
@@ -17,43 +17,53 @@ jobs:
       - name: Generate index.html
         run: |
           echo "Generating index.html..."
+          
           # Ensure the directory exists
           mkdir -p majortom
 
-          # Start creating the index.html in the correct directory
-          echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">' > majortom/index.html
-          echo '<title>Majortom Gallery</title>' >> majortom/index.html
-          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/index.html
-          echo '<link href="https://nostalgic-css.github.io/NES.css/css/nes.min.css" rel="stylesheet" />' >> majortom/index.html
-          echo '<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>' >> majortom/index.html
-          echo '<style>body { font-family: "Press Start 2P", cursive; background-color: #f1faee; color: #457b9d; margin: 0; padding: 0; }' >> majortom/index.html
-          echo '#menu { background-color: #457b9d; padding: 10px; position: fixed; width: calc(100% - 2px); top: 0; z-index: 1000; display: flex; align-items: center; gap: 2px; box-sizing: border-box; }' >> majortom/index.html
-          echo '#gallery { margin-top: 60px; display: flex; flex-wrap: wrap; gap: 16px; padding: 0 2px; }' >> majortom/index.html
-          echo '.grid-item { width: calc(25% - 16px); } img { width: 100%; display: block; border-radius: 5px; }' >> majortom/index.html
-          echo '@media (max-width: 768px) { .grid-item { width: calc(50% - 16px); } }' >> majortom/index.html
-          echo '@media (max-width: 480px) { .grid-item { width: 100%; } }' >> majortom/index.html
-          echo '</style>' >> majortom/index.html
-          echo '</head><body>' >> majortom/index.html
+          # Start creating index.html using a Here Document
+          cat <<EOF > majortom/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majortom Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <style>
+        body { font-family: "Press Start 2P", cursive; background-color: #f1faee; color: #457b9d; margin: 0; padding: 0; }
+        #menu { background-color: #457b9d; padding: 10px; position: fixed; width: calc(100% - 2px); top: 0; z-index: 1000; display: flex; align-items: center; gap: 2px; box-sizing: border-box; }
+        #gallery { margin-top: 60px; display: flex; flex-wrap: wrap; gap: 16px; padding: 0 2px; }
+        .grid-item { width: calc(25% - 16px); }
+        img { width: 100%; display: block; border-radius: 5px; }
+        @media (max-width: 768px) { .grid-item { width: calc(50% - 16px); } }
+        @media (max-width: 480px) { .grid-item { width: 100%; } }
+    </style>
+</head>
+<body>
 
-          # Menu code
-          echo '<div id="menu">' >> majortom/index.html
-          echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> majortom/index.html
-          echo '  <button type="button" class="nes-btn is-success">Success</button>' >> majortom/index.html
-          echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> majortom/index.html
-          echo '  <button type="button" class="nes-btn is-error">Error</button>' >> majortom/index.html
-          echo '  <button type="button" class="nes-btn is-disabled" disabled>Disabled</button>' >> majortom/index.html
-          echo '</div>' >> majortom/index.html
+<div id="menu">
+    <button type="button" class="nes-btn is-primary">Primary</button>
+    <button type="button" class="nes-btn is-success">Success</button>
+    <button type="button" class="nes-btn is-warning">Warning</button>
+    <button type="button" class="nes-btn is-error">Error</button>
+    <button type="button" class="nes-btn is-disabled" disabled>Disabled</button>
+</div>
+
+<div id="gallery">
+EOF
 
           # Gallery generation
-          echo '<div id="gallery">' >> majortom/index.html
           for img in $(ls majortom/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<div class='grid-item'><img src='pictures/$img' alt='Gallery Image' /></div>" >> majortom/index.html
+            echo "  <div class='grid-item'><img src='pictures/$img' alt='Gallery Image' /></div>" >> majortom/index.html
           done
+
           echo '</div>' >> majortom/index.html
 
           # Masonry Initialization
           echo '<script>document.addEventListener("DOMContentLoaded", function() { const gallery = document.getElementById("gallery"); new Masonry(gallery, { itemSelector: ".grid-item", columnWidth: ".grid-item", percentPosition: true }); });</script>' >> majortom/index.html
-
           echo '</body></html>' >> majortom/index.html
 
       - name: Commit changes
