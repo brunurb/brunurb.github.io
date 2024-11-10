@@ -1,5 +1,4 @@
-name: Update Image Gallery
-
+name: Update majortom
 on:
   push:
     branches:
