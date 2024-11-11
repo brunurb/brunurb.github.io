@@ -1,27 +1,28 @@
 <!DOCTYPE html><html lang="en">
 <head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mosaic Gallery</title>
+<title>Intergalactic Pilots</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
 <style>
 body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursive; }
-header { position: fixed; top: 0; left: 0; width: 100%; background-color: #51607d; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }
+.header { background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; z-index: 10; }
 .nes-btn { margin-right: 2px; }
 .nes-btn:last-child { margin-right: 0; }
 #myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 5px; padding: 0; display: block; border: none; max-width: calc(25% - 10px); height: auto; }
+h1 { text-align: center; color: white; margin-top: 20px; }
 </style></head><body>
-<header>
+<div class="header">
   <button type="button" class="nes-btn is-primary">Primary</button>
   <button type="button" class="nes-btn is-success">Success</button>
   <button type="button" class="nes-btn is-warning">Warning</button>
   <button type="button" class="nes-btn is-error">Error</button>
   <button type="button" class="nes-btn is-disabled">Disabled</button>
-</header>
+</div>
 <main>
+<h1>Intergalactic Pilots</h1>
 <div id="myMosaic">
-<h1>Welcome to the Mosaic Gallery</h1>
 <img src='pictures/dfhhhhhhhhhhhhh.jpeg' alt='Gallery Image' />
 <img src='pictures/dfssfdfsd.jpeg' alt='Gallery Image' />
 <img src='pictures/dgfdgd.jpeg' alt='Gallery Image' />
