@@ -1,10 +1,10 @@
-name: Update Majortom Gallery
+name: Update majortom Gallery
 
 on:
   push:
     paths:
-      - 'majortom/pictures/**'   # Watch for image changes in majortom/pictures
-      - 'majortom/index.html'     # Watch for changes to majortom/index.html
+      - 'majortom/pictures/**'
+      - 'majortom/index.html'
   workflow_dispatch:
 
 jobs:
@@ -17,53 +17,49 @@ jobs:
       - name: Generate index.html
         run: |
           echo "Generating index.html..."
-          
-          # Ensure the directory exists
-          mkdir -p majortom
+          echo '<!DOCTYPE html><html lang="en">' > majortom/index.html
+          echo '<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/index.html
+          echo '<title>Mosaic Gallery</title>' >> majortom/index.html
+          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/index.html
+          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/index.html
+          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/index.html
+          echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/index.html
+          echo '<style>' >> majortom/index.html
+          echo 'body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/index.html
+          echo 'header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }' >> majortom/index.html
+          echo '.nes-btn { margin-right: 2px; }' >> majortom/index.html
+          echo '.nes-btn:last-child { margin-right: 0; }' >> majortom/index.html
+          echo 'main { padding-top: 60px; }' >> majortom/index.html
+          echo '</style></head><body>' >> majortom/index.html
 
-          # Start creating index.html using a Here Document
-          cat <<EOF > majortom/index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Majortom Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <style>
-        body { font-family: "Press Start 2P", cursive; background-color: #f1faee; color: #457b9d; margin: 0; padding: 0; }
-        #menu { background-color: #457b9d; padding: 10px; position: fixed; width: calc(100% - 2px); top: 0; z-index: 1000; display: flex; align-items: center; gap: 2px; box-sizing: border-box; }
-        #gallery { margin-top: 60px; display: flex; flex-wrap: wrap; gap: 16px; padding: 0 2px; }
-        .grid-item { width: calc(25% - 16px); }
-        img { width: 100%; display: block; border-radius: 5px; }
-        @media (max-width: 768px) { .grid-item { width: calc(50% - 16px); } }
-        @media (max-width: 480px) { .grid-item { width: 100%; } }
-    </style>
-</head>
-<body>
+          # Header
+          echo '<header>' >> majortom/index.html
+          echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> majortom/index.html
+          echo '  <button type="button" class="nes-btn is-success">Success</button>' >> majortom/index.html
+          echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> majortom/index.html
+          echo '  <button type="button" class="nes-btn is-error">Error</button>' >> majortom/index.html
+          echo '  <button type="button" class="nes-btn is-disabled">Disabled</button>' >> majortom/index.html
+          echo '</header>' >> majortom/index.html
 
-<div id="menu">
-    <button type="button" class="nes-btn is-primary">Primary</button>
-    <button type="button" class="nes-btn is-success">Success</button>
-    <button type="button" class="nes-btn is-warning">Warning</button>
-    <button type="button" class="nes-btn is-error">Error</button>
-    <button type="button" class="nes-btn is-disabled" disabled>Disabled</button>
-</div>
+          # Main content with gallery image generation
+          echo '<main>' >> majortom/index.html
+          echo '<h1>Welcome to the Mosaic Gallery</h1>' >> majortom/index.html
+          echo '<div id="myMosaic">' >> majortom/index.html
 
-<div id="gallery">
-EOF
-
-          # Gallery generation
           for img in $(ls majortom/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "  <div class='grid-item'><img src='pictures/$img' alt='Gallery Image' /></div>" >> majortom/index.html
+            echo "<img src='pictures/$img' alt='Gallery Image' />" >> majortom/index.html
           done
 
           echo '</div>' >> majortom/index.html
+          echo '<p>This is an example page with a fixed header containing buttons aligned to the right.</p>' >> majortom/index.html
+          echo '<p>Scroll down to see the effect of the fixed header.</p>' >> majortom/index.html
+          echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Quisque euismod tellus eget augue ullamcorper, scelerisque consectetur elit bibendum.</p>' >> majortom/index.html
+          echo '<p>Additional content here...</p>' >> majortom/index.html
+          echo '<p>More content to demonstrate scrolling.</p>' >> majortom/index.html
+          echo '<p>Even more content!</p>' >> majortom/index.html
+          echo '<p>And more...</p>' >> majortom/index.html
+          echo '</main>' >> majortom/index.html
 
-          # Masonry Initialization
-          echo '<script>document.addEventListener("DOMContentLoaded", function() { const gallery = document.getElementById("gallery"); new Masonry(gallery, { itemSelector: ".grid-item", columnWidth: ".grid-item", percentPosition: true }); });</script>' >> majortom/index.html
           echo '</body></html>' >> majortom/index.html
 
       - name: Commit changes
@@ -71,5 +67,5 @@ EOF
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/index.html
-          git commit -m "Regenerate index.html for Majortom gallery" || echo "No changes to commit"
-          git push origin master  # Adjust this if your default branch is not master
+          git commit -m "Regenerate index.html for mosaic gallery" || echo "No changes to commit"
+          git push origin master  # Make sure this matches your main branch
