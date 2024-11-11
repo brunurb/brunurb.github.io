@@ -44,8 +44,8 @@ jobs:
 
           # Main content with centered text in mosaic div
           echo '<main>' >> spaceships/index.html
+          echo '<h1 style="text-align: center;">Welcome to the Mosaic Gallery</h1>' >> spaceships/index.html
           echo '<div id="myMosaic">' >> spaceships/index.html
-          echo '<h1>Welcome to the Mosaic Gallery</h1>' >> spaceships/index.html
 
           # Correctly add the images inside the myMosaic div
           for img in $(ls spaceships/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
