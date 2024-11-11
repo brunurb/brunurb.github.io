@@ -26,7 +26,7 @@ jobs:
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> spaceships/index.html
           echo '<style>' >> spaceships/index.html
           echo 'body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursive; }' >> spaceships/index.html
-          echo '.header { background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); z-index: 10; }' >> spaceships/index.html
+          echo '.header { background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); }' >> spaceships/index.html
           echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
           echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; display: block; border: none; max-width: calc(33.333% - 0px); height: auto; }' >> spaceships/index.html
