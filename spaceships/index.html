@@ -10,7 +10,8 @@ body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursi
 header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }
 .nes-btn { margin-right: 2px; }
 .nes-btn:last-child { margin-right: 0; }
-#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none; max-width: 100%; height: auto; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-start; }
+img { margin: 0; display: block; border: none; width: calc(33.333% - 2px); height: auto; }
 </style></head><body>
 <header>
   <button type="button" class="nes-btn is-primary">Primary</button>
