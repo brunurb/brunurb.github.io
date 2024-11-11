@@ -1,4 +1,4 @@
-name: Update majortom Gallery
+name: Update majortom
 
 on:
   push:
@@ -19,32 +19,33 @@ jobs:
           echo "Generating index.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/index.html
           echo '<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/index.html
-          echo '<title>Mosaic Gallery</title>' >> majortom/index.html
+          echo '<title>Intergalactic Pilots</title>' >> majortom/index.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/index.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/index.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/index.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/index.html
           echo '<style>' >> majortom/index.html
           echo 'body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/index.html
-          echo 'header { position: fixed; top: 0; left: 0; width: 100%; background-color: #51607d; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }' >> majortom/index.html
+          echo '.header { background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; z-index: 10; }' >> majortom/index.html
           echo '.nes-btn { margin-right: 2px; }' >> majortom/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> majortom/index.html
           echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 5px; padding: 0; display: block; border: none; max-width: calc(25% - 10px); height: auto; }' >> majortom/index.html
+          echo 'h1 { text-align: center; color: white; margin-top: 20px; }' >> majortom/index.html
           echo '</style></head><body>' >> majortom/index.html
 
           # Header
-          echo '<header>' >> majortom/index.html
+          echo '<div class="header">' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-success">Success</button>' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-error">Error</button>' >> majortom/index.html
           echo '  <button type="button" class="nes-btn is-disabled">Disabled</button>' >> majortom/index.html
-          echo '</header>' >> majortom/index.html
+          echo '</div>' >> majortom/index.html
 
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/index.html
+          echo '<h1>Intergalactic Pilots</h1>' >> majortom/index.html
           echo '<div id="myMosaic">' >> majortom/index.html
-          echo '<h1>Welcome to the Mosaic Gallery</h1>' >> majortom/index.html
 
           # Correctly add the images inside the myMosaic div
           for img in $(ls majortom/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
