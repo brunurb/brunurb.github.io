@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosaic Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
+<style>
+body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursive; }
+header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }
+.nes-btn { margin-right: 2px; }
+.nes-btn:last-child { margin-right: 0; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none; }
+</style></head><body>
+<header>
+  <button type="button" class="nes-btn is-primary">Primary</button>
+  <button type="button" class="nes-btn is-success">Success</button>
+  <button type="button" class="nes-btn is-warning">Warning</button>
+  <button type="button" class="nes-btn is-error">Error</button>
+  <button type="button" class="nes-btn is-disabled">Disabled</button>
+</header>
+<main>
+<div id="myMosaic">
+<h1>Welcome to the Mosaic Gallery</h1>
+</div>
+<img src='pictures/dfhhhhhhhhhhhhh.jpeg' alt='Gallery Image' />
+<img src='pictures/dfssfdfsd.jpeg' alt='Gallery Image' />
+<img src='pictures/dgfdgd.jpeg' alt='Gallery Image' />
+<img src='pictures/dgfgfd.jpeg' alt='Gallery Image' />
+<img src='pictures/fsafasf.jpeg' alt='Gallery Image' />
+<img src='pictures/fsasa.jpeg' alt='Gallery Image' />
+<img src='pictures/fsdfdsfds.jpeg' alt='Gallery Image' />
+<img src='pictures/g344444444444.jpeg' alt='Gallery Image' />
+<img src='pictures/g4errr.jpeg' alt='Gallery Image' />
+<img src='pictures/gdf.jpeg' alt='Gallery Image' />
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.mosaic.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>
+</body></html>
