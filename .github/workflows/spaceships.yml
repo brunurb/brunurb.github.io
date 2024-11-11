@@ -35,11 +35,14 @@ jobs:
 
           # Header
           echo '<div class="header">' >> spaceships/index.html
+          echo '  <a href="https://brunurb.github.io/">brunurb</a>' >> spaceships/index.html  # Plain text link
+          echo '  <div>' >> spaceships/index.html  # Div for button alignment
           echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-success">Success</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-error">Error</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-disabled">Disabled</button>' >> spaceships/index.html
+          echo '  </div>' >> spaceships/index.html
           echo '</div>' >> spaceships/index.html
 
           # Main content with centered text in mosaic div
