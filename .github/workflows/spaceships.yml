@@ -1,4 +1,4 @@
-name: Update Spaceships
+name: Spaceships
 
 on:
   push:
@@ -23,45 +23,46 @@ jobs:
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> spaceships/index.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> spaceships/index.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> spaceships/index.html
+          echo '<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />' >> spaceships/index.html  # Include Mosaic CSS
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> spaceships/index.html
           echo '<style>' >> spaceships/index.html
           echo 'body { background-color: #65789C; color: #FFFFFF; margin: 0; font-family: "Press Start 2P", cursive; }' >> spaceships/index.html
-          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; align-items: center; box-shadow: 0px 4px 0px rgba(30, 30, 30, 0.9); z-index: 10; }' >> spaceships/index.html # Adjusted shadow color
-          echo '.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; margin-right: 20px; }' >> spaceships/index.html # Styling for the link
-          echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
-          echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; }' >> spaceships/index.html
-          echo '#myMosaic img { height: 150px; object-fit: cover; margin: 0; display: block; border: none; max-width: calc(16.666% - 0px); }' >> spaceships/index.html # Added object-fit to maintain aspect ratio
-          echo 'h1 { text-align: center; color: #ffffff; margin: 10px 0; }' >> spaceships/index.html  # Ensured h1 is visible
+          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 0px rgba(30, 30, 30, 0.9); z-index: 10; }' >> spaceships/index.html
+          echo '.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> spaceships/index.html  # Styling for the link
+          echo '#myMosaic { margin: 80px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> spaceships/index.html
+          echo '#myMosaic img { width: 100%; height: auto; display: block; }' >> spaceships/index.html # Ensure responsive images
+          echo 'h1 { text-align: center; color: #ffffff; margin: 60px 0 20px; }' >> spaceships/index.html  # Ensured h1 is styled
           echo '</style></head><body>' >> spaceships/index.html
 
           # Header
           echo '<div class="header">' >> spaceships/index.html
-          echo '  <a href="https://brunurb.github.io/" class="nes-btn">brunurb</a>' >> spaceships/index.html
-          echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> spaceships/index.html
-          echo '  <button type="button" class="nes-btn is-success">Success</button>' >> spaceships/index.html
-          echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> spaceships/index.html
-          echo '  <button type="button" class="nes-btn is-error">Error</button>' >> spaceships/index.html
-          echo '  <button type="button" class="nes-btn is-disabled">Disabled</button>' >> spaceships/index.html
+          echo '  <a href="https://brunurb.github.io/">brunurb</a>' >> spaceships/index.html  # Plain text link
+          echo '  <div>' >> spaceships/index.html  # Div for button alignment
+          echo '      <button type="button" class="nes-btn is-primary">Primary</button>' >> spaceships/index.html
+          echo '      <button type="button" class="nes-btn is-success">Success</button>' >> spaceships/index.html
+          echo '      <button type="button" class="nes-btn is-warning">Warning</button>' >> spaceships/index.html
+          echo '      <button type="button" class="nes-btn is-error">Error</button>' >> spaceships/index.html
+          echo '      <button type="button" class="nes-btn is-disabled">Disabled</button>' >> spaceships/index.html
+          echo '  </div>' >> spaceships/index.html
           echo '</div>' >> spaceships/index.html
 
           # Main content with centered text in mosaic div
           echo '<main>' >> spaceships/index.html
           echo '<h1>Intergalactic Spaceships</h1>' >> spaceships/index.html
-          echo '<div id="myMosaic">' >> spaceships/index.html
-
+          echo '<div id="myMosaic" data-max-row-height="400" data-refit-on-resize="1" data-responsive-width-threshold="500">' >> spaceships/index.html  # Added data attributes
+          
           # Correctly add the images inside the myMosaic div
           for img in $(ls spaceships/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='pictures/$img' alt='Gallery Image' />" >> spaceships/index.html
+            echo "<img src='pictures/$img' data-aspect-ratio='1.5' />" >> spaceships/index.html  # Added aspect ratio attribute (example)
           done
-
+          
           echo '</div>' >> spaceships/index.html
           echo '</main>' >> spaceships/index.html
 
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>' >> spaceships/index.html
           echo '<script type="text/javascript" src="jquery.mosaic.js"></script>' >> spaceships/index.html
           echo '<script type="text/javascript" src="scripts.js"></script>' >> spaceships/index.html
-          echo '<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>' >> spaceships/index.html
+          echo '<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>' >> spaceships/index.html  # Initialize Mosaic
           echo '</body></html>' >> spaceships/index.html
 
       - name: Commit changes
