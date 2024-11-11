@@ -4,56 +4,52 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
 <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
 <style>
 body { background-color: #65789C; color: #FFFFFF; margin: 0; font-family: "Press Start 2P", cursive; }
-.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 0px rgba(30, 30, 30, 0.9); z-index: 10; }
-.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
-#myMosaic { margin: 80px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
-#myMosaic img { width: 100%; height: auto; display: block; }
-h1 { text-align: center; color: #ffffff; margin: 60px 0 20px; }
+.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; box-shadow: 0px 4px 10px rgba(87, 103, 134, 0.9); z-index: 10; }
+.nes-btn { margin-right: 2px; }
+.nes-btn:last-child { margin-right: 0; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 30px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }
+h1 { text-align: center; color: #213350; margin: 40px 0; }
 </style></head><body>
 <div class="header">
-  <a href="https://brunurb.github.io/">brunurb</a>
-  <div>
-      <button type="button" class="nes-btn is-primary">Primary</button>
-      <button type="button" class="nes-btn is-success">Success</button>
-      <button type="button" class="nes-btn is-warning">Warning</button>
-      <button type="button" class="nes-btn is-error">Error</button>
-      <button type="button" class="nes-btn is-disabled">Disabled</button>
-  </div>
+  <button type="button" class="nes-btn is-primary">Primary</button>
+  <button type="button" class="nes-btn is-success">Success</button>
+  <button type="button" class="nes-btn is-warning">Warning</button>
+  <button type="button" class="nes-btn is-error">Error</button>
+  <button type="button" class="nes-btn is-disabled">Disabled</button>
 </div>
 <main>
 <h1>Intergalactic Spaceships</h1>
-<div id="myMosaic" data-max-row-height="400" data-refit-on-resize="1" data-responsive-width-threshold="500">
-<img src='pictures/541dsg.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/54d56d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/54df45f6.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/54fd.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/561ds651.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/561fd56h1d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/561sa6.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56df456g4d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56ds45g4s.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56f1dg6d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56f4d56f456sd.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56f4h65dh.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56fas156f16as.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56fd4g54d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56fs44sf5646.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56fs456fs.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56g4d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/56g4d6.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/61gs.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/64d5ds.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/65ds1g56s.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/65f165fs5a.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/65f165sf1s.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/65f1d65h0d.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/65g160s.jpeg' data-aspect-ratio='1.5' />
-<img src='pictures/65h4df564h6d.jpeg' data-aspect-ratio='1.5' />
+<div id="myMosaic">
+<img src='pictures/541dsg.jpeg' alt='Gallery Image' />
+<img src='pictures/54d56d.jpeg' alt='Gallery Image' />
+<img src='pictures/54df45f6.jpeg' alt='Gallery Image' />
+<img src='pictures/54fd.jpeg' alt='Gallery Image' />
+<img src='pictures/561ds651.jpeg' alt='Gallery Image' />
+<img src='pictures/561fd56h1d.jpeg' alt='Gallery Image' />
+<img src='pictures/561sa6.jpeg' alt='Gallery Image' />
+<img src='pictures/56d.jpeg' alt='Gallery Image' />
+<img src='pictures/56df456g4d.jpeg' alt='Gallery Image' />
+<img src='pictures/56ds45g4s.jpeg' alt='Gallery Image' />
+<img src='pictures/56f1dg6d.jpeg' alt='Gallery Image' />
+<img src='pictures/56f4d56f456sd.jpeg' alt='Gallery Image' />
+<img src='pictures/56f4h65dh.jpeg' alt='Gallery Image' />
+<img src='pictures/56fas156f16as.jpeg' alt='Gallery Image' />
+<img src='pictures/56fd4g54d.jpeg' alt='Gallery Image' />
+<img src='pictures/56fs44sf5646.jpeg' alt='Gallery Image' />
+<img src='pictures/56fs456fs.jpeg' alt='Gallery Image' />
+<img src='pictures/56g4d.jpeg' alt='Gallery Image' />
+<img src='pictures/56g4d6.jpeg' alt='Gallery Image' />
+<img src='pictures/61gs.jpeg' alt='Gallery Image' />
+<img src='pictures/64d5ds.jpeg' alt='Gallery Image' />
+<img src='pictures/65ds1g56s.jpeg' alt='Gallery Image' />
+<img src='pictures/65f165fs5a.jpeg' alt='Gallery Image' />
+<img src='pictures/65f165sf1s.jpeg' alt='Gallery Image' />
+<img src='pictures/65f1d65h0d.jpeg' alt='Gallery Image' />
+<img src='pictures/65g160s.jpeg' alt='Gallery Image' />
+<img src='pictures/65h4df564h6d.jpeg' alt='Gallery Image' />
 </div>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
