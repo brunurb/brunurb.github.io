@@ -30,7 +30,7 @@ jobs:
           echo '.nes-btn { margin-right: 2px; }' >> majortom/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> majortom/index.html
           echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 5px; padding: 0; display: block; border: none; max-width: calc(25% - 10px); height: auto; }' >> majortom/index.html
-          echo 'h1 { text-align: center; color: white; margin-top: 20px; }' >> majortom/index.html
+          echo 'h1 { text-align: center; color: #51607d; margin-top: 20px; }' >> majortom/index.html  # Set h1 color same as header background
           echo '</style></head><body>' >> majortom/index.html
 
           # Header
