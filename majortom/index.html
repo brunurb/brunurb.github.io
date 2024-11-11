@@ -10,7 +10,7 @@ body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursi
 header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }
 .nes-btn { margin-right: 2px; }
 .nes-btn:last-child { margin-right: 0; }
-main { padding-top: 60px; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none; }
 </style></head><body>
 <header>
   <button type="button" class="nes-btn is-primary">Primary</button>
@@ -20,8 +20,9 @@ main { padding-top: 60px; }
   <button type="button" class="nes-btn is-disabled">Disabled</button>
 </header>
 <main>
-<h1>Welcome to the Mosaic Gallery</h1>
 <div id="myMosaic">
+<h1>Welcome to the Mosaic Gallery</h1>
+</div>
 <img src='pictures/dfhhhhhhhhhhhhh.jpeg' alt='Gallery Image' />
 <img src='pictures/dfssfdfsd.jpeg' alt='Gallery Image' />
 <img src='pictures/dgfdgd.jpeg' alt='Gallery Image' />
@@ -32,13 +33,9 @@ main { padding-top: 60px; }
 <img src='pictures/g344444444444.jpeg' alt='Gallery Image' />
 <img src='pictures/g4errr.jpeg' alt='Gallery Image' />
 <img src='pictures/gdf.jpeg' alt='Gallery Image' />
-</div>
-<p>This is an example page with a fixed header containing buttons aligned to the right.</p>
-<p>Scroll down to see the effect of the fixed header.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Quisque euismod tellus eget augue ullamcorper, scelerisque consectetur elit bibendum.</p>
-<p>Additional content here...</p>
-<p>More content to demonstrate scrolling.</p>
-<p>Even more content!</p>
-<p>And more...</p>
 </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.mosaic.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>
 </body></html>
