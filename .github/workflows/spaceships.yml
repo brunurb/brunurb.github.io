@@ -1,4 +1,4 @@
-name: Spaceships
+name: Update Spaceships
 
 on:
   push:
@@ -26,15 +26,18 @@ jobs:
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> spaceships/index.html
           echo '<style>' >> spaceships/index.html
           echo 'body { background-color: #65789C; color: #FFFFFF; margin: 0; font-family: "Press Start 2P", cursive; }' >> spaceships/index.html
-          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.9); z-index: 10; }' >> spaceships/index.html # Adjusted shadow for a harder look
+          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; align-items: center; box-shadow: 0px 4px 0px rgba(30, 30, 30, 0.9); z-index: 10; }' >> spaceships/index.html # Adjusted shadow color
+          echo '.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; margin-right: 20px; }' >> spaceships/index.html # Styling for the link
           echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; } img { margin: 0; display: block; border: none; max-width: calc(16.666% - 0px); height: auto; }' >> spaceships/index.html # Set images to 50% size
-          echo 'h1 { text-align: center; color: #213350; margin: 10px 0; }' >> spaceships/index.html  # Adjusted margin for consistency
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; }' >> spaceships/index.html
+          echo '#myMosaic img { height: 150px; object-fit: cover; margin: 0; display: block; border: none; max-width: calc(16.666% - 0px); }' >> spaceships/index.html # Added object-fit to maintain aspect ratio
+          echo 'h1 { text-align: center; color: #ffffff; margin: 10px 0; }' >> spaceships/index.html  # Ensured h1 is visible
           echo '</style></head><body>' >> spaceships/index.html
 
           # Header
           echo '<div class="header">' >> spaceships/index.html
+          echo '  <a href="https://brunurb.github.io/" class="nes-btn">brunurb</a>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-success">Success</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> spaceships/index.html
