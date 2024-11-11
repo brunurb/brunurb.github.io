@@ -1,4 +1,4 @@
-name: Update spaceships Gallery
+name: Update Spaceships
 
 on:
   push:
@@ -19,32 +19,32 @@ jobs:
           echo "Generating index.html..."
           echo '<!DOCTYPE html><html lang="en">' > spaceships/index.html
           echo '<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> spaceships/index.html
-          echo '<title>Mosaic Gallery</title>' >> spaceships/index.html
+          echo '<title>Intergalactic Spaceships</title>' >> spaceships/index.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> spaceships/index.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> spaceships/index.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> spaceships/index.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> spaceships/index.html
           echo '<style>' >> spaceships/index.html
           echo 'body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursive; }' >> spaceships/index.html
-          echo 'header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }' >> spaceships/index.html
+          echo '.header { background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); z-index: 10; }' >> spaceships/index.html
           echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-start; }' >> spaceships/index.html
-          echo 'img { margin: 0; display: block; border: none; width: calc(33.333% - 2px); height: auto; }' >> spaceships/index.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; display: block; border: none; max-width: calc(33.333% - 0px); height: auto; }' >> spaceships/index.html
+          echo 'h1 { text-align: center; color: #51607d; margin-top: 20px; }' >> spaceships/index.html  # Set h1 color same as header background
           echo '</style></head><body>' >> spaceships/index.html
 
           # Header
-          echo '<header>' >> spaceships/index.html
+          echo '<div class="header">' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-success">Success</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-error">Error</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-disabled">Disabled</button>' >> spaceships/index.html
-          echo '</header>' >> spaceships/index.html
+          echo '</div>' >> spaceships/index.html
 
           # Main content with centered text in mosaic div
           echo '<main>' >> spaceships/index.html
-          echo '<h1 style="text-align: center;">Welcome to the Mosaic Gallery</h1>' >> spaceships/index.html
+          echo '<h1>Intergalactic Spaceships</h1>' >> spaceships/index.html
           echo '<div id="myMosaic">' >> spaceships/index.html
 
           # Correctly add the images inside the myMosaic div
