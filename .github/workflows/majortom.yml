@@ -26,10 +26,10 @@ jobs:
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/index.html
           echo '<style>' >> majortom/index.html
           echo 'body { background-color: yellow; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/index.html
-          echo 'header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }' >> majortom/index.html
+          echo 'header { position: fixed; top: 0; left: 0; width: 100%; background-color: #51607d; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }' >> majortom/index.html
           echo '.nes-btn { margin-right: 2px; }' >> majortom/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> majortom/index.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none; max-width: 100%; height: auto; }' >> majortom/index.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 5px; padding: 0; display: block; border: none; max-width: calc(25% - 10px); height: auto; }' >> majortom/index.html
           echo '</style></head><body>' >> majortom/index.html
 
           # Header
