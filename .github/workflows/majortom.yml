@@ -29,7 +29,7 @@ jobs:
           echo 'header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; padding: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; justify-content: flex-end; padding-right: 10px; z-index: 10; }' >> majortom/index.html
           echo '.nes-btn { margin-right: 2px; }' >> majortom/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> majortom/index.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none; }' >> majortom/index.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none; max-width: 100%; height: auto; }' >> majortom/index.html
           echo '</style></head><body>' >> majortom/index.html
 
           # Header
@@ -45,14 +45,15 @@ jobs:
           echo '<main>' >> majortom/index.html
           echo '<div id="myMosaic">' >> majortom/index.html
           echo '<h1>Welcome to the Mosaic Gallery</h1>' >> majortom/index.html
-          echo '</div>' >> majortom/index.html
 
-          # Adding images to the mosaic
+          # Correctly add the images inside the myMosaic div
           for img in $(ls majortom/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             echo "<img src='pictures/$img' alt='Gallery Image' />" >> majortom/index.html
           done
 
+          echo '</div>' >> majortom/index.html
           echo '</main>' >> majortom/index.html
+
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>' >> majortom/index.html
           echo '<script type="text/javascript" src="jquery.mosaic.js"></script>' >> majortom/index.html
           echo '<script type="text/javascript" src="scripts.js"></script>' >> majortom/index.html
