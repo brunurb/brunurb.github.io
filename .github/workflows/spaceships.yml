@@ -42,7 +42,7 @@ jobs:
           echo '  <a href="https://brunurb.github.io/spaceships"><button type="button" class="nes-btn is-success">Spaceships</button></a>' >> spaceships/index.html
           echo '  <a href="https://brunurb.github.io/mosaicc"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> spaceships/index.html
           echo '  <a href="/mosaicd"><button type="button" class="nes-btn is-error">Planets</button></a>' >> spaceships/index.html
-          echo '  <a href="/mosaicb"><button type="button" class="nes-btn style="background-color: #d1548c; color: #ffffff;"</button></a>' >> spaceships/index.html
+          echo '  <a href="/mosaicb"><button type="button" class="nes-btn style="background-color: #d1548c; color: #ffffff">917</button></a>' >> spaceships/index.html
 
           echo '  </div>' >> spaceships/index.html
           echo '</div>' >> spaceships/index.html
