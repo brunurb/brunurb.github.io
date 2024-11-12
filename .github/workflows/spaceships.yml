@@ -31,7 +31,7 @@ jobs:
           echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
           echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }' >> spaceships/index.html
-          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; }' >> spaceships/index.html
+          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> spaceships/index.html
           echo '</style></head><body>' >> spaceships/index.html
 
           # Header
@@ -41,8 +41,8 @@ jobs:
           echo '  <a href="https://brunurb.github.io/mosaica"><button type="button" class="nes-btn is-primary">Spacenauts</button></a>' >> spaceships/index.html
           echo '  <a href="https://brunurb.github.io/spaceships"><button type="button" class="nes-btn is-success">Spaceships</button></a>' >> spaceships/index.html
           echo '  <a href="https://brunurb.github.io/mosaicc"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> spaceships/index.html
-          echo '  <a href="https://brunurb.github.io/mosaicd"><button type="button" class="nes-btn is-error">Planets</button></a>' >> spaceships/index.html
-          echo '  <a href="/mosaicb"><button type="button" class="nes-btn is-disabled">917</button></a>' >> spaceships/index.html
+          echo '  <a href="/mosaicd"><button type="button" class="nes-btn is-error">Planets</button></a>' >> spaceships/index.html
+          echo '  <a href="/mosaicb"><button type="button" class="nes-btn style="background-color: #d1548c; color: #ffffff;"</button></a>' >> spaceships/index.html
 
           echo '  </div>' >> spaceships/index.html
           echo '</div>' >> spaceships/index.html
