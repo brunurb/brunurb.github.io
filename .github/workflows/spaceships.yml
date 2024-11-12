@@ -30,8 +30,8 @@ jobs:
           echo '.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; margin-left: 10px; }' >> spaceships/index.html
           echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 60px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }' >> spaceships/index.html # Updated max-width for the images
-          echo 'h1 { text-align: center; color: #213350; margin-top: 40px; }' >> spaceships/index.html # Adjusted title spacing
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }' >> spaceships/index.html # Slightly reduce space between the title and mosaic
+          echo 'h1 { text-align: center; color: #213350; margin: 80px 0 20px; }' >> spaceships/index.html # Adjusted margins for better placement
           echo '</style></head><body>' >> spaceships/index.html
 
           # Header
