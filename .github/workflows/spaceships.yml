@@ -27,6 +27,7 @@ jobs:
           echo '<style>' >> spaceships/index.html
           echo 'body { background-color: #65789C; color: #FFFFFF; margin: 0; font-family: "Press Start 2P", cursive; }' >> spaceships/index.html
           echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; box-shadow: 0px 4px 10px rgba(57, 67, 86, 0.9); z-index: 10; }' >> spaceships/index.html
+          echo '.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> spaceships/index.html  # Styling for the link
           echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
           echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 60px; } img { margin: 0; display: block; border: none; max-width: calc(33.333% - 0px); height: auto; }' >> spaceships/index.html
