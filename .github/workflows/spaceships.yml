@@ -26,18 +26,18 @@ jobs:
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> spaceships/index.html
           echo '<style>' >> spaceships/index.html
           echo 'body { background-color: #65789C; color: #FFFFFF; margin: 0; font-family: "Press Start 2P", cursive; }' >> spaceships/index.html
-          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; justify-content: flex-end; box-shadow: 0px 4px 10px rgba(57, 67, 86, 0.9); z-index: 10; }' >> spaceships/index.html
-          echo '.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> spaceships/index.html  # Styling for the link
+          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #51607d; padding: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(57, 67, 86, 0.9); z-index: 10; }' >> spaceships/index.html
+          echo '.header a { color: white; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; margin-left: 10px; }' >> spaceships/index.html
           echo '.nes-btn { margin-right: 2px; }' >> spaceships/index.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> spaceships/index.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 60px; } img { margin: 0; display: block; border: none; max-width: calc(33.333% - 0px); height: auto; }' >> spaceships/index.html
-          echo 'h1 { text-align: center; color: #213350; margin-top: 90px; }' >> spaceships/index.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 60px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }' >> spaceships/index.html # Updated max-width for the images
+          echo 'h1 { text-align: center; color: #213350; margin-top: 40px; }' >> spaceships/index.html # Adjusted title spacing
           echo '</style></head><body>' >> spaceships/index.html
 
           # Header
           echo '<div class="header">' >> spaceships/index.html
-          echo '  <a href="https://brunurb.github.io/">brunurb</a>' >> spaceships/index.html  # Plain text link
-          echo '  <div>' >> spaceships/index.html  # Div for button alignment
+          echo '  <a href="https://brunurb.github.io/">brunurb</a>' >> spaceships/index.html
+          echo '  <div>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-primary">Primary</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-success">Success</button>' >> spaceships/index.html
           echo '  <button type="button" class="nes-btn is-warning">Warning</button>' >> spaceships/index.html
