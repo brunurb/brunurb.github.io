@@ -19,7 +19,7 @@ jobs:
           echo "Generating controls.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/controls.html
           echo '<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/controls.html
-          echo '<title>Intergalactic controls</title>' >> majortom/controls.html
+          echo '<title>Control Panels</title>' >> majortom/controls.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/controls.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/controls.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/controls.html
