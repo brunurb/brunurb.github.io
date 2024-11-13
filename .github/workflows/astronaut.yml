@@ -50,7 +50,7 @@ jobs:
           echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/astronaut.html
           echo '  <div class="buttons">' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/majortom/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/astronaut.html
