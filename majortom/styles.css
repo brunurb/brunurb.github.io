@@ -1,57 +1,71 @@
-/* General styles */
 body {
-    font-family: 'Press Start 2P', cursive;
+    background-color: #142936;
+    color: #92cfbf;
     margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #fff;
+    font-family: "Press Start 2P", cursive;
 }
 
-/* Header styles */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #224357;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background-color: #222;
+    box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9);
+    z-index: 10;
 }
 
 .header a {
-    color: #fff;
+    color: #cd3162;
+    text-decoration: none;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1em;
+}
+
+.buttons {
+    display: flex;
+    gap: 2px;
+}
+
+#myMosaic {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#myMosaic img {
+    border: none;
+    max-width: calc(100% / 8);
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #dedcff;
+    margin: 80px 0 14px;
+    font-size: 14px;
+}
+
+footer {
+    text-align: left;
+    padding: 10px;
+    font-size: 10px;
+    background-color: #224357;
+    color: #92cfbf;
+}
+
+footer a {
+    color: inherit;
     text-decoration: none;
 }
 
-.header .buttons {
-    display: flex;
-    gap: 10px;
-}
-
-/* Main content styles */
-main {
-    text-align: center;
-    padding: 20px;
-}
-
-/* Mosaic styles */
-#mosaic, #myMosaic {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 10px;
-}
-
-/* Thumbnail images */
-.thumbnail {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.thumbnail:hover {
-    transform: scale(1.05);
-}
-
-/* Overlay styles */
 #overlay {
     position: fixed;
     top: 0;
@@ -77,25 +91,4 @@ main {
     font-size: 40px;
     color: white;
     cursor: pointer;
-}
-
-/* Footer styles */
-footer {
-    background-color: #222;
-    padding: 10px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-}
-
-/* Responsive styles */
-@media (max-width: 600px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header .buttons {
-        flex-wrap: wrap;
-    }
 }
