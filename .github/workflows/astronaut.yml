@@ -1,4 +1,4 @@
-name: Astronaut
+name: astronaut
 
 on:
   push:
@@ -22,28 +22,47 @@ jobs:
           echo '<meta charset="UTF-8">' >> majortom/astronaut.html
           echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/astronaut.html
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/astronaut.html
-          echo '<title>Astronaut Gallery</title>' >> majortom/astronaut.html
+          echo '<title>Porsche astronaut</title>' >> majortom/astronaut.html
+          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/astronaut.html
+          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/astronaut.html
+          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/astronaut.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/astronaut.html
           echo '<style>' >> majortom/astronaut.html
-          # Add your CSS here; you could include specific styles for astronaut.html
+          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/astronaut.html
+          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/astronaut.html
+          echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/astronaut.html
+          echo '.buttons { display: flex; gap: 2px; }' >> majortom/astronaut.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/astronaut.html
+          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/astronaut.html
+          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/astronaut.html
+          echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/astronaut.html
+          echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/astronaut.html
+          echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/astronaut.html
+          echo '#overlay.show { display: flex; }' >> majortom/astronaut.html
+          echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/astronaut.html
+          echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/astronaut.html
+          echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/astronaut.html
           echo '</style>' >> majortom/astronaut.html
           echo '</head><body>' >> majortom/astronaut.html
 
           # Header
           echo '<div class="header">' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/majortom/917.html" class="nes-btn">917</a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/majortom/controls.html" class="nes-btn">Controls</a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/majortom/planets.html" class="nes-btn">Planets</a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/majortom/spaceships.html" class="nes-btn">Spaceships</a>' >> majortom/astronaut.html
+          echo '  <div class="buttons">' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-warning">astronaut</button></a>' >> majortom/astronaut.html
+          echo '  </div>' >> majortom/astronaut.html
           echo '</div>' >> majortom/astronaut.html
 
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/astronaut.html
-          echo '<h1>Astronauts Gallery</h1>' >> majortom/astronaut.html
+          echo '<h1>Intergalctic Astronauts</h1>' >> majortom/astronaut.html
           echo '<div id="myMosaic">' >> majortom/astronaut.html
 
-          # Loop to add images inside the myMosaic div
+          # Correctly add images inside the myMosaic div
           for img in $(ls majortom/astronaut/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
           done
@@ -51,19 +70,42 @@ jobs:
           echo '</div>' >> majortom/astronaut.html
           echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/astronaut.html
           echo '  <div class="overlay-content">' >> majortom/astronaut.html
-          echo '    <span id="close">&times;</span>' >> majortom/astronaut.html
+          echo '    <span id="close">×</span>' >> majortom/astronaut.html
           echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/astronaut.html
           echo '  </div>' >> majortom/astronaut.html
           echo '</div>' >> majortom/astronaut.html
           echo '</main>' >> majortom/astronaut.html
 
-          # Footer
-          echo '<footer>© <a href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/astronaut.html
+          # Footer with copyright symbol
+          echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/astronaut.html
 
           # Include jQuery and custom scripts
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/astronaut.html
           echo '<script type="text/javascript">' >> majortom/astronaut.html
-          # Add the Overlay JS functionality here
+          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/astronaut.html
+          echo '    function showImage(src) {' >> majortom/astronaut.html
+          echo '        const overlay = document.getElementById("overlay");' >> majortom/astronaut.html
+          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/astronaut.html
+          echo '        overlayImage.src = src;' >> majortom/astronaut.html
+          echo '        overlay.classList.add("show");' >> majortom/astronaut.html
+          echo '    }' >> majortom/astronaut.html
+          echo '    function closeOverlay(event) {' >> majortom/astronaut.html
+          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/astronaut.html
+          echo '            const overlay = document.getElementById("overlay");' >> majortom/astronaut.html
+          echo '            overlay.classList.remove("show");' >> majortom/astronaut.html
+          echo '        }' >> majortom/astronaut.html
+          echo '    }' >> majortom/astronaut.html
+          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/astronaut.html
+          echo '    images.forEach(image => {' >> majortom/astronaut.html
+          echo '        image.addEventListener("click", function() {' >> majortom/astronaut.html
+          echo '            showImage(this.dataset.full);' >> majortom/astronaut.html
+          echo '        });' >> majortom/astronaut.html
+          echo '    });' >> majortom/astronaut.html
+          echo '    const overlay = document.getElementById("overlay");' >> majortom/astronaut.html
+          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/astronaut.html
+          echo '    const closeButton = document.getElementById("close");' >> majortom/astronaut.html
+          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/astronaut.html
+          echo '});' >> majortom/astronaut.html
           echo '</script>' >> majortom/astronaut.html
           echo '</body></html>' >> majortom/astronaut.html
 
@@ -72,5 +114,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/astronaut.html
-          git commit -m "Regenerate majortom/astronaut.html for gallery" || echo "No changes to commit"
-          git push origin master  # Adjust this if your main branch is something else
+          git commit -m "Regenerate majortom/astronaut.html for mosaic gallery with overlay" || echo "No changes to commit"
+          git push origin master  # Make sure this matches your main branch
