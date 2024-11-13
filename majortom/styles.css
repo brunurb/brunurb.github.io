@@ -74,13 +74,18 @@ footer a {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     display: none; /* Hidden by default */
+    z-index: 1000;
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
-    z-index: 1000;
+}
+
+/* Show the overlay with flex display */
+#overlay.show {
+    display: flex; /* Use flex display when visible */
 }
 
 /* Centering the image in the overlay */
-#overlay .overlay-content {
+.overlay-content {
     display: flex;
     justify-content: center;
     align-items: center;
