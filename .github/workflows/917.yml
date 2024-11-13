@@ -56,7 +56,7 @@ jobs:
 
           # Correctly add the images inside the myMosaic div
           for img in $(ls 917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='pictures/$img' alt='Gallery Image' />" >> majortom/917.html
+            echo "<img src='917/pictures/$img' alt='Gallery Image' />" >> majortom/917.html
           done
 
           echo '</div>' >> majortom/917.html
