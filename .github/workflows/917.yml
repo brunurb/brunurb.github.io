@@ -24,7 +24,6 @@ jobs:
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/917.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/917.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/917.html
-          echo '<link rel="stylesheet" type="text/css" href="majortom/jquery.mosaic.css" />' >> majortom/917.html  # Include the mosaic CSS
           echo '<style>' >> majortom/917.html
           echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/917.html
           echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/917.html
@@ -32,8 +31,8 @@ jobs:
           echo '.buttons { display: flex; gap: 2px; }' >> majortom/917.html
           echo '.nes-btn { margin-right: 2px; }' >> majortom/917.html
           echo '.nes-btn:last-child { margin-right: 0; }' >> majortom/917.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; max-width: 100%; }' >> majortom/917.html
-          echo 'img { margin: 5px; display: block; border: none; height: auto; }' >> majortom/917.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }' >> majortom/917.html
+          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/917.html
           echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/917.html
           echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/917.html
           echo '</style></head><body>' >> majortom/917.html
@@ -45,7 +44,7 @@ jobs:
           echo '  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/917.html
           echo '  <a href="https://brunurb.github.io/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/917.html
           echo '  <a href="https://brunurb.github.io/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/917.html
-          echo '  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">917</button></a>' >> majortom/917.html
+          echo '  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">planets</button></a>' >> majortom/917.html
           echo '  <a href="https://brunurb.github.io/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/917.html
           echo '  </div>' >> majortom/917.html
           echo '</div>' >> majortom/917.html
@@ -53,25 +52,23 @@ jobs:
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/917.html
           echo '<h1>Porsche 917</h1>' >> majortom/917.html
-          echo '<div id="myMosaic" data-max-row-height="400" data-refit-on-resize="1" data-default-aspect-ratio="1">' >> majortom/917.html  # Set up mosaic options
+          echo '<div id="myMosaic">' >> majortom/917.html
 
-          # Correctly add the images inside the myMosaic div, including data attributes for aspect ratio if needed
+          # Correctly add the images inside the myMosaic div
           for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            # You can define an aspect ratio here if known
-            aspect_ratio=1.5  # Placeholder aspect ratio; adjust as needed
-            echo "<img src='917/pictures/$img' data-aspect-ratio='$aspect_ratio' alt='Gallery Image'/>" >> majortom/917.html
+            echo "<img src='917/pictures/$img' alt='Gallery Image' />" >> majortom/917.html
           done
 
           echo '</div>' >> majortom/917.html
           echo '</main>' >> majortom/917.html
 
           # Footer with copyright symbol
-          echo '<footer>&copy; <a href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/917.html
+          echo '<footer>© <a href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/917.html
 
-          # Include required scripts
-          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>' >> majortom/917.html
-          echo '<script type="text/javascript" src="majortom/jquery.mosaic.js"></script>' >> majortom/917.html  # Include mosaic plugin
-          echo '<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>' >> majortom/917.html  # Initialize the mosaic
+          # Corrected paths for external CSS and scripts
+          echo '<link rel="stylesheet" type="text/css" href="majortom/jquery.mosaic.css">' >> majortom/917.html
+          echo '<script type="text/javascript" src="majortom/jquery.mosaic.js"></script>' >> majortom/917.html
+          echo '<script>$(document).ready(function() { $("#myMosaic").Mosaic({ maxRowHeight: 200 }); });</script>' >> majortom/917.html
           echo '</body></html>' >> majortom/917.html
 
       - name: Commit changes
@@ -79,5 +76,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/917.html
-          git commit -m "Regenerate 917.html for mosaic gallery" || echo "No changes to commit"
+          git commit -m "Regenerate /majortom/917.html for mosaic gallery" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
