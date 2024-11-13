@@ -3,7 +3,7 @@ name: Spaceships
 on:
   push:
     paths:
-      - 'spaceships/pictures/**'
+      - 'majortom/spaceships/pictures/**'
       - 'majortom/spaceships.html'
   workflow_dispatch:
 
@@ -14,61 +14,57 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Generate index.html
+      - name: Generate spaceships.html
         run: |
-          echo "Generating index.html..."
+          echo "Generating spaceships.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/spaceships.html
-          echo '<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/spaceships.html
-          echo '<title>Intergalactic Spaceships</title>' >> majortom/spaceships.html
-          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/spaceships.html
-          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/spaceships.html
-          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/spaceships.html
+          echo '<head>' >> majortom/spaceships.html
+          echo '<meta charset="UTF-8">' >> majortom/spaceships.html
+          echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/spaceships.html
+          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/spaceships.html
+          echo '<title>Spaceships Gallery</title>' >> majortom/spaceships.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/spaceships.html
           echo '<style>' >> majortom/spaceships.html
-          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/spaceships.html
-          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/spaceships.html
-          echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/spaceships.html
-          echo '.buttons { display: flex; gap: 2px; }' >> majortom/spaceships.html
-          echo '.nes-btn { margin-right: 2px; }' >> majortom/spaceships.html
-          echo '.nes-btn:last-child { margin-right: 0; }' >> majortom/spaceships.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }' >> majortom/spaceships.html
-          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/spaceships.html
-          echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/spaceships.html
-          echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/spaceships.html
-          echo '</style></head><body>' >> majortom/spaceships.html
+          # Add your CSS here; you could include specific styles for spaceships.html
+          echo '</style>' >> majortom/spaceships.html
+          echo '</head><body>' >> majortom/spaceships.html
 
           # Header
           echo '<div class="header">' >> majortom/spaceships.html
           echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/spaceships.html
-          echo '  <div class="buttons">' >> majortom/spaceships.html
-          echo '  <a href="https://brunurb.github.io/mosaica"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/spaceships.html
-          echo '  <a href="https://brunurb.github.io/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/spaceships.html
-          echo '  <a href="https://brunurb.github.io/mosaicc"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/spaceships.html
-          echo '  <a href="https://brunurb.github.io/mosaicd"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/spaceships.html
-          echo '  <a href="https://brunurb.github.io/mosaicb"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/spaceships.html
-          echo '  </div>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/917.html" class="nes-btn">917</a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/astronaut.html" class="nes-btn">Astronauts</a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/controls.html" class="nes-btn">Controls</a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/planets.html" class="nes-btn">Planets</a>' >> majortom/spaceships.html
           echo '</div>' >> majortom/spaceships.html
 
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/spaceships.html
-          echo '<h1>Intergalactic Spaceships</h1>' >> majortom/spaceships.html
+          echo '<h1>Spaceships Gallery</h1>' >> majortom/spaceships.html
           echo '<div id="myMosaic">' >> majortom/spaceships.html
 
-          # Correctly add the images inside the myMosaic div
-          for img in $(ls spaceships/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='pictures/$img' alt='Gallery Image' />" >> majortom/spaceships.html
+          # Loop to add images inside the myMosaic div
+          for img in $(ls majortom/spaceships/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
+            echo "<img src='https://brunurb.github.io/majortom/spaceships/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/spaceships.html
           done
 
           echo '</div>' >> majortom/spaceships.html
+          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/spaceships.html
+          echo '  <div class="overlay-content">' >> majortom/spaceships.html
+          echo '    <span id="close">&times;</span>' >> majortom/spaceships.html
+          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/spaceships.html
+          echo '  </div>' >> majortom/spaceships.html
+          echo '</div>' >> majortom/spaceships.html
           echo '</main>' >> majortom/spaceships.html
 
-          # Footer with copyright symbol
-          echo '<footer>&copy; <a href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/spaceships.html
+          # Footer
+          echo '<footer>© <a href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/spaceships.html
 
-          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>' >> majortom/spaceships.html
-          echo '<script type="text/javascript" src="jquery.mosaic.js"></script>' >> majortom/spaceships.html
-          echo '<script type="text/javascript" src="scripts.js"></script>' >> majortom/spaceships.html
-          echo '<script>$(document).ready(function() { $("#myMosaic").Mosaic({ maxRowHeight: 200 }); });</script>' >> majortom/spaceships.html
+          # Include jQuery and custom scripts
+          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/spaceships.html
+          echo '<script type="text/javascript">' >> majortom/spaceships.html
+          # Add the Overlay JS functionality here
+          echo '</script>' >> majortom/spaceships.html
           echo '</body></html>' >> majortom/spaceships.html
 
       - name: Commit changes
@@ -76,5 +72,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/spaceships.html
-          git commit -m "Regenerate index.html for mosaic gallery" || echo "No changes to commit"
-          git push origin master  # Make sure this matches your main branch
+          git commit -m "Regenerate majortom/spaceships.html for gallery" || echo "No changes to commit"
+          git push origin master  # Adjust this if your main branch is something else
