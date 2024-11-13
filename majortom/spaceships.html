@@ -1,26 +1,134 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mosaic Gallery</title>
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-<link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
-<link rel="stylesheet" type="text/css" href="styles.css" />
-<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intergalactic spaceshipss</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
+<style>
+body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }
+.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
+.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
+.buttons { display: flex; gap: 2px; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
+h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }
+footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }
+footer a { color: inherit; text-decoration: none; }
+#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
+#overlay.show { display: flex; }
+.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
+#overlay img { max-width: 100%; max-height: 100%; display: block; }
+#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+</style>
 </head><body>
-<div class="topnav nes-container is-rounded" id="myTopnav">
-  <a href="https://brunurb.github.io/" class="nes-btn">Home</a>
-  <a href="#917" class="nes-btn is-primary">917</a>
-  <a href="#news" class="nes-btn">News</a>
-  <a href="#contact" class="nes-btn">Contact</a>
-  <a href="#about" class="nes-btn">About</a>
+<div class="header">
+  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>
+  <div class="buttons">
+  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>
+  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">spaceships</button></a>
+  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>
+  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>
+  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>
+  </div>
 </div>
-<div id="myMosaic" class="nes-container is-rounded">
-<img src='pictures/34g3.jpeg' alt='Gallery Image' class='nes-img' />
-<img src='pictures/34g44g43.jpeg' alt='Gallery Image' class='nes-img' />
-<img src='pictures/4g3g43g43.jpeg' alt='Gallery Image' class='nes-img' />
-<img src='pictures/4t4rg4.jpeg' alt='Gallery Image' class='nes-img' />
+<main>
+<h1>Intergalactic spaceshipss</h1>
+<div id="myMosaic">
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/23d1321fds3.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/23d1321fds3.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/2f1ds23f1ds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/2f1ds23f1ds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/3fds13f1sd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/3fds13f1sd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/44g4545g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/44g4545g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/456465h4fd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/456465h4fd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/541dsg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/541dsg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/54564fss.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/54564fss.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5456gj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5456gj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/54d56d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/54d56d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/54df45f6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/54df45f6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/561ds651.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/561ds651.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5646h6fg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5646h6fg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/564ds4fds65fsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/564ds4fds65fsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/564f5h4d6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/564f5h4d6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5651gfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5651gfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/56ds45g4s.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/56ds45g4s.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/56f1dg6d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/56f1dg6d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/56f4d56f456sd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/56f4d56f456sd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/56f4h65dh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/56f4h65dh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/56fs44sf5646.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/56fs44sf5646.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/56fs456fs.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/56fs456fs.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/56g4d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/56g4d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5d4s5g4sg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5d4s5g4sg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5f4h564fd6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5f4h564fd6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5g456d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5g456d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5g456d6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5g456d6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5g46.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5g46.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5g465g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5g465g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5gf4d56d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5gf4d56d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/5sf6456fs.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/5sf6456fs.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/64d5ds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/64d5ds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/654df54h6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/654df54h6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/654ds5g4ds8.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/654ds5g4ds8.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/65ds1g56s.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/65ds1g56s.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/65f165sf1s.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/65f165sf1s.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/65h4df564h6d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/65h4df564h6d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/asf5f3135s.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/asf5f3135s.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/bmnbnmm.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/bmnbnmm.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/dsffsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/dsffsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/f64as1fas.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/f64as1fas.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/fd51g65fd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/fd51g65fd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/fds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/fds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/fsda564fs.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/fsda564fs.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/g65f1d65fd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/g65f1d65fd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/gfhfgsh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/gfhfgsh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/hgfshsgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/hgfshsgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/hsfhsfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/hsfhsfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/iul87.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/iul87.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/l888888uil.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/l888888uil.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/lkjlk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/lkjlk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/luil8.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/luil8.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/mbnmnbn.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/mbnmnbn.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/sadsasadsasfs.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/sadsasadsasfs.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/sdfsdfsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/sdfsdfsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/sfghfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/sfghfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/sfghgfh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/sfghgfh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/spaceships/pictures/vfgdv51fd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/vfgdv51fd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.mosaic.js"></script>
-<script type="text/javascript" src="scripts.js"></script>
-<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>
+<div id="overlay" onclick="closeOverlay(event)">
+  <div class="overlay-content">
+    <span id="close">×</span>
+    <img id="overlay-image" src="" alt="Full Size Image" />
+  </div>
+</div>
+</main>
+<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    function showImage(src) {
+        const overlay = document.getElementById("overlay");
+        const overlayImage = document.getElementById("overlay-image");
+        overlayImage.src = src;
+        overlay.classList.add("show");
+    }
+    function closeOverlay(event) {
+        if (event.target.id === "overlay" || event.target.id === "close") {
+            const overlay = document.getElementById("overlay");
+            overlay.classList.remove("show");
+        }
+    }
+    const images = document.querySelectorAll("#myMosaic img");
+    images.forEach(image => {
+        image.addEventListener("click", function() {
+            showImage(this.dataset.full);
+        });
+    });
+    const overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", closeOverlay);
+    const closeButton = document.getElementById("close");
+    closeButton.addEventListener("click", closeOverlay);
+});
+</script>
 </body></html>
