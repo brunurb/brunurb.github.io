@@ -55,8 +55,8 @@ jobs:
           echo '<div id="myMosaic">' >> majortom/917.html
 
           # Correctly add the images inside the myMosaic div
-          for img in $(ls 917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='917/pictures/$img' alt='Gallery Image' />" >> majortom/917.html
+          for img in $(ls  majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
+            echo "<img src=' majortom/917/pictures/$img' alt='Gallery Image' />" >> majortom/917.html
           done
 
           echo '</div>' >> majortom/917.html
@@ -75,6 +75,6 @@ jobs:
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
-          git add majortom/917.html
-          git commit -m "Regenerate 917.html for mosaic gallery" || echo "No changes to commit"
+          git add /majortom/917.html
+          git commit -m "Regenerate /majortom/917.html for mosaic gallery" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
