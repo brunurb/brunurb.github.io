@@ -24,7 +24,7 @@ jobs:
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/917.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/917.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/917.html
-          echo '<link rel="stylesheet" type="text/css" href="https://brunurb.github.io/majortom/styles.css">' >> majortom/917.html
+          echo '<link rel="stylesheet" type="text/css" href="styles.css">' >> majortom/917.html
           echo '</head><body>' >> majortom/917.html
 
           # Header
@@ -45,8 +45,8 @@ jobs:
           echo '<div id="myMosaic">' >> majortom/917.html
 
           # Add images in the myMosaic div with click event
-          for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='majortom/917/pictures/$img' alt='Gallery Image' data-full='majortom/917/pictures/$img' class='thumbnail' />" >> majortom/917.html
+          for img in $(ls 917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
+            echo "<img src='917/pictures/$img' alt='Gallery Image' data-full='majortom/917/pictures/$img' class='thumbnail' />" >> majortom/917.html
           done
 
           echo '</div>' >> majortom/917.html
@@ -61,7 +61,7 @@ jobs:
 
           # Include jQuery and custom scripts
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/917.html
-          echo '<script type="text/javascript" src="https://brunurb.github.io/majortom/scripts.js"></script>' >> majortom/917.html
+          echo '<script type="text/javascript" src="scripts.js"></script>' >> majortom/917.html
           echo '</body></html>' >> majortom/917.html
 
       - name: Commit changes
