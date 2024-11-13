@@ -19,7 +19,7 @@ jobs:
           echo "Generating planets.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/planets.html
           echo '<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/planets.html
-          echo '<title>Intergalactic planets</title>' >> majortom/planets.html
+          echo '<title>Intergalactic Planets</title>' >> majortom/planets.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/planets.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/planets.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/planets.html
