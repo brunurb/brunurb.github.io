@@ -22,7 +22,7 @@ jobs:
           echo '<meta charset="UTF-8">' >> majortom/astronaut.html
           echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/astronaut.html
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/astronaut.html
-          echo '<title>Porsche astronaut</title>' >> majortom/astronaut.html
+          echo '<title>Intergalactic Astronauts</title>' >> majortom/astronaut.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/astronaut.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/astronaut.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/astronaut.html
@@ -49,11 +49,11 @@ jobs:
           echo '<div class="header">' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/astronaut.html
           echo '  <div class="buttons">' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-warning">astronaut</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/astronaut.html
           echo '  </div>' >> majortom/astronaut.html
           echo '</div>' >> majortom/astronaut.html
 
