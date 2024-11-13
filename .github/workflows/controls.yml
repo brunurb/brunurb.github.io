@@ -22,7 +22,7 @@ jobs:
           echo '<meta charset="UTF-8">' >> majortom/controls.html
           echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/controls.html
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/controls.html
-          echo '<title>Intergalactic controlss</title>' >> majortom/controls.html
+          echo '<title>Intergalactic Controls</title>' >> majortom/controls.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/controls.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/controls.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/controls.html
@@ -59,7 +59,7 @@ jobs:
 
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/controls.html
-          echo '<h1>Intergalactic controlss</h1>' >> majortom/controls.html
+          echo '<h1>Intergalactic Controls</h1>' >> majortom/controls.html
           echo '<div id="myMosaic">' >> majortom/controls.html
 
           # Correctly add images inside the myMosaic div
