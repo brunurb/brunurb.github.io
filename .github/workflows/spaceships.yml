@@ -1,10 +1,10 @@
-name: spacecraft
+name: spaceships
 
 on:
   push:
     paths:
-      - 'majortom/spacecraft/pictures/**'
-      - 'majortom/spacecraft.html'
+      - 'majortom/spaceships/pictures/**'
+      - 'majortom/spaceships.html'
   workflow_dispatch:
 
 jobs:
@@ -14,105 +14,105 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Generate spacecraft.html
+      - name: Generate spaceships.html
         run: |
-          echo "Generating spacecraft.html..."
-          echo '<!DOCTYPE html><html lang="en">' > majortom/spacecraft.html
-          echo '<head>' >> majortom/spacecraft.html
-          echo '<meta charset="UTF-8">' >> majortom/spacecraft.html
-          echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/spacecraft.html
-          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/spacecraft.html
-          echo '<title>Intergalactic Spacecrafts</title>' >> majortom/spacecraft.html
-          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/spacecraft.html
-          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/spacecraft.html
-          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/spacecraft.html
-          echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/spacecraft.html
-          echo '<style>' >> majortom/spacecraft.html
-          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/spacecraft.html
-          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/spacecraft.html
-          echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/spacecraft.html
-          echo '.buttons { display: flex; gap: 2px; }' >> majortom/spacecraft.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/spacecraft.html
-          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/spacecraft.html
-          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/spacecraft.html
-          echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/spacecraft.html
-          echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/spacecraft.html
-          echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/spacecraft.html
-          echo '#overlay.show { display: flex; }' >> majortom/spacecraft.html
-          echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/spacecraft.html
-          echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/spacecraft.html
-          echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/spacecraft.html
-          echo '</style>' >> majortom/spacecraft.html
-          echo '</head><body>' >> majortom/spacecraft.html
+          echo "Generating spaceships.html..."
+          echo '<!DOCTYPE html><html lang="en">' > majortom/spaceships.html
+          echo '<head>' >> majortom/spaceships.html
+          echo '<meta charset="UTF-8">' >> majortom/spaceships.html
+          echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/spaceships.html
+          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/spaceships.html
+          echo '<title>Intergalactic spaceshipss</title>' >> majortom/spaceships.html
+          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/spaceships.html
+          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/spaceships.html
+          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/spaceships.html
+          echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/spaceships.html
+          echo '<style>' >> majortom/spaceships.html
+          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/spaceships.html
+          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/spaceships.html
+          echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/spaceships.html
+          echo '.buttons { display: flex; gap: 2px; }' >> majortom/spaceships.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/spaceships.html
+          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/spaceships.html
+          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/spaceships.html
+          echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/spaceships.html
+          echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/spaceships.html
+          echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/spaceships.html
+          echo '#overlay.show { display: flex; }' >> majortom/spaceships.html
+          echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/spaceships.html
+          echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/spaceships.html
+          echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/spaceships.html
+          echo '</style>' >> majortom/spaceships.html
+          echo '</head><body>' >> majortom/spaceships.html
 
           # Header
-          echo '<div class="header">' >> majortom/spacecraft.html
-          echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/spacecraft.html
-          echo '  <div class="buttons">' >> majortom/spacecraft.html
-          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/spacecraft.html
-          echo '  <a href="https://brunurb.github.io/majortom/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/spacecraft.html
-          echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/spacecraft.html
-          echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/spacecraft.html
-          echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/spacecraft.html
-          echo '  </div>' >> majortom/spacecraft.html
-          echo '</div>' >> majortom/spacecraft.html
+          echo '<div class="header">' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/spaceships.html
+          echo '  <div class="buttons">' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">spaceships</button></a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/spaceships.html
+          echo '  </div>' >> majortom/spaceships.html
+          echo '</div>' >> majortom/spaceships.html
 
           # Main content with centered text in mosaic div
-          echo '<main>' >> majortom/spacecraft.html
-          echo '<h1>Intergalactic Spacecrafts</h1>' >> majortom/spacecraft.html
-          echo '<div id="myMosaic">' >> majortom/spacecraft.html
+          echo '<main>' >> majortom/spaceships.html
+          echo '<h1>Intergalactic spaceshipss</h1>' >> majortom/spaceships.html
+          echo '<div id="myMosaic">' >> majortom/spaceships.html
 
           # Correctly add images inside the myMosaic div
-          for img in $(ls majortom/spacecraft/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='https://brunurb.github.io/majortom/spacecraft/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spacecraft/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/spacecraft.html
+          for img in $(ls majortom/spaceships/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
+            echo "<img src='https://brunurb.github.io/majortom/spaceships/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/spaceships/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/spaceships.html
           done
 
-          echo '</div>' >> majortom/spacecraft.html
-          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/spacecraft.html
-          echo '  <div class="overlay-content">' >> majortom/spacecraft.html
-          echo '    <span id="close">×</span>' >> majortom/spacecraft.html
-          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/spacecraft.html
-          echo '  </div>' >> majortom/spacecraft.html
-          echo '</div>' >> majortom/spacecraft.html
-          echo '</main>' >> majortom/spacecraft.html
+          echo '</div>' >> majortom/spaceships.html
+          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/spaceships.html
+          echo '  <div class="overlay-content">' >> majortom/spaceships.html
+          echo '    <span id="close">×</span>' >> majortom/spaceships.html
+          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/spaceships.html
+          echo '  </div>' >> majortom/spaceships.html
+          echo '</div>' >> majortom/spaceships.html
+          echo '</main>' >> majortom/spaceships.html
 
           # Footer with copyright symbol
-          echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/spacecraft.html
+          echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/spaceships.html
 
           # Include jQuery and custom scripts
-          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/spacecraft.html
-          echo '<script type="text/javascript">' >> majortom/spacecraft.html
-          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/spacecraft.html
-          echo '    function showImage(src) {' >> majortom/spacecraft.html
-          echo '        const overlay = document.getElementById("overlay");' >> majortom/spacecraft.html
-          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/spacecraft.html
-          echo '        overlayImage.src = src;' >> majortom/spacecraft.html
-          echo '        overlay.classList.add("show");' >> majortom/spacecraft.html
-          echo '    }' >> majortom/spacecraft.html
-          echo '    function closeOverlay(event) {' >> majortom/spacecraft.html
-          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/spacecraft.html
-          echo '            const overlay = document.getElementById("overlay");' >> majortom/spacecraft.html
-          echo '            overlay.classList.remove("show");' >> majortom/spacecraft.html
-          echo '        }' >> majortom/spacecraft.html
-          echo '    }' >> majortom/spacecraft.html
-          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/spacecraft.html
-          echo '    images.forEach(image => {' >> majortom/spacecraft.html
-          echo '        image.addEventListener("click", function() {' >> majortom/spacecraft.html
-          echo '            showImage(this.dataset.full);' >> majortom/spacecraft.html
-          echo '        });' >> majortom/spacecraft.html
-          echo '    });' >> majortom/spacecraft.html
-          echo '    const overlay = document.getElementById("overlay");' >> majortom/spacecraft.html
-          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/spacecraft.html
-          echo '    const closeButton = document.getElementById("close");' >> majortom/spacecraft.html
-          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/spacecraft.html
-          echo '});' >> majortom/spacecraft.html
-          echo '</script>' >> majortom/spacecraft.html
-          echo '</body></html>' >> majortom/spacecraft.html
+          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/spaceships.html
+          echo '<script type="text/javascript">' >> majortom/spaceships.html
+          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/spaceships.html
+          echo '    function showImage(src) {' >> majortom/spaceships.html
+          echo '        const overlay = document.getElementById("overlay");' >> majortom/spaceships.html
+          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/spaceships.html
+          echo '        overlayImage.src = src;' >> majortom/spaceships.html
+          echo '        overlay.classList.add("show");' >> majortom/spaceships.html
+          echo '    }' >> majortom/spaceships.html
+          echo '    function closeOverlay(event) {' >> majortom/spaceships.html
+          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/spaceships.html
+          echo '            const overlay = document.getElementById("overlay");' >> majortom/spaceships.html
+          echo '            overlay.classList.remove("show");' >> majortom/spaceships.html
+          echo '        }' >> majortom/spaceships.html
+          echo '    }' >> majortom/spaceships.html
+          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/spaceships.html
+          echo '    images.forEach(image => {' >> majortom/spaceships.html
+          echo '        image.addEventListener("click", function() {' >> majortom/spaceships.html
+          echo '            showImage(this.dataset.full);' >> majortom/spaceships.html
+          echo '        });' >> majortom/spaceships.html
+          echo '    });' >> majortom/spaceships.html
+          echo '    const overlay = document.getElementById("overlay");' >> majortom/spaceships.html
+          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/spaceships.html
+          echo '    const closeButton = document.getElementById("close");' >> majortom/spaceships.html
+          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/spaceships.html
+          echo '});' >> majortom/spaceships.html
+          echo '</script>' >> majortom/spaceships.html
+          echo '</body></html>' >> majortom/spaceships.html
 
       - name: Commit changes
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
-          git add majortom/spacecraft.html
-          git commit -m "Regenerate majortom/spacecraft.html for mosaic gallery with overlay" || echo "No changes to commit"
+          git add majortom/spaceships.html
+          git commit -m "Regenerate majortom/spaceships.html for mosaic gallery with overlay" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
