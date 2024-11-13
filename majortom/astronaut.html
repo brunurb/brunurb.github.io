@@ -1,6 +1,9 @@
 <!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intergalactic astronaut</title>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porsche astronaut</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -10,31 +13,252 @@ body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press
 .header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
 .header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
 .buttons { display: flex; gap: 2px; }
-.nes-btn { margin-right: 2px; }
-.nes-btn:last-child { margin-right: 0; }
-#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
 h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }
 footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }
 footer a { color: inherit; text-decoration: none; }
-</style></head><body>
+#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
+#overlay.show { display: flex; }
+.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
+#overlay img { max-width: 100%; max-height: 100%; display: block; }
+#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+</style>
+</head><body>
 <div class="header">
   <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>
   <div class="buttons">
   <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>
   <a href="https://brunurb.github.io/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>
   <a href="https://brunurb.github.io/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>
-  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">917</button></a>
-  <a href="https://brunurb.github.io/917"><button type="button" class="nes-btn is-warning">917</button></a>
+  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">Planets</button></a>
+  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-warning">astronaut</button></a>
   </div>
 </div>
 <main>
-<h1>Intergalactic astronaut</h1>
+<h1>Intergalctic Astronauts</h1>
 <div id="myMosaic">
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/1000AD-1.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/1000AD-1.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/2000AD-2.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/2000AD-2.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/3000AD.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/3000AD.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/34g3.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/34g3.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/34g44g43.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/34g44g43.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/43g443g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/43g443g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/465465fds.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/465465fds.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/4654fd46h5d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/4654fd46h5d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/4g3g43g43.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/4g3g43g43.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/4t4rg4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/4t4rg4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/564hdf46h5.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/564hdf46h5.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/568m56.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/568m56.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/568m568.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/568m568.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/586,5m56.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/586,5m56.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/5dfh454h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/5dfh454h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/658m856.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/658m856.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/658m86.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/658m86.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/67i67.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/67i67.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/67i76.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/67i76.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/67ii.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/67ii.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/67iiiiiiii6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/67iiiiiiii6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/76i6i.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/76i6i.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/7887676.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/7887676.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/865m.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/865m.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/865m5856.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/865m5856.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/865m6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/865m6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/86m55555.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/86m55555.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/86m56.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/86m56.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/b,ngh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/b,ngh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/bccx.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/bccx.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/bfdbfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/bfdbfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/bvcbnvb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/bvcbnvb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/bvcbv.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/bvcbv.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/cbvvcb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/cbvvcb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/cvbcvb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/cvbcvb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/cvxbzf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/cvxbzf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/cxbcx.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/cxbcx.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dbdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dbdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dbfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dbfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dbffdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dbffdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ddddb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ddddb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dfbfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dfbfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dfgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dfgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dfgfdg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dfgfdg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dfggfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dfggfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dfhhhhhhhhhhhhh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dfhhhhhhhhhhhhh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dfssfdfsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dfssfdfsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dgfdgd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dgfdgd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dgfgfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dgfgfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dgssssssssssss.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dgssssssssssss.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dsdsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dsdsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dsfffffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dsfffffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dsffffffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dsffffffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dsggsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dsggsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dsgsdg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dsgsdg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/dsgsgger.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/dsgsgger.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/eu66.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/eu66.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ewr.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ewr.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fasfassaaaa.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fasfassaaaa.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fbdbf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fbdbf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fbdfbf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fbdfbf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdbdfb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdbdfb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdbf.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdbf.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdbfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdbfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdbfdb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdbfdb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdbfdfb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdbfdfb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdfdsdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdfdsdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdfff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdfff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdgdfgfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdgdfgfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdgfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdgfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdhfdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdhfdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdhfdh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdhfdh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdsddddddddfsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdsddddddddfsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdsdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdsdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fdsfsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fdsfsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ffffffffffffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ffffffffffffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fghgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fghgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fghgfhfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fghgfhfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fghhfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fghhfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fghhhhh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fghhhhh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fsafas.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fsafas.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fsafasf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fsafasf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fsasa.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fsasa.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fsdfdsfds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fsdfdsfds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fsdfsdsfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fsdfsdsfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/fsffafas.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/fsffafas.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/g344444444444.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/g344444444444.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/g4erfdg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/g4erfdg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/g4errr.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/g4errr.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gdfdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gdfdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gdfeeff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gdfeeff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gdffd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gdffd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gdfff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gdfff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gdfgfdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gdfgfdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/generated-image-1731189763163.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/generated-image-1731189763163.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gerr.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gerr.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfddf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfddf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfdfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfdfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfdfgfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfdfgfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfdgdfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfdgdfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfdgdgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfdgdgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfdgfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfdgfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfdgfdfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfdgfdfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfdgfdg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfdgfdg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfffffdfgfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfffffdfgfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gffgfdddd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gffgfdddd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfhfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfhfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfhfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfhfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfhfghgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfhfghgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfhgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfhgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gfhhfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gfhhfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ghfffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ghfffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ghfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ghfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ghfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ghfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ghfhfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ghfhfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gnfgnfgn.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gnfgnfgn.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gngnnfgn.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gngnnfgn.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/gngnngng.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/gngnngng.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hfggfh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hfggfh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hfgghf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hfgghf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hfghfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hfghfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hfghgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hfghgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hfhgfh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hfhgfh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgfffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgfffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgffg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgffg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgffghffhg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgffghffhg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgffhfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgffhfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgfgfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgfgfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgfh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgfh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgfhfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgfhfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hgfhfgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hgfhfgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hghgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hghgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hhhhh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hhhhh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hhhhhhhhhhh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hhhhhhhhhhh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hrerreh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hrerreh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hrreer.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hrreer.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/hrtbrrrf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/hrtbrrrf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/jggggggg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/jggggggg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/jghjhg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/jghjhg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/jjjjjjjjg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/jjjjjjjjg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/jjjjjjjjjjjjjjjjj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/jjjjjjjjjjjjjjjjj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/kkkkkkkkkkkkkkkk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/kkkkkkkkkkkkkkkk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/m8656.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/m8656.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/nbmbn.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/nbmbn.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ngfnggfnfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ngfnggfnfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/ngnggngfn.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/ngnggngfn.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/rewrew.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/rewrew.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/rhhhhh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/rhhhhh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/rhr.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/rhr.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/rhtttrh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/rhtttrh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/rrrrrrrrrrr.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/rrrrrrrrrrr.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/safasf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/safasf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/safsa.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/safsa.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sdds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sdds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sdssd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sdssd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sdssssss.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sdssssss.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sfaaffafsasfafs.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sfaaffafsasfafs.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sffffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sffffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sfffffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sfffffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sffffffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sffffffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/sfffffffffffff.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/sfffffffffffff.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/t4r4f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/t4r4f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/thsrrthrh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/thsrrthrh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/trhttrth.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/trhttrth.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/tuyyyyyyyyyyyy.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/tuyyyyyyyyyyyy.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/u65e.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/u65e.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/u6ty.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/u6ty.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/u76i76.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/u76i76.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/utyyyyyyyyy.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/utyyyyyyyyy.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/utyyyyyyyyyy.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/utyyyyyyyyyy.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/uytttttttttt.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/uytttttttttt.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/uytttttttttttttttt.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/uytttttttttttttttt.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/vcbbvc.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/vcbbvc.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/vcbvcc.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/vcbvcc.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/vmbmvb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/vmbmvb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/vxzv.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/vxzv.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/vzx.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/vzx.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/xcbcb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/xcbcb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/xcbxc.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/xcbxc.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/xcbxcb.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/xcbxcb.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/xvzvx.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/xvzvx.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/xxvzvx.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/xxvzvx.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/xxxxxxxxxxxv.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/xxxxxxxxxxxv.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/astronaut/pictures/zxxxxxxxxxv.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/zxxxxxxxxxv.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+</div>
+<div id="overlay" onclick="closeOverlay(event)">
+  <div class="overlay-content">
+    <span id="close">×</span>
+    <img id="overlay-image" src="" alt="Full Size Image" />
+  </div>
 </div>
 </main>
-<footer>&copy; <a href="https://brunurb.github.io/">by brunurb</a></footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.mosaic.js"></script>
-<script type="text/javascript" src="scripts.js"></script>
-<script>$(document).ready(function() { $("#myMosaic").Mosaic({ maxRowHeight: 200 }); });</script>
+<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    function showImage(src) {
+        const overlay = document.getElementById("overlay");
+        const overlayImage = document.getElementById("overlay-image");
+        overlayImage.src = src;
+        overlay.classList.add("show");
+    }
+    function closeOverlay(event) {
+        if (event.target.id === "overlay" || event.target.id === "close") {
+            const overlay = document.getElementById("overlay");
+            overlay.classList.remove("show");
+        }
+    }
+    const images = document.querySelectorAll("#myMosaic img");
+    images.forEach(image => {
+        image.addEventListener("click", function() {
+            showImage(this.dataset.full);
+        });
+    });
+    const overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", closeOverlay);
+    const closeButton = document.getElementById("close");
+    closeButton.addEventListener("click", closeOverlay);
+});
+</script>
 </body></html>
