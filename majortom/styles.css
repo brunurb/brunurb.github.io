@@ -1,62 +1,57 @@
+/* General styles */
 body {
-    background-color: #142936;
-    color: #92cfbf;
+    font-family: 'Press Start 2P', cursive;
     margin: 0;
-    font-family: "Press Start 2P", cursive;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
 }
+
+/* Header styles */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #224357;
-    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9);
-    z-index: 10;
+    padding: 15px;
+    background-color: #222;
 }
+
 .header a {
-    color: #cd3162;
+    color: #fff;
     text-decoration: none;
-    font-family: "Press Start 2P", cursive;
-    font-size: 1em;
 }
-.buttons {
+
+.header .buttons {
     display: flex;
-    gap: 2px;
+    gap: 10px;
 }
-#myMosaic {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-#myMosaic img {
-    border: none;
-    max-width: calc(100% / 8);
-    height: auto;
-}
-h1 {
+
+/* Main content styles */
+main {
     text-align: center;
-    color: #dedcff;
-    margin: 80px 0 14px;
-    font-size: 14px;
+    padding: 20px;
 }
-footer {
-    text-align: left;
-    padding: 10px;
-    font-size: 10px;
-    background-color: #224357;
-    color: #92cfbf;
+
+/* Mosaic styles */
+#mosaic, #myMosaic {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
 }
-footer a {
-    color: inherit;
-    text-decoration: none;
+
+/* Thumbnail images */
+.thumbnail {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay styles */
 #overlay {
     position: fixed;
     top: 0;
@@ -65,14 +60,16 @@ footer a {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
     z-index: 1000;
 }
+
 #overlay img {
     max-width: 90%;
     max-height: 90%;
 }
+
 #close {
     position: absolute;
     top: 20px;
@@ -80,4 +77,25 @@ footer a {
     font-size: 40px;
     color: white;
     cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header .buttons {
+        flex-wrap: wrap;
+    }
 }
