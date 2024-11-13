@@ -1,373 +1,40 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mosaic Gallery</title>
-<link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
-<link rel="stylesheet" type="text/css" href="styles.css" />
-<style>#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; } img { margin: 0; padding: 0; display: block; border: none;}</style>
-</head><body>
-<div class="topnav" id="myTopnav">
-  <a href="https://brunurb.github.io/">Home</a>
-  <a href="#917" class="active">917</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intergalactic 917</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
+<style>
+body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }
+.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
+.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
+.buttons { display: flex; gap: 2px; }
+.nes-btn { margin-right: 2px; }
+.nes-btn:last-child { margin-right: 0; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; } img { margin: 0; display: block; border: none; max-width: calc(50% - 0px); height: auto; }
+h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }
+footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }
+footer a { color: inherit; text-decoration: none; }
+</style></head><body>
+<div class="header">
+  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>
+  <div class="buttons">
+  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>
+  <a href="https://brunurb.github.io/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>
+  <a href="https://brunurb.github.io/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>
+  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">917</button></a>
+  <a href="https://brunurb.github.io/917"><button type="button" class="nes-btn is-warning">917</button></a>
+  </div>
 </div>
-<script>function myFunction() { var x = document.getElementById("myTopnav"); if (x.className === "topnav") { x.className += " responsive"; } else { x.className = "topnav"; } }</script>
+<main>
+<h1>Porsche 917</h1>
 <div id="myMosaic">
-<img src='pictures/--WwWcSG.jpeg' alt='Gallery Image' />
-<img src='pictures/-AP3hZE9.jpeg' alt='Gallery Image' />
-<img src='pictures/00E3AIgd.jpeg' alt='Gallery Image' />
-<img src='pictures/0eFn0Zys.jpeg' alt='Gallery Image' />
-<img src='pictures/0h2f06hfg65hf.jpeg' alt='Gallery Image' />
-<img src='pictures/0pVflMdo.jpeg' alt='Gallery Image' />
-<img src='pictures/10110.jpeg' alt='Gallery Image' />
-<img src='pictures/1111.jpeg' alt='Gallery Image' />
-<img src='pictures/116516516516161.jpeg' alt='Gallery Image' />
-<img src='pictures/121211221.jpeg' alt='Gallery Image' />
-<img src='pictures/122145454578.jpeg' alt='Gallery Image' />
-<img src='pictures/1224.jpeg' alt='Gallery Image' />
-<img src='pictures/132.webp' alt='Gallery Image' />
-<img src='pictures/1321321.jpeg' alt='Gallery Image' />
-<img src='pictures/141819191.jpeg' alt='Gallery Image' />
-<img src='pictures/151515151.jpeg' alt='Gallery Image' />
-<img src='pictures/151515161.jpeg' alt='Gallery Image' />
-<img src='pictures/151551151.jpeg' alt='Gallery Image' />
-<img src='pictures/1516.jpeg' alt='Gallery Image' />
-<img src='pictures/1561516116.jpeg' alt='Gallery Image' />
-<img src='pictures/15615165165165kj.jpeg' alt='Gallery Image' />
-<img src='pictures/15616.png' alt='Gallery Image' />
-<img src='pictures/156165.jpeg' alt='Gallery Image' />
-<img src='pictures/1561651.jpeg' alt='Gallery Image' />
-<img src='pictures/15616516.jpeg' alt='Gallery Image' />
-<img src='pictures/156165165.jpeg' alt='Gallery Image' />
-<img src='pictures/15616516516.jpeg' alt='Gallery Image' />
-<img src='pictures/156165165161.jpeg' alt='Gallery Image' />
-<img src='pictures/15616516zx516xz.jpeg' alt='Gallery Image' />
-<img src='pictures/16.jpeg' alt='Gallery Image' />
-<img src='pictures/1616.jpeg' alt='Gallery Image' />
-<img src='pictures/16165161.jpeg' alt='Gallery Image' />
-<img src='pictures/16165165.jpeg' alt='Gallery Image' />
-<img src='pictures/16165165156.jpeg' alt='Gallery Image' />
-<img src='pictures/16515.jpeg' alt='Gallery Image' />
-<img src='pictures/165161.jpeg' alt='Gallery Image' />
-<img src='pictures/165161511.jpeg' alt='Gallery Image' />
-<img src='pictures/1651651.jpeg' alt='Gallery Image' />
-<img src='pictures/16516516.jpeg' alt='Gallery Image' />
-<img src='pictures/1651651651651.jpeg' alt='Gallery Image' />
-<img src='pictures/16516565165.jpeg' alt='Gallery Image' />
-<img src='pictures/1651d6sf5s1.jpeg' alt='Gallery Image' />
-<img src='pictures/1651sdds98f9ds.jpeg' alt='Gallery Image' />
-<img src='pictures/165ds15f1sd6f1ds.jpeg' alt='Gallery Image' />
-<img src='pictures/165f165hf6.jpeg' alt='Gallery Image' />
-<img src='pictures/165fd16f5sd1f6s.jpeg' alt='Gallery Image' />
-<img src='pictures/16951fsd6f5s.jpeg' alt='Gallery Image' />
-<img src='pictures/16sd5f561s651.jpeg' alt='Gallery Image' />
-<img src='pictures/1731034862003uc8gbyuo.webp' alt='Gallery Image' />
-<img src='pictures/185961.jpeg' alt='Gallery Image' />
-<img src='pictures/19181.jpeg' alt='Gallery Image' />
-<img src='pictures/1c1v65xc1v6.jpeg' alt='Gallery Image' />
-<img src='pictures/1c65v16v1xc.jpeg' alt='Gallery Image' />
-<img src='pictures/1g61g6516gd.jpeg' alt='Gallery Image' />
-<img src='pictures/1g6h15fh1f51h.jpeg' alt='Gallery Image' />
-<img src='pictures/1ghf651h6gf165fh1.jpeg' alt='Gallery Image' />
-<img src='pictures/1s-_7aXm.jpeg' alt='Gallery Image' />
-<img src='pictures/20gf2032g02hf0g.jpeg' alt='Gallery Image' />
-<img src='pictures/213156156.jpeg' alt='Gallery Image' />
-<img src='pictures/21651.webp' alt='Gallery Image' />
-<img src='pictures/22255555.jpeg' alt='Gallery Image' />
-<img src='pictures/231132123123.jpeg' alt='Gallery Image' />
-<img src='pictures/23131321.jpeg' alt='Gallery Image' />
-<img src='pictures/23132132132.jpeg' alt='Gallery Image' />
-<img src='pictures/2499837665.webp' alt='Gallery Image' />
-<img src='pictures/25gf651h6gf.jpeg' alt='Gallery Image' />
-<img src='pictures/27427532745.png' alt='Gallery Image' />
-<img src='pictures/2ex-I-3R.jpeg' alt='Gallery Image' />
-<img src='pictures/3-8DH0pB.jpeg' alt='Gallery Image' />
-<img src='pictures/315811cdc37e.jpeg' alt='Gallery Image' />
-<img src='pictures/3B1WTJ2v.jpeg' alt='Gallery Image' />
-<img src='pictures/3cD3bCOR.jpeg' alt='Gallery Image' />
-<img src='pictures/3dgThpHL.jpeg' alt='Gallery Image' />
-<img src='pictures/3jAyfywl.jpeg' alt='Gallery Image' />
-<img src='pictures/3vIDJI5A.jpeg' alt='Gallery Image' />
-<img src='pictures/41.jpeg' alt='Gallery Image' />
-<img src='pictures/416416516.jpeg' alt='Gallery Image' />
-<img src='pictures/4165.jpg' alt='Gallery Image' />
-<img src='pictures/41814181818.jpeg' alt='Gallery Image' />
-<img src='pictures/4191515161.jpeg' alt='Gallery Image' />
-<img src='pictures/41cx654165vcx1.jpeg' alt='Gallery Image' />
-<img src='pictures/41fd1g981fd9g14d.jpeg' alt='Gallery Image' />
-<img src='pictures/41fgh165h1.jpeg' alt='Gallery Image' />
-<img src='pictures/41s46fd16s1.jpeg' alt='Gallery Image' />
-<img src='pictures/4211.jpeg' alt='Gallery Image' />
-<img src='pictures/42424.jpeg' alt='Gallery Image' />
-<img src='pictures/424242.jpeg' alt='Gallery Image' />
-<img src='pictures/42897bb08b2f.jpeg' alt='Gallery Image' />
-<img src='pictures/441641.jpeg' alt='Gallery Image' />
-<img src='pictures/44569161.jpeg' alt='Gallery Image' />
-<img src='pictures/4484848484848.jpeg' alt='Gallery Image' />
-<img src='pictures/45154xcc1.webp' alt='Gallery Image' />
-<img src='pictures/45156165165.jpeg' alt='Gallery Image' />
-<img src='pictures/4516511.webp' alt='Gallery Image' />
-<img src='pictures/45165161.jpeg' alt='Gallery Image' />
-<img src='pictures/4516541.jpeg' alt='Gallery Image' />
-<img src='pictures/45196196.jpeg' alt='Gallery Image' />
-<img src='pictures/4524245.png' alt='Gallery Image' />
-<img src='pictures/456.jpeg' alt='Gallery Image' />
-<img src='pictures/457.jpeg' alt='Gallery Image' />
-<img src='pictures/4598464.webp' alt='Gallery Image' />
-<img src='pictures/45ds1f61f.jpeg' alt='Gallery Image' />
-<img src='pictures/45fsd54146f16s.jpeg' alt='Gallery Image' />
-<img src='pictures/46541515.jpeg' alt='Gallery Image' />
-<img src='pictures/46646.jpeg' alt='Gallery Image' />
-<img src='pictures/484.jpeg' alt='Gallery Image' />
-<img src='pictures/484841818.jpeg' alt='Gallery Image' />
-<img src='pictures/4951561516.jpeg' alt='Gallery Image' />
-<img src='pictures/4YB0N-L6.jpeg' alt='Gallery Image' />
-<img src='pictures/4b69848f736c.jpeg' alt='Gallery Image' />
-<img src='pictures/511515515.jpeg' alt='Gallery Image' />
-<img src='pictures/511616.jpeg' alt='Gallery Image' />
-<img src='pictures/514561616.jpeg' alt='Gallery Image' />
-<img src='pictures/51511848484.jpeg' alt='Gallery Image' />
-<img src='pictures/515616.webp' alt='Gallery Image' />
-<img src='pictures/51561651.jpeg' alt='Gallery Image' />
-<img src='pictures/5161.jpeg' alt='Gallery Image' />
-<img src='pictures/51616.jpeg' alt='Gallery Image' />
-<img src='pictures/5165.jpeg' alt='Gallery Image' />
-<img src='pictures/51651.jpeg' alt='Gallery Image' />
-<img src='pictures/516516.jpeg' alt='Gallery Image' />
-<img src='pictures/5165161.jpeg' alt='Gallery Image' />
-<img src='pictures/516zx5161.jpeg' alt='Gallery Image' />
-<img src='pictures/5195159161616.jpeg' alt='Gallery Image' />
-<img src='pictures/52161f5h165gh.jpeg' alt='Gallery Image' />
-<img src='pictures/521g51h65g1f.jpeg' alt='Gallery Image' />
-<img src='pictures/525615.png' alt='Gallery Image' />
-<img src='pictures/541515.jpeg' alt='Gallery Image' />
-<img src='pictures/54156161.jpeg' alt='Gallery Image' />
-<img src='pictures/5416.webp' alt='Gallery Image' />
-<img src='pictures/54165.jpeg' alt='Gallery Image' />
-<img src='pictures/541fs65s1d.jpeg' alt='Gallery Image' />
-<img src='pictures/546511.jpeg' alt='Gallery Image' />
-<img src='pictures/546516151.jpeg' alt='Gallery Image' />
-<img src='pictures/546541.jpeg' alt='Gallery Image' />
-<img src='pictures/54723.png' alt='Gallery Image' />
-<img src='pictures/54sfd489f41sd6d.jpeg' alt='Gallery Image' />
-<img src='pictures/5616.jpg' alt='Gallery Image' />
-<img src='pictures/56161.jpeg' alt='Gallery Image' />
-<img src='pictures/56161.png' alt='Gallery Image' />
-<img src='pictures/561651.jpeg' alt='Gallery Image' />
-<img src='pictures/56165fh1gf.jpeg' alt='Gallery Image' />
-<img src='pictures/5616h1f51h.jpeg' alt='Gallery Image' />
-<img src='pictures/561f561hg651f6.jpeg' alt='Gallery Image' />
-<img src='pictures/561fsd1f65s.jpeg' alt='Gallery Image' />
-<img src='pictures/561ghf61h6f1fhg.jpeg' alt='Gallery Image' />
-<img src='pictures/561hfg65h416f.jpeg' alt='Gallery Image' />
-<img src='pictures/562cx161v6cx.jpeg' alt='Gallery Image' />
-<img src='pictures/5641651.png' alt='Gallery Image' />
-<img src='pictures/5645.jpeg' alt='Gallery Image' />
-<img src='pictures/564654.jpeg' alt='Gallery Image' />
-<img src='pictures/56f1sd651f651fsd.jpeg' alt='Gallery Image' />
-<img src='pictures/56h1f561h5f.jpeg' alt='Gallery Image' />
-<img src='pictures/5757.webp' alt='Gallery Image' />
-<img src='pictures/581h9g18f1h.jpeg' alt='Gallery Image' />
-<img src='pictures/585841.jpeg' alt='Gallery Image' />
-<img src='pictures/5D3SDkn9.jpeg' alt='Gallery Image' />
-<img src='pictures/5h45fhg45f.jpeg' alt='Gallery Image' />
-<img src='pictures/6161.jpeg' alt='Gallery Image' />
-<img src='pictures/6196165165156161.jpeg' alt='Gallery Image' />
-<img src='pictures/61df651g65d1.jpeg' alt='Gallery Image' />
-<img src='pictures/61df6651gd61.jpeg' alt='Gallery Image' />
-<img src='pictures/61fd6f6s.jpeg' alt='Gallery Image' />
-<img src='pictures/61fds6f5s.jpeg' alt='Gallery Image' />
-<img src='pictures/61fs5s15fsd.jpeg' alt='Gallery Image' />
-<img src='pictures/61gf616h5fg1.jpeg' alt='Gallery Image' />
-<img src='pictures/61s5f165s1f.jpeg' alt='Gallery Image' />
-<img src='pictures/61vxc651v6xc.jpeg' alt='Gallery Image' />
-<img src='pictures/6465.jpeg' alt='Gallery Image' />
-<img src='pictures/65112112216.jpeg' alt='Gallery Image' />
-<img src='pictures/6512cvx651vx6cv.jpeg' alt='Gallery Image' />
-<img src='pictures/6515616.webp' alt='Gallery Image' />
-<img src='pictures/6516.jpeg' alt='Gallery Image' />
-<img src='pictures/65161.jpeg' alt='Gallery Image' />
-<img src='pictures/6516251.jpeg' alt='Gallery Image' />
-<img src='pictures/651651.jpeg' alt='Gallery Image' />
-<img src='pictures/6516516415.jpeg' alt='Gallery Image' />
-<img src='pictures/6516541.jpeg' alt='Gallery Image' />
-<img src='pictures/65165621.jpeg' alt='Gallery Image' />
-<img src='pictures/6516951.jpg' alt='Gallery Image' />
-<img src='pictures/6519.jpeg' alt='Gallery Image' />
-<img src='pictures/65195116951616.jpeg' alt='Gallery Image' />
-<img src='pictures/651dsf951sd9f8sdf.jpeg' alt='Gallery Image' />
-<img src='pictures/651fsd5616fs.jpeg' alt='Gallery Image' />
-<img src='pictures/651fsd65f1s65.jpeg' alt='Gallery Image' />
-<img src='pictures/651gf6165hfg.jpeg' alt='Gallery Image' />
-<img src='pictures/651gf616hgf.jpeg' alt='Gallery Image' />
-<img src='pictures/651gf651h6gf1.jpeg' alt='Gallery Image' />
-<img src='pictures/651gfh1fg61h.jpeg' alt='Gallery Image' />
-<img src='pictures/651sd65f1ds.jpeg' alt='Gallery Image' />
-<img src='pictures/651sd6fds.jpeg' alt='Gallery Image' />
-<img src='pictures/65262.png' alt='Gallery Image' />
-<img src='pictures/6541gf65hgf165hf.jpeg' alt='Gallery Image' />
-<img src='pictures/6546541.jpeg' alt='Gallery Image' />
-<img src='pictures/65d11g6.jpeg' alt='Gallery Image' />
-<img src='pictures/65fg51h65f.jpeg' alt='Gallery Image' />
-<img src='pictures/65g1651hgf61h.jpeg' alt='Gallery Image' />
-<img src='pictures/65h1ff651h651f6h.jpeg' alt='Gallery Image' />
-<img src='pictures/65hf4654fg89h7.jpeg' alt='Gallery Image' />
-<img src='pictures/65sfd15961f6s1f6s.jpeg' alt='Gallery Image' />
-<img src='pictures/661hf6ggf651g.jpeg' alt='Gallery Image' />
-<img src='pictures/679060393.png' alt='Gallery Image' />
-<img src='pictures/695727589.png' alt='Gallery Image' />
-<img src='pictures/6UUakUxY.jpeg' alt='Gallery Image' />
-<img src='pictures/6d1.jpeg' alt='Gallery Image' />
-<img src='pictures/6h46f4h6.jpeg' alt='Gallery Image' />
-<img src='pictures/6wYsjdb6.jpeg' alt='Gallery Image' />
-<img src='pictures/7416515.jpeg' alt='Gallery Image' />
-<img src='pictures/7fyYFNrq.jpeg' alt='Gallery Image' />
-<img src='pictures/849684.png' alt='Gallery Image' />
-<img src='pictures/85xqm6jb.jpeg' alt='Gallery Image' />
-<img src='pictures/87987978789.jpeg' alt='Gallery Image' />
-<img src='pictures/888888888888888888888888.jpeg' alt='Gallery Image' />
-<img src='pictures/8949sdf8s4f98s4df.jpeg' alt='Gallery Image' />
-<img src='pictures/8977446.png' alt='Gallery Image' />
-<img src='pictures/8dbd551776c9.jpeg' alt='Gallery Image' />
-<img src='pictures/917Q.jpeg' alt='Gallery Image' />
-<img src='pictures/917_digit_0.jpg' alt='Gallery Image' />
-<img src='pictures/917_of_1.jpg' alt='Gallery Image' />
-<img src='pictures/917knhn.jpeg' alt='Gallery Image' />
-<img src='pictures/917loijhkiu.jpeg' alt='Gallery Image' />
-<img src='pictures/917oGjiPwhmYOBwQ.jpeg' alt='Gallery Image' />
-<img src='pictures/917sdfdg.jpeg' alt='Gallery Image' />
-<img src='pictures/917sfas.jpeg' alt='Gallery Image' />
-<img src='pictures/917ygul.jpeg' alt='Gallery Image' />
-<img src='pictures/941414984198.jpeg' alt='Gallery Image' />
-<img src='pictures/948484.jpeg' alt='Gallery Image' />
-<img src='pictures/984651.jpeg' alt='Gallery Image' />
-<img src='pictures/9849484.jpeg' alt='Gallery Image' />
-<img src='pictures/B79FA_9A.jpeg' alt='Gallery Image' />
-<img src='pictures/BaanzGIj.jpeg' alt='Gallery Image' />
-<img src='pictures/Cd0p3wkH.jpeg' alt='Gallery Image' />
-<img src='pictures/GC7pruQa.jpeg' alt='Gallery Image' />
-<img src='pictures/GH8vrnp9.jpeg' alt='Gallery Image' />
-<img src='pictures/IFhOOvRt.jpeg' alt='Gallery Image' />
-<img src='pictures/IO439ayO.jpeg' alt='Gallery Image' />
-<img src='pictures/JB8r65Mm.jpeg' alt='Gallery Image' />
-<img src='pictures/Jwz8ACr0.jpeg' alt='Gallery Image' />
-<img src='pictures/K6_EbLR5.jpeg' alt='Gallery Image' />
-<img src='pictures/KfCNTE7L.jpeg' alt='Gallery Image' />
-<img src='pictures/L917ting_of_0.jpg' alt='Gallery Image' />
-<img src='pictures/Leonardo_917_m_1.jpg' alt='Gallery Image' />
-<img src='pictures/Leonardo_917f_2.jpg' alt='Gallery Image' />
-<img src='pictures/LxHzavi3.jpeg' alt='Gallery Image' />
-<img src='pictures/LyZvmYbq.jpeg' alt='Gallery Image' />
-<img src='pictures/NgwMenAfc8ynid0V00q9OBy7.webp' alt='Gallery Image' />
-<img src='pictures/Q6SPyyhR.jpeg' alt='Gallery Image' />
-<img src='pictures/RSobqox3.jpeg' alt='Gallery Image' />
-<img src='pictures/SSgA7wc2.jpeg' alt='Gallery Image' />
-<img src='pictures/Untitled.jpeg' alt='Gallery Image' />
-<img src='pictures/VQh29qGp.jpeg' alt='Gallery Image' />
-<img src='pictures/WGfzHZin.jpeg' alt='Gallery Image' />
-<img src='pictures/YSpjTE6l.jpeg' alt='Gallery Image' />
-<img src='pictures/Z_ToA-iZ.jpeg' alt='Gallery Image' />
-<img src='pictures/a703af9bb7b3.jpeg' alt='Gallery Image' />
-<img src='pictures/adb499a8ce59.jpeg' alt='Gallery Image' />
-<img src='pictures/b1c6e4905c96.jpeg' alt='Gallery Image' />
-<img src='pictures/b484-522071a4d9c3.jpeg' alt='Gallery Image' />
-<img src='pictures/bR8_pmZL.jpeg' alt='Gallery Image' />
-<img src='pictures/bfnRm70i.jpeg' alt='Gallery Image' />
-<img src='pictures/cM8Cy2U0.png' alt='Gallery Image' />
-<img src='pictures/cvtMB3TN.jpeg' alt='Gallery Image' />
-<img src='pictures/cwHZBWjq.jpeg' alt='Gallery Image' />
-<img src='pictures/d8QScjPB.jpeg' alt='Gallery Image' />
-<img src='pictures/d8bfXp06.jpeg' alt='Gallery Image' />
-<img src='pictures/dBPLvVRl.jpeg' alt='Gallery Image' />
-<img src='pictures/dfghfd.png' alt='Gallery Image' />
-<img src='pictures/evCNf4DI.jpeg' alt='Gallery Image' />
-<img src='pictures/fds4f411dsf645d.jpeg' alt='Gallery Image' />
-<img src='pictures/fghfghg.webp' alt='Gallery Image' />
-<img src='pictures/fgjjfgjgf.webp' alt='Gallery Image' />
-<img src='pictures/fhffhhf.webp' alt='Gallery Image' />
-<img src='pictures/fmVD3uCG.jpeg' alt='Gallery Image' />
-<img src='pictures/fz5stHcC.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730756094653.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730756099597.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730756197258.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730756203794.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730756249715.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730756254655.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730939146060.jpeg' alt='Gallery Image' />
-<img src='pictures/generated-image-1730939151569.jpeg' alt='Gallery Image' />
-<img src='pictures/ghjg.webp' alt='Gallery Image' />
-<img src='pictures/gjhg.webp' alt='Gallery Image' />
-<img src='pictures/gnUE8-dT.jpeg' alt='Gallery Image' />
-<img src='pictures/hfgfghfg.webp' alt='Gallery Image' />
-<img src='pictures/hu97gt.jpeg' alt='Gallery Image' />
-<img src='pictures/hzx0Ehu4.jpeg' alt='Gallery Image' />
-<img src='pictures/iNHtWPlL.png' alt='Gallery Image' />
-<img src='pictures/iSmpRYVl.jpeg' alt='Gallery Image' />
-<img src='pictures/ideogram917.jpeg' alt='Gallery Image' />
-<img src='pictures/image.png' alt='Gallery Image' />
-<img src='pictures/iuikjuhjhk.webp' alt='Gallery Image' />
-<img src='pictures/jX8F18VNE582Y63qkxLl6FKH.webp' alt='Gallery Image' />
-<img src='pictures/jgXb7wP8.jpeg' alt='Gallery Image' />
-<img src='pictures/jgdghj.webp' alt='Gallery Image' />
-<img src='pictures/jgfhdfh.webp' alt='Gallery Image' />
-<img src='pictures/jhkhk84748.jpeg' alt='Gallery Image' />
-<img src='pictures/jkghug917.jpeg' alt='Gallery Image' />
-<img src='pictures/jlik469.jpeg' alt='Gallery Image' />
-<img src='pictures/k9Li-Msr.jpeg' alt='Gallery Image' />
-<img src='pictures/keZMiCDS.jpeg' alt='Gallery Image' />
-<img src='pictures/kj80h0y.jpeg' alt='Gallery Image' />
-<img src='pictures/l39mVWsu.jpeg' alt='Gallery Image' />
-<img src='pictures/magicstudio56451.jpg' alt='Gallery Image' />
-<img src='pictures/magicstudio6411t.jpg' alt='Gallery Image' />
-<img src='pictures/magicstudio65415.jpg' alt='Gallery Image' />
-<img src='pictures/magicstudiocxzxct.jpg' alt='Gallery Image' />
-<img src='pictures/mbnnbmbn.webp' alt='Gallery Image' />
-<img src='pictures/n5zfNI3DSIiZLwgsbZHXSw.webp' alt='Gallery Image' />
-<img src='pictures/nou8hy9.jpeg' alt='Gallery Image' />
-<img src='pictures/nu97y.jpeg' alt='Gallery Image' />
-<img src='pictures/nuelink561.png' alt='Gallery Image' />
-<img src='pictures/oGKR1rz_.jpeg' alt='Gallery Image' />
-<img src='pictures/oMB107yk.jpeg' alt='Gallery Image' />
-<img src='pictures/pEii4ZZp.jpeg' alt='Gallery Image' />
-<img src='pictures/pV2nMOv2.jpeg' alt='Gallery Image' />
-<img src='pictures/pixel-art-8.jpeg' alt='Gallery Image' />
-<img src='pictures/problembo11041545330.jpg' alt='Gallery Image' />
-<img src='pictures/problembo1771.jpg' alt='Gallery Image' />
-<img src='pictures/problembo421.jpg' alt='Gallery Image' />
-<img src='pictures/problembo4770.jpg' alt='Gallery Image' />
-<img src='pictures/q3NDGC5H.jpeg' alt='Gallery Image' />
-<img src='pictures/qQUVDtME.jpeg' alt='Gallery Image' />
-<img src='pictures/qX250kKm.jpeg' alt='Gallery Image' />
-<img src='pictures/quxyZU9p.jpeg' alt='Gallery Image' />
-<img src='pictures/sEsU_etY.jpeg' alt='Gallery Image' />
-<img src='pictures/sMs7izlZ.jpeg' alt='Gallery Image' />
-<img src='pictures/sNBWemIc.jpeg' alt='Gallery Image' />
-<img src='pictures/sbZimKwc.jpeg' alt='Gallery Image' />
-<img src='pictures/t-JYgqb0.jpeg' alt='Gallery Image' />
-<img src='pictures/tCcp1R9E.jpeg' alt='Gallery Image' />
-<img src='pictures/taaft.com-technical-drawings-generator-by-silviumercan-1730253452.png' alt='Gallery Image' />
-<img src='pictures/taaft1730751490.png' alt='Gallery Image' />
-<img src='pictures/uhO6ShzS.jpeg' alt='Gallery Image' />
-<img src='pictures/ujg1rp0b.jpeg' alt='Gallery Image' />
-<img src='pictures/v4xc1651cx6v.jpeg' alt='Gallery Image' />
-<img src='pictures/vXc2BypA.jpeg' alt='Gallery Image' />
-<img src='pictures/veX-RbRT.jpeg' alt='Gallery Image' />
-<img src='pictures/wyAc9sIt.jpeg' alt='Gallery Image' />
-<img src='pictures/xNZgCuFC.jpeg' alt='Gallery Image' />
-<img src='pictures/xcxc.webp' alt='Gallery Image' />
-<img src='pictures/xrUhB1i2.jpeg' alt='Gallery Image' />
-<img src='pictures/yQIeYaVCTyiEyGn7hz5W4Q.webp' alt='Gallery Image' />
-<img src='pictures/yszihw21.jpeg' alt='Gallery Image' />
-<img src='pictures/z5x156z1695x1z.jpeg' alt='Gallery Image' />
-<img src='pictures/zxzxz.jpeg' alt='Gallery Image' />
-<img src='pictures/zxzxzxz.webp' alt='Gallery Image' />
 </div>
+</main>
+<footer>&copy; <a href="https://brunurb.github.io/">by brunurb</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.mosaic.js"></script>
 <script type="text/javascript" src="scripts.js"></script>
-<script>$(document).ready(function() { $("#myMosaic").Mosaic(); });</script>
+<script>$(document).ready(function() { $("#myMosaic").Mosaic({ maxRowHeight: 200 }); });</script>
 </body></html>
