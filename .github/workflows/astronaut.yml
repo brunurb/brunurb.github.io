@@ -19,7 +19,7 @@ jobs:
           echo "Generating astronaut.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/astronaut.html
           echo '<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/astronaut.html
-          echo '<title>Intergalactic astronaut</title>' >> majortom/astronaut.html
+          echo '<title>Intergalactic Astronauts</title>' >> majortom/astronaut.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/astronaut.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/astronaut.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/astronaut.html
