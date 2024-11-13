@@ -46,13 +46,15 @@ jobs:
 
           # Correctly add images inside the myMosaic div
           for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' />" >> majortom/917.html
+            echo "<img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
           done
 
           echo '</div>' >> majortom/917.html
-          echo '<div id="overlay">' >> majortom/917.html
+          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/917.html
           echo '  <span id="close">&times;</span>' >> majortom/917.html
-          echo '  <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/917.html
+          echo '  <div class="overlay-content">' >> majortom/917.html
+          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/917.html
+          echo '  </div>' >> majortom/917.html
           echo '</div>' >> majortom/917.html
           echo '</main>' >> majortom/917.html
 
