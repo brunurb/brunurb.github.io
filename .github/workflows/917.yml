@@ -31,11 +31,11 @@ jobs:
           echo '<div class="header">' >> majortom/917.html
           echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/917.html
           echo '  <div class="buttons">' >> majortom/917.html
-          echo '  <a href="https://brunurb.github.io/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/917.html
-          echo '  <a href="https://brunurb.github.io/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/917.html
-          echo '  <a href="https://brunurb.github.io/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/917.html
-          echo '  <a href="https://brunurb.github.io/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/917.html
-          echo '  <a href="https://brunurb.github.io/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/917.html
+          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/917.html
+          echo '  <a href="https://brunurb.github.io/majortom/spacecraft"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/917.html
+          echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/917.html
+          echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/917.html
+          echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/917.html
           echo '  </div>' >> majortom/917.html
           echo '</div>' >> majortom/917.html
 
