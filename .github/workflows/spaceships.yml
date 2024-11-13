@@ -22,7 +22,7 @@ jobs:
           echo '<meta charset="UTF-8">' >> majortom/spaceships.html
           echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/spaceships.html
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/spaceships.html
-          echo '<title>Intergalactic spaceshipss</title>' >> majortom/spaceships.html
+          echo '<title>Intergalactic Spaceships</title>' >> majortom/spaceships.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/spaceships.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/spaceships.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/spaceships.html
@@ -50,7 +50,7 @@ jobs:
           echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/spaceships.html
           echo '  <div class="buttons">' >> majortom/spaceships.html
           echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/spaceships.html
-          echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">spaceships</button></a>' >> majortom/spaceships.html
+          echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/spaceships.html
           echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/spaceships.html
           echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/spaceships.html
           echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/spaceships.html
@@ -59,7 +59,7 @@ jobs:
 
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/spaceships.html
-          echo '<h1>Intergalactic spaceshipss</h1>' >> majortom/spaceships.html
+          echo '<h1>Intergalactic Spacecrafts</h1>' >> majortom/spaceships.html
           echo '<div id="myMosaic">' >> majortom/spaceships.html
 
           # Correctly add images inside the myMosaic div
