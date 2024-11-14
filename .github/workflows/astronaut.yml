@@ -6,7 +6,6 @@ on:
       - 'majortom/astronaut/pictures/**'
       - 'majortom/astronaut.html'
   workflow_dispatch:
-
 jobs:
   update-gallery:
     runs-on: ubuntu-latest
