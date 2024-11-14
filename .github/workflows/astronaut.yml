@@ -63,9 +63,14 @@ jobs:
           echo '<h1>Intergalactic Astronauts</h1>' >> majortom/astronaut.html
           echo '<div id="myMosaic">' >> majortom/astronaut.html
 
-          # Correctly add images inside the myMosaic div
+          # Correctly add images inside the myMosaic div, with data-no-mosaic attribute
           for img in $(ls majortom/astronaut/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' />" >> majortom/astronaut.html
+            # Use data-no-mosaic="true" for specific images as needed
+            if [[ "$img" == *".jpg" ]]; then  # Example condition; adjust as necessary
+              echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' data-no-mosaic='true' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
+            else
+              echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
+            fi
           done
 
           echo '</div>' >> majortom/astronaut.html
@@ -89,7 +94,7 @@ jobs:
           echo '        maxRowHeight: 300,' >> majortom/astronaut.html
           echo '        refitOnResize: true,' >> majortom/astronaut.html
           echo '        defaultAspectRatio: 1,' >> majortom/astronaut.html
-          echo '        maxRowHeightPolicy: "tail"' >> majortom/astronaut.html
+          echo '        maxRowHeightPolicy: "oversize"' >> majortom/astronaut.html  # Set to oversize
           echo '    });' >> majortom/astronaut.html
           echo '});' >> majortom/astronaut.html
           echo '</script>' >> majortom/astronaut.html
@@ -100,5 +105,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/astronaut.html
-          git commit -m "Regenerate majortom/astronaut.html for mosaic gallery with overlay" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/astronaut.html for mosaic gallery with overlay and oversize policy" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
