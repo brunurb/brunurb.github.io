@@ -91,12 +91,21 @@ body {
 /* Main Content */
 main {
   flex: 1; /* Allow main to take up available space */
-  padding: 60px 20px 10px; /* Add padding for content positioning */
+  padding: 0; /* Remove padding for full-width image */
 }
 
 .content {
-  max-width: 800px;
-  margin: 0 auto; /* Center the content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Makes content fill the main area */
+}
+
+/* Image Styles */
+#random-image {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the div without stretching */
 }
 
 /* Footer */
