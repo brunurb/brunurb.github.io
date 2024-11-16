@@ -1,18 +1,45 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Majortom Gallery</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link href="https://nostalgic-css.github.io/NES.css/css/nes.min.css" rel="stylesheet" />
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<style>body { font-family: "Press Start 2P", serif; background-color: #f1faee; color: #457b9d; } #gallery { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 16px; } .grid-item { width: calc(25% - 16px); } img { width: 100%; display: block; border-radius: 5px; }</style>
-</head><body>
-<div id="menu" style="background-color: #457b9d; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000;">
-  <button type="button" class="nes-btn is-primary">Primary</button>
-  <button type="button" class="nes-btn is-success">Success</button>
-  <button type="button" class="nes-btn is-warning">Warning</button>
-  <button type="button" class="nes-btn is-error">Error</button>
-  <button type="button" class="nes-btn is-disabled" disabled>Disabled</button>
-</div>
-<div id="gallery">
-</div>
-<script>document.addEventListener("DOMContentLoaded", function() { const gallery = document.getElementById("gallery"); new Masonry(gallery, { itemSelector: ".grid-item", columnWidth: ".grid-item", percentPosition: true }); });</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brunurb</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <ul class="navbar-top">
+      <li id="nav-company">
+        <a href="https://brunurb.github.io">brunurb</a>
+      </li>
+      <li><a href="https://brunurb.github.io/">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Blog</a></li>
+      <li class="dropdown">
+        <a href="#">Major Tom ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://brunurb.github.io/majortom/spaceships">spaceships</a></li>
+          <li><a href="https://brunurb.github.io/majortom/astronaut">astronauts 2</a></li>
+          <li><a href="https://brunurb.github.io/majortom/917">917</a></li>
+          <li><a href="https://brunurb.github.io/majortom/controls">controls</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+  <main>
+    <!-- Dummy Content for Testing -->
+    <div class="content">
+      <h1>Welcome to Brunurb</h1>
+      <p>This is a sample text to test the layout and responsiveness of the design.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+      <p>Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper idi, adipiscing vitae proin. In ante metus, dictum at tempor id, vehicula in enim. Morbi lectus nisl, cursus ut pharetra ut, faucibus non leo.</p>
+      <p>Donec feugiat aliquet urna. Integer aliquam efficitur odio, vitae accumsan lacus pretium eu. Nullam volutpat arcu nec orci varius, nec aliquet orci accumsan.</p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 brunurb</p>
+  </footer>
+</body>
+</html>

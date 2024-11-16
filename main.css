@@ -1,0 +1,123 @@
+/* General Reset */
+body, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html, body {
+  height: 100%; /* Ensure full height for proper footer positioning */
+}
+
+/* Make body a flex container */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for navbar-top */
+.navbar-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #00314c;
+  font-family: "Arial", sans-serif;
+  z-index: 9999;
+  box-shadow: 0 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-top:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.navbar-top li {
+  float: right;
+  position: relative; /* Necessary for dropdown positioning */
+}
+
+.navbar-top li#nav-company {
+  float: left;
+}
+
+.navbar-top a {
+  display: inline-block;
+  padding: 8px 12px; /* Reduced height */
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #e8e6eb;
+  line-height: 18px; /* Adjust line height for better alignment */
+  transition: background-color 0.3s ease;
+}
+
+.navbar-top a:hover {
+  background-color: #c84667;
+  color: #e8e6eb;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Align with parent link */
+  right: 0; /* Align with parent link */
+  background-color: #90aea4;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  float: none; /* Reset float for dropdown items */
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px; /* Reduced height */
+  color: #00314c;
+}
+
+.dropdown-menu a:hover {
+  background-color: #c84667;
+  color: #e8e6eb;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Main Content */
+main {
+  flex: 1; /* Allow main to take up available space */
+  padding: 60px 20px 10px; /* Add padding for content positioning */
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto; /* Center the content */
+}
+
+/* Footer */
+footer {
+  background-color: #00314c; /* Change color to match the palette */
+  color: #e8e6eb; /* Text color */
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  font-size: 11px;
+  padding-left: 10px;
+  height: 20px; /* Set fixed height for the footer */
+  display: flex;
+  justify-content: left;
+  align-items: center; /* Center content vertically */
+  position: relative;
+}
+
+/* Responsive Behavior */
+@media only screen and (max-width: 880px) {
+  .navbar-top a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
