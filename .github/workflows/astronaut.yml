@@ -51,7 +51,7 @@ jobs:
           echo '  <div class="buttons">' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-warning">astronaut</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/astronaut.html
           echo '  </div>' >> majortom/astronaut.html
@@ -62,14 +62,9 @@ jobs:
           echo '<h1>Intergalactic Astronauts</h1>' >> majortom/astronaut.html
           echo '<div id="myMosaic">' >> majortom/astronaut.html
 
-          # Correctly add images inside the myMosaic div, with data-no-mosaic attribute
+                   # Correctly add images inside the myMosaic div
           for img in $(ls majortom/astronaut/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            # Use data-no-mosaic="true" for specific images as needed
-            if [[ "$img" == *".jpg" ]]; then  # Example condition; adjust as necessary
-              echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' data-no-mosaic='true' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
-            else
-              echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
-            fi
+            echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
           done
 
           echo '</div>' >> majortom/astronaut.html
