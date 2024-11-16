@@ -6,6 +6,7 @@ on:
       - 'majortom/astronaut/pictures/**'
       - 'majortom/astronaut.html'
   workflow_dispatch:
+
 jobs:
   update-gallery:
     runs-on: ubuntu-latest
@@ -21,19 +22,18 @@ jobs:
           echo '<meta charset="UTF-8">' >> majortom/astronaut.html
           echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/astronaut.html
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/astronaut.html
-          echo '<title>Intergalactic Astronauts</title>' >> majortom/astronaut.html
+          echo '<title>Intergalactic astronaut</title>' >> majortom/astronaut.html
           echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/astronaut.html
           echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/astronaut.html
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/astronaut.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/astronaut.html
-          echo '<link rel="stylesheet" type="text/css" href="majortom/jquery.mosaic.css" />' >> majortom/astronaut.html # Include Mosaic CSS
           echo '<style>' >> majortom/astronaut.html
           echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/astronaut.html
           echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/astronaut.html
           echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/astronaut.html
           echo '.buttons { display: flex; gap: 2px; }' >> majortom/astronaut.html
           echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/astronaut.html
-          echo '#myMosaic img { border: none; height: auto; cursor: pointer; }' >> majortom/astronaut.html
+          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/astronaut.html
           echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/astronaut.html
           echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/astronaut.html
           echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/astronaut.html
@@ -51,7 +51,7 @@ jobs:
           echo '  <div class="buttons">' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/astronaut.html
-          echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/astronaut.html
+          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-warning">astronaut</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/astronaut.html
           echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/astronaut.html
           echo '  </div>' >> majortom/astronaut.html
@@ -59,17 +59,12 @@ jobs:
 
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/astronaut.html
-          echo '<h1>Intergalactic Astronauts</h1>' >> majortom/astronaut.html
+          echo '<h1>Intergalactic Aastronauts</h1>' >> majortom/astronaut.html
           echo '<div id="myMosaic">' >> majortom/astronaut.html
 
-          # Correctly add images inside the myMosaic div, with data-no-mosaic attribute
+          # Correctly add images inside the myMosaic div
           for img in $(ls majortom/astronaut/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            # Use data-no-mosaic="true" for specific images as needed
-            if [[ "$img" == *".jpg" ]]; then  # Example condition; adjust as necessary
-              echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' data-no-mosaic='true' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
-            else
-              echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
-            fi
+            echo "<img src='https://brunurb.github.io/majortom/astronaut/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/astronaut.html
           done
 
           echo '</div>' >> majortom/astronaut.html
@@ -84,17 +79,32 @@ jobs:
           # Footer with copyright symbol
           echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/astronaut.html
 
-          # Include jQuery and jQuery Mosaic scripts
+          # Include jQuery and custom scripts
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/astronaut.html
-          echo '<script src="majortom/jquery.mosaic.js"></script>' >> majortom/astronaut.html
           echo '<script type="text/javascript">' >> majortom/astronaut.html
-          echo '$(document).ready(function() {' >> majortom/astronaut.html
-          echo '    $("#myMosaic").mosaic({' >> majortom/astronaut.html
-          echo '        maxRowHeight: 300,' >> majortom/astronaut.html
-          echo '        refitOnResize: true,' >> majortom/astronaut.html
-          echo '        defaultAspectRatio: 1,' >> majortom/astronaut.html
-          echo '        maxRowHeightPolicy: "oversize"' >> majortom/astronaut.html  # Set to oversize
+          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/astronaut.html
+          echo '    function showImage(src) {' >> majortom/astronaut.html
+          echo '        const overlay = document.getElementById("overlay");' >> majortom/astronaut.html
+          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/astronaut.html
+          echo '        overlayImage.src = src;' >> majortom/astronaut.html
+          echo '        overlay.classList.add("show");' >> majortom/astronaut.html
+          echo '    }' >> majortom/astronaut.html
+          echo '    function closeOverlay(event) {' >> majortom/astronaut.html
+          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/astronaut.html
+          echo '            const overlay = document.getElementById("overlay");' >> majortom/astronaut.html
+          echo '            overlay.classList.remove("show");' >> majortom/astronaut.html
+          echo '        }' >> majortom/astronaut.html
+          echo '    }' >> majortom/astronaut.html
+          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/astronaut.html
+          echo '    images.forEach(image => {' >> majortom/astronaut.html
+          echo '        image.addEventListener("click", function() {' >> majortom/astronaut.html
+          echo '            showImage(this.dataset.full);' >> majortom/astronaut.html
+          echo '        });' >> majortom/astronaut.html
           echo '    });' >> majortom/astronaut.html
+          echo '    const overlay = document.getElementById("overlay");' >> majortom/astronaut.html
+          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/astronaut.html
+          echo '    const closeButton = document.getElementById("close");' >> majortom/astronaut.html
+          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/astronaut.html
           echo '});' >> majortom/astronaut.html
           echo '</script>' >> majortom/astronaut.html
           echo '</body></html>' >> majortom/astronaut.html
@@ -104,5 +114,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/astronaut.html
-          git commit -m "Regenerate majortom/astronaut.html for mosaic gallery with overlay and oversize policy" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/astronaut.html for mosaic gallery with overlay" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch

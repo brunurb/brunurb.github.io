@@ -1,5 +1,4 @@
-name: spaceships
-
+name: Spaceships
 on:
   push:
     paths:
