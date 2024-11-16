@@ -3,12 +3,11 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intergalactic Astronauts</title>
+<title>Intergalactic astronaut</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
-<link rel="stylesheet" type="text/css" href="majortom/jquery.mosaic.css" />
 <style>
 body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }
 .header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
@@ -31,13 +30,13 @@ footer a { color: inherit; text-decoration: none; }
   <div class="buttons">
   <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>
   <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>
-  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>
+  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-warning">astronaut</button></a>
   <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>
   <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>
   </div>
 </div>
 <main>
-<h1>Intergalactic Astronauts</h1>
+<h1>Intergalactic Aastronauts</h1>
 <div id="myMosaic">
 <img src='https://brunurb.github.io/majortom/astronaut/pictures/1000AD-1.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/1000AD-1.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
 <img src='https://brunurb.github.io/majortom/astronaut/pictures/12313255456.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/astronaut/pictures/12313255456.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
@@ -243,15 +242,30 @@ footer a { color: inherit; text-decoration: none; }
 </main>
 <footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="majortom/jquery.mosaic.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-    $("#myMosaic").mosaic({
-        maxRowHeight: 300,
-        refitOnResize: true,
-        defaultAspectRatio: 1,
-        maxRowHeightPolicy: "oversize"
+document.addEventListener("DOMContentLoaded", function() {
+    function showImage(src) {
+        const overlay = document.getElementById("overlay");
+        const overlayImage = document.getElementById("overlay-image");
+        overlayImage.src = src;
+        overlay.classList.add("show");
+    }
+    function closeOverlay(event) {
+        if (event.target.id === "overlay" || event.target.id === "close") {
+            const overlay = document.getElementById("overlay");
+            overlay.classList.remove("show");
+        }
+    }
+    const images = document.querySelectorAll("#myMosaic img");
+    images.forEach(image => {
+        image.addEventListener("click", function() {
+            showImage(this.dataset.full);
+        });
     });
+    const overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", closeOverlay);
+    const closeButton = document.getElementById("close");
+    closeButton.addEventListener("click", closeOverlay);
 });
 </script>
 </body></html>
