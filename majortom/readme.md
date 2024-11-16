@@ -1,0 +1,1 @@
+ffmpeg -pattern_type glob -i "/home/b/Desktop/sffsf/*.jpeg" -filter_complex "[0:v]scale=720:720,zoompan=z='zoom+0.05':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=2:s=720x720[v]" -map "[v]" -r 60 -pix_fmt yuv420p -t 40 output.mp4
