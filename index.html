@@ -30,17 +30,30 @@
     </ul>
   </header>
   <main>
-    <!-- Dummy Content for Testing -->
     <div class="content">
-      <h1>Welcome to Brunurb</h1>
-      <p>This is a sample text to test the layout and responsiveness of the design.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
-      <p>Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper idi, adipiscing vitae proin. In ante metus, dictum at tempor id, vehicula in enim. Morbi lectus nisl, cursus ut pharetra ut, faucibus non leo.</p>
-      <p>Donec feugiat aliquet urna. Integer aliquam efficitur odio, vitae accumsan lacus pretium eu. Nullam volutpat arcu nec orci varius, nec aliquet orci accumsan.</p>
+      <img id="random-image" src="" alt="Randomly Loaded" />
     </div>
   </main>
   <footer>
     <p>&copy; 2024 brunurb</p>
   </footer>
+
+  <script>
+    // Array of image URLs
+    const images = [
+      "https://brunurb.github.io/majortom/controls/pictures/fghhfhf.png",
+      "https://brunurb.github.io/majortom/controls/pictures/fgjjgffjgfgj.png",
+      "https://brunurb.github.io/majortom/controls/pictures/fggffg.jpeg",
+      "https://brunurb.github.io/majortom/controls/pictures/gdfgfdg.png",
+      "https://brunurb.github.io/majortom/controls/pictures/dsgsdgsd.png"
+    ];
+
+    // Randomly select an image
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const selectedImage = images[randomIndex];
+
+    // Set the selected image as the source of the img element
+    document.getElementById("random-image").src = selectedImage;
+  </script>
 </body>
 </html>
