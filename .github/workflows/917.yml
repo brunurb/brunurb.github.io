@@ -26,8 +26,15 @@ jobs:
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/main.css">' >> majortom/917.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
           echo '  <style>' >> majortom/917.html
+          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/917.html
+          echo '    .header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/917.html
+          echo '    .header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/917.html
+          echo '    .buttons { display: flex; gap: 2px; }' >> majortom/917.html
           echo '    #myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/917.html
           echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/917.html
+          echo '    h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/917.html
+          echo '    footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/917.html
+          echo '    footer a { color: inherit; text-decoration: none; }' >> majortom/917.html
           echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/917.html
           echo '    #overlay.show { display: flex; }' >> majortom/917.html
           echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/917.html
