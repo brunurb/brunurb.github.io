@@ -1,10 +1,11 @@
-name: Update 917.html
+name: 917
 
 on:
   push:
     paths:
       - 'majortom/917/pictures/**'
       - 'majortom/917.html'
+  workflow_dispatch:
 
 jobs:
   update-917-html:
