@@ -1,46 +1,95 @@
+name: Generate 917.html
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   update-gallery:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Generate 917.html
       - name: Generate 917.html
         run: |
-          # Creating the HTML structure for 917.html
+          # Create a new 917.html file
           echo '<!DOCTYPE html><html lang="en">' > majortom/917.html
           echo '<head>' >> majortom/917.html
-          echo '<meta charset="UTF-8">' >> majortom/917.html
-          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
-          echo '<title>Porsche 917</title>' >> majortom/917.html
-          echo '<link rel="stylesheet" href="https://brunurb.github.io/main.css">' >> majortom/917.html
-          echo '<link rel="stylesheet" href="https://brunurb.github.io/majortom/917/styles.css">' >> majortom/917.html
-          echo '<link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
+          echo '  <meta charset="UTF-8">' >> majortom/917.html
+          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
+          echo '  <title>Porsche 917</title>' >> majortom/917.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/main.css">' >> majortom/917.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/917/styles.css">' >> majortom/917.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
+          echo '  <style>' >> majortom/917.html
+          echo '  #overlay {' >> majortom/917.html
+          echo '    position: fixed;' >> majortom/917.html
+          echo '    top: 0;' >> majortom/917.html
+          echo '    left: 0;' >> majortom/917.html
+          echo '    width: 100%;' >> majortom/917.html
+          echo '    height: 100%;' >> majortom/917.html
+          echo '    background-color: rgba(0, 0, 0, 0.8);' >> majortom/917.html
+          echo '    display: none;' >> majortom/917.html
+          echo '    justify-content: center;' >> majortom/917.html
+          echo '    align-items: center;' >> majortom/917.html
+          echo '    z-index: 1000;' >> majortom/917.html
+          echo '  }' >> majortom/917.html
+          echo '  #overlay.show {' >> majortom/917.html
+          echo '    display: flex;' >> majortom/917.html
+          echo '  }' >> majortom/917.html
+          echo '  .overlay-content {' >> majortom/917.html
+          echo '    max-width: 90%;' >> majortom/917.html
+          echo '    max-height: 90%;' >> majortom/917.html
+          echo '  }' >> majortom/917.html
+          echo '  #overlay img {' >> majortom/917.html
+          echo '    max-width: 100%;' >> majortom/917.html
+          echo '    max-height: 100%;' >> majortom/917.html
+          echo '    display: block;' >> majortom/917.html
+          echo '  }' >> majortom/917.html
+          echo '  </style>' >> majortom/917.html
           echo '</head><body>' >> majortom/917.html
-          echo '<div class="header">' >> majortom/917.html
-          echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/917.html
-          echo '  <div class="buttons">' >> majortom/917.html
-          echo '    <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/917.html
-          echo '    <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/917.html
-          echo '    <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/917.html
-          echo '    <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/917.html
-          echo '    <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/917.html
-          echo '  </div>' >> majortom/917.html
-          echo '</div>' >> majortom/917.html
+
+          # Adding header content
+          echo '<header>' >> majortom/917.html
+          echo '  <ul class="navbar-top">' >> majortom/917.html
+          echo '    <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/917.html
+          echo '    <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/917.html
+          echo '    <!-- Additional menu items here... -->' >> majortom/917.html
+          echo '  </ul>' >> majortom/917.html
+          echo '</header>' >> majortom/917.html
 
           # Main content with images
           echo '<main>' >> majortom/917.html
-          echo '<h1>Porsche 917</h1>' >> majortom/917.html
-          echo '<div id="myMosaic">' >> majortom/917.html
+          echo '  <div class="content">' >> majortom/917.html
+          echo '    <h1>Porsche 917</h1>' >> majortom/917.html
+          echo '    <div id="myMosaic">' >> majortom/917.html
 
+          # Image placeholders
           for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
+            echo "      <img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
           done
 
-          echo '</div>' >> majortom/917.html
-          echo '<div id="overlay" onclick="closeOverlay(event)"><div class="overlay-content"><span id="close">×</span><img id="overlay-image" src="" alt="Full Size Image" /></div></div>' >> majortom/917.html
+          # Closing main section
+          echo '    </div>' >> majortom/917.html
+          echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/917.html
+          echo '      <div class="overlay-content">' >> majortom/917.html
+          echo '        <span id="close">×</span>' >> majortom/917.html
+          echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/917.html
+          echo '      </div>' >> majortom/917.html
+          echo '    </div>' >> majortom/917.html
+          echo '  </div>' >> majortom/917.html
           echo '</main>' >> majortom/917.html
 
-          echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/917.html
+          # Footer
+          echo '<footer>' >> majortom/917.html
+          echo '  <p>© 2024 brunurb</p>' >> majortom/917.html
+          echo '</footer>' >> majortom/917.html
 
-          # Include scripts
+          # Include JavaScript
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/917.html
           echo '<script src="https://brunurb.github.io/majortom/917/jquery.mosaic.js"></script>' >> majortom/917.html
           echo '<script type="text/javascript">' >> majortom/917.html
