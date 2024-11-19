@@ -96,7 +96,8 @@ body {
 /* Main Content */
 main {
   flex: 1; /* Allow main to take up available space */
-  padding: 0 100px; /* Only padding for main content */
+  padding: 0 100px; /* Padding for left and right */
+  padding-top: 80px; /* Add padding to the top to create gap */
 }
 
 .outer-wrapper {
@@ -105,6 +106,7 @@ main {
   flex-grow: 1;
   min-height: 100vh;
   padding: 30px 0;
+  margin-bottom: 30px; /* Optional, to match footer space */
   width: 100%;
   max-width: 1200px; /* Ensure it doesn't grow too wide */
   margin: 0 auto; /* Center the content */
@@ -156,8 +158,8 @@ footer {
 }
 
 .top-site-outer .top-site-inner > a {
-  padding: 20px 16px 4px; /* maintain spacing and layout */
-  color: inherit; /* inherit color */
+  padding: 20px 16px 4px; /* Maintain spacing and layout */
+  color: inherit; /* Inherit color */
   display: block;
   outline: none;
   text-decoration: none;
