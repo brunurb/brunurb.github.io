@@ -23,6 +23,7 @@ jobs:
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
           echo '<title>Porsche 917</title>' >> majortom/917.html
           echo '<link rel="stylesheet" href="main.css">' >> majortom/917.html
+          echo '<link rel="stylesheet" href="jquery.mosaic.css">' >> majortom/917.html
           echo '</head><body>' >> majortom/917.html
 
           # Header
@@ -74,6 +75,8 @@ jobs:
 
           # Include jQuery and custom scripts
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/917.html
+          echo '<script src="jquery.mosaic.js"></script>' >> majortom/917.html
+          echo '<script src="scripts.js"></script>' >> majortom/917.html
           echo '<script type="text/javascript">' >> majortom/917.html
           echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/917.html
           echo '    function showImage(src) {' >> majortom/917.html
