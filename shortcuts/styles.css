@@ -156,15 +156,19 @@ footer {
 }
 
 .top-site-outer .top-site-inner > a {
-  padding: 20px 16px 4px;
-  color: inherit;
+  padding: 20px 16px 4px; /* maintain spacing and layout */
+  color: inherit; /* inherit color */
   display: block;
   outline: none;
   text-decoration: none;
+  text-align: center; /* Center text */
 }
 
 .top-sites-list a {
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content for links */
 }
 
 .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
@@ -212,8 +216,8 @@ footer {
 
 .top-site-outer .tile .icon-wrapper {
   border-radius: 4px;
-  width: 48px;
-  height: 48px;
+  width: 48px; /* Increase width for favicon */
+  height: 48px; /* Increase height for favicon */
   overflow: hidden;
   position: relative;
   display: flex;
@@ -227,12 +231,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 64px;
+  font-size: 48px; /* Adjust to ensure visibility */
   font-weight: 800;
-  transform: rotate(-10deg);
-  top: 6px;
-  position: relative;
-  color: #FFF;
+  transform: rotate(0deg); /* No rotation for better visibility */
+  color: #fff;
 }
 
 .top-site-outer .top-site-icon {
@@ -300,9 +302,9 @@ footer {
 }
 
 .top-site-outer .tile .icon-wrapper .letter-fallback {
-  font-size: 64px;
+  font-size: 48px; /* Ensure the fallback text is visible */
   font-weight: 800;
-  color: #FFF;
+  color: #fff; /* Ensure text is white on dark background */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -311,5 +313,5 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  transform: rotate(-10deg);
+  transform: rotate(0deg); /* No rotation for best visibility */
 }
