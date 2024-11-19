@@ -22,7 +22,9 @@ jobs:
           echo '<meta charset="UTF-8">' >> majortom/917.html
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
           echo '<title>Porsche 917</title>' >> majortom/917.html
-          echo '<link rel="stylesheet" href="brunurb.github.io/main.css">' >> majortom/917.html
+          echo '<link rel="stylesheet" href="https://brunurb.github.io/main.css">' >> majortom/917.html
+          echo '<link rel="stylesheet" href="https://brunurb.github.io/majortom/917/styles.css">' >> majortom/917.html
+          echo '<link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
           echo '</head><body>' >> majortom/917.html
 
           # Header with new menu structure
@@ -73,8 +75,9 @@ jobs:
           echo '  <p>&copy; 2024 brunurb</p>' >> majortom/917.html
           echo '</footer>' >> majortom/917.html
 
-          # Include jQuery and custom scripts
+          # Include jQuery, mosaic functionality, and custom scripts
           echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/917.html
+          echo '<script src="https://brunurb.github.io/majortom/917/jquery.mosaic.js"></script>' >> majortom/917.html
           echo '<script type="text/javascript">' >> majortom/917.html
           echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/917.html
           echo '    function showImage(src) {' >> majortom/917.html
@@ -104,5 +107,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/917.html
-          git commit -m "Regenerate majortom/917.html with new menu structure and styling" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/917.html with new menu structure, buttons, and gallery functionality" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
