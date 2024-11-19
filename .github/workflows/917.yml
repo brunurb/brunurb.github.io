@@ -1,4 +1,4 @@
-name: Generate 917.html
+name: 917
 
 on:
   push:
