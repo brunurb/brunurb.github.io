@@ -45,7 +45,7 @@ body {
 
 .navbar-top li {
   float: right;
-  position: relative;
+  position: relative; /* Necessary for dropdown positioning */
 }
 
 .navbar-top li#nav-company {
@@ -151,4 +151,165 @@ footer {
   background-color: #333; /* Darker background for tiles */
 }
 
-/* Additional styles for the top-site-outer, icon wrapper and titles, etc. (truncated for brevity) */
+.top-site-outer .top-site-inner {
+  position: relative;
+}
+
+.top-site-outer .top-site-inner > a {
+  padding: 20px 16px 4px;
+  color: inherit;
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+
+.top-sites-list a {
+  text-decoration: none;
+}
+
+.top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
+  background: var(--newtab-element-hover-color, #444);
+}
+
+.top-site-outer:is(:hover) .context-menu-button {
+  opacity: 1;
+}
+
+.top-site-outer .context-menu-button {
+  background-image: url("chrome://global/skin/icons/more.svg");
+  background-color: var(--newtab-button-background, #555);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  fill: var(--newtab-button-text, #fff);
+  -moz-context-properties: fill;
+  height: 20px;
+  width: 20px;
+  inset-inline-end: 3px;
+  opacity: 0;
+  position: absolute;
+  top: -20px;
+  transition: opacity 200ms;
+}
+
+.top-site-outer .tile {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: var(--newtab-background-color-secondary, #444);
+  justify-content: center;
+  margin: 0 auto;
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  color: var(--newtab-contextual-text-secondary-color, #fff);
+  display: flex;
+  font-size: 32px;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.top-site-outer .tile .icon-wrapper {
+  border-radius: 4px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-site-outer .tile .icon-wrapper.letter-fallback::before {
+  content: attr(data-fallback);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  font-weight: 800;
+  transform: rotate(-10deg);
+  top: 6px;
+  position: relative;
+  color: #FFF;
+}
+
+.top-site-outer .top-site-icon {
+  background-color: var(--newtab-background-color-secondary, #444);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+
+.top-site-outer .rich-icon {
+  background-size: cover;
+  height: 100%;
+  inset-inline-start: 0;
+  top: 0;
+  width: 100%;
+}
+
+.top-site-outer .default-icon,
+.top-site-outer .search-topsite {
+  background-size: 32px;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.top-site-outer .default-icon[data-fallback]::before,
+.top-site-outer .search-topsite[data-fallback]::before {
+  content: attr(data-fallback);
+}
+
+.top-site-outer.placeholder .tile {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: default;
+}
+
+.top-site-outer.placeholder.add-button .tile {
+  background-color: var(--button-background-color, #555);
+}
+
+.top-site-outer .title {
+  color: var(--newtab-contextual-text-primary-color, #fff);
+  padding-top: 8px;
+  font: caption;
+  text-align: center;
+  position: relative;
+}
+
+.top-site-outer .title .icon {
+  margin-inline-end: 2px;
+  fill: currentColor;
+}
+
+.top-site-outer .title span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.top-site-outer .tile .icon-wrapper .letter-fallback {
+  font-size: 64px;
+  font-weight: 800;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-10deg);
+}
