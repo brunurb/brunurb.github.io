@@ -3,17 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firefox Shortcuts Home Screen</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Brunurb</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="shortcuts/styles.css">
 </head>
 <body>
-  <div class="outer-wrapper">
-    <main>
-      <ul class="top-sites-list">
-        <!-- Shortcut items will be dynamically inserted here -->
-      </ul>
-    </main>
-  </div>
-  <script src="script.js" defer></script>
+  <header>
+    <ul class="navbar-top">
+      <li id="nav-company">
+        <a href="https://brunurb.github.io">brunurb</a>
+      </li>
+      <li><a href="https://brunurb.github.io/">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Blog</a></li>
+      <li class="dropdown">
+        <a href="#">Major Tom ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://brunurb.github.io/majortom/spaceships">spaceships</a></li>
+          <li><a href="https://brunurb.github.io/majortom/astronaut">astronauts 2</a></li>
+          <li><a href="https://brunurb.github.io/majortom/917">917</a></li>
+          <li><a href="https://brunurb.github.io/majortom/controls">controls</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+  <main>
+    <div class="outer-wrapper">
+      <main>
+        <ul class="top-sites-list">
+          <!-- Shortcut items will be dynamically inserted here -->
+        </ul>
+      </main>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 brunurb</p>
+  </footer>
+  <script src="shortcuts/script.js" defer></script>
 </body>
 </html>
