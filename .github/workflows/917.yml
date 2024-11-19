@@ -1,4 +1,4 @@
-name: 917
+name: Generate 917.html
 
 on:
   push:
@@ -23,17 +23,16 @@ jobs:
           echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
           echo '<title>Porsche 917</title>' >> majortom/917.html
           echo '<link rel="stylesheet" href="https://brunurb.github.io/main.css">' >> majortom/917.html
-          echo '<link rel="stylesheet" href="https://brunurb.github.io/majortom/917/styles.css">' >> majortom/917.html
-          echo '<link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
           echo '<style>' >> majortom/917.html
+          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; }' >> majortom/917.html
+          echo 'h1 { text-align: center; color: #dedcff; margin: 40px 0; }' >> majortom/917.html
+          echo '#myMosaic { display: flex; flex-wrap: wrap; justify-content: center; margin: auto; max-width: 80%; }' >> majortom/917.html
+          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; margin: 5px; }' >> majortom/917.html
           echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/917.html
           echo '#overlay.show { display: flex; }' >> majortom/917.html
           echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/917.html
           echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/917.html
           echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/917.html
-          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; }' >> majortom/917.html
-          echo '#myMosaic { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/917.html
-          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/917.html
           echo '</style>' >> majortom/917.html
           echo '</head><body>' >> majortom/917.html
 
@@ -55,8 +54,8 @@ jobs:
           echo '    <div id="myMosaic">' >> majortom/917.html
 
           # Loop through pictures to add them to the mosaic
-          for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "      <img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
+          for img in `ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'`; do
+            echo "      <img src='https://brunurb.github.io/majortom/917/pictures/\"$img\"' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/\"$img\"' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
           done
 
           # Closing tags for main content
