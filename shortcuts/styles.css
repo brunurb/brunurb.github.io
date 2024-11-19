@@ -13,7 +13,17 @@ html, body {
 
 /* Make body a flex container */
 body {
+  margin: 0;
+  background-color: #1e1e1e;
+  font-family: system-ui;
+  font-size: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
+  justify-content: center;
+  padding: 0 100px; /* Left and right margin of 100px */
   flex-direction: column;
 }
 
@@ -93,6 +103,17 @@ body {
 main {
   flex: 1; /* Allow main to take up available space */
   padding: 0; /* Remove padding for full-width image */
+}
+
+.outer-wrapper {
+  color: #ffffff;
+  display: flex;
+  flex-grow: 1;
+  min-height: 100vh;
+  padding: 30px 0;
+  width: 100%;
+  max-width: 1200px; /* Ensure it doesn't grow too wide */
+  margin: 0 auto; /* Center the content */
 }
 
 .content {
