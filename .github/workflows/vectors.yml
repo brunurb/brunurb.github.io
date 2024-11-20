@@ -3,7 +3,6 @@ name: vectors
 on:
   push:
     paths:
-      - 'brunurb.github.io/Mansonery/files/images/**'
       - 'majortom/vectors.html'
   workflow_dispatch:
 
@@ -13,6 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Checkout other repository
+        uses: actions/checkout@v2
+        with:
+          repository: brunurb/brunurb.github.io
+          path: brunurb.github.io
 
       - name: Generate vectors.html
         run: |
@@ -63,8 +68,9 @@ jobs:
           echo '<div id="myMosaic">' >> majortom/vectors.html
 
           # Correctly add images inside the myMosaic div
-          for img in $(ls majortom/vectors/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='https://brunurb.github.io/majortom/vectors/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/vectors/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/vectors.html
+          for img in $(ls brunurb.github.io/Mansonery/files/images | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
+            raw_url="https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/$img"
+            echo "<img src='$raw_url' alt='Gallery Image' data-full='$raw_url' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/vectors.html
           done
 
           echo '</div>' >> majortom/vectors.html
