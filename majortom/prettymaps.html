@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intergalactic planetss</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
+<style>
+body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }
+.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
+.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
+.buttons { display: flex; gap: 2px; }
+#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
+h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }
+footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }
+footer a { color: inherit; text-decoration: none; }
+#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
+#overlay.show { display: flex; }
+.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
+#overlay img { max-width: 100%; max-height: 100%; display: block; }
+#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+</style>
+</head><body>
+<div class="header">
+  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>
+  <div class="buttons">
+  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>
+  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">spacecraft</button></a>
+  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>
+  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>
+  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>
+  </div>
+</div>
+<main>
+<h1>Intergalactic Planets</h1>
+<div id="myMosaic">
+<img src='https://brunurb.github.io/majortom/planets/pictures/1161616.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1161616.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/121321.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/121321.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/12135245jkhjg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/12135245jkhjg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/12312313254.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/12312313254.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123123312.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123123312.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/12312331221231.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/12312331221231.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1231235456.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1231235456.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123125.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123125.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123145.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123145.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1231g2f3j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1231g2f3j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1231h5k64h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1231h5k64h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1231jg234gfj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1231jg234gfj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1235665kjkjlklj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1235665kjkjlklj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123f567653.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123f567653.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123fdh54fdh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123fdh54fdh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123fg1j3f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123fg1j3f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123fj563g4j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123fj563g4j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123fj6t7j435gj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123fj6t7j435gj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123gf1j65f4j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123gf1j65f4j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123gfj123jg213fgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123gfj123jg213fgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123gfj123jg456f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123gfj123jg456f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123gfj54g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123gfj54g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123gj1f32j1g564j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123gj1f32j1g564j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123gj1jf5g6gj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123gj1jf5g6gj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123gjf132gjf65j4f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123gjf132gjf65j4f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123h65fhg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123h65fhg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123hf213h13hdf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123hf213h13hdf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123hg156hf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123hg156hf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123hg541hj5g6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123hg541hj5g6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123jf155f6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123jf155f6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123jfg156gj4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123jfg156gj4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123jg13jg5.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123jg13jg5.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123jg5j56f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123jg5j56f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123jg65gj46fj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123jg65gj46fj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123k165hk4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123k165hk4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123kg156k464.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123kg156k464.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123kg564k8g6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123kg564k8g6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123kgh213gkh123kgh54.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123kgh213gkh123kgh54.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/123nbm123mnb5ghm.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/123nbm123mnb5ghm.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/12kh56kh45gh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/12kh56kh45gh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/12m21m.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/12m21m.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/12mn13mb5h4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/12mn13mb5h4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/132123132.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/132123132.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/132656.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/132656.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/132gk1354gkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/132gk1354gkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/13hkg4554khg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/13hkg4554khg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/151616574.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/151616574.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/156kg165khg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/156kg165khg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/15dhf56d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/15dhf56d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/15jg561f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/15jg561f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/165jthj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/165jthj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/168498.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/168498.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/185fjg198gjf4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/185fjg198gjf4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/189197.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/189197.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/189941987.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/189941987.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1989887416.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1989887416.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1gk561g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1gk561g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/1hgf56h56.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/1hgf56h56.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/211231.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/211231.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/21312123.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/21312123.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/2131fdh564dh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/2131fdh564dh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/2131jg3f56jfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/2131jg3f56jfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213213232.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213213232.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213215.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213215.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213fjg1fg354jg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213fjg1fg354jg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213g1j231jfg54.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213g1j231jfg54.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213gfj131gf56.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213gfj131gf56.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213gfj156j465fgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213gfj156j465fgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213gfj213gjf132jfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213gfj213gjf132jfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213hg321hfghf213.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213hg321hfghf213.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213hm56hg4k566h8j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213hm56hg4k566h8j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213j3h52g45.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213j3h52g45.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213jg123jg5jg4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213jg123jg5jg4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213kg56k4gkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213kg56k4gkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213kg5kg4k6gh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213kg5kg4k6gh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213kghkg5g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213kghkg5g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213nbm132bm5h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213nbm132bm5h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213ncv54cvn.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213ncv54cvn.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/213ncv5nc6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/213ncv5nc6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/21g54j6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/21g54j6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/21hd123hfd123hfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/21hd123hfd123hfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/21jg231j5g4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/21jg231j5g4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/21m123m5m.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/21m123m5m.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/23115465.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/23115465.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/23123.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/23123.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/231545.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/231545.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/231j123j54.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/231j123j54.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/231j1g56f4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/231j1g56f4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/231jgf235j64.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/231jgf235j64.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/231jh56g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/231jh56g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/231vn1c54nc.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/231vn1c54nc.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/23df156fhd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/23df156fhd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/23gjf15jgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/23gjf15jgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/23hf15dhf46.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/23hf15dhf46.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/32h1g5h4f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/32h1g5h4f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/3k2jh1k635h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/3k2jh1k635h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/454jgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/454jgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/45647897.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/45647897.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/456s4654fas.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/456s4654fas.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/45gds46s.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/45gds46s.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/45gj45gj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/45gj45gj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/45gjfj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/45gjfj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/45gjgfj4jfg879gjf8.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/45gjgfj4jfg879gjf8.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/45j5jgf456.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/45j5jgf456.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/45kgh45kgh6k6kgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/45kgh45kgh6k6kgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/48h4fdh4d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/48h4fdh4d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/4f5ds56fds45ds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/4f5ds56fds45ds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/4gd45g46.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/4gd45g46.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/4gkh6k446kg46.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/4gkh6k446kg46.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/4j8gf4j64f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/4j8gf4j64f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/4jgfggjfjgjgfj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/4jgfggjfjgjgfj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/4sfds4.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/4sfds4.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5165161.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5165161.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5165165.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5165165.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/51984.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/51984.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/51fdh56hd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/51fdh56hd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/51gjf546j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/51gjf546j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/51gkh564khg8gk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/51gkh564khg8gk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/541j45jgf56.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/541j45jgf56.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54564.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54564.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54654.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54654.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/546gd456d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/546gd456d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/546h4d65hfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/546h4d65hfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54d65fs46.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54d65fs46.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54f56j489t7jf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54f56j489t7jf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54g6s465s4d56sg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54g6s465s4d56sg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54gds456gd6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54gds456gd6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54gf65f4j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54gf65f4j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54hf45hfd46.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54hf45hfd46.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54hfd65d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54hfd65d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54j56fgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54j56fgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54jgf564jgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54jgf564jgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54jk56hkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54jk56hkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54kh54k6hkg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54kh54k6hkg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/54n1c68g7n6c.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/54n1c68g7n6c.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/555555555gfj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/555555555gfj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5645kh6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5645kh6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5646g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5646g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/564g5j46f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/564g5j46f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/564g6f64f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/564g6f64f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/564h5f6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/564h5f6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/564jg6j4g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/564jg6j4g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/564t564tru.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/564t564tru.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56d6s5.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56d6s5.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56f465hdf456hfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56f465hdf456hfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56f4a65f46sa.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56f4a65f46sa.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56f4h56f4d.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56f4h56f4d.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56fdh46dh7.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56fdh46dh7.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56fhd445.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56fhd445.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56g4654dgs.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56g4654dgs.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56hf45f6h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56hf45f6h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56j4g56jf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56j4g56jf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/56kg4654khg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/56kg4654khg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5d4f564.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5d4f564.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5ds456ds4df45f6as.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5ds456ds4df45f6as.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5f456gf879.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5f456gf879.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5f4j56gfj46.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5f4j56gfj46.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5g456j4gf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5g456j4gf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5g456jhm.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5g456jhm.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5g46sgsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5g46sgsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5gfj45f687f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5gfj45f687f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5gh54f4f56f4h6f46h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5gh54f4f56f4h6f46h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5gh54gh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5gh54gh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5gjfgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5gjfgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5gk46gk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5gk46gk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5h4g46k56ghk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5h4g46k56ghk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5h6fgh78fhg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5h6fgh78fhg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5hdf456dhfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5hdf456dhfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5hg5646gh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5hg5646gh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5j456j4k.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5j456j4k.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5j56gkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5j56gkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5j64g56j4gf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5j64g56j4gf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5jf54j65f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5jf54j65f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5k1h5.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5k1h5.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5k1h56kh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5k1h56kh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5k656k5k6h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5k656k5k6h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5k65k6hk8h79.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5k65k6hk8h79.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5kg46kg4h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5kg46kg4h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5kh456kh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5kh456kh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5kj4h56kh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5kj4h56kh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5s4f564564f65a4s65f4s65a.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5s4f564564f65a4s65f4s65a.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/5t41654jt155gf3.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/5t41654jt155gf3.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/65165165.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/65165165.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/789g879879gfh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/789g879879gfh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/87879j64.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/87879j64.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/879kh879khg879kgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/879kh879khg879kgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/8hd87hfd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/8hd87hfd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/8j78jg4613.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/8j78jg4613.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/8kgh918h96gkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/8kgh918h96gkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/Untitled.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/Untitled.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/cvnnc45nc456.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/cvnnc45nc456.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/dfhdfdfhf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/dfhdfdfhf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/f5645fh4d6f.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/f5645fh4d6f.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/fdh456h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/fdh456h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/fdh4fd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/fdh4fd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/fgjgfjgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/fgjgfjgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/fgjgfjgjf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/fgjgfjgjf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/fhdsfhgfhfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/fhdsfhgfhfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/fjgfjgjfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/fjgfjgjfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/fjgjfgjgf564.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/fjgjfgjgf564.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/g54g54g6d.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/g54g54g6d.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gds45dg46s.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gds45dg46s.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gfgjfjgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gfgjfjgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gfj456fgj6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gfj456fgj6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghg6h.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghg6h.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghgfh4gfh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghgfh4gfh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghhhh54.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghhhh54.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghk8674gkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghk8674gkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghkfhk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghkfhk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghkgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghkgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghkhfkhk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghkhfkhk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghkhhgk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghkhhgk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/ghkkhgkhg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/ghkkhgkhg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gjfjfgfjg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gjfjfgfjg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gjjf6j.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gjjf6j.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gk154hk867ghg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gk154hk867ghg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gkhhgkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gkhhgkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gkhk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gkhk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gkhkghkgkg4kg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gkhkghkgkg4kg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gkhkghkhg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gkhkghkhg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gkhkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gkhkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gkhkhg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gkhkhg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/gkhkhkghkfk.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/gkhkhkghkfk.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/hfdhd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/hfdhd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/hgfd56.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/hgfd56.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/hgjdjtyjyj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/hgjdjtyjyj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/hkgkhgkgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/hkgkhgkgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/iiyiy546.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/iiyiy546.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/j4564gj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/j4564gj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/j45g46gfj.webp' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/j45g46gfj.webp' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/j54fj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/j54fj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/j6jfg6fgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/j6jfg6fgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jfgfjgjfg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jfgfjgjfg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jgf486jgf4f.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jgf486jgf4f.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jgf54jgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jgf54jgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jgffjgfgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jgffjgfgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jgfjfgfgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jgfjfgfgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jgfjgf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jgfjgf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jgfjgfgj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jgfjgfgj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jgjghj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jgjghj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jhjkg768.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jhjkg768.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jhljlj.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jhljlj.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jkjkjlkjl.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jkjkjlkjl.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/jlj456.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/jlj456.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/k561g.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/k561g.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/kg45k6kg6.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/kg45k6kg6.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/kghghghk.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/kghghghk.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/kghghkgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/kghghkgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/kghhkh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/kghhkh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/kghkhgkgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/kghkhgkgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/khg54564kg.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/khg54564kg.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/khgghkgh.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/khgghkgh.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/sfhdfhf.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/sfhdfhf.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/sgdgsd.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/sgdgsd.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+<img src='https://brunurb.github.io/majortom/planets/pictures/sgdsgdgds.jpeg' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/planets/pictures/sgdsgdgds.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
+</div>
+<div id="overlay" onclick="closeOverlay(event)">
+  <div class="overlay-content">
+    <span id="close">×</span>
+    <img id="overlay-image" src="" alt="Full Size Image" />
+  </div>
+</div>
+</main>
+<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    function showImage(src) {
+        const overlay = document.getElementById("overlay");
+        const overlayImage = document.getElementById("overlay-image");
+        overlayImage.src = src;
+        overlay.classList.add("show");
+    }
+    function closeOverlay(event) {
+        if (event.target.id === "overlay" || event.target.id === "close") {
+            const overlay = document.getElementById("overlay");
+            overlay.classList.remove("show");
+        }
+    }
+    const images = document.querySelectorAll("#myMosaic img");
+    images.forEach(image => {
+        image.addEventListener("click", function() {
+            showImage(this.dataset.full);
+        });
+    });
+    const overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", closeOverlay);
+    const closeButton = document.getElementById("close");
+    closeButton.addEventListener("click", closeOverlay);
+});
+</script>
+</body></html>
