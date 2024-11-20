@@ -71,7 +71,7 @@ jobs:
           echo '      <div id="myMosaic">' >> majortom/917.html
           # Correctly add images inside the myMosaic div
           for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
+          echo "<img src='https://brunurb.github.io/majortom/917/pictures/${img// /%20}' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/${img// /%20}' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
           done
           echo '      </div>' >> majortom/917.html
           echo '      <div id="overlay" onclick="closeOverlay(event)">' >> majortom/917.html
