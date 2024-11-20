@@ -1,0 +1,118 @@
+name: vectors
+
+on:
+  push:
+    paths:
+      - 'brunurb.github.io/Mansonery/files/images/**'
+      - 'majortom/vectors.html'
+  workflow_dispatch:
+
+jobs:
+  update-gallery:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate vectors.html
+        run: |
+          echo "Generating vectors.html..."
+          echo '<!DOCTYPE html><html lang="en">' > majortom/vectors.html
+          echo '<head>' >> majortom/vectors.html
+          echo '<meta charset="UTF-8">' >> majortom/vectors.html
+          echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/vectors.html
+          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/vectors.html
+          echo '<title>Intergalactic vectors</title>' >> majortom/vectors.html
+          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/vectors.html
+          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/vectors.html
+          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/vectors.html
+          echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/vectors.html
+          echo '<style>' >> majortom/vectors.html
+          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/vectors.html
+          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/vectors.html
+          echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/vectors.html
+          echo '.buttons { display: flex; gap: 2px; }' >> majortom/vectors.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/vectors.html
+          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/vectors.html
+          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/vectors.html
+          echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/vectors.html
+          echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/vectors.html
+          echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/vectors.html
+          echo '#overlay.show { display: flex; }' >> majortom/vectors.html
+          echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/vectors.html
+          echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/vectors.html
+          echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/vectors.html
+          echo '</style>' >> majortom/vectors.html
+          echo '</head><body>' >> majortom/vectors.html
+
+          # Header
+          echo '<div class="header">' >> majortom/vectors.html
+          echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/vectors.html
+          echo '  <div class="buttons">' >> majortom/vectors.html
+          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/vectors.html
+          echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/vectors.html
+          echo '  <a href="https://brunurb.github.io/majortom/vectors"><button type="button" class="nes-btn is-warning">vectors</button></a>' >> majortom/vectors.html
+          echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/vectors.html
+          echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/vectors.html
+          echo '  </div>' >> majortom/vectors.html
+          echo '</div>' >> majortom/vectors.html
+
+          # Main content with centered text in mosaic div
+          echo '<main>' >> majortom/vectors.html
+          echo '<h1>vectors</h1>' >> majortom/vectors.html
+          echo '<div id="myMosaic">' >> majortom/vectors.html
+
+          # Correctly add images inside the myMosaic div
+          for img in $(ls majortom/vectors/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
+            echo "<img src='https://brunurb.github.io/majortom/vectors/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/vectors/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/vectors.html
+          done
+
+          echo '</div>' >> majortom/vectors.html
+          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/vectors.html
+          echo '  <div class="overlay-content">' >> majortom/vectors.html
+          echo '    <span id="close">×</span>' >> majortom/vectors.html
+          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/vectors.html
+          echo '  </div>' >> majortom/vectors.html
+          echo '</div>' >> majortom/vectors.html
+          echo '</main>' >> majortom/vectors.html
+
+          # Footer with copyright symbol
+          echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/vectors.html
+
+          # Include jQuery and custom scripts
+          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/vectors.html
+          echo '<script type="text/javascript">' >> majortom/vectors.html
+          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/vectors.html
+          echo '    function showImage(src) {' >> majortom/vectors.html
+          echo '        const overlay = document.getElementById("overlay");' >> majortom/vectors.html
+          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/vectors.html
+          echo '        overlayImage.src = src;' >> majortom/vectors.html
+          echo '        overlay.classList.add("show");' >> majortom/vectors.html
+          echo '    }' >> majortom/vectors.html
+          echo '    function closeOverlay(event) {' >> majortom/vectors.html
+          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/vectors.html
+          echo '            const overlay = document.getElementById("overlay");' >> majortom/vectors.html
+          echo '            overlay.classList.remove("show");' >> majortom/vectors.html
+          echo '        }' >> majortom/vectors.html
+          echo '    }' >> majortom/vectors.html
+          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/vectors.html
+          echo '    images.forEach(image => {' >> majortom/vectors.html
+          echo '        image.addEventListener("click", function() {' >> majortom/vectors.html
+          echo '            showImage(this.dataset.full);' >> majortom/vectors.html
+          echo '        });' >> majortom/vectors.html
+          echo '    });' >> majortom/vectors.html
+          echo '    const overlay = document.getElementById("overlay");' >> majortom/vectors.html
+          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/vectors.html
+          echo '    const closeButton = document.getElementById("close");' >> majortom/vectors.html
+          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/vectors.html
+          echo '});' >> majortom/vectors.html
+          echo '</script>' >> majortom/vectors.html
+          echo '</body></html>' >> majortom/vectors.html
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "GitHub Action"
+          git add majortom/vectors.html
+          git commit -m "Regenerate majortom/vectors.html for mosaic gallery with overlay" || echo "No changes to commit"
+          git push origin master  # Make sure this matches your main branch
