@@ -29,12 +29,15 @@ jobs:
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/917.html
           echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/917.html
           echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/917.html
-          echo '    h1 { text-align: center; color: #e8e6eb; margin: 20px 0 5px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/917.html
+          echo '    h1 { text-align: center; color: #e8e6eb; margin: 30px 0 0px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/917.html
           echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/917.html
           echo '    #overlay.show { display: flex; }' >> majortom/917.html
-          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/917.html
+          echo '    .overlay-content { position: relative; display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/917.html
           echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/917.html
           echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/917.html
+          echo '    button { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> majortom/917.html
+          echo '    #prevBtn { left: 20px; }' >> majortom/917.html
+          echo '    #nextBtn { right: 20px; }' >> majortom/917.html
           echo '  </style>' >> majortom/917.html
           echo '</head>' >> majortom/917.html
 
@@ -76,18 +79,20 @@ jobs:
           done
           echo '    </div>' >> majortom/917.html
 
-          # Overlay section
+          # Overlay section with navigation arrows
           echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/917.html
           echo '      <div class="overlay-content">' >> majortom/917.html
           echo '        <span id="close">×</span>' >> majortom/917.html
           echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/917.html
+          echo '        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>' >> majortom/917.html
+          echo '        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>' >> majortom/917.html
           echo '      </div>' >> majortom/917.html
           echo '    </div>' >> majortom/917.html
           echo '  </main>' >> majortom/917.html
 
           # Footer
           echo '  <footer>' >> majortom/917.html
-          echo '    <p>&copy; 2024 brunurb</p>' >> majortom/917.html
+          echo '    <p>© 2024 brunurb</p>' >> majortom/917.html
           echo '  </footer>' >> majortom/917.html
 
           # Include jQuery and custom scripts
@@ -95,11 +100,24 @@ jobs:
           echo '  <script src="https://brunurb.github.io/majortom/917/jquery.mosaic.js"></script>' >> majortom/917.html
           echo '  <script type="text/javascript">' >> majortom/917.html
           echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/917.html
+          echo '      let currentIndex = 0;' >> majortom/917.html
+          echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/917.html
           echo '      function showImage(src) {' >> majortom/917.html
           echo '        const overlay = document.getElementById("overlay");' >> majortom/917.html
           echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/917.html
           echo '        overlayImage.src = src;' >> majortom/917.html
+          echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> majortom/917.html
           echo '        overlay.classList.add("show");' >> majortom/917.html
+          echo '      }' >> majortom/917.html
+          echo '      function showPrevious(event) {' >> majortom/917.html
+          echo '        event.stopPropagation();' >> majortom/917.html
+          echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> majortom/917.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/917.html
+          echo '      }' >> majortom/917.html
+          echo '      function showNext(event) {' >> majortom/917.html
+          echo '        event.stopPropagation();' >> majortom/917.html
+          echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> majortom/917.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/917.html
           echo '      }' >> majortom/917.html
           echo '      function closeOverlay(event) {' >> majortom/917.html
           echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/917.html
@@ -117,6 +135,8 @@ jobs:
           echo '      overlay.addEventListener("click", closeOverlay);' >> majortom/917.html
           echo '      const closeButton = document.getElementById("close");' >> majortom/917.html
           echo '      closeButton.addEventListener("click", closeOverlay);' >> majortom/917.html
+          echo '      document.getElementById("prevBtn").addEventListener("click", showPrevious);' >> majortom/917.html
+          echo '      document.getElementById("nextBtn").addEventListener("click", showNext);' >> majortom/917.html
           echo '    });' >> majortom/917.html
           echo '  </script>' >> majortom/917.html
           echo '</body></html>' >> majortom/917.html
@@ -126,5 +146,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/917.html
-          git commit -m "Regenerate majortom/917.html for mosaic gallery with overlay" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/917.html for mosaic gallery with overlay and navigation arrows" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
