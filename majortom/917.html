@@ -9,12 +9,15 @@
     body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }
     #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
     #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
-    h1 { text-align: center; color: #e8e6eb; margin: 20px 0 5px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }
+    h1 { text-align: center; color: #e8e6eb; margin: 30px 0 0px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }
     #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
     #overlay.show { display: flex; }
-    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
+    .overlay-content { position: relative; display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
     #overlay img { max-width: 100%; max-height: 100%; display: block; }
     #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+    button { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }
+    #prevBtn { left: 20px; }
+    #nextBtn { right: 20px; }
   </style>
 </head>
 <body>
@@ -412,21 +415,36 @@
       <div class="overlay-content">
         <span id="close">×</span>
         <img id="overlay-image" src="" alt="Full Size Image" />
+        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>
+        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>
       </div>
     </div>
   </main>
   <footer>
-    <p>&copy; 2024 brunurb</p>
+    <p>© 2024 brunurb</p>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://brunurb.github.io/majortom/917/jquery.mosaic.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
+      let currentIndex = 0;
+      const imagesArray = [...document.querySelectorAll("#myMosaic img")];
       function showImage(src) {
         const overlay = document.getElementById("overlay");
         const overlayImage = document.getElementById("overlay-image");
         overlayImage.src = src;
+        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);
         overlay.classList.add("show");
+      }
+      function showPrevious(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;
+        showImage(imagesArray[currentIndex].dataset.full);
+      }
+      function showNext(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % imagesArray.length;
+        showImage(imagesArray[currentIndex].dataset.full);
       }
       function closeOverlay(event) {
         if (event.target.id === "overlay" || event.target.id === "close") {
@@ -444,6 +462,8 @@
       overlay.addEventListener("click", closeOverlay);
       const closeButton = document.getElementById("close");
       closeButton.addEventListener("click", closeOverlay);
+      document.getElementById("prevBtn").addEventListener("click", showPrevious);
+      document.getElementById("nextBtn").addEventListener("click", showNext);
     });
   </script>
 </body></html>
