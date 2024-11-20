@@ -23,7 +23,7 @@ jobs:
           echo '  <meta charset="UTF-8">' >> majortom/917.html
           echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
           echo '  <title>Porsche 917</title>' >> majortom/917.html
-          echo '  <link rel="stylesheet" href="main.css">' >> majortom/917.html
+          echo '  <link rel="stylesheet" href="brunurb.github.io/main.css">' >> majortom/917.html
           echo '  <style>' >> majortom/917.html
           echo '    #myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/917.html
           echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/917.html
