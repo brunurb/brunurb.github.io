@@ -29,7 +29,7 @@ jobs:
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/917.html
           echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/917.html
           echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/917.html
-          echo '    h1 { text-align: center; color: #e8e6eb; margin: 10px 0 14px; font-size: 24px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/917.html
+          echo '    h1 { text-align: center; color: #e8e6eb; margin: 20px 0 5px; font-size: 24px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/917.html
           echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/917.html
           echo '    #overlay.show { display: flex; }' >> majortom/917.html
           echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/917.html
