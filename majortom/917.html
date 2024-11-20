@@ -6,21 +6,15 @@
   <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">
   <link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">
   <style>
-    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }
-    .header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
-    .header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
-    .buttons { display: flex; gap: 2px; }
+    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }
     #myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
     #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
     h1 { text-align: center; color: #e8e6eb; margin: 80px 0 14px; font-size: 14px; font-family: "Arial", sans-serif; text-transform: uppercase; }
-    footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }
-    footer a { color: inherit; text-decoration: none; }
     #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
     #overlay.show { display: flex; }
     .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
     #overlay img { max-width: 100%; max-height: 100%; display: block; }
     #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
-    .content { padding-top: 60px; } /* Add padding to account for the fixed header */
   </style>
 </head>
 <body>
