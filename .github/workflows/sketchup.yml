@@ -65,7 +65,7 @@ jobs:
 
           # Main content with centered text in mosaic div
           echo '<main>' >> majortom/sketchup.html
-          echo '<h1>Intergalactic Asketchups</h1>' >> majortom/sketchup.html
+          echo '<h1>Sketchup</h1>' >> majortom/sketchup.html
           echo '<div id="myMosaic">' >> majortom/sketchup.html
 
           # Correctly add images inside the myMosaic div
