@@ -67,7 +67,6 @@ jobs:
           echo '    </ul>' >> majortom/917.html
           echo '  </header>' >> majortom/917.html
           echo '  <main>' >> majortom/917.html
-          echo '    <div class="content">' >> majortom/917.html
           echo '      <h1>917</h1>' >> majortom/917.html
           echo '      <div id="myMosaic">' >> majortom/917.html
 
