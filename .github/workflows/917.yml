@@ -128,15 +128,3 @@ jobs:
           git add majortom/917.html
           git commit -m "Regenerate majortom/917.html for mosaic gallery with overlay" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
-
-      # Add a step to trigger GitHub Pages build and deployment
-      - name: Deploy to GitHub Pages
-        run: |
-          echo "Deploying to GitHub Pages..."
-          mkdir -p output
-          cp majortom/917.html output/
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions@github.com"
-          git add output/917.html
-          git commit -m "Deploy 917.html to GitHub Pages" || echo "No changes to commit"
-          git push origin master:gh-pages  # Ensure you push changes to the 'gh-pages' branch
