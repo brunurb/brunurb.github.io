@@ -8,11 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-917-html:
+  update-gallery:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Generate 917.html
@@ -20,110 +19,108 @@ jobs:
           echo "Generating 917.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/917.html
           echo '<head>' >> majortom/917.html
-          echo '  <meta charset="UTF-8">' >> majortom/917.html
-          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
-          echo '  <title>917</title>' >> majortom/917.html
-          echo '  <link rel="stylesheet" href="https://brunurb.github.io/main.css">' >> majortom/917.html
-          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
-          echo '  <style>' >> majortom/917.html
-          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/917.html
-          echo '    .header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/917.html
-          echo '    .header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/917.html
-          echo '    .buttons { display: flex; gap: 2px; }' >> majortom/917.html
-          echo '    #myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/917.html
-          echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/917.html
-          echo '    h1 { text-align: center; color: #e8e6eb; margin: 80px 0 14px; font-size: 14px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/917.html
-          echo '    footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/917.html
-          echo '    footer a { color: inherit; text-decoration: none; }' >> majortom/917.html
-          echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/917.html
-          echo '    #overlay.show { display: flex; }' >> majortom/917.html
-          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/917.html
-          echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/917.html
-          echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/917.html
-          echo '    .content { padding-top: 60px; } /* Add padding to account for the fixed header */' >> majortom/917.html
-          echo '  </style>' >> majortom/917.html
-          echo '</head>' >> majortom/917.html
-          echo '<body>' >> majortom/917.html
-          echo '  <header>' >> majortom/917.html
-          echo '    <ul class="navbar-top">' >> majortom/917.html
-          echo '      <li id="nav-company">' >> majortom/917.html
-          echo '        <a href="https://brunurb.github.io">brunurb</a>' >> majortom/917.html
-          echo '      </li>' >> majortom/917.html
-          echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/917.html
-          echo '      <li class="dropdown">' >> majortom/917.html
-          echo '        <a href="#">About ▼</a>' >> majortom/917.html
-          echo '        <ul class="dropdown-menu">' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/917.html
-          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/917.html
-          echo '        </ul>' >> majortom/917.html
-          echo '      </li>' >> majortom/917.html
-          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/917.html
-          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/917.html
-          echo '      <li class="dropdown">' >> majortom/917.html
-          echo '        <a href="#">Works ▼</a>' >> majortom/917.html
-          echo '        <ul class="dropdown-menu">' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/917.html
-          echo '        </ul>' >> majortom/917.html
-          echo '      </li>' >> majortom/917.html
-          echo '    </ul>' >> majortom/917.html
-          echo '  </header>' >> majortom/917.html
-          echo '  <main>' >> majortom/917.html
-          echo '    <div class="content">' >> majortom/917.html
-          echo '      <h1>917</h1>' >> majortom/917.html
-          echo '      <div id="myMosaic">' >> majortom/917.html
+          echo '<meta charset="UTF-8">' >> majortom/917.html
+          echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/917.html
+          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
+          echo '<title>Porsche 917</title>' >> majortom/917.html
+          echo '<link rel="stylesheet" href="main.css">' >> majortom/917.html
+          echo '<style>' >> majortom/917.html
+          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/917.html
+          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/917.html
+          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/917.html
+          echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/917.html
+          echo '#overlay.show { display: flex; }' >> majortom/917.html
+          echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/917.html
+          echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/917.html
+          echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/917.html
+          echo '</style>' >> majortom/917.html
+          echo '</head><body>' >> majortom/917.html
+
+          # Header
+          echo '<header>' >> majortom/917.html
+          echo '  <ul class="navbar-top">' >> majortom/917.html
+          echo '    <li id="nav-company">' >> majortom/917.html
+          echo '      <a href="https://brunurb.github.io">brunurb</a>' >> majortom/917.html
+          echo '    </li>' >> majortom/917.html
+          echo '    <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/917.html
+          echo '    <li class="dropdown">' >> majortom/917.html
+          echo '      <a href="#">About ▼</a>' >> majortom/917.html
+          echo '      <ul class="dropdown-menu">' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/917.html
+          echo '        <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/917.html
+          echo '      </ul>' >> majortom/917.html
+          echo '    </li>' >> majortom/917.html
+          echo '    <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/917.html
+          echo '    <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/917.html
+          echo '    <li class="dropdown">' >> majortom/917.html
+          echo '      <a href="#">Works ▼</a>' >> majortom/917.html
+          echo '      <ul class="dropdown-menu">' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/majortom/prettymaps">prettymaps</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/majortom/sketchup">sketchup</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/majortom/vectors">vectors</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/917.html
+          echo '        <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/917.html
+          echo '      </ul>' >> majortom/917.html
+          echo '    </li>' >> majortom/917.html
+          echo '  </ul>' >> majortom/917.html
+          echo '</header>' >> majortom/917.html
+
+          # Main content with centered text in mosaic div
+          echo '<main>' >> majortom/917.html
+          echo '<h1>Porsche 917</h1>' >> majortom/917.html
+          echo '<div id="myMosaic">' >> majortom/917.html
 
           # Correctly add images inside the myMosaic div
           for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             echo "<img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
           done
 
-          echo '      </div>' >> majortom/917.html
-          echo '      <div id="overlay" onclick="closeOverlay(event)">' >> majortom/917.html
-          echo '        <div class="overlay-content">' >> majortom/917.html
-          echo '          <span id="close">×</span>' >> majortom/917.html
-          echo '          <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/917.html
-          echo '        </div>' >> majortom/917.html
-          echo '      </div>' >> majortom/917.html
-          echo '    </div>' >> majortom/917.html
-          echo '  </main>' >> majortom/917.html
-          echo '  <footer>' >> majortom/917.html
-          echo '    <p>&copy; 2024 brunurb</p>' >> majortom/917.html
-          echo '  </footer>' >> majortom/917.html
+          echo '</div>' >> majortom/917.html
+          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/917.html
+          echo '  <div class="overlay-content">' >> majortom/917.html
+          echo '    <span id="close">×</span>' >> majortom/917.html
+          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/917.html
+          echo '  </div>' >> majortom/917.html
+          echo '</div>' >> majortom/917.html
+          echo '</main>' >> majortom/917.html
+
+          # Footer with copyright symbol
+          echo '<footer>' >> majortom/917.html
+          echo '  <p>&copy; 2024 brunurb</p>' >> majortom/917.html
+          echo '</footer>' >> majortom/917.html
 
           # Include jQuery and custom scripts
-          echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/917.html
-          echo '  <script src="https://brunurb.github.io/majortom/917/jquery.mosaic.js"></script>' >> majortom/917.html
-          echo '  <script type="text/javascript">' >> majortom/917.html
-          echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/917.html
-          echo '      function showImage(src) {' >> majortom/917.html
+          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/917.html
+          echo '<script type="text/javascript">' >> majortom/917.html
+          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/917.html
+          echo '    function showImage(src) {' >> majortom/917.html
           echo '        const overlay = document.getElementById("overlay");' >> majortom/917.html
           echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/917.html
           echo '        overlayImage.src = src;' >> majortom/917.html
           echo '        overlay.classList.add("show");' >> majortom/917.html
-          echo '      }' >> majortom/917.html
-          echo '      function closeOverlay(event) {' >> majortom/917.html
+          echo '    }' >> majortom/917.html
+          echo '    function closeOverlay(event) {' >> majortom/917.html
           echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/917.html
-          echo '          const overlay = document.getElementById("overlay");' >> majortom/917.html
-          echo '          overlay.classList.remove("show");' >> majortom/917.html
+          echo '            const overlay = document.getElementById("overlay");' >> majortom/917.html
+          echo '            overlay.classList.remove("show");' >> majortom/917.html
           echo '        }' >> majortom/917.html
-          echo '      }' >> majortom/917.html
-          echo '      const images = document.querySelectorAll("#myMosaic img");' >> majortom/917.html
-          echo '      images.forEach(image => {' >> majortom/917.html
+          echo '    }' >> majortom/917.html
+          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/917.html
+          echo '    images.forEach(image => {' >> majortom/917.html
           echo '        image.addEventListener("click", function() {' >> majortom/917.html
-          echo '          showImage(this.dataset.full);' >> majortom/917.html
+          echo '            showImage(this.dataset.full);' >> majortom/917.html
           echo '        });' >> majortom/917.html
-          echo '      });' >> majortom/917.html
-          echo '      const overlay = document.getElementById("overlay");' >> majortom/917.html
-          echo '      overlay.addEventListener("click", closeOverlay);' >> majortom/917.html
-          echo '      const closeButton = document.getElementById("close");' >> majortom/917.html
-          echo '      closeButton.addEventListener("click", closeOverlay);' >> majortom/917.html
           echo '    });' >> majortom/917.html
-          echo '  </script>' >> majortom/917.html
+          echo '    const overlay = document.getElementById("overlay");' >> majortom/917.html
+          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/917.html
+          echo '    const closeButton = document.getElementById("close");' >> majortom/917.html
+          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/917.html
+          echo '});' >> majortom/917.html
+          echo '</script>' >> majortom/917.html
           echo '</body></html>' >> majortom/917.html
 
       - name: Commit changes
