@@ -67,7 +67,7 @@ jobs:
           echo '    </ul>' >> majortom/917.html
           echo '  </header>' >> majortom/917.html
           echo '  <main>' >> majortom/917.html
-          echo '    h1 { text-align: center; color: #e8e6eb; margin: 20px 0 14px; font-size: 14px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/917.html        echo '      <div id="myMosaic">' >> majortom/917.html
+          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 14px; font-size: 14px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/917.html        echo '      <div id="myMosaic">' >> majortom/917.html
           # Correctly add images inside the myMosaic div
           for img in $(ls majortom/917/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             echo "<img src='https://brunurb.github.io/majortom/917/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/917/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/917.html
