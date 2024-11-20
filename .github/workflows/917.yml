@@ -23,7 +23,7 @@ jobs:
           echo '  <meta charset="UTF-8">' >> majortom/917.html
           echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/917.html
           echo '  <title>917</title>' >> majortom/917.html
-          echo '  <link rel="stylesheet" href="https://brunurb.github.io/main.css">' >> majortom/917.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/917.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
           echo '  <style>' >> majortom/917.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/917.html
