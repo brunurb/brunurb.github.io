@@ -3,119 +3,153 @@ name: sketchup
 on:
   push:
     paths:
+      - 'majortom/sketchup/pictures/**'
       - 'majortom/sketchup.html'
   workflow_dispatch:
 
 jobs:
-  update-gallery:
+  update-sketchup-html:
     runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
-      - name: Checkout Google-Sketchup repository
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          repository: brunurb/Google-Sketchup
-          ref: 053c9bfad942c25a092728e1e8cb5bc3598ab52e
-          path: google-sketchup
 
       - name: Generate sketchup.html
         run: |
           echo "Generating sketchup.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/sketchup.html
           echo '<head>' >> majortom/sketchup.html
-          echo '<meta charset="UTF-8">' >> majortom/sketchup.html
-          echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/sketchup.html
-          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/sketchup.html
-          echo '<title>Intergalactic sketchup</title>' >> majortom/sketchup.html
-          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/sketchup.html
-          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/sketchup.html
-          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/sketchup.html
-          echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/sketchup.html
-          echo '<style>' >> majortom/sketchup.html
-          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/sketchup.html
-          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/sketchup.html
-          echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/sketchup.html
-          echo '.buttons { display: flex; gap: 2px; }' >> majortom/sketchup.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/sketchup.html
-          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/sketchup.html
-          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/sketchup.html
-          echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/sketchup.html
-          echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/sketchup.html
-          echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/sketchup.html
-          echo '#overlay.show { display: flex; }' >> majortom/sketchup.html
-          echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/sketchup.html
-          echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/sketchup.html
-          echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/sketchup.html
-          echo '</style>' >> majortom/sketchup.html
-          echo '</head><body>' >> majortom/sketchup.html
+          echo '  <meta charset="UTF-8">' >> majortom/sketchup.html
+          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/sketchup.html
+          echo '  <title>sketchup</title>' >> majortom/sketchup.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/sketchup.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/sketchup/jquery.mosaic.css">' >> majortom/sketchup.html
+          echo '  <style>' >> majortom/sketchup.html
+          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/sketchup.html
+          echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/sketchup.html
+          echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/sketchup.html
+          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/sketchup.html
+          echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/sketchup.html
+          echo '    #overlay.show { display: flex; }' >> majortom/sketchup.html
+          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }' >> majortom/sketchup.html
+          echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/sketchup.html
+          echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/sketchup.html
+          echo '    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> majortom/sketchup.html
+          echo '    #prevBtn { left: 20px; }' >> majortom/sketchup.html
+          echo '    #nextBtn { right: 20px; }' >> majortom/sketchup.html
+          echo '  </style>' >> majortom/sketchup.html
+          echo '</head>' >> majortom/sketchup.html
 
-          # Header
-          echo '<div class="header">' >> majortom/sketchup.html
-          echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/sketchup.html
-          echo '  <div class="buttons">' >> majortom/sketchup.html
-          echo '  <a href="https://brunurb.github.io/majortom/sketchup"><button type="button" class="nes-btn is-primary">sketchup</button></a>' >> majortom/sketchup.html
-          echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/sketchup.html
-          echo '  <a href="https://brunurb.github.io/majortom/sketchup"><button type="button" class="nes-btn is-warning">sketchup</button></a>' >> majortom/sketchup.html
-          echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/sketchup.html
-          echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/sketchup.html
-          echo '  </div>' >> majortom/sketchup.html
-          echo '</div>' >> majortom/sketchup.html
+          # Adding the header
+          echo '<body>' >> majortom/sketchup.html
+          echo '  <header>' >> majortom/sketchup.html
+          echo '    <ul class="navbar-top">' >> majortom/sketchup.html
+          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/sketchup.html
+          echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/sketchup.html
+          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/sketchup.html
+          echo '        <ul class="dropdown-menu">' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/sketchup.html
+          echo '        </ul>' >> majortom/sketchup.html
+          echo '      </li>' >> majortom/sketchup.html
+          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/sketchup.html
+          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/sketchup.html
+          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/sketchup.html
+          echo '        <ul class="dropdown-menu">' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/sketchup.html
+          echo '        </ul>' >> majortom/sketchup.html
+          echo '      </li>' >> majortom/sketchup.html
+          echo '    </ul>' >> majortom/sketchup.html
+          echo '  </header>' >> majortom/sketchup.html
 
-          # Main content with centered text in mosaic div
-          echo '<main>' >> majortom/sketchup.html
-          echo '<h1>Sketchup</h1>' >> majortom/sketchup.html
-          echo '<div id="myMosaic">' >> majortom/sketchup.html
+          # Add the title
+          echo '  <main>' >> majortom/sketchup.html
+          echo '<h1>sketchup</h1>' >> majortom/sketchup.html
 
-          # Correctly add images inside the myMosaic div
+          # Mosaic images generation
+          echo '    <div id="myMosaic">' >> majortom/sketchup.html
+
+          # Generate image tags
           for img in $(ls "google-sketchup/SKETCHUP RASTER" | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             img_escaped=$(echo "$img" | sed 's/ /%20/g')  # Escape spaces
             raw_url="https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/$img_escaped"
             echo "<img src='$raw_url' alt='Gallery Image' data-full='$raw_url' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/sketchup.html
           done
+          
+          echo '    </div>' >> majortom/sketchup.html
 
-          echo '</div>' >> majortom/sketchup.html
-          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/sketchup.html
-          echo '  <div class="overlay-content">' >> majortom/sketchup.html
-          echo '    <span id="close">×</span>' >> majortom/sketchup.html
-          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/sketchup.html
-          echo '  </div>' >> majortom/sketchup.html
-          echo '</div>' >> majortom/sketchup.html
-          echo '</main>' >> majortom/sketchup.html
+          # Overlay section with navigation arrows
+          echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/sketchup.html
+          echo '      <div class="overlay-content">' >> majortom/sketchup.html
+          echo '        <span id="close">×</span>' >> majortom/sketchup.html
+          echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/sketchup.html
+          echo '        <button id="prevBtn" onclick="showPrevious(event)">❮</button>' >> majortom/sketchup.html
+          echo '        <button id="nextBtn" onclick="showNext(event)">❯</button>' >> majortom/sketchup.html
+          echo '      </div>' >> majortom/sketchup.html
+          echo '    </div>' >> majortom/sketchup.html
+          echo '  </main>' >> majortom/sketchup.html
 
-          # Footer with copyright symbol
-          echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/sketchup.html
+          # Footer
+          echo '  <footer>' >> majortom/sketchup.html
+          echo '    <p>© 2024 brunurb</p>' >> majortom/sketchup.html
+          echo '  </footer>' >> majortom/sketchup.html
 
           # Include jQuery and custom scripts
-          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/sketchup.html
-          echo '<script type="text/javascript">' >> majortom/sketchup.html
-          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/sketchup.html
-          echo '    function showImage(src) {' >> majortom/sketchup.html
+          echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/sketchup.html
+          echo '  <script type="text/javascript">' >> majortom/sketchup.html
+          echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/sketchup.html
+          echo '      let currentIndex = 0;' >> majortom/sketchup.html
+          echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/sketchup.html
+          echo '      function showImage(src) {' >> majortom/sketchup.html
           echo '        const overlay = document.getElementById("overlay");' >> majortom/sketchup.html
           echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/sketchup.html
           echo '        overlayImage.src = src;' >> majortom/sketchup.html
+          echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> majortom/sketchup.html
           echo '        overlay.classList.add("show");' >> majortom/sketchup.html
-          echo '    }' >> majortom/sketchup.html
-          echo '    function closeOverlay(event) {' >> majortom/sketchup.html
+          echo '      }' >> majortom/sketchup.html
+          echo '      function showPrevious(event) {' >> majortom/sketchup.html
+          echo '        event.stopPropagation();' >> majortom/sketchup.html
+          echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> majortom/sketchup.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/sketchup.html
+          echo '      }' >> majortom/sketchup.html
+          echo '      function showNext(event) {' >> majortom/sketchup.html
+          echo '        event.stopPropagation();' >> majortom/sketchup.html
+          echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> majortom/sketchup.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/sketchup.html
+          echo '      }' >> majortom/sketchup.html
+          echo '      function closeOverlay(event) {' >> majortom/sketchup.html
           echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/sketchup.html
-          echo '            const overlay = document.getElementById("overlay");' >> majortom/sketchup.html
-          echo '            overlay.classList.remove("show");' >> majortom/sketchup.html
+          echo '          const overlay = document.getElementById("overlay");' >> majortom/sketchup.html
+          echo '          overlay.classList.remove("show");' >> majortom/sketchup.html
           echo '        }' >> majortom/sketchup.html
-          echo '    }' >> majortom/sketchup.html
-          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/sketchup.html
-          echo '    images.forEach(image => {' >> majortom/sketchup.html
+          echo '      }' >> majortom/sketchup.html
+          echo '      const images = document.querySelectorAll("#myMosaic img");' >> majortom/sketchup.html
+          echo '      images.forEach(image => {' >> majortom/sketchup.html
           echo '        image.addEventListener("click", function() {' >> majortom/sketchup.html
-          echo '            showImage(this.dataset.full);' >> majortom/sketchup.html
+          echo '          showImage(this.dataset.full);' >> majortom/sketchup.html
           echo '        });' >> majortom/sketchup.html
+          echo '      });' >> majortom/sketchup.html
+          echo '      const overlay = document.getElementById("overlay");' >> majortom/sketchup.html
+          echo '      overlay.addEventListener("click", closeOverlay);' >> majortom/sketchup.html
+          echo '      const closeButton = document.getElementById("close");' >> majortom/sketchup.html
+          echo '      closeButton.addEventListener("click", closeOverlay);' >> majortom/sketchup.html
+          echo '      document.getElementById("prevBtn").addEventListener("click", showPrevious);' >> majortom/sketchup.html
+          echo '      document.getElementById("nextBtn").addEventListener("click", showNext);' >> majortom/sketchup.html
+          echo '      window.addEventListener("keydown", function(event) {' >> majortom/sketchup.html
+          echo '        if (event.key === "ArrowLeft") {' >> majortom/sketchup.html
+          echo '          showPrevious(event);' >> majortom/sketchup.html
+          echo '        } else if (event.key === "ArrowRight") {' >> majortom/sketchup.html
+          echo '          showNext(event);' >> majortom/sketchup.html
+          echo '        }' >> majortom/sketchup.html
+          echo '      });' >> majortom/sketchup.html
           echo '    });' >> majortom/sketchup.html
-          echo '    const overlay = document.getElementById("overlay");' >> majortom/sketchup.html
-          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/sketchup.html
-          echo '    const closeButton = document.getElementById("close");' >> majortom/sketchup.html
-          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/sketchup.html
-          echo '});' >> majortom/sketchup.html
-          echo '</script>' >> majortom/sketchup.html
+          echo '  </script>' >> majortom/sketchup.html
           echo '</body></html>' >> majortom/sketchup.html
 
       - name: Commit changes
@@ -123,5 +157,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/sketchup.html
-          git commit -m "Regenerate majortom/sketchup.html for mosaic gallery with overlay" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/sketchup.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
