@@ -1,9 +1,9 @@
-name: sketchup
+name: Generate Sketchup Gallery
 
 on:
   push:
+    # Adjust these paths according to where you expect to change files
     paths:
-      - 'majortom/sketchup/pictures/**'
       - 'majortom/sketchup.html'
   workflow_dispatch:
 
@@ -12,8 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout the main repository
         uses: actions/checkout@v2
+      
+      - name: Checkout Google-Sketchup repository
+        uses: actions/checkout@v2
+        with:
+          repository: brunurb/Google-Sketchup
+          path: Google-Sketchup  # Check out into the specified folder
 
       - name: Generate sketchup.html
         run: |
@@ -22,17 +28,17 @@ jobs:
           echo '<head>' >> majortom/sketchup.html
           echo '  <meta charset="UTF-8">' >> majortom/sketchup.html
           echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/sketchup.html
-          echo '  <title>sketchup</title>' >> majortom/sketchup.html
+          echo '  <title>Sketchup Gallery</title>' >> majortom/sketchup.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/sketchup.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/sketchup/jquery.mosaic.css">' >> majortom/sketchup.html
           echo '  <style>' >> majortom/sketchup.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/sketchup.html
-          echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/sketchup.html
+          echo '    #myMosaic { margin: 20px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/sketchup.html
           echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/sketchup.html
-          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/sketchup.html
+          echo '    h1 { text-align: center; margin: 40px 0 -10px; font-size: 18px; text-transform: uppercase; }' >> majortom/sketchup.html
           echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/sketchup.html
           echo '    #overlay.show { display: flex; }' >> majortom/sketchup.html
-          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }' >> majortom/sketchup.html
+          echo '    .overlay-content { position: relative; max-width: 90%; max-height: 90%; }' >> majortom/sketchup.html
           echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/sketchup.html
           echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/sketchup.html
           echo '    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> majortom/sketchup.html
@@ -41,50 +47,35 @@ jobs:
           echo '  </style>' >> majortom/sketchup.html
           echo '</head>' >> majortom/sketchup.html
 
-          # Adding the header
+          # Header
           echo '<body>' >> majortom/sketchup.html
           echo '  <header>' >> majortom/sketchup.html
           echo '    <ul class="navbar-top">' >> majortom/sketchup.html
           echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/sketchup.html
           echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/sketchup.html
-          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/sketchup.html
-          echo '        <ul class="dropdown-menu">' >> majortom/sketchup.html
-          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/sketchup.html
-          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/sketchup.html
-          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/sketchup.html
-          echo '        </ul>' >> majortom/sketchup.html
-          echo '      </li>' >> majortom/sketchup.html
-          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/sketchup.html
-          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/sketchup.html
-          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/sketchup.html
-          echo '        <ul class="dropdown-menu">' >> majortom/sketchup.html
-          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/sketchup.html
-          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/sketchup.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/sketchup.html
-          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/sketchup.html
-          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/sketchup.html
-          echo '        </ul>' >> majortom/sketchup.html
-          echo '      </li>' >> majortom/sketchup.html
+          echo '      <li><a href="#">About</a></li>' >> majortom/sketchup.html
+          echo '      <li><a href="#">Portfolio</a></li>' >> majortom/sketchup.html
+          echo '      <li><a href="#">Blog</a></li>' >> majortom/sketchup.html
           echo '    </ul>' >> majortom/sketchup.html
           echo '  </header>' >> majortom/sketchup.html
 
-          # Add the title
+          # Main content
           echo '  <main>' >> majortom/sketchup.html
-          echo '<h1>sketchup</h1>' >> majortom/sketchup.html
-
-          # Mosaic images generation
+          echo '    <h1>Sketchup Gallery</h1>' >> majortom/sketchup.html
           echo '    <div id="myMosaic">' >> majortom/sketchup.html
-
-          # Generate image tags
-          for img in $(ls "google-sketchup/SKETCHUP RASTER" | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            img_escaped=$(echo "$img" | sed 's/ /%20/g')  # Escape spaces
-            raw_url="https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/$img_escaped"
-            echo "<img src='$raw_url' alt='Gallery Image' data-full='$raw_url' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/sketchup.html
-          done
           
+          # Find images in the Google-Sketchup/SKETCHUP RASTER directory
+          echo "Searching for images in 'Google-Sketchup/SKETCHUP RASTER':"
+          find "Google-Sketchup/SKETCHUP RASTER" -type f \( -iname "*.jpeg" -o -iname "*.jpg" -o -iname "*.gif" -o -iname "*.svg" -o -iname "*.png" -o -iname "*.webp" \) | while IFS= read -r img; do
+            img_name=$(basename "$img")       # Extract the filename
+            img_url="https://raw.githubusercontent.com/brunurb/Google-Sketchup/refs/heads/master/SKETCHUP%20RASTER/$img_name"  # Construct the URL
+            echo "<img src='$img_url' alt='Gallery Image' data-full='$img_url' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/sketchup.html
+            echo "Added image: $img_url"  # Log added image URLs
+          done
+
           echo '    </div>' >> majortom/sketchup.html
 
-          # Overlay section with navigation arrows
+          # Overlay section
           echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/sketchup.html
           echo '      <div class="overlay-content">' >> majortom/sketchup.html
           echo '        <span id="close">×</span>' >> majortom/sketchup.html
@@ -157,5 +148,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/sketchup.html
-          git commit -m "Regenerate majortom/sketchup.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
-          git push origin master  # Make sure this matches your main branch
+          git commit -m "Regenerate majortom/sketchup.html for mosaic gallery" || echo "No changes to commit"
+          git push origin master  # Ensure this matches your main branch
