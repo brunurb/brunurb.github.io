@@ -25,6 +25,7 @@ jobs:
           echo '  <title>astronaut</title>' >> majortom/astronaut.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/astronaut.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/astronaut/jquery.mosaic.css">' >> majortom/astronaut.html
+          echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/astronaut.html
           echo '  <style>' >> majortom/astronaut.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/astronaut.html
           echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/astronaut.html
@@ -41,7 +42,7 @@ jobs:
           echo '  </style>' >> majortom/astronaut.html
           echo '</head>' >> majortom/astronaut.html
 
-          # Adding the header
+          # Adding the header with updated menu
           echo '<body>' >> majortom/astronaut.html
           echo '  <header>' >> majortom/astronaut.html
           echo '    <ul class="navbar-top">' >> majortom/astronaut.html
