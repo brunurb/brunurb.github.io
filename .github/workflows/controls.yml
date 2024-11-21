@@ -8,10 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-gallery:
+  update-controls-html:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Generate controls.html
@@ -19,94 +20,131 @@ jobs:
           echo "Generating controls.html..."
           echo '<!DOCTYPE html><html lang="en">' > majortom/controls.html
           echo '<head>' >> majortom/controls.html
-          echo '<meta charset="UTF-8">' >> majortom/controls.html
-          echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">' >> majortom/controls.html
-          echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/controls.html
-          echo '<title>Intergalactic Controls</title>' >> majortom/controls.html
-          echo '<link rel="preconnect" href="https://fonts.googleapis.com">' >> majortom/controls.html
-          echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' >> majortom/controls.html
-          echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/controls.html
-          echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/controls.html
-          echo '<style>' >> majortom/controls.html
-          echo 'body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }' >> majortom/controls.html
-          echo '.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }' >> majortom/controls.html
-          echo '.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }' >> majortom/controls.html
-          echo '.buttons { display: flex; gap: 2px; }' >> majortom/controls.html
-          echo '#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }' >> majortom/controls.html
-          echo '#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/controls.html
-          echo 'h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }' >> majortom/controls.html
-          echo 'footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }' >> majortom/controls.html
-          echo 'footer a { color: inherit; text-decoration: none; }' >> majortom/controls.html
-          echo '#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/controls.html
-          echo '#overlay.show { display: flex; }' >> majortom/controls.html
-          echo '.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }' >> majortom/controls.html
-          echo '#overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/controls.html
-          echo '#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/controls.html
-          echo '</style>' >> majortom/controls.html
-          echo '</head><body>' >> majortom/controls.html
+          echo '  <meta charset="UTF-8">' >> majortom/controls.html
+          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/controls.html
+          echo '  <title>controls</title>' >> majortom/controls.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/controls.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/controls/jquery.mosaic.css">' >> majortom/controls.html
+          echo '  <style>' >> majortom/controls.html
+          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/controls.html
+          echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/controls.html
+          echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/controls.html
+          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/controls.html
+          echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/controls.html
+          echo '    #overlay.show { display: flex; }' >> majortom/controls.html
+          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }' >> majortom/controls.html
+          echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/controls.html
+          echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/controls.html
+          echo '    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> majortom/controls.html
+          echo '    #prevBtn { left: 20px; }' >> majortom/controls.html
+          echo '    #nextBtn { right: 20px; }' >> majortom/controls.html
+          echo '  </style>' >> majortom/controls.html
+          echo '</head>' >> majortom/controls.html
 
-          # Header
-          echo '<div class="header">' >> majortom/controls.html
-          echo '  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>' >> majortom/controls.html
-          echo '  <div class="buttons">' >> majortom/controls.html
-          echo '  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>' >> majortom/controls.html
-          echo '  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>' >> majortom/controls.html
-          echo '  <a href="https://brunurb.github.io/majortom/controls"><button type="button" class="nes-btn is-warning">Controls</button></a>' >> majortom/controls.html
-          echo '  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>' >> majortom/controls.html
-          echo '  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>' >> majortom/controls.html
-          echo '  </div>' >> majortom/controls.html
-          echo '</div>' >> majortom/controls.html
+          # Adding the header
+          echo '<body>' >> majortom/controls.html
+          echo '  <header>' >> majortom/controls.html
+          echo '    <ul class="navbar-top">' >> majortom/controls.html
+          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/controls.html
+          echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/controls.html
+          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/controls.html
+          echo '        <ul class="dropdown-menu">' >> majortom/controls.html
+          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/controls.html
+          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/controls.html
+          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/controls.html
+          echo '        </ul>' >> majortom/controls.html
+          echo '      </li>' >> majortom/controls.html
+          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/controls.html
+          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/controls.html
+          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/controls.html
+          echo '        <ul class="dropdown-menu">' >> majortom/controls.html
+          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/controls.html
+          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/controls.html
+          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/controls.html
+          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/controls.html
+          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/controls.html
+          echo '        </ul>' >> majortom/controls.html
+          echo '      </li>' >> majortom/controls.html
+          echo '    </ul>' >> majortom/controls.html
+          echo '  </header>' >> majortom/controls.html
 
-          # Main content with centered text in mosaic div
-          echo '<main>' >> majortom/controls.html
-          echo '<h1>Intergalactic Controls</h1>' >> majortom/controls.html
-          echo '<div id="myMosaic">' >> majortom/controls.html
+          # Add the title
+          echo '<h1>controls</h1>' >> majortom/controls.html
 
-          # Correctly add images inside the myMosaic div
-          for img in $(ls majortom/controls/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
-            echo "<img src='https://brunurb.github.io/majortom/controls/pictures/$img' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/controls/pictures/$img' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/controls.html
+          # Mosaic images generation
+          echo '  <main>' >> majortom/controls.html
+          echo '    <div id="myMosaic">' >> majortom/controls.html
+          ls majortom/controls/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$' | while IFS= read -r img; do
+            echo "<img src='https://brunurb.github.io/majortom/controls/pictures/${img// /%20}' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/controls/pictures/${img// /%20}' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/controls.html
           done
+          echo '    </div>' >> majortom/controls.html
 
-          echo '</div>' >> majortom/controls.html
-          echo '<div id="overlay" onclick="closeOverlay(event)">' >> majortom/controls.html
-          echo '  <div class="overlay-content">' >> majortom/controls.html
-          echo '    <span id="close">×</span>' >> majortom/controls.html
-          echo '    <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/controls.html
-          echo '  </div>' >> majortom/controls.html
-          echo '</div>' >> majortom/controls.html
-          echo '</main>' >> majortom/controls.html
+          # Overlay section with navigation arrows
+          echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/controls.html
+          echo '      <div class="overlay-content">' >> majortom/controls.html
+          echo '        <span id="close">×</span>' >> majortom/controls.html
+          echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/controls.html
+          echo '        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>' >> majortom/controls.html
+          echo '        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>' >> majortom/controls.html
+          echo '      </div>' >> majortom/controls.html
+          echo '    </div>' >> majortom/controls.html
+          echo '  </main>' >> majortom/controls.html
 
-          # Footer with copyright symbol
-          echo '<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>' >> majortom/controls.html
+          # Footer
+          echo '  <footer>' >> majortom/controls.html
+          echo '    <p>© 2024 brunurb</p>' >> majortom/controls.html
+          echo '  </footer>' >> majortom/controls.html
 
           # Include jQuery and custom scripts
-          echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/controls.html
-          echo '<script type="text/javascript">' >> majortom/controls.html
-          echo 'document.addEventListener("DOMContentLoaded", function() {' >> majortom/controls.html
-          echo '    function showImage(src) {' >> majortom/controls.html
+          echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/controls.html
+          echo '  <script type="text/javascript">' >> majortom/controls.html
+          echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/controls.html
+          echo '      let currentIndex = 0;' >> majortom/controls.html
+          echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/controls.html
+          echo '      function showImage(src) {' >> majortom/controls.html
           echo '        const overlay = document.getElementById("overlay");' >> majortom/controls.html
           echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/controls.html
           echo '        overlayImage.src = src;' >> majortom/controls.html
+          echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> majortom/controls.html
           echo '        overlay.classList.add("show");' >> majortom/controls.html
-          echo '    }' >> majortom/controls.html
-          echo '    function closeOverlay(event) {' >> majortom/controls.html
+          echo '      }' >> majortom/controls.html
+          echo '      function showPrevious(event) {' >> majortom/controls.html
+          echo '        event.stopPropagation();' >> majortom/controls.html
+          echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> majortom/controls.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/controls.html
+          echo '      }' >> majortom/controls.html
+          echo '      function showNext(event) {' >> majortom/controls.html
+          echo '        event.stopPropagation();' >> majortom/controls.html
+          echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> majortom/controls.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/controls.html
+          echo '      }' >> majortom/controls.html
+          echo '      function closeOverlay(event) {' >> majortom/controls.html
           echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/controls.html
-          echo '            const overlay = document.getElementById("overlay");' >> majortom/controls.html
-          echo '            overlay.classList.remove("show");' >> majortom/controls.html
+          echo '          const overlay = document.getElementById("overlay");' >> majortom/controls.html
+          echo '          overlay.classList.remove("show");' >> majortom/controls.html
           echo '        }' >> majortom/controls.html
-          echo '    }' >> majortom/controls.html
-          echo '    const images = document.querySelectorAll("#myMosaic img");' >> majortom/controls.html
-          echo '    images.forEach(image => {' >> majortom/controls.html
+          echo '      }' >> majortom/controls.html
+          echo '      const images = document.querySelectorAll("#myMosaic img");' >> majortom/controls.html
+          echo '      images.forEach(image => {' >> majortom/controls.html
           echo '        image.addEventListener("click", function() {' >> majortom/controls.html
-          echo '            showImage(this.dataset.full);' >> majortom/controls.html
+          echo '          showImage(this.dataset.full);' >> majortom/controls.html
           echo '        });' >> majortom/controls.html
+          echo '      });' >> majortom/controls.html
+          echo '      const overlay = document.getElementById("overlay");' >> majortom/controls.html
+          echo '      overlay.addEventListener("click", closeOverlay);' >> majortom/controls.html
+          echo '      const closeButton = document.getElementById("close");' >> majortom/controls.html
+          echo '      closeButton.addEventListener("click", closeOverlay);' >> majortom/controls.html
+          echo '      document.getElementById("prevBtn").addEventListener("click", showPrevious);' >> majortom/controls.html
+          echo '      document.getElementById("nextBtn").addEventListener("click", showNext);' >> majortom/controls.html
+          echo '      window.addEventListener("keydown", function(event) {' >> majortom/controls.html
+          echo '        if (event.key === "ArrowLeft") {' >> majortom/controls.html
+          echo '          showPrevious(event);' >> majortom/controls.html
+          echo '        } else if (event.key === "ArrowRight") {' >> majortom/controls.html
+          echo '          showNext(event);' >> majortom/controls.html
+          echo '        }' >> majortom/controls.html
+          echo '      });' >> majortom/controls.html
           echo '    });' >> majortom/controls.html
-          echo '    const overlay = document.getElementById("overlay");' >> majortom/controls.html
-          echo '    overlay.addEventListener("click", closeOverlay);' >> majortom/controls.html
-          echo '    const closeButton = document.getElementById("close");' >> majortom/controls.html
-          echo '    closeButton.addEventListener("click", closeOverlay);' >> majortom/controls.html
-          echo '});' >> majortom/controls.html
-          echo '</script>' >> majortom/controls.html
+          echo '  </script>' >> majortom/controls.html
           echo '</body></html>' >> majortom/controls.html
 
       - name: Commit changes
@@ -114,5 +152,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/controls.html
-          git commit -m "Regenerate majortom/controls.html for mosaic gallery with overlay" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/controls.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
