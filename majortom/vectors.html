@@ -1,112 +1,64 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vectors Gallery</title>
-  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">
-  <link rel="stylesheet" href="https://brunurb.github.io/majortom/vectors/jquery.mosaic.css">
-  <style>
-    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }
-    #myMosaic { margin: 20px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
-    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
-    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }
-    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
-    #overlay.show { display: flex; }
-    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }
-    #overlay img { max-width: 100%; max-height: 100%; display: block; }
-    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
-    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }
-    #prevBtn { left: 20px; }
-    #nextBtn { right: 20px; }
-  </style>
-</head>
-<body>
-  <header>
-    <ul class="navbar-top">
-      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>
-      <li><a href="https://brunurb.github.io/">Home</a></li>
-      <li class="dropdown"><a href="#">About ▼</a>
-        <ul class="dropdown-menu">
-          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>
-          <li><a href="https://brunurb.github.io/web">links</a></li>
-          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>
-        </ul>
-      </li>
-      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>
-      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>
-      <li class="dropdown"><a href="#">Works ▼</a>
-        <ul class="dropdown-menu">
-          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>
-          <li><a href="https://brunurb.github.io/web">Website 2</a></li>
-          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>
-          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>
-          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>
-        </ul>
-      </li>
-    </ul>
-  </header>
-<h1>Vectors Gallery</h1>
-    <div id="myMosaic">
-    </div>
-    <div id="overlay" onclick="closeOverlay(event)">
-      <div class="overlay-content">
-        <span id="close">×</span>
-        <img id="overlay-image" src="" alt="Full Size Image" />
-        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>
-        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <p>© 2024 brunurb</p>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-      let currentIndex = 0;
-      const imagesArray = [...document.querySelectorAll("#myMosaic img")];
-      function showImage(src) {
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intergalactic vectors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
+<link rel="stylesheet" type="text/css" href="https://brunurb.github.io/majortom/jquery.mosaic.css" />
+</head><body>
+<div class="header">
+  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>
+  <div class="buttons">
+  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>
+  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>
+  <a href="https://brunurb.github.io/majortom/vectors"><button type="button" class="nes-btn is-warning">Vectors</button></a>
+  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>
+  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>
+  </div>
+</div>
+<main>
+<h1>Vectors</h1>
+<div id="myMosaic">
+</div>
+<div id="overlay" onclick="closeOverlay(event)">
+  <div class="overlay-content">
+    <span id="close">×</span>
+    <img id="overlay-image" src="" alt="Full Size Image" />
+  </div>
+</div>
+</main>
+<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://brunurb.github.io/majortom/jquery.mosaic.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    function showImage(src) {
         const overlay = document.getElementById("overlay");
         const overlayImage = document.getElementById("overlay-image");
         overlayImage.src = src;
-        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);
         overlay.classList.add("show");
-      }
-      function showPrevious(event) {
-        event.stopPropagation();
-        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;
-        showImage(imagesArray[currentIndex].dataset.full);
-      }
-      function showNext(event) {
-        event.stopPropagation();
-        currentIndex = (currentIndex + 1) % imagesArray.length;
-        showImage(imagesArray[currentIndex].dataset.full);
-      }
-      function closeOverlay(event) {
+    }
+    function closeOverlay(event) {
         if (event.target.id === "overlay" || event.target.id === "close") {
-          const overlay = document.getElementById("overlay");
-          overlay.classList.remove("show");
+            const overlay = document.getElementById("overlay");
+            overlay.classList.remove("show");
         }
-      }
-      const images = document.querySelectorAll("#myMosaic img");
-      images.forEach(image => {
+    }
+    const images = document.querySelectorAll("#myMosaic img");
+    images.forEach(image => {
         image.addEventListener("click", function() {
-          showImage(this.dataset.full);
+            showImage(this.dataset.full);
         });
-      });
-      const overlay = document.getElementById("overlay");
-      overlay.addEventListener("click", closeOverlay);
-      const closeButton = document.getElementById("close");
-      closeButton.addEventListener("click", closeOverlay);
-      document.getElementById("prevBtn").addEventListener("click", showPrevious);
-      document.getElementById("nextBtn").addEventListener("click", showNext);
-      window.addEventListener("keydown", function(event) {
-        if (event.key === "ArrowLeft") {
-          showPrevious(event);
-        } else if (event.key === "ArrowRight") {
-          showNext(event);
-        }
-      });
     });
-  </script>
+    const overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", closeOverlay);
+    const closeButton = document.getElementById("close");
+    closeButton.addEventListener("click", closeOverlay);
+    $("#myMosaic").Mosaic();
+});
+</script>
 </body></html>
