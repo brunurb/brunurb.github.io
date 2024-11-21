@@ -22,12 +22,12 @@ jobs:
           echo '<head>' >> majortom/vectors.html
           echo '  <meta charset="UTF-8">' >> majortom/vectors.html
           echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/vectors.html
-          echo '  <title>vectors</title>' >> majortom/vectors.html
+          echo '  <title>Vectors Gallery</title>' >> majortom/vectors.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/vectors.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/vectors/jquery.mosaic.css">' >> majortom/vectors.html
           echo '  <style>' >> majortom/vectors.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/vectors.html
-          echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/vectors.html
+          echo '    #myMosaic { margin: 20px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/vectors.html
           echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/vectors.html
           echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/vectors.html
           echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/vectors.html
@@ -41,7 +41,6 @@ jobs:
           echo '  </style>' >> majortom/vectors.html
           echo '</head>' >> majortom/vectors.html
 
-          # Adding the header
           echo '<body>' >> majortom/vectors.html
           echo '  <header>' >> majortom/vectors.html
           echo '    <ul class="navbar-top">' >> majortom/vectors.html
@@ -68,12 +67,11 @@ jobs:
           echo '    </ul>' >> majortom/vectors.html
           echo '  </header>' >> majortom/vectors.html
 
-          # Add the title
-          echo '<h1>vectors</h1>' >> majortom/vectors.html          
-          echo '    <div id="myMosaic">' >> majortom/sketchup.html
+          echo '<h1>Vectors Gallery</h1>' >> majortom/vectors.html          
+          echo '    <div id="myMosaic">' >> majortom/vectors.html
           
           # Find images in the brunurb.github.io/Mansonery/files/images directory
-          echo "Searching for images in 'brunurb.github.io/Mansonery/files/images':"
+          echo "Searching for images in 'Mansonery/files/images':"
           find "brunurb.github.io/Mansonery/files/images" -type f \( -iname "*.jpeg" -o -iname "*.jpg" -o -iname "*.gif" -o -iname "*.svg" -o -iname "*.png" -o -iname "*.webp" \) | while IFS= read -r img; do
             img_name=$(basename "$img")       # Extract the filename
             img_url="https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/$img_name"  # Construct the URL
@@ -82,7 +80,7 @@ jobs:
           done
           echo '    </div>' >> majortom/vectors.html
 
-          # Overlay section with navigation arrows
+          # Overlay section
           echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/vectors.html
           echo '      <div class="overlay-content">' >> majortom/vectors.html
           echo '        <span id="close">×</span>' >> majortom/vectors.html
@@ -98,7 +96,6 @@ jobs:
           echo '    <p>© 2024 brunurb</p>' >> majortom/vectors.html
           echo '  </footer>' >> majortom/vectors.html
 
-          # Include jQuery and custom scripts
           echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/vectors.html
           echo '  <script type="text/javascript">' >> majortom/vectors.html
           echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/vectors.html
@@ -155,5 +152,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/vectors.html
-          git commit -m "Regenerate majortom/vectors.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
-          git push origin master  # Make sure this matches your main branch
+          git commit -m "Regenerate majortom/vectors.html for updated image gallery" || echo "No changes to commit"
+          git push origin master  # Ensure this matches your main branch
