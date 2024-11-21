@@ -1,227 +1,111 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intergalactic vectors</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
-<link rel="stylesheet" type="text/css" href="https://brunurb.github.io/majortom/jquery.mosaic.css" />
-<style>
-body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }
-.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
-.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
-.buttons { display: flex; gap: 2px; }
-#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
-h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }
-footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }
-footer a { color: inherit; text-decoration: none; }
-#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
-#overlay.show { display: flex; }
-.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
-#overlay img { max-width: 100%; max-height: 100%; display: block; }
-#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
-</style>
-</head><body>
-<div class="header">
-  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>
-  <div class="buttons">
-  <a href="https://brunurb.github.io/majortom/astronaut"><button type="button" class="nes-btn is-primary">Astronaut</button></a>
-  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>
-  <a href="https://brunurb.github.io/majortom/vectors"><button type="button" class="nes-btn is-warning">vectors</button></a>
-  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>
-  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>
-  </div>
-</div>
-<main>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vectors</title>
+  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">
+  <link rel="stylesheet" href="https://brunurb.github.io/majortom/vectors/jquery.mosaic.css">
+  <style>
+    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }
+    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
+    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }
+    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
+    #overlay.show { display: flex; }
+    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }
+    #overlay img { max-width: 100%; max-height: 100%; display: block; }
+    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }
+    #prevBtn { left: 20px; }
+    #nextBtn { right: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <ul class="navbar-top">
+      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>
+      <li><a href="https://brunurb.github.io/">Home</a></li>
+      <li class="dropdown"><a href="#">About ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>
+          <li><a href="https://brunurb.github.io/web">links</a></li>
+          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>
+      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>
+      <li class="dropdown"><a href="#">Works ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>
+          <li><a href="https://brunurb.github.io/web">Website 2</a></li>
+          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>
+          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>
+          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
 <h1>vectors</h1>
-<div id="myMosaic">
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/023.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/023.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/11oldRailwayStation.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/11oldRailwayStation.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/133346.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/133346.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/133502.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/133502.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/133636.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/133636.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/1bank.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/1bank.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/223949.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/223949.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224112.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224112.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224122.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224122.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224348.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224348.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224923.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224923.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224931.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/224931.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/225018.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/225018.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/225145.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/225145.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/34.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/34.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/367.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/367.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/456.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/456.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/466.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/466.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/50sKitchen.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/50sKitchen.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/50sKitchen2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/50sKitchen2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/50sKitchen3.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/50sKitchen3.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/56.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/56.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/5632.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/5632.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/587.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/587.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/6.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/6.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/713.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/713.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/738.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/738.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/78.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/78.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/784.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/784.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/79.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/79.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/80.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/80.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/81.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/81.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/82.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/82.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/84.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/84.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/85.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/85.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/86.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/86.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/865.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/865.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/87.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/87.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/88.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/88.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/89.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/89.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/89.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/89.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/894.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/894.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/8i3.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/8i3.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/90.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/90.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/91.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/91.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/911.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/911.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/911Stencil.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/911Stencil.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/92.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/92.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/94.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/94.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/959.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/959.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/965.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/965.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Alvalade.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Alvalade.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/BellX1.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/BellX1.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/BellX1b.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/BellX1b.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Cinearte.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Cinearte.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Cinearte2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Cinearte2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Condes.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Condes.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Condes2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Condes2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Contach1.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Contach1.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Dragao_lotus.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Dragao_lotus.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/E_1441B.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/E_1441B.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/F_GT.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/F_GT.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Flash_Gordon_RayGun.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Flash_Gordon_RayGun.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/GT_II.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/GT_II.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Imperio.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Imperio.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Imperio3.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Imperio3.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Joystick.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Joystick.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Joystick2.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Joystick2.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/LisboaCRT.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/LisboaCRT.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Lovebug.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Lovebug.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Mandrake.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Mandrake.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Mobile.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Mobile.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Mustang.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Mustang.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/NEW50sKitchen.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/NEW50sKitchen.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/ServiceStation.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/ServiceStation.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Shuttle.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Shuttle.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Shuttlecraft.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Shuttlecraft.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Shuttlecraft2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Shuttlecraft2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/SpaceInvadersBuilding.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/SpaceInvadersBuilding.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/SpaceSuit.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/SpaceSuit.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Spaceman.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Spaceman.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TRONlightcycle.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TRONlightcycle.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke2t.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke2t.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke3t.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke3t.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke4t.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke4t.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke77t.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke77t.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke9t.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRocke9t.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRockefdst.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/TinTinRockefdst.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/X1_bell_chuck.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/X1_bell_chuck.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/X1orange.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/X1orange.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Yacht.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/Yacht.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/artdeco.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/artdeco.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/bank.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/bank.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/bank2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/bank2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/baratci.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/baratci.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/bellX1.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/bellX1.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/blueberries.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/blueberries.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/boombox.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/boombox.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/cherries.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/cherries.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/cherry-plant.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/cherry-plant.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/commlock.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/commlock.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/easter-eggs.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/easter-eggs.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/espadon.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/espadon.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/espadon2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/espadon2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/estorilTRACK.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/estorilTRACK.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/estorilTRACKbp.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/estorilTRACKbp.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/gjgffg.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/gjgffg.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/grapes.jpeg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/grapes.jpeg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/grapes.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/grapes.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar4.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar4.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar6.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar6.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar7.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/guitar7.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/headinajar.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/headinajar.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/imperio.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/imperio.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/imperio2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/imperio2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/interlagosmapINV.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/interlagosmapINV.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/joystick.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/joystick.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/kitchn.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/kitchn.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lemons.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lemons.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lenigme.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lenigme.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lephone.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lephone.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lightcycle.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/lightcycle.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/luna.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/luna.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/mononclehouse.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/mononclehouse.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/mononclehouse2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/mononclehouse2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/odeon.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/odeon.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/oranges-pomegranates.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/oranges-pomegranates.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/pears.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/pears.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone3.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone3.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone4.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone4.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone9.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/phone9.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/ptcrt.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/ptcrt.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/raygun.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/raygun.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/retrohouse.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/retrohouse.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/robot.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/robot.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/saojorge.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/saojorge.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/sputnik9.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/sputnik9.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/strawberry.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/strawberry.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/tank.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/tank.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/tintinrocket66.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/tintinrocket66.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/tobler.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/tobler.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/trainstatio2n.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/trainstatio2n.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/trainstation.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/trainstation.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/trainstation3.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/trainstation3.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/xfv.png' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/xfv.png' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/zapgun.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/zapgun.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-</div>
-<div id="overlay" onclick="closeOverlay(event)">
-  <div class="overlay-content">
-    <span id="close">×</span>
-    <img id="overlay-image" src="" alt="Full Size Image" />
-  </div>
-</div>
-</main>
-<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://brunurb.github.io/majortom/jquery.mosaic.js"></script>
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-    function showImage(src) {
+    </div>
+    <div id="overlay" onclick="closeOverlay(event)">
+      <div class="overlay-content">
+        <span id="close">×</span>
+        <img id="overlay-image" src="" alt="Full Size Image" />
+        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>
+        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2024 brunurb</p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      let currentIndex = 0;
+      const imagesArray = [...document.querySelectorAll("#myMosaic img")];
+      function showImage(src) {
         const overlay = document.getElementById("overlay");
         const overlayImage = document.getElementById("overlay-image");
         overlayImage.src = src;
+        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);
         overlay.classList.add("show");
-    }
-    function closeOverlay(event) {
+      }
+      function showPrevious(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;
+        showImage(imagesArray[currentIndex].dataset.full);
+      }
+      function showNext(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % imagesArray.length;
+        showImage(imagesArray[currentIndex].dataset.full);
+      }
+      function closeOverlay(event) {
         if (event.target.id === "overlay" || event.target.id === "close") {
-            const overlay = document.getElementById("overlay");
-            overlay.classList.remove("show");
+          const overlay = document.getElementById("overlay");
+          overlay.classList.remove("show");
         }
-    }
-    const images = document.querySelectorAll("#myMosaic img");
-    images.forEach(image => {
+      }
+      const images = document.querySelectorAll("#myMosaic img");
+      images.forEach(image => {
         image.addEventListener("click", function() {
-            showImage(this.dataset.full);
+          showImage(this.dataset.full);
         });
+      });
+      const overlay = document.getElementById("overlay");
+      overlay.addEventListener("click", closeOverlay);
+      const closeButton = document.getElementById("close");
+      closeButton.addEventListener("click", closeOverlay);
+      document.getElementById("prevBtn").addEventListener("click", showPrevious);
+      document.getElementById("nextBtn").addEventListener("click", showNext);
+      window.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") {
+          showPrevious(event);
+        } else if (event.key === "ArrowRight") {
+          showNext(event);
+        }
+      });
     });
-    const overlay = document.getElementById("overlay");
-    overlay.addEventListener("click", closeOverlay);
-    const closeButton = document.getElementById("close");
-    closeButton.addEventListener("click", closeOverlay);
-    $("#myMosaic").Mosaic();
-});
-</script>
+  </script>
 </body></html>
