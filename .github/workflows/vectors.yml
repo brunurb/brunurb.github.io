@@ -3,7 +3,7 @@ name: vectors
 on:
   push:
     paths:
-      - 'majortom/vectors/pictures/**'
+      - 'brunurb.github.io/Mansonery/files/images/**'
       - 'majortom/vectors.html'
   workflow_dispatch:
 
