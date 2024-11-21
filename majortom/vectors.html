@@ -2,12 +2,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vectors</title>
+  <title>Vectors Gallery</title>
   <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">
   <link rel="stylesheet" href="https://brunurb.github.io/majortom/vectors/jquery.mosaic.css">
   <style>
     body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }
-    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+    #myMosaic { margin: 20px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
     #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
     h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }
     #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
@@ -45,7 +45,8 @@
       </li>
     </ul>
   </header>
-<h1>vectors</h1>
+<h1>Vectors Gallery</h1>
+    <div id="myMosaic">
     </div>
     <div id="overlay" onclick="closeOverlay(event)">
       <div class="overlay-content">
