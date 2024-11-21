@@ -1,170 +1,113 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intergalactic sketchup</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />
-<style>
-body { background-color: #142936; color: #92cfbf; margin: 0; font-family: "Press Start 2P", cursive; }
-.header { position: fixed; top: 0; left: 0; right: 0; background-color: #224357; padding: 5px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 10px rgba(8, 17, 23, 0.9); z-index: 10; }
-.header a { color: #cd3162; text-decoration: none; font-family: "Press Start 2P", cursive; font-size: 1em; }
-.buttons { display: flex; gap: 2px; }
-#myMosaic { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
-#myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
-h1 { text-align: center; color: #dedcff; margin: 80px 0 14px; font-size: 14px; }
-footer { text-align: left; padding: 10px; font-size: 10px; background-color: #224357; color: #92cfbf; }
-footer a { color: inherit; text-decoration: none; }
-#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
-#overlay.show { display: flex; }
-.overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; }
-#overlay img { max-width: 100%; max-height: 100%; display: block; }
-#close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
-</style>
-</head><body>
-<div class="header">
-  <a href="https://brunurb.github.io/"><span class="nes-icon home is-small"></span> brunurb</a>
-  <div class="buttons">
-  <a href="https://brunurb.github.io/majortom/sketchup"><button type="button" class="nes-btn is-primary">sketchup</button></a>
-  <a href="https://brunurb.github.io/majortom/spaceships"><button type="button" class="nes-btn is-success">Spacecraft</button></a>
-  <a href="https://brunurb.github.io/majortom/sketchup"><button type="button" class="nes-btn is-warning">sketchup</button></a>
-  <a href="https://brunurb.github.io/majortom/planets"><button type="button" class="nes-btn is-error">Planets</button></a>
-  <a href="https://brunurb.github.io/majortom/917"><button type="button" class="nes-btn is-warning">917</button></a>
-  </div>
-</div>
-<main>
-<h1>Sketchup</h1>
-<div id="myMosaic">
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/1950kitchen.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/1950kitchen.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/AllTanks.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/AllTanks.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Apple.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Apple.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Armario_rightsize.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Armario_rightsize.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ArtDecoCinema.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ArtDecoCinema.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Atlantic.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Atlantic.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Bcube.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Bcube.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/BicLighterV5.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/BicLighterV5.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/BoomBox.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/BoomBox.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Cabo_Raso.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Cabo_Raso.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/CinemaCondes.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/CinemaCondes.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/CinemaSaoJorge.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/CinemaSaoJorge.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Cinema_Cinearte.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Cinema_Cinearte.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/City.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/City.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ClassicFrige.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ClassicFrige.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Comlock.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Comlock.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/CondesSepia.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/CondesSepia.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/DecoServiceStation.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/DecoServiceStation.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/DollhouseModern.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/DollhouseModern.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Espadon2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Espadon2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Euro_coin.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Euro_coin.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Farol_Sta_Marta.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Farol_Sta_Marta.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Fender_strato.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Fender_strato.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/FlashGordonDrZarkovsSpaceShip.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/FlashGordonDrZarkovsSpaceShip.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/FutureBike.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/FutureBike.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Galileo' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Galileo' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Atomic-Powered' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Atomic-Powered' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Moon' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Moon' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Rocket.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Rocket.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Hydrant.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Hydrant.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Jetsons_airCar.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Jetsons_airCar.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Joystick1.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Joystick1.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Joystick2.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Joystick2.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Lego2x6_block.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Lego2x6_block.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Lloyd_wright_house.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Lloyd_wright_house.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Luna.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Luna.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Mailbox.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Mailbox.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/MilkBar.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/MilkBar.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Modern20BankBuilding.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Modern20BankBuilding.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ModernRetroDinner.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ModernRetroDinner.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ModernTrain.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ModernTrain.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/MonOncleHouse.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/MonOncleHouse.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/MonsantoHouse.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/MonsantoHouse.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Mountain.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Mountain.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Odeon_Cinema_Deco.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Odeon_Cinema_Deco.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/PinballV5.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/PinballV5.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Radio.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Radio.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RadioBoomboxV5.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RadioBoomboxV5.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RayGun_I.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RayGun_I.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RetroFuturisticHouse.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RetroFuturisticHouse.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RetroPhone.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RetroPhone.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RevolverV5.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RevolverV5.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Robot.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Robot.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Robot_furniture.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Robot_furniture.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RoundBuilding.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/RoundBuilding.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Rubik_cube_Original_size.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Rubik_cube_Original_size.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ShellBarrel.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ShellBarrel.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/SlidingDoors.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/SlidingDoors.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Sofa.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Sofa.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/SpaceShipOne.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/SpaceShipOne.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/SquareMall.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/SquareMall.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/TankBDII.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/TankBDII.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/TankT_40V5.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/TankT_40V5.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Tank_BT5_V5.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Tank_BT5_V5.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Tintin_Rocket_brunurb.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Tintin_Rocket_brunurb.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Toblerone.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Toblerone.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ToyTank.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ToyTank.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Tron_lightcycle.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Tron_lightcycle.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/UFO_flying_saucer.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/UFO_flying_saucer.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/X1Bell.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/X1Bell.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ZapGun_I.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/ZapGun_I.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Zeppelin.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/Zeppelin.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/chupachups.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/chupachups.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/cinema_imperio.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/cinema_imperio.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/colortable.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/colortable.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/container.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/container.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/container_withFurniture.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/container_withFurniture.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/cube_apartments.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/cube_apartments.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/fallingwater.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/fallingwater.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/iPod.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/iPod.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/megaHotel.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/megaHotel.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/objects.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/objects.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/oldRailwayStation.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/oldRailwayStation.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/poligons_domes.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/poligons_domes.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/shuttlecraft.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/shuttlecraft.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/spark5.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/spark5.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/sputnik.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/sputnik.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/stungun1999.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/stungun1999.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/target.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/target.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/tetrisShelfs.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/tetrisShelfs.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/toyPalace.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/toyPalace.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/transparent' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/transparent' class='thumbnail' onclick='showImage(this.dataset.full)' />
-<img src='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/table.jpg' alt='Gallery Image' data-full='https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/table.jpg' class='thumbnail' onclick='showImage(this.dataset.full)' />
-</div>
-<div id="overlay" onclick="closeOverlay(event)">
-  <div class="overlay-content">
-    <span id="close">×</span>
-    <img id="overlay-image" src="" alt="Full Size Image" />
-  </div>
-</div>
-</main>
-<footer>© <a style="text-decoration:none" href="https://brunurb.github.io/">by brunurb</a></footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-    function showImage(src) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sketchup</title>
+  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">
+  <link rel="stylesheet" href="https://brunurb.github.io/majortom/sketchup/jquery.mosaic.css">
+  <style>
+    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }
+    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }
+    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }
+    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }
+    #overlay.show { display: flex; }
+    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }
+    #overlay img { max-width: 100%; max-height: 100%; display: block; }
+    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }
+    #prevBtn { left: 20px; }
+    #nextBtn { right: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <ul class="navbar-top">
+      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>
+      <li><a href="https://brunurb.github.io/">Home</a></li>
+      <li class="dropdown"><a href="#">About ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>
+          <li><a href="https://brunurb.github.io/web">links</a></li>
+          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>
+      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>
+      <li class="dropdown"><a href="#">Works ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>
+          <li><a href="https://brunurb.github.io/web">Website 2</a></li>
+          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>
+          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>
+          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+  <main>
+<h1>sketchup</h1>
+    <div id="myMosaic">
+    </div>
+    <div id="overlay" onclick="closeOverlay(event)">
+      <div class="overlay-content">
+        <span id="close">×</span>
+        <img id="overlay-image" src="" alt="Full Size Image" />
+        <button id="prevBtn" onclick="showPrevious(event)">❮</button>
+        <button id="nextBtn" onclick="showNext(event)">❯</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2024 brunurb</p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      let currentIndex = 0;
+      const imagesArray = [...document.querySelectorAll("#myMosaic img")];
+      function showImage(src) {
         const overlay = document.getElementById("overlay");
         const overlayImage = document.getElementById("overlay-image");
         overlayImage.src = src;
+        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);
         overlay.classList.add("show");
-    }
-    function closeOverlay(event) {
+      }
+      function showPrevious(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;
+        showImage(imagesArray[currentIndex].dataset.full);
+      }
+      function showNext(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % imagesArray.length;
+        showImage(imagesArray[currentIndex].dataset.full);
+      }
+      function closeOverlay(event) {
         if (event.target.id === "overlay" || event.target.id === "close") {
-            const overlay = document.getElementById("overlay");
-            overlay.classList.remove("show");
+          const overlay = document.getElementById("overlay");
+          overlay.classList.remove("show");
         }
-    }
-    const images = document.querySelectorAll("#myMosaic img");
-    images.forEach(image => {
+      }
+      const images = document.querySelectorAll("#myMosaic img");
+      images.forEach(image => {
         image.addEventListener("click", function() {
-            showImage(this.dataset.full);
+          showImage(this.dataset.full);
         });
+      });
+      const overlay = document.getElementById("overlay");
+      overlay.addEventListener("click", closeOverlay);
+      const closeButton = document.getElementById("close");
+      closeButton.addEventListener("click", closeOverlay);
+      document.getElementById("prevBtn").addEventListener("click", showPrevious);
+      document.getElementById("nextBtn").addEventListener("click", showNext);
+      window.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") {
+          showPrevious(event);
+        } else if (event.key === "ArrowRight") {
+          showNext(event);
+        }
+      });
     });
-    const overlay = document.getElementById("overlay");
-    overlay.addEventListener("click", closeOverlay);
-    const closeButton = document.getElementById("close");
-    closeButton.addEventListener("click", closeOverlay);
-});
-</script>
+  </script>
 </body></html>
