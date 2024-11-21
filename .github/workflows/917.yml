@@ -25,6 +25,7 @@ jobs:
           echo '  <title>917</title>' >> majortom/917.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/917.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/917/jquery.mosaic.css">' >> majortom/917.html
+          echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/917.html
           echo '  <style>' >> majortom/917.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/917.html
           echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/917.html
@@ -41,13 +42,16 @@ jobs:
           echo '  </style>' >> majortom/917.html
           echo '</head>' >> majortom/917.html
 
-          # Adding the header
+          # Adding the header with new menu
           echo '<body>' >> majortom/917.html
           echo '  <header>' >> majortom/917.html
           echo '    <ul class="navbar-top">' >> majortom/917.html
-          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/917.html
+          echo '      <li id="nav-company">' >> majortom/917.html
+          echo '        <a href="https://brunurb.github.io">brunurb</a>' >> majortom/917.html
+          echo '      </li>' >> majortom/917.html
           echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/917.html
-          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/917.html
+          echo '      <li class="dropdown">' >> majortom/917.html
+          echo '        <a href="#">About ▼</a>' >> majortom/917.html
           echo '        <ul class="dropdown-menu">' >> majortom/917.html
           echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/917.html
           echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/917.html
@@ -56,13 +60,27 @@ jobs:
           echo '      </li>' >> majortom/917.html
           echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/917.html
           echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/917.html
-          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/917.html
+          echo '      <li class="dropdown">' >> majortom/917.html
+          echo '        <a href="#">Works ▼</a>' >> majortom/917.html
           echo '        <ul class="dropdown-menu">' >> majortom/917.html
           echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/prettymaps">prettymaps</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/sketchup">sketchup</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/vectors">vectors</a></li>' >> majortom/917.html
           echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/917.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/917.html
           echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/917.html
           echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/917.html
+          echo '        </ul>' >> majortom/917.html
+          echo '      </li>' >> majortom/917.html
+          echo '      <li class="dropdown">' >> majortom/917.html
+          echo '        <a href="#">8BIT ▼</a>' >> majortom/917.html
+          echo '        <ul class="dropdown-menu">' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/astronaut">astronauts</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/spaceships">spacecrafts</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/controls">controls</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/planets">planets</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/917">917</a></li>' >> majortom/917.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/">majortom</a></li>' >> majortom/917.html
           echo '        </ul>' >> majortom/917.html
           echo '      </li>' >> majortom/917.html
           echo '    </ul>' >> majortom/917.html
@@ -84,8 +102,8 @@ jobs:
           echo '      <div class="overlay-content">' >> majortom/917.html
           echo '        <span id="close">×</span>' >> majortom/917.html
           echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/917.html
-          echo '        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>' >> majortom/917.html
-          echo '        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>' >> majortom/917.html
+          echo '        <button id="prevBtn" onclick="showPrevious(event)">❮</button>' >> majortom/917.html
+          echo '        <button id="nextBtn" onclick="showNext(event)">❯</button>' >> majortom/917.html
           echo '      </div>' >> majortom/917.html
           echo '    </div>' >> majortom/917.html
           echo '  </main>' >> majortom/917.html
@@ -152,5 +170,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/917.html
-          git commit -m "Regenerate majortom/917.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/917.html for mosaic gallery with overlay, fixed navigation arrows, and updated menu" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
