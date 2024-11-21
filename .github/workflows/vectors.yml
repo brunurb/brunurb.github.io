@@ -3,7 +3,6 @@ name: vectors
 on:
   push:
     paths:
-      - 'majortom/vectors/pictures/**'
       - 'majortom/vectors.html'
   workflow_dispatch:
 
