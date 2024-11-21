@@ -25,6 +25,7 @@ jobs:
           echo '  <title>controls</title>' >> majortom/controls.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/controls.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/controls/jquery.mosaic.css">' >> majortom/controls.html
+          echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/controls.html
           echo '  <style>' >> majortom/controls.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/controls.html
           echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/controls.html
@@ -41,7 +42,7 @@ jobs:
           echo '  </style>' >> majortom/controls.html
           echo '</head>' >> majortom/controls.html
 
-          # Adding the header
+          # Adding the header with updated menu
           echo '<body>' >> majortom/controls.html
           echo '  <header>' >> majortom/controls.html
           echo '    <ul class="navbar-top">' >> majortom/controls.html
