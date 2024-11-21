@@ -25,6 +25,7 @@ jobs:
           echo '  <title>spaceships</title>' >> majortom/spaceships.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/spaceships.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/spaceships/jquery.mosaic.css">' >> majortom/spaceships.html
+          echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/spaceships.html
           echo '  <style>' >> majortom/spaceships.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/spaceships.html
           echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/spaceships.html
@@ -41,13 +42,16 @@ jobs:
           echo '  </style>' >> majortom/spaceships.html
           echo '</head>' >> majortom/spaceships.html
 
-          # Adding the header
+          # Adding the header with new menu
           echo '<body>' >> majortom/spaceships.html
           echo '  <header>' >> majortom/spaceships.html
           echo '    <ul class="navbar-top">' >> majortom/spaceships.html
-          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/spaceships.html
+          echo '      <li id="nav-company">' >> majortom/spaceships.html
+          echo '        <a href="https://brunurb.github.io">brunurb</a>' >> majortom/spaceships.html
+          echo '      </li>' >> majortom/spaceships.html
           echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/spaceships.html
-          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/spaceships.html
+          echo '      <li class="dropdown">' >> majortom/spaceships.html
+          echo '        <a href="#">About ▼</a>' >> majortom/spaceships.html
           echo '        <ul class="dropdown-menu">' >> majortom/spaceships.html
           echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/spaceships.html
           echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/spaceships.html
@@ -56,7 +60,8 @@ jobs:
           echo '      </li>' >> majortom/spaceships.html
           echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/spaceships.html
           echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/spaceships.html
-          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/spaceships.html
+          echo '      <li class="dropdown">' >> majortom/spaceships.html
+          echo '        <a href="#">Works ▼</a>' >> majortom/spaceships.html
           echo '        <ul class="dropdown-menu">' >> majortom/spaceships.html
           echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/spaceships.html
           echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/spaceships.html
@@ -152,5 +157,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/spaceships.html
-          git commit -m "Regenerate majortom/spaceships.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
-          git push origin master  # Make sure this matches your main branch
+          git commit -m "Regenerate majortom/spaceships.html for mosaic gallery with updated images and favicon" || echo "No changes to commit"
+          git push origin master  # Ensure this matches your main branch
