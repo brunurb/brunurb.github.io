@@ -3,8 +3,8 @@ name: vectors
 on:
   push:
     paths:
-      - 'brunurb.github.io/Mansonery/files/images/**'
-      - 'majortom/vectors.html'
+      - 'brunurb.github.io/majortom/vectors.html'
+      - 'Mansonery/files/images/**'  # Track changes in the images directory
   workflow_dispatch:
 
 jobs:
@@ -12,145 +12,152 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout brunurb.github.io repository
         uses: actions/checkout@v2
+        with:
+          repository: brunurb/brunurb.github.io
+          path: brunurb.github.io  # Check out this repository
+
+      - name: Checkout Mansonery repository
+        uses: actions/checkout@v2
+        with:
+          repository: brunurb/Mansonery
+          path: Mansonery  # Check out the Mansonery repository
 
       - name: Generate vectors.html
         run: |
           echo "Generating vectors.html..."
-          echo '<!DOCTYPE html><html lang="en">' > majortom/vectors.html
-          echo '<head>' >> majortom/vectors.html
-          echo '  <meta charset="UTF-8">' >> majortom/vectors.html
-          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/vectors.html
-          echo '  <title>Vectors Gallery</title>' >> majortom/vectors.html
-          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/vectors.html
-          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/vectors/jquery.mosaic.css">' >> majortom/vectors.html
-          echo '  <style>' >> majortom/vectors.html
-          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/vectors.html
-          echo '    #myMosaic { margin: 20px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/vectors.html
-          echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/vectors.html
-          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/vectors.html
-          echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/vectors.html
-          echo '    #overlay.show { display: flex; }' >> majortom/vectors.html
-          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }' >> majortom/vectors.html
-          echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/vectors.html
-          echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/vectors.html
-          echo '    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> majortom/vectors.html
-          echo '    #prevBtn { left: 20px; }' >> majortom/vectors.html
-          echo '    #nextBtn { right: 20px; }' >> majortom/vectors.html
-          echo '  </style>' >> majortom/vectors.html
-          echo '</head>' >> majortom/vectors.html
+          echo '<!DOCTYPE html><html lang="en">' > brunurb.github.io/majortom/vectors.html
+          echo '<head>' >> brunurb.github.io/majortom/vectors.html
+          echo '  <meta charset="UTF-8">' >> brunurb.github.io/majortom/vectors.html
+          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> brunurb.github.io/majortom/vectors.html
+          echo '  <title>Vectors Gallery</title>' >> brunurb.github.io/majortom/vectors.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> brunurb.github.io/majortom/vectors.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/vectors/jquery.mosaic.css">' >> brunurb.github.io/majortom/vectors.html
+          echo '  <style>' >> brunurb.github.io/majortom/vectors.html
+          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #myMosaic { margin: 20px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #overlay.show { display: flex; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #prevBtn { left: 20px; }' >> brunurb.github.io/majortom/vectors.html
+          echo '    #nextBtn { right: 20px; }' >> brunurb.github.io/majortom/vectors.html
+          echo '  </style>' >> brunurb.github.io/majortom/vectors.html
+          echo '</head>' >> brunurb.github.io/majortom/vectors.html
 
-          echo '<body>' >> majortom/vectors.html
-          echo '  <header>' >> majortom/vectors.html
-          echo '    <ul class="navbar-top">' >> majortom/vectors.html
-          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/vectors.html
-          echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/vectors.html
-          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/vectors.html
-          echo '        <ul class="dropdown-menu">' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/vectors.html
-          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/vectors.html
-          echo '        </ul>' >> majortom/vectors.html
-          echo '      </li>' >> majortom/vectors.html
-          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/vectors.html
-          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/vectors.html
-          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/vectors.html
-          echo '        <ul class="dropdown-menu">' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/vectors.html
-          echo '        </ul>' >> majortom/vectors.html
-          echo '      </li>' >> majortom/vectors.html
-          echo '    </ul>' >> majortom/vectors.html
-          echo '  </header>' >> majortom/vectors.html
+          echo '<body>' >> brunurb.github.io/majortom/vectors.html
+          echo '  <header>' >> brunurb.github.io/majortom/vectors.html
+          echo '    <ul class="navbar-top">' >> brunurb.github.io/majortom/vectors.html
+          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> brunurb.github.io/majortom/vectors.html
+          echo '        <ul class="dropdown-menu">' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '        </ul>' >> brunurb.github.io/majortom/vectors.html
+          echo '      </li>' >> brunurb.github.io/majortom/vectors.html
+          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> brunurb.github.io/majortom/vectors.html
+          echo '        <ul class="dropdown-menu">' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> brunurb.github.io/majortom/vectors.html
+          echo '        </ul>' >> brunurb.github.io/majortom/vectors.html
+          echo '      </li>' >> brunurb.github.io/majortom/vectors.html
+          echo '    </ul>' >> brunurb.github.io/majortom/vectors.html
+          echo '  </header>' >> brunurb.github.io/majortom/vectors.html
 
-          echo '<h1>Vectors Gallery</h1>' >> majortom/vectors.html          
-          echo '    <div id="myMosaic">' >> majortom/vectors.html
+          echo '<h1>Vectors Gallery</h1>' >> brunurb.github.io/majortom/vectors.html          
+          echo '    <div id="myMosaic">' >> brunurb.github.io/majortom/vectors.html
           
-          # Find images in the brunurb.github.io/Mansonery/files/images directory
+          # Find images in the Mansonery/files/images directory
           echo "Searching for images in 'Mansonery/files/images':"
-          find "brunurb.github.io/Mansonery/files/images" -type f \( -iname "*.jpeg" -o -iname "*.jpg" -o -iname "*.gif" -o -iname "*.svg" -o -iname "*.png" -o -iname "*.webp" \) | while IFS= read -r img; do
-            img_name=$(basename "$img")       # Extract the filename
-            img_url="https://raw.githubusercontent.com/brunurb/brunurb.github.io/master/Mansonery/files/images/$img_name"  # Construct the URL
-            echo "<img src='$img_url' alt='Gallery Image' data-full='$img_url' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/vectors.html
+          find "Mansonery/files/images" -type f \( -iname "*.jpeg" -o -iname "*.jpg" -o -iname "*.gif" -o -iname "*.svg" -o -iname "*.png" -o -iname "*.webp" \) | while IFS= read -r img; do
+            img_name=$(basename "$img")       # Extracting the filename
+            img_url="https://raw.githubusercontent.com/brunurb/Mansonery/master/files/images/$img_name"  # Construct the URL
+            echo "<img src='$img_url' alt='Gallery Image' data-full='$img_url' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> brunurb.github.io/majortom/vectors.html
             echo "Added image: $img_url"  # Log added image URLs
           done
-          echo '    </div>' >> majortom/vectors.html
+          echo '    </div>' >> brunurb.github.io/majortom/vectors.html
 
           # Overlay section
-          echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/vectors.html
-          echo '      <div class="overlay-content">' >> majortom/vectors.html
-          echo '        <span id="close">×</span>' >> majortom/vectors.html
-          echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/vectors.html
-          echo '        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>' >> majortom/vectors.html
-          echo '        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>' >> majortom/vectors.html
-          echo '      </div>' >> majortom/vectors.html
-          echo '    </div>' >> majortom/vectors.html
-          echo '  </main>' >> majortom/vectors.html
+          echo '    <div id="overlay" onclick="closeOverlay(event)">' >> brunurb.github.io/majortom/vectors.html
+          echo '      <div class="overlay-content">' >> brunurb.github.io/majortom/vectors.html
+          echo '        <span id="close">×</span>' >> brunurb.github.io/majortom/vectors.html
+          echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> brunurb.github.io/majortom/vectors.html
+          echo '        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>' >> brunurb.github.io/majortom/vectors.html
+          echo '        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>' >> brunurb.github.io/majortom/vectors.html
+          echo '      </div>' >> brunurb.github.io/majortom/vectors.html
+          echo '    </div>' >> brunurb.github.io/majortom/vectors.html
 
-          # Footer
-          echo '  <footer>' >> majortom/vectors.html
-          echo '    <p>© 2024 brunurb</p>' >> majortom/vectors.html
-          echo '  </footer>' >> majortom/vectors.html
+          echo '  <footer>' >> brunurb.github.io/majortom/vectors.html
+          echo '    <p>© 2024 brunurb</p>' >> brunurb.github.io/majortom/vectors.html
+          echo '  </footer>' >> brunurb.github.io/majortom/vectors.html
 
-          echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/vectors.html
-          echo '  <script type="text/javascript">' >> majortom/vectors.html
-          echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/vectors.html
-          echo '      let currentIndex = 0;' >> majortom/vectors.html
-          echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/vectors.html
-          echo '      function showImage(src) {' >> majortom/vectors.html
-          echo '        const overlay = document.getElementById("overlay");' >> majortom/vectors.html
-          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/vectors.html
-          echo '        overlayImage.src = src;' >> majortom/vectors.html
-          echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> majortom/vectors.html
-          echo '        overlay.classList.add("show");' >> majortom/vectors.html
-          echo '      }' >> majortom/vectors.html
-          echo '      function showPrevious(event) {' >> majortom/vectors.html
-          echo '        event.stopPropagation();' >> majortom/vectors.html
-          echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> majortom/vectors.html
-          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/vectors.html
-          echo '      }' >> majortom/vectors.html
-          echo '      function showNext(event) {' >> majortom/vectors.html
-          echo '        event.stopPropagation();' >> majortom/vectors.html
-          echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> majortom/vectors.html
-          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/vectors.html
-          echo '      }' >> majortom/vectors.html
-          echo '      function closeOverlay(event) {' >> majortom/vectors.html
-          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/vectors.html
-          echo '          const overlay = document.getElementById("overlay");' >> majortom/vectors.html
-          echo '          overlay.classList.remove("show");' >> majortom/vectors.html
-          echo '        }' >> majortom/vectors.html
-          echo '      }' >> majortom/vectors.html
-          echo '      const images = document.querySelectorAll("#myMosaic img");' >> majortom/vectors.html
-          echo '      images.forEach(image => {' >> majortom/vectors.html
-          echo '        image.addEventListener("click", function() {' >> majortom/vectors.html
-          echo '          showImage(this.dataset.full);' >> majortom/vectors.html
-          echo '        });' >> majortom/vectors.html
-          echo '      });' >> majortom/vectors.html
-          echo '      const overlay = document.getElementById("overlay");' >> majortom/vectors.html
-          echo '      overlay.addEventListener("click", closeOverlay);' >> majortom/vectors.html
-          echo '      const closeButton = document.getElementById("close");' >> majortom/vectors.html
-          echo '      closeButton.addEventListener("click", closeOverlay);' >> majortom/vectors.html
-          echo '      document.getElementById("prevBtn").addEventListener("click", showPrevious);' >> majortom/vectors.html
-          echo '      document.getElementById("nextBtn").addEventListener("click", showNext);' >> majortom/vectors.html
-          echo '      window.addEventListener("keydown", function(event) {' >> majortom/vectors.html
-          echo '        if (event.key === "ArrowLeft") {' >> majortom/vectors.html
-          echo '          showPrevious(event);' >> majortom/vectors.html
-          echo '        } else if (event.key === "ArrowRight") {' >> majortom/vectors.html
-          echo '          showNext(event);' >> majortom/vectors.html
-          echo '        }' >> majortom/vectors.html
-          echo '      });' >> majortom/vectors.html
-          echo '    });' >> majortom/vectors.html
-          echo '  </script>' >> majortom/vectors.html
-          echo '</body></html>' >> majortom/vectors.html
+          echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> brunurb.github.io/majortom/vectors.html
+          echo '  <script type="text/javascript">' >> brunurb.github.io/majortom/vectors.html
+          echo '    document.addEventListener("DOMContentLoaded", function() {' >> brunurb.github.io/majortom/vectors.html
+          echo '      let currentIndex = 0;' >> brunurb.github.io/majortom/vectors.html
+          echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> brunurb.github.io/majortom/vectors.html
+          echo '      function showImage(src) {' >> brunurb.github.io/majortom/vectors.html
+          echo '        const overlay = document.getElementById("overlay");' >> brunurb.github.io/majortom/vectors.html
+          echo '        const overlayImage = document.getElementById("overlay-image");' >> brunurb.github.io/majortom/vectors.html
+          echo '        overlayImage.src = src;' >> brunurb.github.io/majortom/vectors.html
+          echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> brunurb.github.io/majortom/vectors.html
+          echo '        overlay.classList.add("show");' >> brunurb.github.io/majortom/vectors.html
+          echo '      }' >> brunurb.github.io/majortom/vectors.html
+          echo '      function showPrevious(event) {' >> brunurb.github.io/majortom/vectors.html
+          echo '        event.stopPropagation();' >> brunurb.github.io/majortom/vectors.html
+          echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> brunurb.github.io/majortom/vectors.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> brunurb.github.io/majortom/vectors.html
+          echo '      }' >> brunurb.github.io/majortom/vectors.html
+          echo '      function showNext(event) {' >> brunurb.github.io/majortom/vectors.html
+          echo '        event.stopPropagation();' >> brunurb.github.io/majortom/vectors.html
+          echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> brunurb.github.io/majortom/vectors.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> brunurb.github.io/majortom/vectors.html
+          echo '      }' >> brunurb.github.io/majortom/vectors.html
+          echo '      function closeOverlay(event) {' >> brunurb.github.io/majortom/vectors.html
+          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> brunurb.github.io/majortom/vectors.html
+          echo '          const overlay = document.getElementById("overlay");' >> brunurb.github.io/majortom/vectors.html
+          echo '          overlay.classList.remove("show");' >> brunurb.github.io/majortom/vectors.html
+          echo '        }' >> brunurb.github.io/majortom/vectors.html
+          echo '      }' >> brunurb.github.io/majortom/vectors.html
+          echo '      const images = document.querySelectorAll("#myMosaic img");' >> brunurb.github.io/majortom/vectors.html
+          echo '      images.forEach(image => {' >> brunurb.github.io/majortom/vectors.html
+          echo '        image.addEventListener("click", function() {' >> brunurb.github.io/majortom/vectors.html
+          echo '          showImage(this.dataset.full);' >> brunurb.github.io/majortom/vectors.html
+          echo '        });' >> brunurb.github.io/majortom/vectors.html
+          echo '      });' >> brunurb.github.io/majortom/vectors.html
+          echo '      const overlay = document.getElementById("overlay");' >> brunurb.github.io/majortom/vectors.html
+          echo '      overlay.addEventListener("click", closeOverlay);' >> brunurb.github.io/majortom/vectors.html
+          echo '      const closeButton = document.getElementById("close");' >> brunurb.github.io/majortom/vectors.html
+          echo '      closeButton.addEventListener("click", closeOverlay);' >> brunurb.github.io/majortom/vectors.html
+          echo '      document.getElementById("prevBtn").addEventListener("click", showPrevious);' >> brunurb.github.io/majortom/vectors.html
+          echo '      document.getElementById("nextBtn").addEventListener("click", showNext);' >> brunurb.github.io/majortom/vectors.html
+          echo '      window.addEventListener("keydown", function(event) {' >> brunurb.github.io/majortom/vectors.html
+          echo '        if (event.key === "ArrowLeft") {' >> brunurb.github.io/majortom/vectors.html
+          echo '          showPrevious(event);' >> brunurb.github.io/majortom/vectors.html
+          echo '        } else if (event.key === "ArrowRight") {' >> brunurb.github.io/majortom/vectors.html
+          echo '          showNext(event);' >> brunurb.github.io/majortom/vectors.html
+          echo '        }' >> brunurb.github.io/majortom/vectors.html
+          echo '      });' >> brunurb.github.io/majortom/vectors.html
+          echo '    });' >> brunurb.github.io/majortom/vectors.html
+          echo '  </script>' >> brunurb.github.io/majortom/vectors.html
+          echo '</body></html>' >> brunurb.github.io/majortom/vectors.html
 
       - name: Commit changes
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
-          git add majortom/vectors.html
-          git commit -m "Regenerate majortom/vectors.html for updated image gallery" || echo "No changes to commit"
+          git add brunurb.github.io/majortom/vectors.html
+          git commit -m "Regenerate majortom/vectors.html with updated images from Mansonery" || echo "No changes to commit"
           git push origin master  # Ensure this matches your main branch
