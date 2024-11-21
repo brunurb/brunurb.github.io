@@ -1,4 +1,4 @@
-name: Generate Sketchup Gallery
+name: Sketchup
 
 on:
   push:
