@@ -1,9 +1,9 @@
-name: vectors
+name: Vectors
 
 on:
   push:
     paths:
-      - 'majortom/vectors.html'
+      - 'majortom/vectors.html'  # Trigger this workflow when this specific file changes
   workflow_dispatch:
 
 jobs:
@@ -14,17 +14,16 @@ jobs:
       - name: Checkout the main repository
         uses: actions/checkout@v2
 
-      - name: Checkout Mansonery repository for images
+      - name: Checkout images from the main GitHub Pages repository
         uses: actions/checkout@v2
         with:
-          repository: brunurb/Mansonery  # Ensure this points to the correct repository
-          path: Mansonery  # Check out into the 'Mansonery' directory
-          ref: master  # Explicitly specify the branch if necessary
+          repository: brunurb/brunurb.github.io  # This is the correct repository that contains your images
+          path: Mansonery  # Directory to clone into
+          ref: master  # Specify the branch
 
       - name: Generate vectors.html
         run: |
           echo "Generating vectors.html..."
-          # Building the HTML document starting with the header
           echo '<!DOCTYPE html><html lang="en">' > majortom/vectors.html
           echo '<head>' >> majortom/vectors.html
           echo '<meta charset="UTF-8">' >> majortom/vectors.html
@@ -36,7 +35,6 @@ jobs:
           echo '<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">' >> majortom/vectors.html
           echo '<link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.css" />' >> majortom/vectors.html
           echo '<link rel="stylesheet" type="text/css" href="https://brunurb.github.io/majortom/jquery.mosaic.css" />' >> majortom/vectors.html
-          
           # Include your CSS styles here...
           echo '</head><body>' >> majortom/vectors.html
 
