@@ -31,6 +31,7 @@ jobs:
           echo '  <title>Sketchup Gallery</title>' >> majortom/sketchup.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/sketchup.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/sketchup/jquery.mosaic.css">' >> majortom/sketchup.html
+          echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/sketchup.html
           echo '  <style>' >> majortom/sketchup.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/sketchup.html
           echo '    #myMosaic { margin: 20px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/sketchup.html
@@ -47,15 +48,30 @@ jobs:
           echo '  </style>' >> majortom/sketchup.html
           echo '</head>' >> majortom/sketchup.html
 
-          # Header
+          # Header with updated menu
           echo '<body>' >> majortom/sketchup.html
           echo '  <header>' >> majortom/sketchup.html
           echo '    <ul class="navbar-top">' >> majortom/sketchup.html
           echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/sketchup.html
           echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/sketchup.html
-          echo '      <li><a href="#">About</a></li>' >> majortom/sketchup.html
-          echo '      <li><a href="#">Portfolio</a></li>' >> majortom/sketchup.html
-          echo '      <li><a href="#">Blog</a></li>' >> majortom/sketchup.html
+          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/sketchup.html
+          echo '        <ul class="dropdown-menu">' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/sketchup.html
+          echo '        </ul>' >> majortom/sketchup.html
+          echo '      </li>' >> majortom/sketchup.html
+          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/sketchup.html
+          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/sketchup.html
+          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/sketchup.html
+          echo '        <ul class="dropdown-menu">' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/sketchup.html
+          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/sketchup.html
+          echo '        </ul>' >> majortom/sketchup.html
+          echo '      </li>' >> majortom/sketchup.html
           echo '    </ul>' >> majortom/sketchup.html
           echo '  </header>' >> majortom/sketchup.html
 
@@ -148,5 +164,5 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
           git add majortom/sketchup.html
-          git commit -m "Regenerate majortom/sketchup.html for mosaic gallery" || echo "No changes to commit"
+          git commit -m "Regenerate majortom/sketchup.html for mosaic gallery with updated images and favicon" || echo "No changes to commit"
           git push origin master  # Ensure this matches your main branch
