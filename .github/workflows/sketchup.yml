@@ -70,8 +70,10 @@ jobs:
 
           # Add the title
           echo '<h1>sketchup</h1>' >> majortom/sketchup.html
-          
-          # Correctly add images inside the myMosaic div
+
+          # Mosaic images generation
+          echo '  <main>' >> majortom/sketchup.html
+          echo '    <div id="myMosaic">' >> majortom/sketchup.html
           for img in $(ls google-sketchup/SKETCHUP\ RASTER | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$'); do
             raw_url="https://raw.githubusercontent.com/brunurb/Google-Sketchup/053c9bfad942c25a092728e1e8cb5bc3598ab52e/SKETCHUP%20RASTER/$img"
             echo "<img src='$raw_url' alt='Gallery Image' data-full='$raw_url' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/sketchup.html
