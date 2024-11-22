@@ -88,7 +88,7 @@ jobs:
           echo '  </header>' >> majortom/astronaut.html
 
           # Add the title
-          echo '<h1>astronaut</h1>' >> majortom/astronaut.html
+          echo '<h1>Major Tom</h1>' >> majortom/astronaut.html
 
           # Mosaic images generation
           echo '  <main>' >> majortom/astronaut.html
