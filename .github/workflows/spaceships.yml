@@ -87,7 +87,7 @@ jobs:
           echo '  </header>' >> majortom/spaceships.html
 
           # Add the title
-          echo '<h1>spaceships</h1>' >> majortom/spaceships.html
+          echo '<h1>All your base are belong to us</h1>' >> majortom/spaceships.html
 
           # Mosaic images generation
           echo '  <main>' >> majortom/spaceships.html
