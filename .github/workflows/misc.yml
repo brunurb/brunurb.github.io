@@ -27,12 +27,16 @@ jobs:
 
       - name: Fetch image URLs from Google Photos album
         id: fetch_images
+        env:
+          album_url: "https://photos.app.goo.gl/5j5NeDQBiUmcyjhq6"
         run: |
           import requests
           from bs4 import BeautifulSoup
 
-          # Public Google Photos album link
-          album_url = "https://photos.app.goo.gl/5j5NeDQBiUmcyjhq6"
+          # Fetch the album URL from the environment variable
+          album_url = os.getenv('album_url')
+
+          # send GET request to the URL
           response = requests.get(album_url)
 
           # Verify that the request was successful
