@@ -88,7 +88,7 @@ jobs:
           echo '  </header>' >> majortom/planets.html
 
           # Add the title
-          echo '<h1>planets</h1>' >> majortom/planets.html
+          echo '<h1>Anata-tachi no kichi wa subete watashi-tachi no mono da</h1>' >> majortom/planets.html
 
           # Mosaic images generation
           echo '  <main>' >> majortom/planets.html
