@@ -42,13 +42,17 @@ jobs:
           echo '  </style>' >> majortom/prettymaps.html
           echo '</head>' >> majortom/prettymaps.html
 
-          # Adding the header with updated menu
+
+          # Adding the header with new menu
           echo '<body>' >> majortom/prettymaps.html
           echo '  <header>' >> majortom/prettymaps.html
           echo '    <ul class="navbar-top">' >> majortom/prettymaps.html
-          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/prettymaps.html
+          echo '      <li id="nav-company">' >> majortom/prettymaps.html
+          echo '        <a href="https://brunurb.github.io">brunurb</a>' >> majortom/prettymaps.html
+          echo '      </li>' >> majortom/prettymaps.html
           echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/prettymaps.html
-          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/prettymaps.html
+          echo '      <li class="dropdown">' >> majortom/prettymaps.html
+          echo '        <a href="#">About ▼</a>' >> majortom/prettymaps.html
           echo '        <ul class="dropdown-menu">' >> majortom/prettymaps.html
           echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/prettymaps.html
           echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/prettymaps.html
@@ -57,13 +61,27 @@ jobs:
           echo '      </li>' >> majortom/prettymaps.html
           echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/prettymaps.html
           echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/prettymaps.html
-          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/prettymaps.html
+          echo '      <li class="dropdown">' >> majortom/prettymaps.html
+          echo '        <a href="#">Works ▼</a>' >> majortom/prettymaps.html
           echo '        <ul class="dropdown-menu">' >> majortom/prettymaps.html
           echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/prettymaps">prettymaps</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/sketchup">sketchup</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/vectors">vectors</a></li>' >> majortom/prettymaps.html
           echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/prettymaps.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/prettymaps.html
           echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/prettymaps.html
           echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/prettymaps.html
+          echo '        </ul>' >> majortom/prettymaps.html
+          echo '      </li>' >> majortom/prettymaps.html
+          echo '      <li class="dropdown">' >> majortom/prettymaps.html
+          echo '        <a href="#">8BIT ▼</a>' >> majortom/prettymaps.html
+          echo '        <ul class="dropdown-menu">' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/astronaut">astronauts</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/spaceships">spacecrafts</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/controls">controls</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/planets">planets</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/917">917</a></li>' >> majortom/prettymaps.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/">majortom</a></li>' >> majortom/prettymaps.html
           echo '        </ul>' >> majortom/prettymaps.html
           echo '      </li>' >> majortom/prettymaps.html
           echo '    </ul>' >> majortom/prettymaps.html
