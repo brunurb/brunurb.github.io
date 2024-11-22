@@ -65,15 +65,27 @@ jobs:
           echo '        <a href="#">Works ▼</a>' >> majortom/vectors.html
           echo '        <ul class="dropdown-menu">' >> majortom/vectors.html
           echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/prettymaps">prettymaps</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/sketchup">sketchup</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/vectors">vectors</a></li>' >> majortom/vectors.html
           echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/vectors.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/vectors.html
           echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/vectors.html
           echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/vectors.html
           echo '        </ul>' >> majortom/vectors.html
           echo '      </li>' >> majortom/vectors.html
+          echo '      <li class="dropdown">' >> majortom/vectors.html
+          echo '        <a href="#">8BIT ▼</a>' >> majortom/vectors.html
+          echo '        <ul class="dropdown-menu">' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/astronaut">astronauts</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/spaceships">spacecrafts</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/controls">controls</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/planets">planets</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/917">917</a></li>' >> majortom/vectors.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/">majortom</a></li>' >> majortom/vectors.html
+          echo '        </ul>' >> majortom/vectors.html
+          echo '      </li>' >> majortom/vectors.html
           echo '    </ul>' >> majortom/vectors.html
           echo '  </header>' >> majortom/vectors.html
-
           # Add the title
           echo '<h1>vectors</h1>' >> majortom/vectors.html
 
