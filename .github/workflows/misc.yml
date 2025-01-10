@@ -15,52 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install beautifulsoup4 requests
-
-      - name: Fetch image URLs from Google Photos album
-        id: fetch_images
-        env:
-          album_url: "https://photos.app.goo.gl/5j5NeDQBiUmcyjhq6"
-        run: |
-          import requests
-          from bs4 import BeautifulSoup
-
-          # Fetch the album URL from the environment variable
-          album_url = os.getenv('album_url')
-
-          # send GET request to the URL
-          response = requests.get(album_url)
-
-          # Verify that the request was successful
-          if response.status_code != 200:
-              raise Exception(f"Failed to fetch album: {response.status_code}")
-
-          # Parse the HTML content of the album page
-          soup = BeautifulSoup(response.text, 'html.parser')
-
-          # Retrieve all image tags
-          image_tags = soup.find_all('img')
-
-          # Extract URLs from image tags
-          image_urls = []
-          for img in image_tags:
-              img_url = img.get('src')
-              if img_url and img_url.startswith('http'):
-                  image_urls.append(img_url)
-
-          # Create a text file with the image URLs
-          output = '\n'.join(image_urls)
-          with open('image_urls.txt', 'w') as file:
-              file.write(output)
-
       - name: Generate index.html
         run: |
           echo "Generating index.html..."
@@ -68,8 +22,9 @@ jobs:
           echo '<head>' >> majortom/index.html
           echo '  <meta charset="UTF-8">' >> majortom/index.html
           echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/index.html
-          echo '  <title>Miscellaneous Images</title>' >> majortom/index.html
+          echo '  <title>portfolio</title>' >> majortom/index.html
           echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/index.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/misc/jquery.mosaic.css">' >> majortom/index.html
           echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/index.html
           echo '  <style>' >> majortom/index.html
           echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/index.html
@@ -87,13 +42,17 @@ jobs:
           echo '  </style>' >> majortom/index.html
           echo '</head>' >> majortom/index.html
 
-          # Adding the header
+
+          # Adding the header with new menu
           echo '<body>' >> majortom/index.html
           echo '  <header>' >> majortom/index.html
           echo '    <ul class="navbar-top">' >> majortom/index.html
-          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/index.html
+          echo '      <li id="nav-company">' >> majortom/index.html
+          echo '        <a href="https://brunurb.github.io">brunurb</a>' >> majortom/index.html
+          echo '      </li>' >> majortom/index.html
           echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/index.html
-          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/index.html
+          echo '      <li class="dropdown">' >> majortom/index.html
+          echo '        <a href="#">About ▼</a>' >> majortom/index.html
           echo '        <ul class="dropdown-menu">' >> majortom/index.html
           echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/index.html
           echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/index.html
@@ -102,31 +61,41 @@ jobs:
           echo '      </li>' >> majortom/index.html
           echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/index.html
           echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/index.html
-          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/index.html
+          echo '      <li class="dropdown">' >> majortom/index.html
+          echo '        <a href="#">Works ▼</a>' >> majortom/index.html
           echo '        <ul class="dropdown-menu">' >> majortom/index.html
           echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/prettymaps">prettymaps</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/sketchup">sketchup</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/vectors">vectors</a></li>' >> majortom/index.html
           echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/index.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/index.html
           echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/index.html
           echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/index.html
+          echo '        </ul>' >> majortom/index.html
+          echo '      </li>' >> majortom/index.html
+          echo '      <li class="dropdown">' >> majortom/index.html
+          echo '        <a href="#">8BIT ▼</a>' >> majortom/index.html
+          echo '        <ul class="dropdown-menu">' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/astronaut">astronauts</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/spaceships">spacecrafts</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/controls">controls</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/planets">planets</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/917">917</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom/">majortom</a></li>' >> majortom/index.html
           echo '        </ul>' >> majortom/index.html
           echo '      </li>' >> majortom/index.html
           echo '    </ul>' >> majortom/index.html
           echo '  </header>' >> majortom/index.html
 
           # Add the title
-          echo '<h1>Miscellaneous Images</h1>' >> majortom/index.html
+          echo '<h1>portfolio</h1>' >> majortom/index.html
 
           # Mosaic images generation
           echo '  <main>' >> majortom/index.html
           echo '    <div id="myMosaic">' >> majortom/index.html
-
-          # Read image URLs from the generated file
-          with open('image_urls.txt', 'r') as file:
-              urls = file.readlines()
-              for url in urls:
-                  echo "<img src='${url.strip()}' alt='Gallery Image' class='thumbnail' onclick='showImage(this.src)' />" >> majortom/index.html
-
+          ls majortom/misc/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$' | while IFS= read -r img; do
+            echo "<img src='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/index.html
+          done
           echo '    </div>' >> majortom/index.html
 
           # Overlay section with navigation arrows
@@ -155,18 +124,18 @@ jobs:
           echo '        const overlay = document.getElementById("overlay");' >> majortom/index.html
           echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/index.html
           echo '        overlayImage.src = src;' >> majortom/index.html
-          echo '        currentIndex = imagesArray.findIndex(img => img.src === src);' >> majortom/index.html
+          echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> majortom/index.html
           echo '        overlay.classList.add("show");' >> majortom/index.html
           echo '      }' >> majortom/index.html
           echo '      function showPrevious(event) {' >> majortom/index.html
           echo '        event.stopPropagation();' >> majortom/index.html
           echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> majortom/index.html
-          echo '        showImage(imagesArray[currentIndex].src);' >> majortom/index.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/index.html
           echo '      }' >> majortom/index.html
           echo '      function showNext(event) {' >> majortom/index.html
           echo '        event.stopPropagation();' >> majortom/index.html
           echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> majortom/index.html
-          echo '        showImage(imagesArray[currentIndex].src);' >> majortom/index.html
+          echo '        showImage(imagesArray[currentIndex].dataset.full);' >> majortom/index.html
           echo '      }' >> majortom/index.html
           echo '      function closeOverlay(event) {' >> majortom/index.html
           echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/index.html
@@ -177,7 +146,7 @@ jobs:
           echo '      const images = document.querySelectorAll("#myMosaic img");' >> majortom/index.html
           echo '      images.forEach(image => {' >> majortom/index.html
           echo '        image.addEventListener("click", function() {' >> majortom/index.html
-          echo '          showImage(this.src);' >> majortom/index.html
+          echo '          showImage(this.dataset.full);' >> majortom/index.html
           echo '        });' >> majortom/index.html
           echo '      });' >> majortom/index.html
           echo '      const overlay = document.getElementById("overlay");' >> majortom/index.html
@@ -201,6 +170,6 @@ jobs:
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
-          git add majortom/index.html image_urls.txt
-          git commit -m "Fetch images from Google Photos album and regenerate index.html" || echo "No changes to commit"
+          git add majortom/index.html
+          git commit -m "Regenerate majortom/index.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
