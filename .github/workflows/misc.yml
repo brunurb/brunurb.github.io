@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'majortom/misc/pictures/**'
-      - 'majortom/misc.html'
+      - 'majortom/index.html'
   workflow_dispatch:
 
 jobs:
@@ -61,146 +61,146 @@ jobs:
           with open('image_urls.txt', 'w') as file:
               file.write(output)
 
-      - name: Generate misc.html
+      - name: Generate index.html
         run: |
-          echo "Generating misc.html..."
-          echo '<!DOCTYPE html><html lang="en">' > majortom/misc.html
-          echo '<head>' >> majortom/misc.html
-          echo '  <meta charset="UTF-8">' >> majortom/misc.html
-          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/misc.html
-          echo '  <title>Miscellaneous Images</title>' >> majortom/misc.html
-          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/misc.html
-          echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/misc.html
-          echo '  <style>' >> majortom/misc.html
-          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/misc.html
-          echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/misc.html
-          echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/misc.html
-          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/misc.html
-          echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/misc.html
-          echo '    #overlay.show { display: flex; }' >> majortom/misc.html
-          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }' >> majortom/misc.html
-          echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/misc.html
-          echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/misc.html
-          echo '    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> majortom/misc.html
-          echo '    #prevBtn { left: 20px; }' >> majortom/misc.html
-          echo '    #nextBtn { right: 20px; }' >> majortom/misc.html
-          echo '  </style>' >> majortom/misc.html
-          echo '</head>' >> majortom/misc.html
+          echo "Generating index.html..."
+          echo '<!DOCTYPE html><html lang="en">' > majortom/index.html
+          echo '<head>' >> majortom/index.html
+          echo '  <meta charset="UTF-8">' >> majortom/index.html
+          echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> majortom/index.html
+          echo '  <title>Miscellaneous Images</title>' >> majortom/index.html
+          echo '  <link rel="stylesheet" href="https://brunurb.github.io/majortom/main.css">' >> majortom/index.html
+          echo '  <link rel="icon" href="https://brunurb.github.io/mooo/assets/img/favicon.ico">' >> majortom/index.html
+          echo '  <style>' >> majortom/index.html
+          echo '    body { background-color: #142936; color: #92cfbf; margin: 0; font-family: Arial, Helvetica, sans-serif; }' >> majortom/index.html
+          echo '    #myMosaic { margin: 20px 0 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }' >> majortom/index.html
+          echo '    #myMosaic img { border: none; max-width: calc(100% / 8); height: auto; cursor: pointer; }' >> majortom/index.html
+          echo '    h1 { text-align: center; color: #e8e6eb; margin: 40px 0 -10px; font-size: 18px; font-family: "Arial", sans-serif; text-transform: uppercase; }' >> majortom/index.html
+          echo '    #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; z-index: 1000; justify-content: center; align-items: center; }' >> majortom/index.html
+          echo '    #overlay.show { display: flex; }' >> majortom/index.html
+          echo '    .overlay-content { display: flex; justify-content: center; align-items: center; max-width: 90%; max-height: 90%; position: relative; }' >> majortom/index.html
+          echo '    #overlay img { max-width: 100%; max-height: 100%; display: block; }' >> majortom/index.html
+          echo '    #close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }' >> majortom/index.html
+          echo '    button { position: fixed; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 1001; }' >> majortom/index.html
+          echo '    #prevBtn { left: 20px; }' >> majortom/index.html
+          echo '    #nextBtn { right: 20px; }' >> majortom/index.html
+          echo '  </style>' >> majortom/index.html
+          echo '</head>' >> majortom/index.html
 
           # Adding the header
-          echo '<body>' >> majortom/misc.html
-          echo '  <header>' >> majortom/misc.html
-          echo '    <ul class="navbar-top">' >> majortom/misc.html
-          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/misc.html
-          echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/misc.html
-          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/misc.html
-          echo '        <ul class="dropdown-menu">' >> majortom/misc.html
-          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/misc.html
-          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/misc.html
-          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/misc.html
-          echo '        </ul>' >> majortom/misc.html
-          echo '      </li>' >> majortom/misc.html
-          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/misc.html
-          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/misc.html
-          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/misc.html
-          echo '        <ul class="dropdown-menu">' >> majortom/misc.html
-          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/misc.html
-          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/misc.html
-          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/misc.html
-          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/misc.html
-          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/misc.html
-          echo '        </ul>' >> majortom/misc.html
-          echo '      </li>' >> majortom/misc.html
-          echo '    </ul>' >> majortom/misc.html
-          echo '  </header>' >> majortom/misc.html
+          echo '<body>' >> majortom/index.html
+          echo '  <header>' >> majortom/index.html
+          echo '    <ul class="navbar-top">' >> majortom/index.html
+          echo '      <li id="nav-company"><a href="https://brunurb.github.io">brunurb</a></li>' >> majortom/index.html
+          echo '      <li><a href="https://brunurb.github.io/">Home</a></li>' >> majortom/index.html
+          echo '      <li class="dropdown"><a href="#">About ▼</a>' >> majortom/index.html
+          echo '        <ul class="dropdown-menu">' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/mooo/index.html">About</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/web">links</a></li>' >> majortom/index.html
+          echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/index.html
+          echo '        </ul>' >> majortom/index.html
+          echo '      </li>' >> majortom/index.html
+          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/index.html
+          echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/index.html
+          echo '      <li class="dropdown"><a href="#">Works ▼</a>' >> majortom/index.html
+          echo '        <ul class="dropdown-menu">' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/mooo">Presentations</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/web">Website 2</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/majortom">8bit</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/shortcuts">Shortcuts</a></li>' >> majortom/index.html
+          echo '          <li><a href="https://brunurb.github.io/startpage">Startpage</a></li>' >> majortom/index.html
+          echo '        </ul>' >> majortom/index.html
+          echo '      </li>' >> majortom/index.html
+          echo '    </ul>' >> majortom/index.html
+          echo '  </header>' >> majortom/index.html
 
           # Add the title
-          echo '<h1>Miscellaneous Images</h1>' >> majortom/misc.html
+          echo '<h1>Miscellaneous Images</h1>' >> majortom/index.html
 
           # Mosaic images generation
-          echo '  <main>' >> majortom/misc.html
-          echo '    <div id="myMosaic">' >> majortom/misc.html
+          echo '  <main>' >> majortom/index.html
+          echo '    <div id="myMosaic">' >> majortom/index.html
 
           # Read image URLs from the generated file
           with open('image_urls.txt', 'r') as file:
               urls = file.readlines()
               for url in urls:
-                  echo "<img src='${url.strip()}' alt='Gallery Image' class='thumbnail' onclick='showImage(this.src)' />" >> majortom/misc.html
+                  echo "<img src='${url.strip()}' alt='Gallery Image' class='thumbnail' onclick='showImage(this.src)' />" >> majortom/index.html
 
-          echo '    </div>' >> majortom/misc.html
+          echo '    </div>' >> majortom/index.html
 
           # Overlay section with navigation arrows
-          echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/misc.html
-          echo '      <div class="overlay-content">' >> majortom/misc.html
-          echo '        <span id="close">×</span>' >> majortom/misc.html
-          echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/misc.html
-          echo '        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>' >> majortom/misc.html
-          echo '        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>' >> majortom/misc.html
-          echo '      </div>' >> majortom/misc.html
-          echo '    </div>' >> majortom/misc.html
-          echo '  </main>' >> majortom/misc.html
+          echo '    <div id="overlay" onclick="closeOverlay(event)">' >> majortom/index.html
+          echo '      <div class="overlay-content">' >> majortom/index.html
+          echo '        <span id="close">×</span>' >> majortom/index.html
+          echo '        <img id="overlay-image" src="" alt="Full Size Image" />' >> majortom/index.html
+          echo '        <button id="prevBtn" onclick="showPrevious(event)">&#10094;</button>' >> majortom/index.html
+          echo '        <button id="nextBtn" onclick="showNext(event)">&#10095;</button>' >> majortom/index.html
+          echo '      </div>' >> majortom/index.html
+          echo '    </div>' >> majortom/index.html
+          echo '  </main>' >> majortom/index.html
 
           # Footer
-          echo '  <footer>' >> majortom/misc.html
-          echo '    <p>© 2024 brunurb</p>' >> majortom/misc.html
-          echo '  </footer>' >> majortom/misc.html
+          echo '  <footer>' >> majortom/index.html
+          echo '    <p>© 2024 brunurb</p>' >> majortom/index.html
+          echo '  </footer>' >> majortom/index.html
 
           # Include jQuery and custom scripts
-          echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/misc.html
-          echo '  <script type="text/javascript">' >> majortom/misc.html
-          echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/misc.html
-          echo '      let currentIndex = 0;' >> majortom/misc.html
-          echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/misc.html
-          echo '      function showImage(src) {' >> majortom/misc.html
-          echo '        const overlay = document.getElementById("overlay");' >> majortom/misc.html
-          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/misc.html
-          echo '        overlayImage.src = src;' >> majortom/misc.html
-          echo '        currentIndex = imagesArray.findIndex(img => img.src === src);' >> majortom/misc.html
-          echo '        overlay.classList.add("show");' >> majortom/misc.html
-          echo '      }' >> majortom/misc.html
-          echo '      function showPrevious(event) {' >> majortom/misc.html
-          echo '        event.stopPropagation();' >> majortom/misc.html
-          echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> majortom/misc.html
-          echo '        showImage(imagesArray[currentIndex].src);' >> majortom/misc.html
-          echo '      }' >> majortom/misc.html
-          echo '      function showNext(event) {' >> majortom/misc.html
-          echo '        event.stopPropagation();' >> majortom/misc.html
-          echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> majortom/misc.html
-          echo '        showImage(imagesArray[currentIndex].src);' >> majortom/misc.html
-          echo '      }' >> majortom/misc.html
-          echo '      function closeOverlay(event) {' >> majortom/misc.html
-          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/misc.html
-          echo '          const overlay = document.getElementById("overlay");' >> majortom/misc.html
-          echo '          overlay.classList.remove("show");' >> majortom/misc.html
-          echo '        }' >> majortom/misc.html
-          echo '      }' >> majortom/misc.html
-          echo '      const images = document.querySelectorAll("#myMosaic img");' >> majortom/misc.html
-          echo '      images.forEach(image => {' >> majortom/misc.html
-          echo '        image.addEventListener("click", function() {' >> majortom/misc.html
-          echo '          showImage(this.src);' >> majortom/misc.html
-          echo '        });' >> majortom/misc.html
-          echo '      });' >> majortom/misc.html
-          echo '      const overlay = document.getElementById("overlay");' >> majortom/misc.html
-          echo '      overlay.addEventListener("click", closeOverlay);' >> majortom/misc.html
-          echo '      const closeButton = document.getElementById("close");' >> majortom/misc.html
-          echo '      closeButton.addEventListener("click", closeOverlay);' >> majortom/misc.html
-          echo '      document.getElementById("prevBtn").addEventListener("click", showPrevious);' >> majortom/misc.html
-          echo '      document.getElementById("nextBtn").addEventListener("click", showNext);' >> majortom/misc.html
-          echo '      window.addEventListener("keydown", function(event) {' >> majortom/misc.html
-          echo '        if (event.key === "ArrowLeft") {' >> majortom/misc.html
-          echo '          showPrevious(event);' >> majortom/misc.html
-          echo '        } else if (event.key === "ArrowRight") {' >> majortom/misc.html
-          echo '          showNext(event);' >> majortom/misc.html
-          echo '        }' >> majortom/misc.html
-          echo '      });' >> majortom/misc.html
-          echo '    });' >> majortom/misc.html
-          echo '  </script>' >> majortom/misc.html
-          echo '</body></html>' >> majortom/misc.html
+          echo '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>' >> majortom/index.html
+          echo '  <script type="text/javascript">' >> majortom/index.html
+          echo '    document.addEventListener("DOMContentLoaded", function() {' >> majortom/index.html
+          echo '      let currentIndex = 0;' >> majortom/index.html
+          echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/index.html
+          echo '      function showImage(src) {' >> majortom/index.html
+          echo '        const overlay = document.getElementById("overlay");' >> majortom/index.html
+          echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/index.html
+          echo '        overlayImage.src = src;' >> majortom/index.html
+          echo '        currentIndex = imagesArray.findIndex(img => img.src === src);' >> majortom/index.html
+          echo '        overlay.classList.add("show");' >> majortom/index.html
+          echo '      }' >> majortom/index.html
+          echo '      function showPrevious(event) {' >> majortom/index.html
+          echo '        event.stopPropagation();' >> majortom/index.html
+          echo '        currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;' >> majortom/index.html
+          echo '        showImage(imagesArray[currentIndex].src);' >> majortom/index.html
+          echo '      }' >> majortom/index.html
+          echo '      function showNext(event) {' >> majortom/index.html
+          echo '        event.stopPropagation();' >> majortom/index.html
+          echo '        currentIndex = (currentIndex + 1) % imagesArray.length;' >> majortom/index.html
+          echo '        showImage(imagesArray[currentIndex].src);' >> majortom/index.html
+          echo '      }' >> majortom/index.html
+          echo '      function closeOverlay(event) {' >> majortom/index.html
+          echo '        if (event.target.id === "overlay" || event.target.id === "close") {' >> majortom/index.html
+          echo '          const overlay = document.getElementById("overlay");' >> majortom/index.html
+          echo '          overlay.classList.remove("show");' >> majortom/index.html
+          echo '        }' >> majortom/index.html
+          echo '      }' >> majortom/index.html
+          echo '      const images = document.querySelectorAll("#myMosaic img");' >> majortom/index.html
+          echo '      images.forEach(image => {' >> majortom/index.html
+          echo '        image.addEventListener("click", function() {' >> majortom/index.html
+          echo '          showImage(this.src);' >> majortom/index.html
+          echo '        });' >> majortom/index.html
+          echo '      });' >> majortom/index.html
+          echo '      const overlay = document.getElementById("overlay");' >> majortom/index.html
+          echo '      overlay.addEventListener("click", closeOverlay);' >> majortom/index.html
+          echo '      const closeButton = document.getElementById("close");' >> majortom/index.html
+          echo '      closeButton.addEventListener("click", closeOverlay);' >> majortom/index.html
+          echo '      document.getElementById("prevBtn").addEventListener("click", showPrevious);' >> majortom/index.html
+          echo '      document.getElementById("nextBtn").addEventListener("click", showNext);' >> majortom/index.html
+          echo '      window.addEventListener("keydown", function(event) {' >> majortom/index.html
+          echo '        if (event.key === "ArrowLeft") {' >> majortom/index.html
+          echo '          showPrevious(event);' >> majortom/index.html
+          echo '        } else if (event.key === "ArrowRight") {' >> majortom/index.html
+          echo '          showNext(event);' >> majortom/index.html
+          echo '        }' >> majortom/index.html
+          echo '      });' >> majortom/index.html
+          echo '    });' >> majortom/index.html
+          echo '  </script>' >> majortom/index.html
+          echo '</body></html>' >> majortom/index.html
 
       - name: Commit changes
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Action"
-          git add majortom/misc.html image_urls.txt
-          git commit -m "Fetch images from Google Photos album and regenerate misc.html" || echo "No changes to commit"
+          git add majortom/index.html image_urls.txt
+          git commit -m "Fetch images from Google Photos album and regenerate index.html" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
