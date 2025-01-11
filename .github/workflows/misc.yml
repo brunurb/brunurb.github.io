@@ -59,7 +59,7 @@ jobs:
           echo '          <li><a href="mailto:eargdu3d5@mozmail.com">Contact</a></li>' >> majortom/index.html
           echo '        </ul>' >> majortom/index.html
           echo '      </li>' >> majortom/index.html
-          echo '      <li><a href="https://brunurb.github.io/majortom/">Portfolio</a></li>' >> majortom/index.html
+          echo '      <li><a href="https://brunurb.github.io/majortom">Portfolio</a></li>' >> majortom/index.html
           echo '      <li><a href="https://old.reddit.com/r/brunurb/" target="_blank">Blog</a></li>' >> majortom/index.html
           echo '      <li class="dropdown">' >> majortom/index.html
           echo '        <a href="#">Works ▼</a>' >> majortom/index.html
@@ -88,7 +88,7 @@ jobs:
           echo '  </header>' >> majortom/index.html
 
           # Add the title
-          echo '<h1>portfolio</h1>' >> majortom/index.html
+          echo '<h1>Major Tom</h1>' >> majortom/index.html
 
           # Mosaic images generation
           echo '  <main>' >> majortom/index.html
