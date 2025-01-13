@@ -15,9 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up GitHub CLI
-        uses: cli/gh-action@v2
-
       - name: Generate index.html
         run: |
           echo "Generating index.html..."
@@ -44,7 +41,6 @@ jobs:
           echo '    #nextBtn { right: 20px; }' >> majortom/index.html
           echo '  </style>' >> majortom/index.html
           echo '</head>' >> majortom/index.html
-
 
           # Adding the header with new menu
           echo '<body>' >> majortom/index.html
@@ -97,7 +93,7 @@ jobs:
           echo '  <main>' >> majortom/index.html
           echo '    <div id="myMosaic">' >> majortom/index.html
           ls majortom/misc/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$' | while IFS= read -r img; do
-            echo "<img src='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/index.html
+            echo "<img src='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' class='thumbnail' />"
           done
           echo '    </div>' >> majortom/index.html
 
@@ -124,7 +120,7 @@ jobs:
           echo '      let currentIndex = 0;' >> majortom/index.html
           echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/index.html
           echo '      function showImage(src) {' >> majortom/index.html
-          echo '        const overlay = document.getElementById("overlay");' >> majortom/index.html
+          echo '        const overlay = document.getElementById("overlay");' >> majortom.index.html
           echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/index.html
           echo '        overlayImage.src = src;' >> majortom/index.html
           echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> majortom/index.html
@@ -184,4 +180,4 @@ jobs:
             -F conclusion="$CONCLUSION"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONCLUSION: success # or failure based on the actual workflow result
+          CONCLUSION: failure
