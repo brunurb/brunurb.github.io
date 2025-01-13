@@ -42,6 +42,7 @@ jobs:
           echo '  </style>' >> majortom/index.html
           echo '</head>' >> majortom/index.html
 
+
           # Adding the header with new menu
           echo '<body>' >> majortom/index.html
           echo '  <header>' >> majortom/index.html
@@ -93,7 +94,7 @@ jobs:
           echo '  <main>' >> majortom/index.html
           echo '    <div id="myMosaic">' >> majortom/index.html
           ls majortom/misc/pictures | grep -E '\.jpeg$|\.jpg$|\.gif$|\.svg$|\.png$|\.webp$' | while IFS= read -r img; do
-            echo "<img src='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' class='thumbnail' />"
+            echo "<img src='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' alt='Gallery Image' data-full='https://brunurb.github.io/majortom/misc/pictures/${img// /%20}' class='thumbnail' onclick='showImage(this.dataset.full)' />" >> majortom/index.html
           done
           echo '    </div>' >> majortom/index.html
 
@@ -120,7 +121,7 @@ jobs:
           echo '      let currentIndex = 0;' >> majortom/index.html
           echo '      const imagesArray = [...document.querySelectorAll("#myMosaic img")];' >> majortom/index.html
           echo '      function showImage(src) {' >> majortom/index.html
-          echo '        const overlay = document.getElementById("overlay");' >> majortom.index.html
+          echo '        const overlay = document.getElementById("overlay");' >> majortom/index.html
           echo '        const overlayImage = document.getElementById("overlay-image");' >> majortom/index.html
           echo '        overlayImage.src = src;' >> majortom/index.html
           echo '        currentIndex = imagesArray.findIndex(img => img.dataset.full === src);' >> majortom/index.html
@@ -172,12 +173,3 @@ jobs:
           git add majortom/index.html
           git commit -m "Regenerate majortom/index.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
-
-      - name: Report build status
-        run: |
-          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
-            -F github_run_id="$GITHUB_RUN_ID" \
-            -F conclusion="$CONCLUSION"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONCLUSION: failure
