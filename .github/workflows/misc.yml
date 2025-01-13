@@ -15,6 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up GitHub CLI
+        uses: cli/gh-action@v2
+
       - name: Generate index.html
         run: |
           echo "Generating index.html..."
@@ -173,3 +176,12 @@ jobs:
           git add majortom/index.html
           git commit -m "Regenerate majortom/index.html for mosaic gallery with overlay and fixed navigation arrows" || echo "No changes to commit"
           git push origin master  # Make sure this matches your main branch
+
+      - name: Report build status
+        run: |
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
+            -F github_run_id="$GITHUB_RUN_ID" \
+            -F conclusion="$CONCLUSION"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONCLUSION: success # or failure based on the actual workflow result
